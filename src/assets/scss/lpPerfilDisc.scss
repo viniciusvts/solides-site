@@ -1,0 +1,336 @@
+@import "./variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+$primary: #2F0A77;
+$blue_buttons: #0087A4;
+$blue_buttons_border: #0CAED1;
+$yellow: #FFBA00;
+$yellow_buttons_border: #FBDD8B;
+$color_light: #F4F0EB;
+$bg-light: #F8F9FA;
+$cyan: #00C9DB;
+$mod_red: #D74149;
+$mod_red_buttons_border: #F6777E;
+$gray: #E2E3E3;
+$green: #57DD6D;
+
+*, ::after, ::before{
+    font-family: 'Lato', 'Roboto', sans-serif;
+    font-size: 16px;
+    @media (min-width: $smallPhones) {
+        font-size: 21px;
+    }
+}
+h2{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.logo-menu{
+    width: 150px;
+}
+.no-border{
+    border: none;
+}
+.collapse{
+    margin-left: 5%;
+    &.active{
+        display: block;
+    }
+}
+nav{
+    position: fixed!important;
+    width: 100%;
+    top: 0;
+    background-color: white;
+    &.navbar.active{
+        background-color: $primary;
+    }
+}
+.nav-item{
+    .nav-link{
+        color: whitesmoke!important;
+        &:hover{
+            color: white;
+        }
+    }
+}
+.hambmenu{
+    height: 30px;
+}
+.dropdown-menu{
+    border: none;
+    background-color: inherit;
+    @media (min-width: $desktops) {
+        background-color: solid 1px $primary;
+    }
+    &.active{
+        display: block;
+    }
+    .dropdown-item{
+        color: whitesmoke;
+        &:focus, &:active{
+            background-color: inherit;
+            outline: none;
+        }
+        .saiba-mais{
+            color: gray;
+        }
+    }
+}
+.centerize-itens{
+    width: fit-content;
+    margin: 0 auto;
+}
+.blue-back{
+    background: $blue_buttons;
+    border: 2px solid $blue_buttons_border;
+}
+.red-back{
+    background: $mod_red;
+    border: 2px solid $mod_red_buttons_border;
+}
+.yellow-back{
+    background: $yellow;
+    border: 2px solid $yellow_buttons_border;
+}
+.blue-outline{
+    color: $blue_buttons;
+    background-color: inherit;
+    border: 2px solid $blue_buttons;
+}
+button{
+    &.badge{
+        padding: .6rem 1rem;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+.color-primary{
+    color: $primary;
+}
+.color-cyan{
+    color: $cyan;
+}
+.bg-light{
+    background-color: $bg-light;
+}
+.bg-gray{
+    background-color: $gray;
+}
+.to-left-70{
+    width: 60%;
+    float: left;
+}
+.to-right-70{
+    width: 60%;
+    float: right;
+}
+.to-left-30{
+    width: 40%;
+    float: left;
+    img{
+        width: 200%;
+        margin-left: -50%;
+    }
+}
+.to-right-30{
+    width: 40%;
+    float: right;
+    img{
+        width: 200%;
+        margin-left: -35%;
+    }
+}
+.vertical-pill{
+    position: absolute;
+    border-radius: 100px;
+    width: 3.8rem;
+    height: 20rem;
+    z-index: -1;
+    margin-left: 10%;
+    &.yellow{
+        background: $yellow;
+    }
+    &.cyan{
+        background: $cyan;
+        margin-top: -9.4rem;
+    }
+    &.red{
+        background-color: $mod_red;
+    }
+    &.green{
+        background-color: $green;
+    }
+}
+@each $marginPx in 30 50 70 120{
+    .mt-#{$marginPx} {
+        margin-top: $marginPx + px;
+    }
+    .mb-#{$marginPx} {
+        margin-bottom: $marginPx + px;
+    }
+}
+@each $padding in 60 120{
+    .pt-#{$padding} {
+        padding-top: $padding + px;
+    }
+    .pb-#{$padding} {
+        padding-bottom: $padding + px;
+    }
+}
+.over-x-h{
+    overflow-x: hidden;
+}
+img{
+    &.submenu{
+        height: 10px;
+    }
+}
+.mx-button{
+    margin-left: 1px;
+    margin-right: 1px;
+    @media (min-width: $smallPhones) {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+.w-80{
+    max-width: 80%;
+}
+ul.detalhes{
+    list-style-type: none;
+    li{
+        margin-bottom: 10px;
+    }
+}
+#ytframe{
+    width: 80%;
+    margin: 50px auto;
+    iframe{
+        border-radius: 15px;
+    }
+}
+.depoimento{
+    img.profile{
+        margin: 10px;
+    }
+    p.profile{
+        font-weight: bold;
+    }
+    .text{
+        position: relative;
+        max-width: 200px;
+        margin: 50px auto;
+        color: $primary;
+        p{
+            font-size: 1.4rem;
+        }
+        .asp{
+            position: absolute;
+            &.begin{
+                top: -25px;
+                left: -25px;
+            }
+            &.end{
+                bottom: -25px;
+                right: -25px;
+            }
+        }
+    }
+    .identidade{
+        max-width: 200px;
+        color: $primary;
+        margin: 50px auto;
+        p{
+            font-size: .8rem;
+        }
+    }
+}
+table.prices{
+    border-radius: 10px;
+    thead{
+        tr{
+            background-color: #F8F9FA;
+            th{
+                font-size: .8rem;
+                padding: .75rem .3rem;
+                border-top: none;
+            }
+        }
+    }
+    tbody{
+        tr{
+            &:nth-of-type(odd) {
+                background-color: #E2E3E3;
+            }
+            &:nth-of-type(even) {
+                background-color: #F8F9FA;
+            }
+            td{
+                font-size: .8rem;
+                padding: .75rem .1rem;
+            }
+        }
+    }
+}
+.left-right{
+    margin-bottom: 50px;
+    h2, p{
+        padding-left: 2rem;
+        padding-right: 4rem;
+        @media (min-width: $smallPhones) {
+            padding-left: 3.3rem;
+            padding-right: 3rem;
+        }
+    }
+    img{
+        margin-left: 10%;
+        @media (min-width: $smallPhones) {
+            margin-left: 20%;
+        }
+    }
+}
+.right-left{
+    margin-bottom: 50px;
+    text-align: right;
+    h2, p{
+        padding-left: 3rem;
+        padding-right: 3rem;
+        @media (min-width: $smallPhones) {
+            padding-left: 2rem;
+            padding-right: 4rem;
+        }
+    }
+    img{
+        transform: translateX(-20%);
+        @media (min-width: $smallPhones) {
+            transform: translateX(-30%);
+        }
+    }
+}
+
+footer{
+    width: 100%;
+    bottom: 0;
+    background: #3c1a80;
+    ul{
+        li{
+            margin-bottom: 15px;
+            .estado{
+                font-weight: bold;
+            }
+            a{
+                color: $color_light;
+            }
+        }
+        &.social{
+            img{
+                padding-right: 10px;
+            }
+        }
+    }
+}
+.rotate-180{
+    transform: rotate(180deg);
+}

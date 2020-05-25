@@ -20,6 +20,9 @@ $green: #57DD6D;
     @media (min-width: $smallPhones) {
         font-size: 21px;
     }
+    @media (min-width: $tablets) {
+        font-size: 25px;
+    }
 }
 h2{
     font-size: 1.3rem;
@@ -39,18 +42,42 @@ h2{
 }
 nav{
     position: fixed!important;
+    z-index: 10;
     width: 100%;
     top: 0;
     background-color: white;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25);
     &.navbar.active{
         background-color: $primary;
     }
 }
+.navbar-nav{
+    margin-right: auto;
+    @media (min-width: $desktops) {
+        margin-right: unset;
+        width: 100%;
+    }
+}
 .nav-item{
+    @media (min-width: $desktops) {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
     .nav-link{
         color: whitesmoke!important;
         &:hover{
             color: white;
+        }
+        @media (min-width: $desktops) {
+            color: $primary!important;
+            &:hover{
+                color: white;
+            }
         }
     }
 }
@@ -101,6 +128,11 @@ nav{
 button{
     &.badge{
         padding: .6rem 1rem;
+        &.two-in-a-row{
+            @media (min-width: $smallPhones) {
+                padding: .6rem .5rem;
+            }
+        }
     }
     &:focus{
         outline: none;
@@ -108,6 +140,9 @@ button{
 }
 .color-primary{
     color: $primary;
+}
+.color-black{
+    color: black;
 }
 .color-cyan{
     color: $cyan;
@@ -121,6 +156,11 @@ button{
 .to-left-70{
     width: 60%;
     float: left;
+    *{
+        @media (min-width: $tablets) {
+            padding-right: 20%;
+        }
+    }
 }
 .to-right-70{
     width: 60%;
@@ -149,23 +189,47 @@ button{
     height: 20rem;
     z-index: -1;
     margin-left: 10%;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25);
     &.yellow{
         background: $yellow;
+        @media (min-width: $desktops) {
+            width: 7rem;
+            height: 50rem;
+        }
     }
     &.cyan{
         background: $cyan;
         margin-top: -9.4rem;
+        @media (min-width: $desktops) {
+            width: 7rem;
+            height: 50rem;
+            margin-top: 0;
+        }
     }
     &.red{
         background-color: $mod_red;
+        @media (min-width: $desktops) {
+            width: 7rem;
+            height: 30rem;
+        }
     }
     &.green{
         background-color: $green;
+        @media (min-width: $desktops) {
+            width: 7rem;
+            height: 25rem;
+            margin-top: -5rem;
+        }
     }
 }
-@each $marginPx in 30 50 70 120{
+@each $marginPx in 30 50 70 120 250{
     .mt-#{$marginPx} {
         margin-top: $marginPx + px;
+    }
+    .mt-md-#{$marginPx} {
+        @media (min-width: $tablets) {
+            margin-top: $marginPx + px;
+        }
     }
     .mb-#{$marginPx} {
         margin-bottom: $marginPx + px;
@@ -179,20 +243,40 @@ button{
         padding-bottom: $padding + px;
     }
 }
+.ml-text-profiler{
+    @media (min-width: $desktops) {
+        margin-left: -60px;
+    }
+}
+.mt-img-profiler{
+    @media (min-width: $desktops) {
+        margin-top: 500px;
+    }
+}
+.mt-xs-0{
+    @media (min-width: $smallPhones) {
+        margin-top: 0;
+    }
+}
+.mt-xs-50{
+    @media (min-width: $smallPhones) {
+        margin-top: 50px!important;
+    }
+}
 .over-x-h{
     overflow-x: hidden;
 }
 img{
-    &.submenu{
+    .submenu &{
         height: 10px;
     }
 }
 .mx-button{
     margin-left: 1px;
     margin-right: 1px;
-    @media (min-width: $smallPhones) {
-        margin-left: 5px;
-        margin-right: 5px;
+    @media (min-width: $tablets) {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 .w-80{
@@ -207,6 +291,21 @@ ul.detalhes{
 #ytframe{
     width: 80%;
     margin: 50px auto;
+    @media (min-width: $smallPhones) {
+        width: 90%;
+        height: 230px;
+    }
+    @media (min-width: $smartphones) {
+        width: 80%;
+        height: 220px;
+    }
+    @media (min-width: $tablets) {
+        width: 70%;
+        height: 275px;
+    }
+    @media (min-width: $desktops) {
+        height: 400px;
+    }
     iframe{
         border-radius: 15px;
     }
@@ -220,7 +319,7 @@ ul.detalhes{
     }
     .text{
         position: relative;
-        max-width: 200px;
+        max-width: 80%;
         margin: 50px auto;
         color: $primary;
         p{
@@ -239,7 +338,7 @@ ul.detalhes{
         }
     }
     .identidade{
-        max-width: 200px;
+        max-width: 80%;
         color: $primary;
         margin: 50px auto;
         p{
@@ -256,6 +355,12 @@ table.prices{
                 font-size: .8rem;
                 padding: .75rem .3rem;
                 border-top: none;
+                @media (min-width: $tablets) {
+                    font-size: 1rem;
+                }
+                @media (min-width: $desktops) {
+                    font-size: .8rem;
+                }
             }
         }
     }
@@ -270,8 +375,27 @@ table.prices{
             td{
                 font-size: .8rem;
                 padding: .75rem .1rem;
+                @media (min-width: $smallPhones) {
+                    font-size: 0.7rem;
+                }
+                @media (min-width: $tablets) {
+                    font-size: 1rem;
+                }
+                @media (min-width: $desktops) {
+                    font-size: .8rem;
+                    padding: .25rem .1rem;
+                }
             }
         }
+    }
+}
+.price-details{
+    line-height: normal;
+    @media (min-width: $desktops) {
+        margin-top: -60px;
+    }
+    p, span{
+        font-size: 1.3rem;
     }
 }
 .left-right{
@@ -280,14 +404,13 @@ table.prices{
         padding-left: 2rem;
         padding-right: 4rem;
         @media (min-width: $smallPhones) {
-            padding-left: 3.3rem;
-            padding-right: 3rem;
+            padding-right: 1rem;
         }
     }
     img{
         margin-left: 10%;
         @media (min-width: $smallPhones) {
-            margin-left: 20%;
+            margin-left: 10%;
         }
     }
 }
@@ -299,13 +422,13 @@ table.prices{
         padding-right: 3rem;
         @media (min-width: $smallPhones) {
             padding-left: 2rem;
-            padding-right: 4rem;
+            padding-right: 2rem;
         }
     }
     img{
         transform: translateX(-20%);
         @media (min-width: $smallPhones) {
-            transform: translateX(-30%);
+            transform: translateX(-15%);
         }
     }
 }
@@ -327,10 +450,41 @@ footer{
         &.social{
             img{
                 padding-right: 10px;
+                height: 1rem;
             }
         }
     }
 }
 .rotate-180{
     transform: rotate(180deg);
+}
+.trx-60{
+    transform: translateX(60px);
+}
+.frame{
+    width: 100%;
+    height: 75px;
+    @media (min-width: $smallPhones) {
+        height: 100px
+    }
+    @media (min-width: $tablets) {
+        height: 150px
+    }
+    @media (min-width: $desktops) {
+        height: 150px
+    }
+}
+.align-lg-vertical{
+    @media (min-width: $desktops) {
+        height: fit-content;
+        margin-top: auto;
+        margin-bottom: auto;    
+    }
+}
+.bestcontent-profiler{
+    .to-left-30{
+        img{
+            width: 20rem;
+        }
+    }
 }

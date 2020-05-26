@@ -2,7 +2,7 @@
  * define a url base do app
  * @author Vinicius de Santana
 */
-const baseURL = process.env.NODE_ENV === 'production' ? '/' : 'https://novo.dnadevendas.com.br/';
+const baseURL = process.env.NODE_ENV === 'production' ? '/' : 'http://vue.localhost/';
 /**
  * Comunicação com o servidor DNA
  * @author Vinicius de Santana
@@ -28,6 +28,17 @@ const apiRest = {
     if (urlArgs.length > 0){
       url += "?" + urlArgs;
     }
+    return fetch(url);
+  },
+
+  /**
+   * Resgata uma página pelo seu id
+   * @param {number} id - Id da página
+   * @author Vinicius de Santana
+   */
+  getLPsById(id) {
+    if (!Number.isInteger(id))  throw new TypeError("O parametro precisa ser um número inteiro");
+    let url = baseURL + 'api/wp-json/wp/v2/lps/' + id;
     return fetch(url);
   },
 };

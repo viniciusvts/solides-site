@@ -27,3 +27,5 @@ yarn-error.log*
 !public/api/wp-content/plugins/
 public/api/wp-content/plugins/*
 !public/api/wp-content/plugins/dna-custom/
+!public/api/wp-content/plugins/advanced-custom-fields-pro/
+!public/api/wp-content/plugins/acf-to-rest-api/

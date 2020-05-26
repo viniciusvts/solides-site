@@ -5,10 +5,10 @@ import App from './App.vue'
 import router from './services/router.js'
 import ApiRest from './services/ApiRest.js'
 
+Vue.prototype.$http = ApiRest
 Vue.config.productionTip = false
 
 new Vue({
   router,
-  ApiRest,
   render: h => h(App),
 }).$mount('#app')

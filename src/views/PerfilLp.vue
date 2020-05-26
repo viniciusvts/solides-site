@@ -1,6 +1,8 @@
 <template>
-<div class="lpPerfilDisc over-x-h">
-  <nav :class="{'active': controls.expandMenu}" class="navbar navbar-expand-lg navbar-light">
+<div v-if="lp" class="lpPerfilDisc over-x-h">
+  <nav
+  :class="{'active': controls.expandMenu}"
+  class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="#">
       <img 
       v-if="controls.expandMenu" 
@@ -32,13 +34,13 @@
           :class="{'active': controls.expandConteudo}"
           class="dropdown-menu"
           aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Blog da Sólides</a>
+            <a class="dropdown-item" href="https://blog.solides.com.br/">Blog da Sólides</a>
             <p class="d-none d-lg-block">Os melhores conteúdos para gestão de pessoas</p>
-            <a class="dropdown-item" href="#">RH Portal</a>
+            <a class="dropdown-item" href="https://www.rhportal.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346">RH Portal</a>
             <p class="d-none d-lg-block">Os melhores conteúdos sobre gestão de pessoas</p>
-            <a class="dropdown-item" href="#">Materiais</a>
+            <a class="dropdown-item" href="https://solides.com.br/materiais-educativos/">Materiais</a>
             <p class="d-none d-lg-block">Os melhores conteúdos para gestão de pessoas</p>
-            <a class="dropdown-item" href="#">Ferramentas</a>
+            <a class="dropdown-item" href="https://contratarerradocustacaro.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346">Ferramentas</a>
             <p class="d-none d-lg-block">Calculadora de rotatividade</p>
           </div>
         </li>
@@ -58,23 +60,23 @@
           :class="{'active': controls.expandCursos}"
           class="dropdown-menu"
           aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Engenharia de Cargos<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+            <a class="dropdown-item" href="https://universidade.solides.com.br/course/people-analytics/">Engenharia de Cargos<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
             <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
-            <a class="dropdown-item " href="#">People Analytics<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+            <a class="dropdown-item " href="https://universidade.solides.com.br/course/people-analytics/">People Analytics<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
             <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
-            <a class="dropdown-item" href="#">RH Tecnológico<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+            <a class="dropdown-item" href="https://universidade.solides.com.br/course/rh-tecnologico/">RH Tecnológico<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
             <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
-            <a class="dropdown-item" href="#">Recrutamento e Seleção<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+            <a class="dropdown-item" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">Recrutamento e Seleção<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
             <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
-            <a class="dropdown-item" href="#">Gestão Comportamental<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+            <a class="dropdown-item" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">Gestão Comportamental<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
             <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Preços</a>
+          <a class="nav-link" href="#prices">Preços</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Seja Parceiro</a>
+          <a class="nav-link" href="https://materiais.solides.com.br/parceria">Seja Parceiro</a>
         </li>
       </ul>
     </div>
@@ -82,22 +84,22 @@
   <div class="container mt-70 pb-60 mt-md-120">
     <div class="row ml-0">
       <div class="text-left color-primary to-left-70 mt-120">
-        <h2>Perfil Disc e mais 7 metodologias em um só lugar</h2>
-        <p>Aplique o Profiler, único assesment que em apenas 5 minutos mostra mais de 50 informações sobre o perfil comportamental do profissional</p>
+        <h2 v-html="lp.acf.titulo1"></h2>
+        <p v-html="lp.acf.texto1"></p>
         <!--exibe apenas em desktop -->
         <div class="mt-70 pr-0 d-none d-lg-block">
-          <a href="#" class="pr-0">
+          <a href="https://checkout.solides.com.br/" class="pr-0">
             <button class="badge badge-pill mx-button blue-back two-in-a-row">Comprar Agora</button>
           </a>
-          <a href="#" class="pr-0">
+          <a href="#form" class="pr-0">
             <button class="badge badge-pill mx-button blue-outline two-in-a-row">Fale com um especialista</button>
           </a>
           <!--profiler-->
           <div class="text-right pr-0 trx-60 color-black internal-wip">
-            <h2 class="mb-5 pr-0">O que é o profiler?</h2>
-            <p class="pr-0">O Profiler é um teste comportamental exclusivo da  Sólides, baseado no teste Disc e mais sete metodologias de perfis comportamentais. Validado por USP, UFMG, e FINEP, em apenas 5 minutos o Profiler fornece mais de 50 informações sobre a pessoam entre elas competências, energia e pressão para o trabalho, fatores moticacionais e de afastamento, estilo de liderança ideal e histórico individual</p>
+            <h2 v-html="lp.acf.titulo2" class="mb-5 pr-0"></h2>
+            <p v-html="lp.acf.texto2" class="pr-0"></p>
             <div class="mt-50 pr-0">
-              <a href="#" class="pr-0">
+              <a href="https://checkout.solides.com.br/" class="pr-0">
                 <button class="badge badge-pill mx-2 blue-back">Quero fazer o Profiler</button>
               </a>
             </div>
@@ -111,20 +113,20 @@
       </div>
     </div>
     <div class="centerize-itens mt-70 d-lg-none">
-      <a href="#">
+      <a href="https://checkout.solides.com.br/">
         <button class="badge badge-pill mx-button blue-back two-in-a-row">Comprar Agora</button>
       </a>
-      <a href="#">
+      <a href="#form">
         <button class="badge badge-pill mx-button blue-outline two-in-a-row">Fale com um especialista</button>
       </a>
     </div>
   </div>
   <!--profiler-->
   <div class="container pt-60 pb-60 text-center d-lg-none">
-    <h2 class="mb-5">O que é o profiler?</h2>
-    <p>O Profiler é um teste comportamental exclusivo da  Sólides, baseado no teste Disc e mais sete metodologias de perfis comportamentais. Validado por USP, UFMG, e FINEP, em apenas 5 minutos o Profiler fornece mais de 50 informações sobre a pessoam entre elas competências, energia e pressão para o trabalho, fatores moticacionais e de afastamento, estilo de liderança ideal e histórico individual</p>
+    <h2 v-html="lp.acf.titulo2" class="mb-5"></h2>
+    <p v-html="lp.acf.texto2"></p>
     <div class="centerize-itens mt-50">
-      <a href="#">
+      <a href="https://checkout.solides.com.br/">
         <button class="badge badge-pill mx-2 blue-back">Quero fazer o Profiler</button>
       </a>
     </div>
@@ -132,31 +134,10 @@
   <!--profiler competencias-->
   <div class="bg-light">
     <div class="container pt-60 text-center">
-      <h2 class="mb-5 color-primary">Com o Profiler, trabalhe o desenvolvimento de talentos e foque em suas principais competências</h2>
+      <h2 v-html="lp.acf.titulo3" class="mb-5 color-primary"></h2>
       <div class="row profiler-competencias">
-        <div class="col-6 col-md-3 mb-md-5 mb-lg-4">
-          <img src="@/assets/img/coaching.png" alt="coaching">
-        </div>
-        <div class="col-6 col-md-3 mb-md-5 mb-lg-4">
-          <img src="@/assets/img/treinamentos.png" alt="treinamentos">
-        </div>
-        <div class="col-6 col-md-3 mb-md-5 mb-lg-4">
-          <img src="@/assets/img/formacao.png" alt="formacao">
-        </div>
-        <div class="col-6 col-md-3 mb-md-5 mb-lg-4">
-          <img src="@/assets/img/auto-conhecimento.png" alt="auto-conhecimento">
-        </div>
-        <div class="col-6 col-md-3 mb-md-5 mb-lg-4">
-          <img src="@/assets/img/getao-de-pessoas.png" alt="getao-de-pessoas">
-        </div>
-        <div class="col-6 col-md-3 mb-md-5 mb-lg-4">
-          <img src="@/assets/img/processos-de-recrutamento-e-selecao.png" alt="processos-de-recrutamento-e-selecao">
-        </div>
-        <div class="col-6 col-md-3 mb-md-5 mb-lg-4">
-          <img src="@/assets/img/controle-da-taxa-de-rotatividade.png" alt="controle-da-taxa-de-rotatividade">
-        </div>
-        <div class="col-6 col-md-3 mb-md-5 mb-lg-4">
-          <img src="@/assets/img/diminuicao-de-suctus-em-processos-de-contratacao.png" alt="diminuicao-de-suctus-em-processos-de-contratacao">
+        <div v-for="(img, index) in lp.acf.gal3" :key="index" class="col-6 col-md-3 mb-md-5 mb-lg-4">
+          <img :src="img.sizes.medium" :alt="img.alt">
         </div>
       </div>
     </div>
@@ -177,22 +158,25 @@
         alt="homem achando solução na solides">
       </div>
       <div class="text-left to-right-70 mt-30 ml-text-profiler">
-        <h2>Como o Profiler tem ajudado pessoas e empresas?</h2>
+        <h2 v-html="lp.acf.titulo4"></h2>
         <!--so aparece em desktop -->
         <div class="d-none d-lg-block">
-          <p class="w-80">Desde 2010 a Sólides e seus parceiros desenvolvem talentos e colocam a pessoa certa no lugar certo.</p>
+          <p v-html="lp.acf.texto4" class="w-80"></p>
           <ul class="detalhes pl-0">
-            <li class="font-weight-bold"><span class="color-cyan bold">+ 8 mil</span> analistas comportamentais formados</li>
-            <li class="font-weight-bold"><span class="color-cyan bold">+ 2 milhões</span> de relatórios</li>
-            <li class="font-weight-bold"><span class="color-cyan bold">+ 350</span> parceiros</li>
+            <li class="font-weight-bold">
+              <span v-html="lp.acf.mil_analistas" class="color-cyan bold"></span> analistas comportamentais formados
+            </li>
+            <li class="font-weight-bold">
+              <span v-html="lp.acf.milhoes_relatorios" class="color-cyan bold"></span> de relatórios
+            </li>
+            <li class="font-weight-bold">
+              <span v-html="lp.acf.parceiros" class="color-cyan bold"></span> parceiros
+            </li>
           </ul>
           <div class="container mt-5 text-right">
-            <h2>O que torna o Profiler exclusivo?</h2>
-            <p>O único com <span class="font-weight-bold">8 metodologias</span> de perfis comportamentais</p>
-            <p>Análise comportamental em apenas <span class="font-weight-bold">5 minutos</span></p>
-            <p>Aumento da <span class="font-weight-bold">produtividade</span> e aumento da <span class="font-weight-bold">produtividade</span></p>
-            <p><span class="font-weight-bold">Altíssima precisão</span> comprovada</p>
-            <a href="#">
+            <h2 v-html="lp.acf.titulo5"></h2>
+            <div v-html="lp.acf.texto5"></div>
+            <a href="https://checkout.solides.com.br/">
               <button class="badge badge-pill mx-button yellow-back">Quero saber mais</button>
             </a>
           </div>
@@ -202,18 +186,21 @@
   </div>
   <!--como o profiler... detalhes-->
   <div class="container d-lg-none">
-      <p class="pl-4 w-80">Desde 2010 a Sólides e seus parceiros desenvolvem talentos e colocam a pessoa certa no lugar certo.</p>
+      <p v-html="lp.acf.texto4" class="pl-4 w-80"></p>
       <ul class="detalhes pl-4">
-        <li class="font-weight-bold"><span class="color-cyan bold">+ 8 mil</span> analistas comportamentais formados</li>
-        <li class="font-weight-bold"><span class="color-cyan bold">+ 2 milhões</span> de relatórios</li>
-        <li class="font-weight-bold"><span class="color-cyan bold">+ 350</span> parceiros</li>
+        <li class="font-weight-bold">
+          <span v-html="lp.acf.mil_analistas" class="color-cyan bold"></span> analistas comportamentais formados
+        </li>
+        <li class="font-weight-bold">
+          <span v-html="lp.acf.milhoes_relatorios" class="color-cyan bold"></span> de relatórios
+        </li>
+        <li class="font-weight-bold">
+          <span v-html="lp.acf.parceiros" class="color-cyan bold"></span> parceiros
+        </li>
       </ul>
     <div class="container mt-5 px-3">
-      <h2>O que torna o Profiler exclusivo?</h2>
-      <p>O único com <span class="font-weight-bold">8 metodologias</span> de perfis comportamentais</p>
-      <p>Análise comportamental em apenas <span class="font-weight-bold">5 minutos</span></p>
-      <p>Aumento da <span class="font-weight-bold">produtividade</span> e aumento da <span class="font-weight-bold">produtividade</span></p>
-      <p><span class="font-weight-bold">Altíssima precisão</span> comprovada</p>
+      <h2 v-html="lp.acf.titulo5"></h2>
+      <div v-html="lp.acf.texto5"></div>
       <a href="#">
         <button class="badge badge-pill mx-button yellow-back">Quero saber mais</button>
       </a>
@@ -222,7 +209,7 @@
   <!-- <img class="w-100 rotate-180" src="@/assets/img/frame1.png" alt=""> -->
   <!--validado por-->
   <div class="container pt-60 pb-60">
-    <h2 class="ml-4">Validado por:</h2>
+    <h2 v-html="lp.acf.titulo6" class="ml-4"></h2>
     <div class="row ml-4">
       <div class="text-left color-primary to-left-70">
         <div class="row pr-md-0 text-md-center">
@@ -241,17 +228,10 @@
         <div class="vertical-pill red"></div>
       </div>
     </div>
-    <div id="ytframe">
-      <iframe
-      width="100%"
-      height="100%"
-      src="https://www.youtube.com/embed/pytNf_1YweM"
-      frameborder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen></iframe>
+    <div v-html="lp.acf.iframe6" id="ytframe">
     </div>
     <div class="centerize-itens mt-30">
-      <a href="#">
+      <a href="https://checkout.solides.com.br/">
         <button class="badge badge-pill mx-button red-back">Compre Agora</button>
       </a>
     </div>
@@ -259,27 +239,15 @@
   <!-- <img class="w-100" src="@/assets/img/frame1.png" alt=""> -->
   <!--simlpes contratar...-->
   <div class="container pt-60">
-    <h2 class="text-center color-primary">Simples de contratar<br>Rápido de aplicar</h2>
+    <h2 v-html="lp.acf.titulo7"  class="text-center color-primary"></h2>
     <div class="mt-5 text-center row">
-      <div class="col-12 col-lg-4 mt-50">
-        <img src="@/assets/img/adquira-creditos.png" alt="adquira-creditos">
-        <p class="color-primary mt-3 px-5">Adquira créditos (1 crédito vale 1 Profiler)</p>
+      <div v-for="(wf, index) in lp.acf.workflow_comprar7" :key="index" class="col-12 col-lg-4 mt-50">
+        <img :src="wf.imagem.sizes.medium" :alt="wf.imagem.alt">
+        <p class="color-primary mt-3 px-5">{{wf.text}}</p>
       </div>
-      <div class="col-12 col-lg-4 mt-50">
-        <img
-        src="@/assets/img/envia-para-a-pessoa-que-quer-avaliar.png"
-        alt="envia-para-a-pessoa-que-quer-avaliar">
-        <p class="color-primary mt-3 px-5">Envie para a pessoa que você deseja avaliar</p>
-      </div> 
-      <div class="col-12 col-lg-4 mt-50">
-        <img
-        src="@/assets/img/receba-o-relatorio-comportamental-pronto.png"
-        alt="receba-o-relatorio-comportamental-pronto">
-        <p class="color-primary mt-3 px-5">Receba o relatório comportamental pronto</p>
-      </div> 
     </div>
     <div class="centerize-itens mt-30">
-      <a href="#">
+      <a href="https://checkout.solides.com.br/">
         <button class="badge badge-pill mx-button blue-back">Comprar agora</button>
       </a>
     </div>
@@ -290,23 +258,21 @@
     <div class="container">
       <div class="depoimento row">
         <div class="text-center col-12 col-lg-2 align-lg-vertical">
-          <img class="profile" src="@/assets/img/foto_wagner.png" alt="foto depoimento">
-          <p class="profile color-primary">Wagner Ribeiro</p>
+          <img class="profile" :src="lp.acf.depoimento_foto.sizes.medium" :alt="lp.acf.depoimento_foto.alt">
+          <p v-html="lp.acf.depoimento_nome" class="profile color-primary"></p>
         </div>
         <div class="col-12 col-lg-10">
           <div class="text">
             <img class="asp begin" src="@/assets/img/asp-begin.png" alt="aspas begin">
             <img class="asp end" src="@/assets/img/asp-end.png" alt="aspas end">
-            <p>Como Profissional Coaching, o Profiler é uma poderosa ferramenta para start do processo com meus clientes.</p>
+            <div v-html="lp.acf.depoimento_texto"></div>
           </div>
-          <div class="identidade">
-            <p>CEO da Academia Brasileira de Desenvolvimento de Pessoas e Negócios - ABRADEP, Fundador da Confraria Brasileira de Coaching - CBC; Consultor & Analista de Negócios e Gestão Empresarial.</p>
-          </div>
+          <div v-html="lp.acf.depoimento_identidade" class="identidade"></div>
         </div>
       </div>
     </div>
   </div>
-  <img class="frame" src="@/assets/img/frame1.png" alt="">
+  <img class="frame" src="@/assets/img/frame1.png" alt="" id="prices">
   <!--tabela de preços-->
   <div class="container pb-60 text-center">
     <div class="container">
@@ -382,7 +348,7 @@
           <p><span class="font-weight-bold">Inclui:</span><br>Relatório DISC;<br>Plataforma web para gerenciar avaliações;</p>
         </div>
         <div class="col-12 col-lg-3 text-left text-lg-right">
-          <a href="#">
+          <a href="https://checkout.solides.com.br/">
             <button class="badge badge-pill mx-button blue-back">Comprar agora</button>
           </a>
         </div>
@@ -390,7 +356,7 @@
     </div>
   </div>
   <!-- form aqui -->
-  <div class="bg-gray">
+  <div class="bg-gray" id="form">
     <div class="container pt-60 pb-60">
       <h2>Form Aqui!</h2>
     </div>
@@ -404,54 +370,66 @@
       </div>
       <div class="text-left to-right-70 mt-30 mt-xs-0 mt-lg-5">
         <h2 class="pr-5">Melhores conteúdos sobre Profiler</h2>
-        <div class="left-right d-none d-lg-block mt-120 pl-5">
-          <h2>Profiler Sólides: solução em perfil comportamental</h2>
-          <p class="mb-0">O profiler é um assessment que utiliza 8 metodologias de perfil comportamental.</p>
-          <p>Saiba como esse teste exclusivo da Sólides pode ajudar a sua empresa!</p>
-        </div>
+        <a class="color-black" href="https://blog.solides.com.br/profiler/">
+          <div class="left-right d-none d-lg-block mt-120 pl-5">
+            <h2>Profiler Sólides: solução em perfil comportamental</h2>
+            <p class="mb-0">O profiler é um assessment que utiliza 8 metodologias de perfil comportamental.</p>
+            <p>Saiba como esse teste exclusivo da Sólides pode ajudar a sua empresa!</p>
+          </div>
+        </a>
       </div>
-      <div class="row d-none d-lg-flex mt-70">
-        <div class="col-7 text-right">
-          <h2>Guia da metodologia DISC: o que é, como aplicar e importância</h2>
-          <p>Descubra tudo sobre a Metodologia DISC, uma ferramenta usada para desenvolver pessoas e trabalhar as principais competências. Confira o guia completo.</p>
+      <a class="color-black" href="https://blog.solides.com.br/metodologia-disc/">
+        <div class="row d-none d-lg-flex mt-70">
+          <div class="col-7 text-right">
+            <h2>Guia da metodologia DISC: o que é, como aplicar e importância</h2>
+            <p>Descubra tudo sobre a Metodologia DISC, uma ferramenta usada para desenvolver pessoas e trabalhar as principais competências. Confira o guia completo.</p>
+          </div>
+          <div class="col-5">
+            <img class="h-100 ml-2"
+            src="@/assets/img/solucao-em-perfil-comportamental.png"
+            alt="solucao-em-perfil-comportamental">
+          </div>
         </div>
-        <div class="col-5">
-          <img class="h-100 ml-2"
-          src="@/assets/img/solucao-em-perfil-comportamental.png"
-          alt="solucao-em-perfil-comportamental">
+      </a>
+      <a class="color-black" href="https://blog.solides.com.br/analisar-perfil-disc/">
+        <div class="row d-none d-lg-flex mt-70">
+          <div class="col-5">
+            <img class="h-100 ml-text-profiler"
+            src="@/assets/img/guia-da-metodologia.png"
+            alt="guia-da-metodologia">
+          </div>
+          <div class="col-7 ml-fhd--100">
+            <h2>DISC: o que é e como analisar o perfil DISC corretamente</h2>
+            <p>Para conseguir avançar na eficiência da gestão de pessoas é fundamental saber interpretar e analisar o perfil DISC. Saiba como aplicar o teste Disc.</p>
+          </div>
         </div>
-      </div>
-      <div class="row d-none d-lg-flex mt-70">
-        <div class="col-5">
-          <img class="h-100 ml-text-profiler"
-          src="@/assets/img/guia-da-metodologia.png"
-          alt="guia-da-metodologia">
-        </div>
-        <div class="col-7 ml-fhd--100">
-          <h2>DISC: o que é e como analisar o perfil DISC corretamente</h2>
-          <p>Para conseguir avançar na eficiência da gestão de pessoas é fundamental saber interpretar e analisar o perfil DISC. Saiba como aplicar o teste Disc.</p>
-        </div>
-      </div>
+      </a>
     </div>
   </div>
   <!-- melhor conteúdo sobre o profiler -->
   <div class="container mt-xs-50 d-lg-none">
-    <div class="left-right">
-      <h2>Profiler Sólides: solução em perfil comportamental</h2>
-      <p class="mb-0">O profiler é um assessment que utiliza 8 metodologias de perfil comportamental.</p>
-      <p>Saiba como esse teste exclusivo da Sólides pode ajudar a sua empresa!</p>
-      <img src="@/assets/img/solucao-em-perfil-comportamental.png" alt="solucao-em-perfil-comportamental">
-    </div>
-    <div class="right-left">
-      <h2>Guia da metodologia DISC: o que é, como aplicar e importância</h2>
-      <p>Descubra tudo sobre a Metodologia DISC, uma ferramenta usada para desenvolver pessoas e trabalhar as principais competências. Confira o guia completo.</p>
-      <img src="@/assets/img/guia-da-metodologia.png" alt="guia-da-metodologia">
-    </div>
-    <div class="left-right">
-      <h2>DISC: o que é e como analisar o perfil DISC corretamente</h2>
-      <p>Para conseguir avançar na eficiência da gestão de pessoas é fundamental saber interpretar e analisar o perfil DISC. Saiba como aplicar o teste Disc.</p>
-      <img src="@/assets/img/solucao-em-perfil-comportamental.png" alt="solucao-em-perfil-comportamental">
-    </div>
+    <a class="color-black" href="https://blog.solides.com.br/profiler/">
+      <div class="left-right">
+        <h2>Profiler Sólides: solução em perfil comportamental</h2>
+        <p class="mb-0">O profiler é um assessment que utiliza 8 metodologias de perfil comportamental.</p>
+        <p>Saiba como esse teste exclusivo da Sólides pode ajudar a sua empresa!</p>
+        <img src="@/assets/img/solucao-em-perfil-comportamental.png" alt="solucao-em-perfil-comportamental">
+      </div>
+    </a>
+    <a class="color-black" href="https://blog.solides.com.br/metodologia-disc/">
+      <div class="right-left">
+        <h2>Guia da metodologia DISC: o que é, como aplicar e importância</h2>
+        <p>Descubra tudo sobre a Metodologia DISC, uma ferramenta usada para desenvolver pessoas e trabalhar as principais competências. Confira o guia completo.</p>
+        <img src="@/assets/img/guia-da-metodologia.png" alt="guia-da-metodologia">
+      </div>
+    </a>
+    <a class="color-black" href="https://blog.solides.com.br/analisar-perfil-disc/">
+      <div class="left-right">
+        <h2>DISC: o que é e como analisar o perfil DISC corretamente</h2>
+        <p>Para conseguir avançar na eficiência da gestão de pessoas é fundamental saber interpretar e analisar o perfil DISC. Saiba como aplicar o teste Disc.</p>
+        <img src="@/assets/img/solucao-em-perfil-comportamental.png" alt="solucao-em-perfil-comportamental">
+      </div>
+    </a>
   </div>
   <img class="w-100" src="@/assets/img/frame-roxo-m.png" alt="">
   <footer>
@@ -530,19 +508,27 @@
     </div>
   </footer>
 </div>
+<Loading v-else></Loading>
 </template>
 
 <script>
+import Loading from "@/components/Loading.vue"
 export default {
   name: 'PerfilLp',
+  components: {Loading},
   data () {
     return {
+      lpId: 6,
+      lp: null,
       controls: {
         expandMenu: false,
         expandConteudo: false,
         expandCursos: false
       },
     }
+  },
+  mounted () {
+    this.getLP()
   },
   methods: {
     togleMenu () { this.controls.expandMenu = !this.controls.expandMenu },
@@ -558,15 +544,13 @@ export default {
         this.controls.expandConteudo = false
       }
     },
-    sendForm () {
-      // to-do
-      /*Api.sendToCF7(3795, this.formData)
-      .then(res => {
-        return res.json();
-      })
+    getLP () {
+      this.$http.getLPsById(this.lpId)
+      .then(res => res.json())
       .then(json => {
-        this.formMessage = json.message;
-      });*/
+        this.lp = json
+        document.title = this.lp.title.rendered
+      });
     }
   }
 }

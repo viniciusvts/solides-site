@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Api from '@/services/ApiRest.js'
+// import Api from '@/services/ApiRest.js'
 
 const Home = () => import('@/views/Home.vue')
 const PerfilLp = () => import('@/views/PerfilLp.vue')
 
 Vue.use(VueRouter)
-Vue.use(Api)
+// Vue.use(Api)
 
 const routes = [
   {

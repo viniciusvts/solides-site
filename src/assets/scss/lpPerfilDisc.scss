@@ -521,3 +521,38 @@ footer{
         margin-top: 200px;
     }
 }
+.dropdown-menu.active{
+    @media (min-width: $desktops) {
+        background-color: white;
+        box-shadow: 0 0px 10px 12px rgba(0, 0, 0, 0.25);
+        border-radius: 50px;
+        margin-left: -50%;
+        margin-top: 25px;//a setinha
+        &::before{
+            $height: 50px;
+            content: "";
+            position: absolute;
+            width: 0; 
+            height: 0; 
+            border-left: $height/2 solid transparent;
+            border-right: $height/2 solid transparent;
+            border-bottom: $height solid white;
+            left: 50%;
+            margin-left: -$height/2;
+            top: -$height/2;
+        }
+        a{
+            color: $primary;
+            padding-bottom: 0;
+        }
+        P{
+            font-size: 18px;
+            line-height: 22px;
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 1.5rem;
+            padding-right: .3rem;
+            color: #727272;
+        }
+    }
+}

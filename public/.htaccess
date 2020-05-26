@@ -1,0 +1,21 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/api/
+RewriteRule (.*)/amp(.*) /api/$1/amp$2 [R=301,L]
+
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+</IfModule>
+
+## EXPIRES CACHING ##
+<ifmodule mod_expires.c>
+   ExpiresActive On
+   ExpiresDefault "access plus 30 days"
+   <Filesmatch "\.(jpg|jpeg|png|gif|js|css|svg|ico|woff|woff2)$">
+       ExpiresDefault "access plus 1 years"
+   </Filesmatch>
+</ifmodule>
+## EXPIRES CACHING ##

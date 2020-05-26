@@ -21,11 +21,11 @@
             Conteúdo
             <span v-if="controls.expandConteudo" class="submenu">
               <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
-              <img class="d-none d-lg-block" src="@/assets/img/seta-pra-cima-primary.png" alt="menu">
+              <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-cima-primary.png" alt="menu">
             </span>
             <span v-else class="submenu">
               <img class="d-lg-none" src="@/assets/img/seta-pra-baixo.png" alt="menu">
-              <img class="d-none d-lg-block" src="@/assets/img/seta-pra-baixo-primary.png" alt="menu">
+              <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-baixo-primary.png" alt="menu">
             </span>
           </a>
           <div
@@ -33,9 +33,13 @@
           class="dropdown-menu"
           aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Blog da Sólides</a>
+            <p class="d-none d-lg-block">Os melhores conteúdos para gestão de pessoas</p>
             <a class="dropdown-item" href="#">RH Portal</a>
+            <p class="d-none d-lg-block">Os melhores conteúdos sobre gestão de pessoas</p>
             <a class="dropdown-item" href="#">Materiais</a>
+            <p class="d-none d-lg-block">Os melhores conteúdos para gestão de pessoas</p>
             <a class="dropdown-item" href="#">Ferramentas</a>
+            <p class="d-none d-lg-block">Calculadora de rotatividade</p>
           </div>
         </li>
         <li class="nav-item">
@@ -43,22 +47,27 @@
             Cursos
             <span v-if="controls.expandCursos" class="submenu">
               <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
-              <img class="d-none d-lg-block" src="@/assets/img/seta-pra-cima-primary.png" alt="menu">
+              <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-cima-primary.png" alt="menu">
             </span>
             <span v-else class="submenu">
               <img class="d-lg-none" src="@/assets/img/seta-pra-baixo.png" alt="menu">
-              <img class="d-none d-lg-block" src="@/assets/img/seta-pra-baixo-primary.png" alt="menu">
+              <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-baixo-primary.png" alt="menu">
             </span>
           </a>
           <div
           :class="{'active': controls.expandCursos}"
           class="dropdown-menu"
           aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Engenharia de Cargos<p class="saiba-mais">Saiba mais >></p></a>
-            <a class="dropdown-item" href="#">People Analytics<p class="saiba-mais">Saiba mais >></p></a>
-            <a class="dropdown-item" href="#">RH Tecnológico<p class="saiba-mais">Saiba mais >></p></a>
-            <a class="dropdown-item" href="#">Recrutamento e Seleção<p class="saiba-mais">Saiba mais >></p></a>
-            <a class="dropdown-item" href="#">Gestão Comportamental<p class="saiba-mais">Saiba mais >></p></a>
+            <a class="dropdown-item" href="#">Engenharia de Cargos<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+            <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+            <a class="dropdown-item " href="#">People Analytics<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+            <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+            <a class="dropdown-item" href="#">RH Tecnológico<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+            <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+            <a class="dropdown-item" href="#">Recrutamento e Seleção<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+            <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+            <a class="dropdown-item" href="#">Gestão Comportamental<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+            <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
           </div>
         </li>
         <li class="nav-item">
@@ -537,8 +546,18 @@ export default {
   },
   methods: {
     togleMenu () { this.controls.expandMenu = !this.controls.expandMenu },
-    togleConteudo () { this.controls.expandConteudo = !this.controls.expandConteudo },
-    togleCursos () { this.controls.expandCursos = !this.controls.expandCursos },
+    togleConteudo () {
+      this.controls.expandConteudo = !this.controls.expandConteudo
+      if (window.screen.width >= 998){
+        this.controls.expandCursos = false
+      }
+    },
+    togleCursos () {
+      this.controls.expandCursos = !this.controls.expandCursos
+      if (window.screen.width >= 998){
+        this.controls.expandConteudo = false
+      }
+    },
     sendForm () {
       // to-do
       /*Api.sendToCF7(3795, this.formData)

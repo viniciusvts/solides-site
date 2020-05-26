@@ -180,6 +180,15 @@ button{
     img{
         width: 200%;
         margin-left: -35%;
+        @media (min-width: $desktops) {
+            width: 160%;
+        }
+        @media (min-width: $largeDesktops) {
+            width: 140%;
+        }
+        @media (min-width: $fullHdDesktops) {
+            margin-left: -15%;
+        }
     }
 }
 .vertical-pill{
@@ -194,7 +203,15 @@ button{
         background: $yellow;
         @media (min-width: $desktops) {
             width: 7rem;
-            height: 50rem;
+            height: 45rem;
+        }
+        @media (min-width: $largeDesktops) {
+            width: 7rem;
+            height: 40rem;
+        }
+        @media (min-width: $fullHdDesktops) {
+            width: 7rem;
+            height: 35rem;
         }
     }
     &.cyan{
@@ -222,7 +239,7 @@ button{
         }
     }
 }
-@each $marginPx in 30 50 70 120 250{
+@each $marginPx in 30 50 70 120{
     .mt-#{$marginPx} {
         margin-top: $marginPx + px;
     }
@@ -248,9 +265,17 @@ button{
         margin-left: -60px;
     }
 }
+.ml-fhd--100{
+    @media (min-width: $fullHdDesktops) {
+        margin-left: -100px;
+    }
+}
 .mt-img-profiler{
     @media (min-width: $desktops) {
         margin-top: 500px;
+    }
+    @media (min-width: $fullHdDesktops) {
+        margin-top: 400px;
     }
 }
 .mt-xs-0{
@@ -434,6 +459,7 @@ table.prices{
 }
 
 footer{
+    margin-top: -1px;
     width: 100%;
     bottom: 0;
     background: #3c1a80;
@@ -486,5 +512,12 @@ footer{
         img{
             width: 20rem;
         }
+    }
+}
+/// wip = what is profiler ;)
+.internal-wip{
+    margin-top: 120px;
+    @media (min-width: $largeDesktops) {
+        margin-top: 200px;
     }
 }

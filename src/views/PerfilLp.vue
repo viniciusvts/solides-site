@@ -84,7 +84,7 @@
             <button class="badge badge-pill mx-button blue-outline two-in-a-row">Fale com um especialista</button>
           </a>
           <!--profiler-->
-          <div class="mt-250 text-right pr-0 trx-60 color-black">
+          <div class="text-right pr-0 trx-60 color-black internal-wip">
             <h2 class="mb-5 pr-0">O que é o profiler?</h2>
             <p class="pr-0">O Profiler é um teste comportamental exclusivo da  Sólides, baseado no teste Disc e mais sete metodologias de perfis comportamentais. Validado por USP, UFMG, e FINEP, em apenas 5 minutos o Profiler fornece mais de 50 informações sobre a pessoam entre elas competências, energia e pressão para o trabalho, fatores moticacionais e de afastamento, estilo de liderança ideal e histórico individual</p>
             <div class="mt-50 pr-0">
@@ -124,7 +124,7 @@
   <div class="bg-light">
     <div class="container pt-60 text-center">
       <h2 class="mb-5 color-primary">Com o Profiler, trabalhe o desenvolvimento de talentos e foque em suas principais competências</h2>
-      <div class="row">
+      <div class="row profiler-competencias">
         <div class="col-6 col-md-3 mb-md-5 mb-lg-4">
           <img src="@/assets/img/coaching.png" alt="coaching">
         </div>
@@ -386,6 +386,7 @@
       <h2>Form Aqui!</h2>
     </div>
   </div>
+  <!-- melhor conteúdo sobre o profiler -->
   <div class="container pt-60 pb-60">
     <div class="row ml-0 bestcontent-profiler">
       <div class="to-left-30">
@@ -400,27 +401,31 @@
           <p>Saiba como esse teste exclusivo da Sólides pode ajudar a sua empresa!</p>
         </div>
       </div>
-      <div class="row d-none d-lg-flex">
-        <div class="col-6">
+      <div class="row d-none d-lg-flex mt-70">
+        <div class="col-7 text-right">
           <h2>Guia da metodologia DISC: o que é, como aplicar e importância</h2>
           <p>Descubra tudo sobre a Metodologia DISC, uma ferramenta usada para desenvolver pessoas e trabalhar as principais competências. Confira o guia completo.</p>
         </div>
-        <div class="col-6">
-          <img src="@/assets/img/solucao-em-perfil-comportamental.png" alt="solucao-em-perfil-comportamental">
-          
+        <div class="col-5">
+          <img class="h-100 ml-2"
+          src="@/assets/img/solucao-em-perfil-comportamental.png"
+          alt="solucao-em-perfil-comportamental">
         </div>
       </div>
-      <div class="left-right d-none d-lg-flex">
-        <div class="col-6">
-          <img src="@/assets/img/guia-da-metodologia.png" alt="guia-da-metodologia">
+      <div class="row d-none d-lg-flex mt-70">
+        <div class="col-5">
+          <img class="h-100 ml-text-profiler"
+          src="@/assets/img/guia-da-metodologia.png"
+          alt="guia-da-metodologia">
         </div>
-        <div class="col-6">
+        <div class="col-7 ml-fhd--100">
           <h2>DISC: o que é e como analisar o perfil DISC corretamente</h2>
           <p>Para conseguir avançar na eficiência da gestão de pessoas é fundamental saber interpretar e analisar o perfil DISC. Saiba como aplicar o teste Disc.</p>
         </div>
       </div>
     </div>
   </div>
+  <!-- melhor conteúdo sobre o profiler -->
   <div class="container mt-xs-50 d-lg-none">
     <div class="left-right">
       <h2>Profiler Sólides: solução em perfil comportamental</h2>
@@ -443,12 +448,10 @@
   <footer>
     <div class="container">
       <div class="row px-4">
-        <div class="col-12 mb-50">
-          <img class="logo-menu" 
+        <div class="col-12 col-lg-4 mb-30">
+          <img class="logo-menu mb-50" 
           src="@/assets/img/solides-header-logo-white.png" 
           alt="logo da sólides branco">
-        </div>
-        <div class="col-12 mb-30">
           <ul class="list-inline">
             <li>
               <a href="#">Sobre a empresa</a>
@@ -467,7 +470,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-12 mb-30">
+        <div class="col-12 col-lg-5 mb-30">
           <ul class="list-inline">
             <li>
               <a href="+55 (11) 4765-6674"><span class="estado">São Paulo</span> (11) 4765-6674</a>
@@ -486,7 +489,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-12 mb-30">
+        <div class="col-12 col-lg-3 mb-30">
           <ul class="list-inline social">
             <li>
               <a href="#">

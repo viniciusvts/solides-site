@@ -495,12 +495,12 @@ export default {
     },
     scrollSmothTo (event) {
       // dont work
-      // const elem = document.querySelector(event.target.getAttribute('href'))
-      // window.scroll({
-      //   top: elem.offsetTop, 
-      //   left: 0, 
-      //   behavior: 'smooth'
-      // });
+      const elem = document.querySelector(event.target.getAttribute('href'))
+      window.scroll({
+        top: elem.offsetTop, 
+        left: 0, 
+        behavior: 'smooth'
+      });
       // document.querySelector(event.target.getAttribute('href')).scrollIntoView({ 
       //   behavior: 'smooth' 
       // });

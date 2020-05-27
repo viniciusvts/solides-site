@@ -35,8 +35,8 @@ switch ($server_addr) {
 		$dbuser_default = 'wordpressuser';
 		$dbpassword_default = '53kmqydsxob789a';
         $dev_mod = 'false';
-        $wp_home = 'http://novo.dnadevendas.com.br/solides/api/';
-        $wp_siteurl = 'http://novo.dnadevendas.com.br/solides/';
+        $wp_home = 'https://solides.dnadevendas.com.br/api/';
+        $wp_siteurl = 'https://solides.dnadevendas.com.br/api';
 		break;
 }
 

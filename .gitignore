@@ -29,6 +29,7 @@ api/wp-content/plugins/*
 !api/wp-content/plugins/dna-custom/
 !api/wp-content/plugins/advanced-custom-fields-pro/
 !api/wp-content/plugins/acf-to-rest-api/
+!api/wp-content/plugins/safe-svg/
 
 #compiled files
 /js/

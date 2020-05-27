@@ -2,7 +2,7 @@
  * define a url base do app
  * @author Vinicius de Santana
 */
-const baseURL = process.env.NODE_ENV === 'production' ? '/' : 'http://vue.localhost/';
+const baseURL = process.env.NODE_ENV === 'production' ? '/' : 'http://solides.localhost/';
 /**
  * Comunicação com o servidor DNA
  * @author Vinicius de Santana

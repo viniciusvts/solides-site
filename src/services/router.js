@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 // import Api from '@/services/ApiRest.js'
 
 const Home = () => import('@/views/Home.vue')
-const PerfilLp = () => import('@/views/PerfilLp.vue')
+const PerfilLp = () => import('@/lps/PerfilLp.vue')
 
 Vue.use(VueRouter)
 // Vue.use(Api)

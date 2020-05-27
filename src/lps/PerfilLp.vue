@@ -3,7 +3,7 @@
   <nav
   :class="{'active': controls.expandMenu}"
   class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="javascript: void(0)">
       <img 
       v-if="controls.expandMenu" 
       class="logo-menu" 
@@ -19,7 +19,7 @@
     <div class="collapse navbar-collapse" :class="{'active': controls.expandMenu}">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a @click="togleConteudo" class="nav-link" href="#">
+          <a @click="togleConteudo" class="nav-link" href="javascript: void(0)">
             Conteúdo
             <span v-if="controls.expandConteudo" class="submenu">
               <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
@@ -45,7 +45,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a @click="togleCursos" class="nav-link" href="#">
+          <a @click="togleCursos" class="nav-link" href="javascript: void(0)">
             Cursos
             <span v-if="controls.expandCursos" class="submenu">
               <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
@@ -201,7 +201,7 @@
     <div class="container mt-5 px-3">
       <h2 v-html="lp.acf.titulo5"></h2>
       <div v-html="lp.acf.texto5"></div>
-      <a href="#">
+      <a href="https://checkout.solides.com.br/">
         <button class="badge badge-pill mx-button yellow-back">Quero saber mais</button>
       </a>
     </div>
@@ -277,12 +277,19 @@
   <div class="container pb-60 text-center">
     <div class="container">
       <div class="row">
-        <h2 class="color-primary col-12 col-lg-6 text-lg-left">Compre Agora mesmo e receba os créditos para usar o Profiler hoje mesmo</h2>
-        <p class="mt-4 mb-4 col-12 col-lg-6 text-lg-right"><span class="color-cyan bold">R$ 69,90 por crédito</span></p>
+        <h2
+        v-html="lp.acf.tabela_titulo"
+        class="color-primary col-12 col-lg-6 text-lg-left"></h2>
+        <p class="mt-4 mb-4 col-12 col-lg-6 text-lg-right">
+          <span v-html="lp.acf.tabela_texto_destaque" class="color-cyan bold"></span>
+        </p>
       </div>
       <div class="row mb-5">
         <div class="d-none d-lg-block col-lg-5 align-lg-vertical">
-          <img class="w-100" src="@/assets/img/iphone.png" alt="iphone">
+          <img
+          class="w-100"
+          :src="lp.acf.tabela_imagem_destaque.sizes.large"
+          :alt="lp.acf.tabela_imagem_destaque.alt">
         </div>
         <div class="col-12 col-lg-7">
           <table class="table table-striped color-primary prices">
@@ -294,50 +301,10 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>01 a 04</td>
-                <td>R$69,90</td>
-                <td>Até 2x sem juros</td>
-              </tr>
-              <tr>
-                <td>05 a 09</td>
-                <td>R$64,90</td>
-                <td>Até 5x sem juros</td>
-              </tr>
-              <tr>
-                <td>10 a 14</td>
-                <td>R$59,90</td>
-                <td>Até 5x sem juros</td>
-              </tr>
-              <tr>
-                <td>15 a 19</td>
-                <td>R$54,90</td>
-                <td>Até 8x sem juros</td>
-              </tr>
-              <tr>
-                <td>20 a 29</td>
-                <td>R$49,90</td>
-                <td>Até 8x sem juros</td>
-              </tr>
-              <tr>
-                <td>30 a 39</td>
-                <td>R$69,90</td>
-                <td>Até 10x sem juros</td>
-              </tr>
-              <tr>
-                <td>40 a 49</td>
-                <td>R$46,90</td>
-                <td>Até 10x sem juros</td>
-              </tr>
-              <tr>
-                <td>50 a 79</td>
-                <td>R$41,90</td>
-                <td>Até 10x sem juros</td>
-              </tr>
-              <tr>
-                <td>80 a 99</td>
-                <td>R$39,90</td>
-                <td>Até 10x sem juros</td>
+              <tr v-for="(preco, index) in lp.acf.tabela_precos" :key="index">
+                <td>{{preco.quantidade_de_creditos}}</td>
+                <td>{{preco.valor_por_credito}}</td>
+                <td>{{preco.parcelamento_no_cartao}}</td>
               </tr>
             </tbody>
           </table>
@@ -366,41 +333,42 @@
     <div class="row ml-0 bestcontent-profiler">
       <div class="to-left-30">
         <div class="vertical-pill green"></div>
-        <img class="mt-120 ml-0" src="@/assets/img/melhores-conteudos.png" alt="melhores-conteudos">
+        <img class="mt-120 ml-0"
+        :src="lp.acf.imagem_1_secao_10.sizes.large"
+        :alt="lp.acf.imagem_1_secao_10.alt">
       </div>
       <div class="text-left to-right-70 mt-30 mt-xs-0 mt-lg-5">
-        <h2 class="pr-5">Melhores conteúdos sobre Profiler</h2>
-        <a class="color-black" href="https://blog.solides.com.br/profiler/">
+        <h2 v-html="lp.acf.titulo10" class="pr-5"></h2>
+        <a class="color-black" :href="lp.acf.link_1_secao_10">
           <div class="left-right d-none d-lg-block mt-120 pl-5">
-            <h2>Profiler Sólides: solução em perfil comportamental</h2>
-            <p class="mb-0">O profiler é um assessment que utiliza 8 metodologias de perfil comportamental.</p>
-            <p>Saiba como esse teste exclusivo da Sólides pode ajudar a sua empresa!</p>
+            <h2 v-html="lp.acf.subtitulo_1_secao_10"></h2>
+            <p v-html="lp.acf.texto_1_secao_10"></p>
           </div>
         </a>
       </div>
-      <a class="color-black" href="https://blog.solides.com.br/metodologia-disc/">
+      <a class="color-black" :href="lp.acf.link_2_secao_10">
         <div class="row d-none d-lg-flex mt-70">
           <div class="col-7 text-right">
-            <h2>Guia da metodologia DISC: o que é, como aplicar e importância</h2>
-            <p>Descubra tudo sobre a Metodologia DISC, uma ferramenta usada para desenvolver pessoas e trabalhar as principais competências. Confira o guia completo.</p>
+            <h2 v-html="lp.acf.subtitulo_2_secao_10"></h2>
+            <p v-html="lp.acf.texto_2_secao_10"></p>
           </div>
           <div class="col-5">
             <img class="h-100 ml-2"
-            src="@/assets/img/solucao-em-perfil-comportamental.png"
-            alt="solucao-em-perfil-comportamental">
+            :src="lp.acf.imagem_2_secao_10.sizes.large"
+            :alt="lp.acf.imagem_2_secao_10.alt">
           </div>
         </div>
       </a>
-      <a class="color-black" href="https://blog.solides.com.br/analisar-perfil-disc/">
+      <a class="color-black" :href="lp.acf.link_3_secao_10">
         <div class="row d-none d-lg-flex mt-70">
           <div class="col-5">
             <img class="h-100 ml-text-profiler"
-            src="@/assets/img/guia-da-metodologia.png"
-            alt="guia-da-metodologia">
+            :src="lp.acf.imagem_3_secao_10.sizes.large"
+            :alt="lp.acf.imagem_3_secao_10.alt">
           </div>
           <div class="col-7 ml-fhd--100">
-            <h2>DISC: o que é e como analisar o perfil DISC corretamente</h2>
-            <p>Para conseguir avançar na eficiência da gestão de pessoas é fundamental saber interpretar e analisar o perfil DISC. Saiba como aplicar o teste Disc.</p>
+            <h2 v-html="lp.acf.subtitulo_3_secao_10"></h2>
+            <p v-html="lp.acf.texto_3_secao_10"></p>
           </div>
         </div>
       </a>
@@ -408,26 +376,28 @@
   </div>
   <!-- melhor conteúdo sobre o profiler -->
   <div class="container mt-xs-50 d-lg-none">
-    <a class="color-black" href="https://blog.solides.com.br/profiler/">
+    <a class="color-black" :href="lp.acf.link_1_secao_10">
       <div class="left-right">
-        <h2>Profiler Sólides: solução em perfil comportamental</h2>
-        <p class="mb-0">O profiler é um assessment que utiliza 8 metodologias de perfil comportamental.</p>
-        <p>Saiba como esse teste exclusivo da Sólides pode ajudar a sua empresa!</p>
-        <img src="@/assets/img/solucao-em-perfil-comportamental.png" alt="solucao-em-perfil-comportamental">
+        <h2 v-html="lp.acf.subtitulo_1_secao_10"></h2>
+        <p v-html="lp.acf.texto_1_secao_10"></p>
+        <img 
+        :src="lp.acf.imagem_2_secao_10.sizes.large"
+        :alt="lp.acf.imagem_2_secao_10.alt">
       </div>
     </a>
-    <a class="color-black" href="https://blog.solides.com.br/metodologia-disc/">
+    <a class="color-black" :href="lp.acf.link_2_secao_10">
       <div class="right-left">
-        <h2>Guia da metodologia DISC: o que é, como aplicar e importância</h2>
-        <p>Descubra tudo sobre a Metodologia DISC, uma ferramenta usada para desenvolver pessoas e trabalhar as principais competências. Confira o guia completo.</p>
-        <img src="@/assets/img/guia-da-metodologia.png" alt="guia-da-metodologia">
+        <h2 v-html="lp.acf.subtitulo_2_secao_10"></h2>
+        <p v-html="lp.acf.texto_2_secao_10"></p>
+        <img
+        :src="lp.acf.imagem_3_secao_10.sizes.large"
+        :alt="lp.acf.imagem_3_secao_10.alt">
       </div>
     </a>
-    <a class="color-black" href="https://blog.solides.com.br/analisar-perfil-disc/">
+    <a class="color-black" :href="lp.acf.link_3_secao_10">
       <div class="left-right">
-        <h2>DISC: o que é e como analisar o perfil DISC corretamente</h2>
-        <p>Para conseguir avançar na eficiência da gestão de pessoas é fundamental saber interpretar e analisar o perfil DISC. Saiba como aplicar o teste Disc.</p>
-        <img src="@/assets/img/solucao-em-perfil-comportamental.png" alt="solucao-em-perfil-comportamental">
+        <h2 v-html="lp.acf.subtitulo_3_secao_10"></h2>
+        <p v-html="lp.acf.texto_3_secao_10"></p>
       </div>
     </a>
   </div>
@@ -435,71 +405,34 @@
   <footer>
     <div class="container">
       <div class="row px-4">
-        <div class="col-12 col-lg-4 mb-30">
+        <div class="col-12">
           <img class="logo-menu mb-50" 
           src="@/assets/img/solides-header-logo-white.png" 
           alt="logo da sólides branco">
+        </div>
+        <div class="col-12 col-lg-4 mb-30">
           <ul class="list-inline">
-            <li>
-              <a href="#">Sobre a empresa</a>
-            </li>
-            <li>
-              <a href="#">Responsabilidade Social</a>
-            </li>
-            <li>
-              <a href="#">Politica de Privacidade</a>
-            </li>
-            <li>
-              <a href="#">Nossos Parceiros</a>
-            </li>
-            <li>
-              <a href="#">Contato</a>
+            <li v-for="(foo, index) in lp.acf.footer_1" :key="index">
+              <a v-html="foo.texto" :href="foo.link"></a>
             </li>
           </ul>
         </div>
         <div class="col-12 col-lg-5 mb-30">
           <ul class="list-inline">
-            <li>
-              <a href="+55 (11) 4765-6674"><span class="estado">São Paulo</span> (11) 4765-6674</a>
+            <li v-for="(foo, index) in lp.acf.footer_2" :key="index">
+              <a v-html="foo.texto" :href="foo.link"></a>
             </li>
             <li>
-              <a href="+55 (21) 4042-3914"><span class="estado">Rio de Janeiro</span> (21) 4042-3914</a>
-            </li>
-            <li>
-              <a href="+55 (31) 3262-3464"><span class="estado">Belo Horizonte</span> (31) 3262-3464</a>
-            </li>
-            <li>
-              <a href="#">Rua Tomé de Souza, 845</a>
-            </li>
-            <li>
-              <a href="#">Belo Horizonte, MG</a>
+              <a href="javascript: void(0)">Rua Tomé de Souza, 845. Belo Horizonte, MG</a>
             </li>
           </ul>
         </div>
         <div class="col-12 col-lg-3 mb-30">
           <ul class="list-inline social">
-            <li>
-              <a href="#">
-                <img src="@/assets/img/svg/linkedin.svg" alt="linkedin">
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="@/assets/img/svg/instagram.svg" alt="instagram">
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="@/assets/img/svg/facebook.svg" alt="facebook">
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="@/assets/img/svg/youtube.svg" alt="youtube">
-                YouTube
+            <li v-for="(foo, index) in lp.acf.footer_3" :key="index">
+              <a :href="foo.link">
+                <img :src="foo.imagem.sizes.medium" alt="linkedin">
+                {{foo.texto}}
               </a>
             </li>
           </ul>
@@ -508,7 +441,10 @@
     </div>
   </footer>
 </div>
-<Loading v-else></Loading>
+<div v-else>
+  <Loading></Loading>
+  <h4 class="text-center">{{mensagem}}</h4>
+</div>
 </template>
 
 <script>
@@ -520,6 +456,7 @@ export default {
     return {
       lpId: 6,
       lp: null,
+      mensagem: 'Carregando...',
       controls: {
         expandMenu: false,
         expandConteudo: false,
@@ -546,11 +483,27 @@ export default {
     },
     getLP () {
       this.$http.getLPsById(this.lpId)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok)
+          this.mensagem = "Erro ao carregar, por favor recarregue a página."
+        return res.json()
+      })
       .then(json => {
         this.lp = json
         document.title = this.lp.title.rendered
       });
+    },
+    scrollSmothTo (event) {
+      // dont work
+      // const elem = document.querySelector(event.target.getAttribute('href'))
+      // window.scroll({
+      //   top: elem.offsetTop, 
+      //   left: 0, 
+      //   behavior: 'smooth'
+      // });
+      // document.querySelector(event.target.getAttribute('href')).scrollIntoView({ 
+      //   behavior: 'smooth' 
+      // });
     }
   }
 }

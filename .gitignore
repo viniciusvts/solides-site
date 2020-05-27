@@ -29,3 +29,19 @@ api/wp-content/plugins/*
 !api/wp-content/plugins/dna-custom/
 !api/wp-content/plugins/advanced-custom-fields-pro/
 !api/wp-content/plugins/acf-to-rest-api/
+
+#compiled files
+/js/
+/img/
+/css/
+favicon.ico
+index.html
+
+#servidor 
+.htaccess
+fix.php
+gulpfile.js
+info.php
+prototypes  
+robots.txt  
+yarn.lock

@@ -89,7 +89,7 @@
         <!--exibe apenas em desktop -->
         <div class="mt-70 pr-0 d-none d-lg-block">
           <a href="https://checkout.solides.com.br/" class="pr-0">
-            <button class="badge badge-pill mx-button blue-back two-in-a-row">Comprar Agora</button>
+            <button class="badge badge-pill mx-button blue-back color-white two-in-a-row">Comprar Agora</button>
           </a>
           <a href="#form" class="pr-0">
             <button class="badge badge-pill mx-button blue-outline two-in-a-row">Fale com um especialista</button>
@@ -100,7 +100,7 @@
             <p v-html="lp.acf.texto2" class="pr-0"></p>
             <div class="mt-50 pr-0">
               <a href="https://checkout.solides.com.br/" class="pr-0">
-                <button class="badge badge-pill mx-2 blue-back">Quero fazer o Profiler</button>
+                <button class="badge badge-pill mx-2 blue-back color-white">Quero fazer o Profiler</button>
               </a>
             </div>
           </div>
@@ -114,7 +114,7 @@
     </div>
     <div class="centerize-itens mt-70 d-lg-none">
       <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-button blue-back two-in-a-row">Comprar Agora</button>
+        <button class="badge badge-pill mx-button blue-back two-in-a-row color-white">Comprar Agora</button>
       </a>
       <a href="#form">
         <button class="badge badge-pill mx-button blue-outline two-in-a-row">Fale com um especialista</button>
@@ -127,7 +127,7 @@
     <p v-html="lp.acf.texto2"></p>
     <div class="centerize-itens mt-50">
       <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-2 blue-back">Quero fazer o Profiler</button>
+        <button class="badge badge-pill mx-2 blue-back color-white">Quero fazer o Profiler</button>
       </a>
     </div>
   </div>
@@ -177,7 +177,7 @@
             <h2 v-html="lp.acf.titulo5"></h2>
             <div v-html="lp.acf.texto5"></div>
             <a href="https://checkout.solides.com.br/">
-              <button class="badge badge-pill mx-button yellow-back">Quero saber mais</button>
+              <button class="badge badge-pill mx-button yellow-back color-white">Quero saber mais</button>
             </a>
           </div>
         </div>
@@ -202,7 +202,7 @@
       <h2 v-html="lp.acf.titulo5"></h2>
       <div v-html="lp.acf.texto5"></div>
       <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-button yellow-back">Quero saber mais</button>
+        <button class="badge badge-pill mx-button yellow-back color-white">Quero saber mais</button>
       </a>
     </div>
   </div>
@@ -232,7 +232,7 @@
     </div>
     <div class="centerize-itens mt-30">
       <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-button red-back">Compre Agora</button>
+        <button class="badge badge-pill mx-button red-back color-white">Compre Agora</button>
       </a>
     </div>
   </div>
@@ -248,7 +248,7 @@
     </div>
     <div class="centerize-itens mt-30">
       <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-button blue-back">Comprar agora</button>
+        <button class="badge badge-pill mx-button blue-back color-white">Comprar agora</button>
       </a>
     </div>
   </div>
@@ -316,7 +316,7 @@
         </div>
         <div class="col-12 col-lg-3 text-left text-lg-right">
           <a href="https://checkout.solides.com.br/">
-            <button class="badge badge-pill mx-button blue-back">Comprar agora</button>
+            <button class="badge badge-pill mx-button blue-back color-white">Comprar agora</button>
           </a>
         </div>
       </div>

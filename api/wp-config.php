@@ -26,8 +26,8 @@ switch ($server_addr) {
         $dbuser_default = 'root';
         $dbpassword_default = 'root';
         $dev_mod = 'true';
-        $wp_home = 'http://vue.localhost/api/';
-        $wp_siteurl = 'http://vue.localhost/api/';
+        $wp_home = 'http://solides.localhost/api/';
+        $wp_siteurl = 'http://solides.localhost/api/';
 		break;
 	case '198.199.88.130':
 		$dbhost_default = 'ddb-mysql-nyc1-74097-do-user-787860-0.db.ondigitalocean.com:25060';

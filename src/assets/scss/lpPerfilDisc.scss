@@ -13,6 +13,7 @@ $mod_red: #D74149;
 $mod_red_buttons_border: #F6777E;
 $gray: #E2E3E3;
 $green: #57DD6D;
+$almostBlack: #3D3B3B;
 
 *, ::after, ::before{
     font-family: 'Lato', 'Roboto', sans-serif;
@@ -22,6 +23,9 @@ $green: #57DD6D;
     }
     @media (min-width: $tablets) {
         font-size: 25px;
+    }
+    @media (min-width: $largeDesktops) {
+        font-size: 34px;
     }
 }
 html{
@@ -49,7 +53,41 @@ nav{
     width: 100%;
     top: 0;
     background-color: white;
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25);
+    @media (min-width: $desktops) and (max-width: $largeDesktops) {
+        .nav-item{
+            padding-left: 0;
+        }
+    }
+    @media (min-width: $desktops) {
+        .navbar-brand{
+            padding-top: 0;
+        }
+        a, span, button.badge{
+            font-size: 18px;
+        }
+        &.scrolled{
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.23);
+            .nav-item{
+                a, span{
+                    padding: 0!important;
+                }
+                button.badge{
+                    font-weight: normal;
+                    padding: 0.3rem .5rem;
+                    margin-top: -5%;
+                }
+            }
+            .collapse.navbar-collapse{
+                margin: 0;
+            }
+        }
+        .showOnScroll{
+            display: none;
+            &.active{
+                display: block;
+            }
+        }
+    }
     &.navbar.active{
         background-color: $primary;
     }
@@ -130,10 +168,10 @@ nav{
 }
 button{
     &.badge{
-        padding: .6rem 1rem;
+        padding: .4rem .8rem;
         &.two-in-a-row{
             @media (min-width: $smallPhones) {
-                padding: .6rem .5rem;
+                padding: .4rem .5rem;
             }
         }
     }
@@ -146,6 +184,9 @@ button{
 }
 .color-black{
     color: black;
+}
+.color-almostBlack{
+    color: $almostBlack;
 }
 .color-white{
     color: white;
@@ -169,12 +210,42 @@ a{
 .bg-gray{
     background-color: $gray;
 }
+.to-right-30{
+    width: 40%;
+    float: right;
+    @media (min-width: $largeDesktops) {
+        width: 30%;
+    }
+    img{
+        width: 200%;
+        margin-left: -35%;
+        @media (min-width: $desktops) {
+            width: 180%;
+        }
+        @media (min-width: $largeDesktops) {
+            margin-left: -50%;
+            width: 240%;
+        }
+        @media (min-width: $fullHdDesktops) {
+            margin-left: -15%;
+        }
+    }
+}
 .to-left-70{
     width: 60%;
     float: left;
+    @media (min-width: $largeDesktops) {
+        width: 69%;
+    }
     *{
         @media (min-width: $tablets) {
             padding-right: 20%;
+        }
+        @media (min-width: $desktops) {
+            padding-right: 5%;
+        }
+        @media (min-width: $largeDesktops) {
+            padding-right: 0;
         }
     }
 }
@@ -190,40 +261,23 @@ a{
         margin-left: -50%;
     }
 }
-.to-right-30{
-    width: 40%;
-    float: right;
-    img{
-        width: 200%;
-        margin-left: -35%;
-        @media (min-width: $desktops) {
-            width: 160%;
-        }
-        @media (min-width: $largeDesktops) {
-            width: 140%;
-        }
-        @media (min-width: $fullHdDesktops) {
-            margin-left: -15%;
-        }
-    }
-}
 .vertical-pill{
     position: absolute;
-    border-radius: 100px;
+    border-radius: 150px;
     width: 3.8rem;
     height: 20rem;
     z-index: -1;
     margin-left: 10%;
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25);
     &.yellow{
         background: $yellow;
         @media (min-width: $desktops) {
             width: 7rem;
-            height: 45rem;
+            height: 39rem;
         }
         @media (min-width: $largeDesktops) {
             width: 7rem;
-            height: 40rem;
+            height: 35rem;
+            margin-left: 7%;
         }
         @media (min-width: $fullHdDesktops) {
             width: 7rem;
@@ -235,7 +289,7 @@ a{
         margin-top: -9.4rem;
         @media (min-width: $desktops) {
             width: 7rem;
-            height: 50rem;
+            height: 45rem;
             margin-top: 0;
         }
     }
@@ -255,12 +309,22 @@ a{
         }
     }
 }
-@each $marginPx in 30 50 70 120{
+@each $marginPx in 30 50 70 120 180{
     .mt-#{$marginPx} {
         margin-top: $marginPx + px;
     }
     .mt-md-#{$marginPx} {
         @media (min-width: $tablets) {
+            margin-top: $marginPx + px;
+        }
+    }
+    .mt-lg-#{$marginPx} {
+        @media (min-width: $desktops) {
+            margin-top: $marginPx + px;
+        }
+    }
+    .mt-xl-#{$marginPx} {
+        @media (min-width: $largeDesktops) {
             margin-top: $marginPx + px;
         }
     }
@@ -276,11 +340,11 @@ a{
         padding-bottom: $padding + px;
     }
 }
-// .ml-text-profiler{
-//     @media (min-width: $desktops) {
-//         margin-left: -60px;
-//     }
-// }
+.text-profiler{
+    p{
+        line-height: 41px;
+    }
+}
 .ml-fhd--100{
     @media (min-width: $fullHdDesktops) {
         margin-left: -100px;
@@ -289,6 +353,9 @@ a{
 .mt-img-profiler{
     @media (min-width: $desktops) {
         margin-top: 500px;
+    }
+    @media (min-width: $largeDesktops) {
+        margin-top: 700px;
     }
     @media (min-width: $fullHdDesktops) {
         margin-top: 400px;
@@ -537,9 +604,6 @@ footer{
 /// wip = what is profiler ;)
 .internal-wip{
     margin-top: 120px;
-    @media (min-width: $largeDesktops) {
-        margin-top: 200px;
-    }
 }
 .dropdown-menu.active{
     @media (min-width: $desktops) {
@@ -574,6 +638,37 @@ footer{
             padding-left: 1.5rem;
             padding-right: .3rem;
             color: #727272;
+        }
+    }
+}
+.pf-details{
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+.profiler-competencias{
+    img{
+        height: 35%;
+        @media (min-width: $desktops) {
+            height: 30%;
+        }
+    }
+}
+.escada >{
+    @media (min-width: $desktops) {
+        *:first-child{
+            margin-left: 0;
+        }
+        *:nth-child(2){
+            margin-left: 60px;
+        }
+        *:nth-child(3){
+            margin-left: 120px;
+        }
+        *:nth-child(4){
+            margin-left: 180px;
+        }
+        *:nth-child(n+5){
+            margin-left: 240px;
         }
     }
 }

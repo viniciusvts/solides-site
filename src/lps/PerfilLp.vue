@@ -1,7 +1,7 @@
 <template>
 <div v-if="lp" class="lpPerfilDisc over-x-h">
   <nav
-  :class="{'active': controls.expandMenu}"
+  :class="{'active': controls.expandMenu, 'scrolled': controls.scroll}"
   class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="javascript: void(0)">
       <img 
@@ -78,13 +78,23 @@
         <li class="nav-item">
           <a class="nav-link" href="https://materiais.solides.com.br/parceria">Seja Parceiro</a>
         </li>
+        <li class="nav-item showOnScroll" :class="{'active': controls.scroll}">
+          <a class="nav-link pr-0" href="https://checkout.solides.com.br/">
+            <button class="badge badge-pill blue-back color-white two-in-a-row">Comprar Agora</button>
+          </a>
+        </li>
+        <li class="nav-item showOnScroll" :class="{'active': controls.scroll}">
+          <a class="nav-link pr-0" href="#form">
+            <button class="badge badge-pill blue-outline two-in-a-row">Fale com um especialista</button>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
   <div class="container mt-70 pb-60 mt-md-120">
     <div class="row ml-0">
       <div class="text-left color-primary to-left-70 mt-120">
-        <h2 v-html="lp.acf.titulo1"></h2>
+        <h2 v-html="lp.acf.titulo1" class="mt-lg-70 mt-xl-120 mb-lg-3"></h2>
         <p v-html="lp.acf.texto1"></p>
         <!--exibe apenas em desktop -->
         <div class="mt-70 pr-0 d-none d-lg-block">
@@ -95,9 +105,9 @@
             <button class="badge badge-pill mx-button blue-outline two-in-a-row">Fale com um especialista</button>
           </a>
           <!--profiler-->
-          <div class="text-right pr-0 trx-60 color-black internal-wip">
-            <h2 v-html="lp.acf.titulo2" class="mb-5 pr-0"></h2>
-            <p v-html="lp.acf.texto2" class="pr-0"></p>
+          <div class="text-right pr-0 trx-60 color-almostBlack internal-wip">
+            <h2 v-html="lp.acf.titulo2" class="mb-2 pr-0"></h2>
+            <p v-html="lp.acf.texto2" class="pr-0 pf-details"></p>
             <div class="mt-50 pr-0">
               <a href="https://checkout.solides.com.br/" class="pr-0">
                 <button class="badge badge-pill mx-2 blue-back color-white">Quero fazer o Profiler</button>
@@ -122,7 +132,7 @@
     </div>
   </div>
   <!--profiler-->
-  <div class="container pt-60 pb-60 text-center d-lg-none">
+  <div class="container pt-60 pb-60 text-center d-lg-none color-almostBlack">
     <h2 v-html="lp.acf.titulo2" class="mb-5"></h2>
     <p v-html="lp.acf.texto2"></p>
     <div class="centerize-itens mt-50">
@@ -136,8 +146,9 @@
     <div class="container pt-60 text-center">
       <h2 v-html="lp.acf.titulo3" class="mb-5 color-primary"></h2>
       <div class="row profiler-competencias">
-        <div v-for="(img, index) in lp.acf.gal3" :key="index" class="col-6 col-md-3 mb-md-5 mb-lg-4">
-          <img :src="img.sizes.medium" :alt="img.alt">
+        <div v-for="(gal, index) in lp.acf.gal3" :key="index" class="col-6 col-md-3 mb-md-5 mb-lg-4">
+          <img :src="gal.imagem.sizes.medium" :alt="gal.imagem.alt">
+          <p v-html="gal.texto" class="color-primary font-weight-bold"></p>
         </div>
       </div>
     </div>
@@ -157,28 +168,30 @@
         src="@/assets/img/Terceira-sessao-perfil-disc 2.png"
         alt="homem achando solução na solides">
       </div>
-      <div class="text-left to-right-70 mt-30 ml-text-profiler">
+      <div class="text-left to-right-70 mt-30 text-profiler">
         <h2 v-html="lp.acf.titulo4"></h2>
         <!--so aparece em desktop -->
         <div class="d-none d-lg-block">
-          <p v-html="lp.acf.texto4" class="w-80"></p>
+          <p v-html="lp.acf.texto4" class="mt-lg-4 mb-lg-4"></p>
           <ul class="detalhes pl-0">
-            <li class="font-weight-bold">
+            <li class="font-weight-bold mb-lg-4">
               <span v-html="lp.acf.mil_analistas" class="color-cyan bold"></span> analistas comportamentais formados
             </li>
-            <li class="font-weight-bold">
+            <li class="font-weight-bold mb-lg-4">
               <span v-html="lp.acf.milhoes_relatorios" class="color-cyan bold"></span> de relatórios
             </li>
-            <li class="font-weight-bold">
+            <li class="font-weight-bold mb-lg-4">
               <span v-html="lp.acf.parceiros" class="color-cyan bold"></span> parceiros
             </li>
           </ul>
-          <div class="container mt-5 text-right">
-            <h2 v-html="lp.acf.titulo5"></h2>
-            <div v-html="lp.acf.texto5"></div>
-            <a href="https://checkout.solides.com.br/">
-              <button class="badge badge-pill mx-button yellow-back color-white">Quero saber mais</button>
-            </a>
+          <div class="container mt-5">
+            <h2 v-html="lp.acf.titulo5" class="mb-lg-4"></h2>
+            <div v-html="lp.acf.texto5" class="escada almost-black"></div>
+            <div class="text-right">
+              <a href="https://checkout.solides.com.br/">
+                <button class="badge badge-pill mx-button yellow-back color-white">Quero saber mais</button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -460,12 +473,17 @@ export default {
       controls: {
         expandMenu: false,
         expandConteudo: false,
-        expandCursos: false
+        expandCursos: false,
+        scroll: false
       },
     }
   },
   mounted () {
     this.getLP()
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
     togleMenu () { this.controls.expandMenu = !this.controls.expandMenu },
@@ -492,6 +510,9 @@ export default {
         this.lp = json
         document.title = this.lp.title.rendered
       });
+    },
+    handleScroll () {
+      this.controls.scroll = (window.scrollY >= 800)
     },
     scrollSmothTo (event) {
       // dont work

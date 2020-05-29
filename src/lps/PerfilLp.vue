@@ -146,7 +146,7 @@
     <div class="container pt-60 text-center">
       <h2 v-html="lp.acf.titulo3" class="mb-5 color-primary"></h2>
       <div class="row profiler-competencias">
-        <div v-for="(gal, index) in lp.acf.gal3" :key="index" class="col-6 col-md-3 mb-md-5 mb-lg-4">
+        <div v-for="(gal, index) in lp.acf.gal3" :key="index" class="col-6 col-md-3 mb-lg-2">
           <img :src="gal.imagem.sizes.medium" :alt="gal.imagem.alt">
           <p v-html="gal.texto" class="color-primary font-weight-bold"></p>
         </div>
@@ -154,11 +154,6 @@
     </div>
   </div>
   <img class="frame" src="@/assets/img/frame1.png" alt="">
-  <!-- para o texto ficar daquele jeito só com imagem -->
-  <!-- <img
-  class="w-100"
-  src="@/assets/img/frame-como-o-profiler-ajuda-pessoas-e-empresas.png"
-  alt="frame-como-o-profiler-ajuda-pessoas-e-empresas"> -->
   <!--como o profiler...-->
   <div class="container pb-60">
     <div class="row ml-0">
@@ -169,10 +164,10 @@
         alt="homem achando solução na solides">
       </div>
       <div class="text-left to-right-70 mt-30 text-profiler">
-        <h2 v-html="lp.acf.titulo4"></h2>
+        <h2 v-html="lp.acf.titulo4" class="color-almostBlack"></h2>
         <!--so aparece em desktop -->
         <div class="d-none d-lg-block">
-          <p v-html="lp.acf.texto4" class="mt-lg-4 mb-lg-4"></p>
+          <p v-html="lp.acf.texto4" class="mt-lg-4 mb-lg-4 color-almostBlack"></p>
           <ul class="detalhes pl-0">
             <li class="font-weight-bold mb-lg-4">
               <span v-html="lp.acf.mil_analistas" class="color-cyan bold"></span> analistas comportamentais formados
@@ -185,8 +180,8 @@
             </li>
           </ul>
           <div class="container mt-5">
-            <h2 v-html="lp.acf.titulo5" class="mb-lg-4"></h2>
-            <div v-html="lp.acf.texto5" class="escada almost-black"></div>
+            <h2 v-html="lp.acf.titulo5" class="mb-lg-4 color-almostBlack"></h2>
+            <div v-html="lp.acf.texto5" class="escada color-almostBlack"></div>
             <div class="text-right">
               <a href="https://checkout.solides.com.br/">
                 <button class="badge badge-pill mx-button yellow-back color-white">Quero saber mais</button>
@@ -219,44 +214,47 @@
       </a>
     </div>
   </div>
-  <!-- <img class="w-100 rotate-180" src="@/assets/img/frame1.png" alt=""> -->
+  <img class="frame rotate-180" src="@/assets/img/frame1.png" alt="">
   <!--validado por-->
-  <div class="container pt-60 pb-60">
-    <h2 v-html="lp.acf.titulo6" class="ml-4"></h2>
-    <div class="row ml-4">
-      <div class="text-left color-primary to-left-70">
-        <div class="row pr-md-0 text-md-center">
-          <div class="col-12 col-md-4 pr-md-0 mt-30">
-            <img src="@/assets/img/usp.png" alt="usp">
-          </div>
-          <div class="col-12 col-md-4 pr-md-0 mt-50">
-            <img src="@/assets/img/ufmg.png" alt="ufmg">
-          </div>
-          <div class="col-12 col-md-4 pr-md-0 mt-30">
-            <img src="@/assets/img/finep.png" alt="finep">
+  <div class="bg-light">
+    <div class="container pb-60">
+      <h2 v-html="lp.acf.titulo6" class="ml-4"></h2>
+      <div class="row ml-4">
+        <div class="text-left color-primary to-left-70">
+          <div class="row pr-md-0 text-md-center">
+            <div class="col-12 col-md-4 pr-md-0 mt-30">
+              <img src="@/assets/img/usp.png" alt="usp" class="h-100">
+            </div>
+            <div class="col-12 col-md-4 pr-md-0 mt-30">
+              <img src="@/assets/img/ufmg.png" alt="ufmg" class="h-100">
+            </div>
+            <div class="col-12 col-md-4 pr-md-0 mt-30">
+              <img src="@/assets/img/finep.png" alt="finep" class="h-100">
+            </div>
           </div>
         </div>
+        <div class="to-right-30">
+          <div class="vertical-pill red"></div>
+        </div>
       </div>
-      <div class="to-right-30">
-        <div class="vertical-pill red"></div>
+      <div v-html="lp.acf.iframe6" id="ytframe">
       </div>
-    </div>
-    <div v-html="lp.acf.iframe6" id="ytframe">
-    </div>
-    <div class="centerize-itens mt-30">
-      <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-button red-back color-white">Compre Agora</button>
-      </a>
+      <div class="text-center text-lg-left mt-30 row-lg">
+        <div class="d-none d-lg-block col-2"></div>
+        <a href="https://checkout.solides.com.br/">
+          <button class="badge badge-pill mx-button red-back color-white">Compre Agora</button>
+        </a>
+      </div>
     </div>
   </div>
-  <!-- <img class="w-100" src="@/assets/img/frame1.png" alt=""> -->
+  <img class="frame" src="@/assets/img/frame1.png" alt="">
   <!--simlpes contratar...-->
   <div class="container pt-60">
-    <h2 v-html="lp.acf.titulo7"  class="text-center color-primary"></h2>
-    <div class="mt-5 text-center row">
+    <h2 v-html="lp.acf.titulo7" class="text-center color-primary"></h2>
+    <div class="mt-5 text-center row simple">
       <div v-for="(wf, index) in lp.acf.workflow_comprar7" :key="index" class="col-12 col-lg-4 mt-50">
-        <img :src="wf.imagem.sizes.medium" :alt="wf.imagem.alt">
-        <p class="color-primary mt-3 px-5">{{wf.text}}</p>
+        <img :src="wf.imagem.sizes.medium" :alt="wf.imagem.alt" class="h-50">
+        <p class="color-primary mt-3 px-5 px-lg-2 font-weight-bold">{{wf.text}}</p>
       </div>
     </div>
     <div class="centerize-itens mt-30">
@@ -270,11 +268,11 @@
   <div class="bg-light">
     <div class="container">
       <div class="depoimento row">
-        <div class="text-center col-12 col-lg-2 align-lg-vertical">
+        <div class="text-center col-12 col-lg-3 align-lg-vertical">
           <img class="profile" :src="lp.acf.depoimento_foto.sizes.medium" :alt="lp.acf.depoimento_foto.alt">
           <p v-html="lp.acf.depoimento_nome" class="profile color-primary"></p>
         </div>
-        <div class="col-12 col-lg-10">
+        <div class="col-12 col-lg-9">
           <div class="text">
             <img class="asp begin" src="@/assets/img/asp-begin.png" alt="aspas begin">
             <img class="asp end" src="@/assets/img/asp-end.png" alt="aspas end">
@@ -338,83 +336,93 @@
   <!-- form aqui -->
   <div class="bg-gray" id="form">
     <div class="container pt-60 pb-60">
-      <h2>Form Aqui!</h2>
+      <h2 class="color-primary text-center">Conheça todos os benefícios do Profiler</h2>
     </div>
   </div>
+  <img class="frame form-frame" src="@/assets/img/svg/form-frame.svg">
   <!-- melhor conteúdo sobre o profiler -->
-  <div class="container pt-60 pb-60">
+  <div class="container pt-60 pb-2">
     <div class="row ml-0 bestcontent-profiler">
       <div class="to-left-30">
         <div class="vertical-pill green"></div>
-        <img class="mt-120 ml-0"
-        :src="lp.acf.imagem_1_secao_10.sizes.large"
-        :alt="lp.acf.imagem_1_secao_10.alt">
       </div>
       <div class="text-left to-right-70 mt-30 mt-xs-0 mt-lg-5">
         <h2 v-html="lp.acf.titulo10" class="pr-5"></h2>
-        <a class="color-black" :href="lp.acf.link_1_secao_10">
-          <div class="left-right d-none d-lg-block mt-120 pl-5">
-            <h2 v-html="lp.acf.subtitulo_1_secao_10"></h2>
-            <p v-html="lp.acf.texto_1_secao_10"></p>
+      </div>
+      <div class="profiler-content-lg d-none d-lg-block">
+        <a class="color-almostBlack" :href="lp.acf.link_1_secao_10">
+          <div class="row mt-70">
+            <div class="col-5">
+              <img class="ml"
+              :src="lp.acf.imagem_1_secao_10.sizes.large"
+              :alt="lp.acf.imagem_1_secao_10.alt">
+            </div>
+            <div class="col-7 ml-fhd--100">
+              <h2 v-html="lp.acf.subtitulo_1_secao_10"></h2>
+              <p v-html="lp.acf.texto_1_secao_10"></p>
+            </div>
+          </div>
+        </a>
+        <a class="color-almostBlack" :href="lp.acf.link_2_secao_10">
+          <div class="row mt-70">
+            <div class="col-7 text-right">
+              <h2 v-html="lp.acf.subtitulo_2_secao_10"></h2>
+              <p v-html="lp.acf.texto_2_secao_10"></p>
+            </div>
+            <div class="col-5">
+              <img class="mr"
+              :src="lp.acf.imagem_2_secao_10.sizes.large"
+              :alt="lp.acf.imagem_2_secao_10.alt">
+            </div>
+          </div>
+        </a>
+        <a class="color-almostBlack" :href="lp.acf.link_3_secao_10">
+          <div class="row mt-70">
+            <div class="col-5">
+              <img class="ml"
+              :src="lp.acf.imagem_3_secao_10.sizes.large"
+              :alt="lp.acf.imagem_3_secao_10.alt">
+            </div>
+            <div class="col-7 ml-fhd--100">
+              <h2 v-html="lp.acf.subtitulo_3_secao_10"></h2>
+              <p v-html="lp.acf.texto_3_secao_10"></p>
+            </div>
           </div>
         </a>
       </div>
-      <a class="color-black" :href="lp.acf.link_2_secao_10">
-        <div class="row d-none d-lg-flex mt-70">
-          <div class="col-7 text-right">
-            <h2 v-html="lp.acf.subtitulo_2_secao_10"></h2>
-            <p v-html="lp.acf.texto_2_secao_10"></p>
-          </div>
-          <div class="col-5">
-            <img class="h-100 ml-2"
-            :src="lp.acf.imagem_2_secao_10.sizes.large"
-            :alt="lp.acf.imagem_2_secao_10.alt">
-          </div>
-        </div>
-      </a>
-      <a class="color-black" :href="lp.acf.link_3_secao_10">
-        <div class="row d-none d-lg-flex mt-70">
-          <div class="col-5">
-            <img class="h-100 ml-text-profiler"
-            :src="lp.acf.imagem_3_secao_10.sizes.large"
-            :alt="lp.acf.imagem_3_secao_10.alt">
-          </div>
-          <div class="col-7 ml-fhd--100">
-            <h2 v-html="lp.acf.subtitulo_3_secao_10"></h2>
-            <p v-html="lp.acf.texto_3_secao_10"></p>
-          </div>
-        </div>
-      </a>
     </div>
   </div>
   <!-- melhor conteúdo sobre o profiler -->
   <div class="container mt-xs-50 d-lg-none">
-    <a class="color-black" :href="lp.acf.link_1_secao_10">
+    <a class="color-almostBlack" :href="lp.acf.link_1_secao_10">
       <div class="left-right">
+        <img 
+        :src="lp.acf.imagem_1_secao_10.sizes.large"
+        :alt="lp.acf.imagem_1_secao_10.alt">
         <h2 v-html="lp.acf.subtitulo_1_secao_10"></h2>
         <p v-html="lp.acf.texto_1_secao_10"></p>
+      </div>
+    </a>
+    <a class="color-almostBlack" :href="lp.acf.link_2_secao_10">
+      <div class="right-left">
         <img 
         :src="lp.acf.imagem_2_secao_10.sizes.large"
         :alt="lp.acf.imagem_2_secao_10.alt">
-      </div>
-    </a>
-    <a class="color-black" :href="lp.acf.link_2_secao_10">
-      <div class="right-left">
         <h2 v-html="lp.acf.subtitulo_2_secao_10"></h2>
         <p v-html="lp.acf.texto_2_secao_10"></p>
+      </div>
+    </a>
+    <a class="color-almostBlack" :href="lp.acf.link_3_secao_10">
+      <div class="left-right">
         <img
         :src="lp.acf.imagem_3_secao_10.sizes.large"
         :alt="lp.acf.imagem_3_secao_10.alt">
-      </div>
-    </a>
-    <a class="color-black" :href="lp.acf.link_3_secao_10">
-      <div class="left-right">
         <h2 v-html="lp.acf.subtitulo_3_secao_10"></h2>
         <p v-html="lp.acf.texto_3_secao_10"></p>
       </div>
     </a>
   </div>
-  <img class="w-100" src="@/assets/img/frame-roxo-m.png" alt="">
+  <img class="w-100" src="@/assets/img/svg/footer-frame.svg" alt="">
   <footer>
     <div class="container">
       <div class="row px-4">

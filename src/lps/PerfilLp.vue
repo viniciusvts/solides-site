@@ -296,13 +296,13 @@
         </p>
       </div>
       <div class="row mb-5">
-        <div class="d-none d-lg-block col-lg-5 align-lg-vertical">
+        <div class="d-none d-lg-block col-lg-6 align-lg-vertical">
           <img
           class="w-100"
           :src="lp.acf.tabela_imagem_destaque.sizes.large"
           :alt="lp.acf.tabela_imagem_destaque.alt">
         </div>
-        <div class="col-12 col-lg-7">
+        <div class="col-12 col-lg-6">
           <table class="table table-striped color-primary prices">
             <thead>
               <tr>

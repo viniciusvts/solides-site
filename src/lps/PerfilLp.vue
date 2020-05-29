@@ -291,7 +291,7 @@
         <h2
         v-html="lp.acf.tabela_titulo"
         class="color-primary col-12 col-lg-6 text-lg-left"></h2>
-        <p class="mt-4 mb-4 col-12 col-lg-6 text-lg-right">
+        <p class="mt-4 mb-4 col-12 col-lg-6 text-lg-right credit-price">
           <span v-html="lp.acf.tabela_texto_destaque" class="color-cyan bold"></span>
         </p>
       </div>

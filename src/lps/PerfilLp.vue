@@ -339,7 +339,7 @@
       <h2 class="color-primary text-center">Conheça todos os benefícios do Profiler</h2>
     </div>
   </div>
-  <img class="frame form-frame" src="@/assets/img/svg/form-frame.svg">
+  <img class="frame" src="@/assets/img/form-frame.png">
   <!-- melhor conteúdo sobre o profiler -->
   <div class="container pt-60 pb-2">
     <div class="row ml-0 bestcontent-profiler">

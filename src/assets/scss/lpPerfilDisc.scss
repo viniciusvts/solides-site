@@ -316,6 +316,9 @@ a{
             height: 25rem;
             margin-top: -5rem;
         }
+        @media (min-width: $largeDesktops) {
+            margin-left: 0;
+        }
     }
 }
 @each $marginPx in 30 50 70 120 180{
@@ -474,6 +477,7 @@ ul.detalhes{
             font-size: .8rem;
             @media (min-width: $desktops) {
                 font-size: .7rem;
+                line-height: 25px;
             }
         }
     }
@@ -718,10 +722,10 @@ footer{
         &.ml{
             transform: translateX(-40px);
             @media (min-width: $largeDesktops) {
-                transform: translateX(-60px);
-            }
-            @media (min-width: $largeDesktops) {
                 transform: translateX(-100px);
+            }
+            @media (min-width: $fullHdDesktops) {
+                transform: translateX(-180px);
             }
         }
         &.mr{
@@ -733,4 +737,11 @@ footer{
 }
 .form-frame{
     margin-top: -20px;
+}
+.simple{
+    p{
+        @media (min-width: $desktops) {
+            font-size: .7rem;
+        }
+    }
 }

@@ -19,7 +19,7 @@
     <div class="collapse navbar-collapse" :class="{'active': controls.expandMenu}">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a @click="togleConteudo" class="nav-link" href="javascript: void(0)">
+          <a @click="togleConteudo" class="nav-link p-0" href="javascript: void(0)">
             Conteúdo
             <span v-if="controls.expandConteudo" class="submenu">
               <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
@@ -45,7 +45,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a @click="togleCursos" class="nav-link" href="javascript: void(0)">
+          <a @click="togleCursos" class="nav-link p-0" href="javascript: void(0)">
             Cursos
             <span v-if="controls.expandCursos" class="submenu">
               <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
@@ -73,18 +73,18 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#prices">Preços</a>
+          <a class="nav-link p-0" href="#prices">Preços</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://materiais.solides.com.br/parceria">Seja Parceiro</a>
+          <a class="nav-link p-0" href="https://materiais.solides.com.br/parceria">Seja Parceiro</a>
         </li>
-        <li class="nav-item showOnScroll" :class="{'active': controls.scroll}">
-          <a class="nav-link pr-0" href="https://checkout.solides.com.br/">
+        <li class="nav-item showOnScroll d-none" :class="{'active': controls.scroll}">
+          <a class="nav-link p-0" href="https://checkout.solides.com.br/">
             <button class="badge badge-pill blue-back color-white two-in-a-row">Comprar Agora</button>
           </a>
         </li>
-        <li class="nav-item showOnScroll" :class="{'active': controls.scroll}">
-          <a class="nav-link pr-0" href="#form">
+        <li class="nav-item showOnScroll d-none" :class="{'active': controls.scroll}">
+          <a class="nav-link p-0" href="#form">
             <button class="badge badge-pill blue-outline two-in-a-row">Fale com um especialista</button>
           </a>
         </li>
@@ -156,7 +156,7 @@
   <img class="frame" src="@/assets/img/frame1.png" alt="">
   <!--como o profiler...-->
   <div class="container pb-60">
-    <div class="row ml-0">
+    <div class="row ml-lg-0">
       <div class="to-left-30">
         <div class="vertical-pill cyan"></div>
         <img class="mt-img-profiler"
@@ -240,7 +240,7 @@
       <div v-html="lp.acf.iframe6" id="ytframe">
       </div>
       <div class="text-center text-lg-left mt-30 row-lg">
-        <div class="d-none d-lg-block col-2"></div>
+        <div class="d-none d-lg-block col-2 col-hd-1"></div>
         <a href="https://checkout.solides.com.br/">
           <button class="badge badge-pill mx-button red-back color-white">Compre Agora</button>
         </a>
@@ -250,7 +250,7 @@
   <img class="frame" src="@/assets/img/frame1.png" alt="">
   <!--simlpes contratar...-->
   <div class="container pt-60">
-    <h2 v-html="lp.acf.titulo7" class="text-center color-primary"></h2>
+    <h2 v-html="lp.acf.titulo7" class="text-center color-primary simples"></h2>
     <div class="mt-5 text-center row simple">
       <div v-for="(wf, index) in lp.acf.workflow_comprar7" :key="index" class="col-12 col-lg-4 mt-50">
         <img :src="wf.imagem.sizes.medium" :alt="wf.imagem.alt" class="h-50">
@@ -336,7 +336,7 @@
   <!-- form aqui -->
   <div class="bg-gray" id="form">
     <div class="container pt-60 pb-60">
-      <h2 class="color-primary text-center">Conheça todos os benefícios do Profiler</h2>
+      <h2 class="color-primary text-center simples">Conheça todos os benefícios do Profiler</h2>
     </div>
   </div>
   <img class="frame" src="@/assets/img/form-frame.png">
@@ -439,12 +439,9 @@
           </ul>
         </div>
         <div class="col-12 col-lg-5 mb-30">
-          <ul class="list-inline">
+          <ul class="list-inline numbers">
             <li v-for="(foo, index) in lp.acf.footer_2" :key="index">
               <a v-html="foo.texto" :href="foo.link"></a>
-            </li>
-            <li>
-              <a href="javascript: void(0)">Rua Tomé de Souza, 845. Belo Horizonte, MG</a>
             </li>
           </ul>
         </div>

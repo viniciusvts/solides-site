@@ -53,12 +53,18 @@ nav{
     width: 100%;
     top: 0;
     background-color: white;
+    @media (max-width: $desktops) {
+        .collapse.navbar-collapse{
+            padding-bottom: 30px;
+        }
+    }
     @media (min-width: $desktops) and (max-width: $largeDesktops) {
         .nav-item{
             padding-left: 0;
         }
     }
     @media (min-width: $desktops) {
+        transition: all 1s;
         .navbar-brand{
             padding-top: 0;
         }
@@ -67,9 +73,10 @@ nav{
         }
         &.scrolled{
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.23);
+            transition: all 1s;
             .nav-item{
-                a, span{
-                    padding: 0!important;
+                a, span, ul li a{
+                    padding: 0;
                 }
                 button.badge{
                     font-weight: normal;
@@ -84,7 +91,7 @@ nav{
         .showOnScroll{
             display: none;
             &.active{
-                display: block;
+                display: block!important;
             }
         }
     }
@@ -100,7 +107,9 @@ nav{
     }
 }
 .nav-item{
+    margin-top: 30px;
     @media (min-width: $desktops) {
+        margin-top: 0;
         flex: 0 0 auto;
         width: auto;
         max-width: none;
@@ -136,6 +145,7 @@ nav{
     }
     .dropdown-item{
         color: whitesmoke;
+        padding-left: 0;
         &:focus, &:active{
             background-color: inherit;
             outline: none;
@@ -262,6 +272,9 @@ a{
     img{
         width: 200%;
         margin-left: -50%;
+        @media (min-width: $fullHdDesktops) {
+            margin-left: -80%;
+        }
     }
 }
 .vertical-pill{
@@ -298,6 +311,7 @@ a{
     }
     &.red{
         background-color: $mod_red;
+        z-index: 1;
         @media (min-width: $desktops) {
             width: 6rem;
             height: 29rem;
@@ -307,6 +321,9 @@ a{
             width: 6rem;
             height: 23rem;
             margin-left: 7%;
+        }
+        @media (min-width: $fullHdDesktops) {
+            height: 30rem;
         }
     }
     &.green{
@@ -412,6 +429,8 @@ ul.detalhes{
     width: 80%;
     margin: 50px auto;
     box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.23);
+    z-index: 1;
+    position: relative;
     @media (min-width: $smallPhones) {
         width: 90%;
         height: 230px;
@@ -430,6 +449,10 @@ ul.detalhes{
     }
     @media (min-width: $largeDesktops) {
         margin-top: 150px;
+    }
+    @media (min-width: $fullHdDesktops) {
+        width: 80%;
+        height: 530px;
     }
     iframe{
         border-radius: 15px;
@@ -597,10 +620,18 @@ footer{
     ul{
         li{
             margin-bottom: 15px;
+            @media (min-width: $desktops) {
+                margin-bottom: 0;
+            }
             .estado{
                 font-weight: bold;
             }
             a{
+                &, & *{
+                    @media (min-width: $desktops) {
+                        font-size: .6rem;
+                    }
+                }
                 color: $color_light;
                 &:hover{
                     color: $color_light;
@@ -608,10 +639,23 @@ footer{
                 }
             }
         }
+        &.numbers{
+            @media (min-width: $desktops) {
+                margin-left: auto;
+                width: fit-content;
+            }
+        }
         &.social{
+            @media (min-width: $desktops) {
+                margin-left: auto;
+                width: fit-content;
+            }
             img{
                 padding-right: 10px;
                 height: 1rem;
+                @media (min-width: $desktops) {
+                    height: .6rem;
+                }
             }
         }
     }
@@ -659,13 +703,13 @@ footer{
 .dropdown-menu.active{
     @media (min-width: $desktops) {
         background-color: white;
-        overflow: hidden;
         box-shadow: 0 0px 10px 12px rgba(0, 0, 0, 0.25);
         border-radius: 50px;
+        padding-top: 40px;
         margin-left: -50%;
         margin-top: 25px;//a setinha
         &::before{
-            $height: 50px;
+            $height: 26px;
             content: "";
             position: absolute;
             width: 0; 
@@ -675,11 +719,11 @@ footer{
             border-bottom: $height solid white;
             left: 50%;
             margin-left: -$height/2;
-            top: -$height/2;
+            top: (1-$height);
         }
         a{
             color: $primary;
-            padding-bottom: 0;
+            padding: 0.25rem 1.5rem 0 1.5rem!important;
         }
         P{
             font-size: 18px;
@@ -762,5 +806,22 @@ footer{
         @media (min-width: $desktops) {
             font-size: .7rem;
         }
+    }
+}
+h2.simples{
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: $smallPhones) {
+        max-width: 300px;
+    }
+    @media (min-width: $desktops) {
+        max-width: unset;
+    }
+}
+.col-hd-1 {
+    @media (min-width: $fullHdDesktops) {
+        flex: 0 0 8.333333%;
+        max-width: 8.333333%;
     }
 }

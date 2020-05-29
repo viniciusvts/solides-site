@@ -485,6 +485,20 @@ ul.detalhes{
         }
     }
 }
+
+.credit-price{
+    max-width: unset;
+    margin-left: unset;
+    font-weight: bold;
+
+    @media (min-width: $desktops) {
+        max-width: 200px;
+        margin-left: auto;
+        font-size: 42px;
+        line-height: 40px;        
+    }
+}
+
 table.prices{
     border-radius: 10px;
     thead{

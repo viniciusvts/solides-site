@@ -498,7 +498,8 @@ table.prices{
                     font-size: 1rem;
                 }
                 @media (min-width: $desktops) {
-                    font-size: .8rem;
+                    font-size: 16px;
+                    line-height: 29px;
                 }
             }
         }
@@ -514,6 +515,7 @@ table.prices{
             td{
                 font-size: .8rem;
                 padding: .75rem .1rem;
+                font-weight: bold;
                 @media (min-width: $smallPhones) {
                     font-size: 0.7rem;
                 }
@@ -521,8 +523,8 @@ table.prices{
                     font-size: 1rem;
                 }
                 @media (min-width: $desktops) {
-                    font-size: .8rem;
-                    padding: .25rem .1rem;
+                    font-size: 18px;
+                    padding: 20px;
                 }
             }
         }

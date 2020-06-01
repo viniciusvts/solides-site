@@ -93,9 +93,9 @@
   </nav>
   <div class="container mt-70 pb-60 mt-md-120">
     <div class="row ml-0">
-      <div class="text-left color-primary to-left-70 mt-120">
-        <h2 v-html="lp.acf.titulo1" class="mt-lg-70 mt-xl-120 mb-lg-3"></h2>
-        <p v-html="lp.acf.texto1"></p>
+      <div class="text-left color-primary to-left-70 mt-70 discprofiler">
+        <h2 v-html="lp.acf.titulo1" class="mt-lg-70 mt-xl-120 mb-4 mb-lg-3"></h2>
+        <p v-html="lp.acf.texto1" class="font-weight-bold"></p>
         <!--exibe apenas em desktop -->
         <div class="mt-70 pr-0 d-none d-lg-block">
           <a href="https://checkout.solides.com.br/" class="pr-0">
@@ -132,9 +132,9 @@
     </div>
   </div>
   <!--profiler-->
-  <div class="container pt-60 pb-60 text-center d-lg-none color-almostBlack">
-    <h2 v-html="lp.acf.titulo2" class="mb-5"></h2>
-    <p v-html="lp.acf.texto2"></p>
+  <div class="container pt-60 pb-60 text-center d-lg-none color-almostBlack mobile-wip">
+    <h2 v-html="lp.acf.titulo2" class="mb-4 mb-md-5"></h2>
+    <p v-html="lp.acf.texto2" class="font-weight-bold"></p>
     <div class="centerize-itens mt-50">
       <a href="https://checkout.solides.com.br/">
         <button class="badge badge-pill mx-2 blue-back color-white">Quero fazer o Profiler</button>
@@ -144,7 +144,7 @@
   <!--profiler competencias-->
   <div class="bg-light">
     <div class="container pt-60 text-center">
-      <h2 v-html="lp.acf.titulo3" class="mb-5 color-primary"></h2>
+      <h2 v-html="lp.acf.titulo3" class="mb-5 color-primary t2"></h2>
       <div class="row profiler-competencias">
         <div v-for="(gal, index) in lp.acf.gal3" :key="index" class="col-6 col-md-3 mb-lg-2">
           <img :src="gal.imagem.sizes.medium" :alt="gal.imagem.alt">
@@ -164,11 +164,11 @@
         alt="homem achando solução na solides">
       </div>
       <div class="text-left to-right-70 mt-30 text-profiler">
-        <h2 v-html="lp.acf.titulo4" class="color-almostBlack"></h2>
+        <h2 v-html="lp.acf.titulo4" class="color-almostBlack text-right text-lg-left trtr-profiler t4"></h2>
         <!--so aparece em desktop -->
         <div class="d-none d-lg-block">
           <p v-html="lp.acf.texto4" class="mt-lg-4 mb-lg-4 color-almostBlack"></p>
-          <ul class="detalhes pl-0">
+          <ul class="detalhes pl-0 ul1">
             <li class="font-weight-bold mb-lg-4">
               <span v-html="lp.acf.mil_analistas" class="color-cyan bold"></span> analistas comportamentais formados
             </li>
@@ -195,7 +195,7 @@
   <!--como o profiler... detalhes-->
   <div class="container d-lg-none">
       <p v-html="lp.acf.texto4" class="pl-4 w-80"></p>
-      <ul class="detalhes pl-4">
+      <ul class="detalhes pl-4 ul1">
         <li class="font-weight-bold">
           <span v-html="lp.acf.mil_analistas" class="color-cyan bold"></span> analistas comportamentais formados
         </li>
@@ -207,8 +207,8 @@
         </li>
       </ul>
     <div class="container mt-5 px-3">
-      <h2 v-html="lp.acf.titulo5"></h2>
-      <div v-html="lp.acf.texto5"></div>
+      <h2 v-html="lp.acf.titulo5" class="simples mx-0"></h2>
+      <div v-html="lp.acf.texto5" class="proExclusivo"></div>
       <a href="https://checkout.solides.com.br/">
         <button class="badge badge-pill mx-button yellow-back color-white">Quero saber mais</button>
       </a>
@@ -270,15 +270,15 @@
       <div class="depoimento row">
         <div class="text-center col-12 col-lg-3 align-lg-vertical">
           <img class="profile" :src="lp.acf.depoimento_foto.sizes.medium" :alt="lp.acf.depoimento_foto.alt">
-          <p v-html="lp.acf.depoimento_nome" class="profile color-primary"></p>
+          <p v-html="lp.acf.depoimento_nome" class="profile color-primary font-roboto"></p>
         </div>
         <div class="col-12 col-lg-9">
           <div class="text">
             <img class="asp begin" src="@/assets/img/asp-begin.png" alt="aspas begin">
             <img class="asp end" src="@/assets/img/asp-end.png" alt="aspas end">
-            <div v-html="lp.acf.depoimento_texto"></div>
+            <div v-html="lp.acf.depoimento_texto" class="font-roboto"></div>
           </div>
-          <div v-html="lp.acf.depoimento_identidade" class="identidade"></div>
+          <div v-html="lp.acf.depoimento_identidade" class="identidade font-roboto"></div>
         </div>
       </div>
     </div>
@@ -290,7 +290,7 @@
       <div class="row">
         <h2
         v-html="lp.acf.tabela_titulo"
-        class="color-primary col-12 col-lg-6 text-lg-left"></h2>
+        class="color-primary col-12 col-lg-6 text-lg-left prices"></h2>
         <p class="mt-4 mb-4 col-12 col-lg-6 text-lg-right credit-price">
           <span v-html="lp.acf.tabela_texto_destaque" class="color-cyan bold"></span>
         </p>
@@ -337,6 +337,7 @@
   <div class="bg-gray" id="form">
     <div class="container pt-60 pb-60">
       <h2 class="color-primary text-center simples">Conheça todos os benefícios do Profiler</h2>
+      <div class="hsform"></div>
     </div>
   </div>
   <img class="frame" src="@/assets/img/form-frame.png">
@@ -365,7 +366,7 @@
         </a>
         <a class="color-almostBlack" :href="lp.acf.link_2_secao_10">
           <div class="row mt-70">
-            <div class="col-7 text-right">
+            <div class="col-7 text-right right-t">
               <h2 v-html="lp.acf.subtitulo_2_secao_10"></h2>
               <p v-html="lp.acf.texto_2_secao_10"></p>
             </div>
@@ -486,6 +487,7 @@ export default {
   mounted () {
     this.getLP()
     window.addEventListener('scroll', this.handleScroll)
+    this.startHsForm();
   },
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll);
@@ -518,6 +520,13 @@ export default {
     },
     handleScroll () {
       this.controls.scroll = (window.scrollY >= 800)
+    },
+    startHsForm () {
+      window.hbspt.forms.create({
+        portalId: "6009739",
+        formId: "aa14808c-6ee3-4ff3-9a79-aa376731e05b",
+        target: ".hsform"
+      });
     },
     scrollSmothTo (event) {
       // dont work

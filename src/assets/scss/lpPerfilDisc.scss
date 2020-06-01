@@ -19,7 +19,7 @@ $almostBlack: #3D3B3B;
     font-family: 'Lato', 'Roboto', sans-serif;
     font-size: 16px;
     @media (min-width: $smallPhones) {
-        font-size: 21px;
+        font-size: 20px;
     }
     @media (min-width: $tablets) {
         font-size: 25px;
@@ -28,15 +28,97 @@ $almostBlack: #3D3B3B;
         font-size: 34px;
     }
 }
+.font-roboto{
+    &, & *{
+        font-family: 'Roboto', sans-serif;
+    }
+}
 html{
     scroll-behavior: smooth;
 }
 h2{
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: bold;
+    line-height: 1.8rem;
+    &.simples{
+        max-width: 210px;
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width: $smallPhones) {
+            max-width: 265px;
+        }
+        @media (min-width: $tablets) {
+            max-width: 330px;
+        }
+        @media (min-width: $desktops) {
+            max-width: unset;
+        }
+    }
+    &.t2{
+        max-width: 235px;
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width: $smallPhones) {
+            max-width: 295px;
+        }
+        @media (min-width: $tablets) {
+            max-width: 370px;
+        }
+        @media (min-width: $desktops) {
+            max-width: 750px;
+        }
+        @media (min-width: $largeDesktops) {
+            max-width: unset;
+        }
+    }
+    &.t4{
+        @media (min-width: $desktops) {
+            max-width: 500px;
+        }
+        @media (min-width: $largeDesktops) {
+            max-width: 650px;
+        }
+    }
+    &.trtr-profiler{
+        transform: translateX(-45px);
+        @media (min-width: $smallPhones) {
+            transform: translateX(-25px);
+        }
+        @media (min-width: $tablets) {
+            transform: translateX(-100px);
+        }
+        @media (min-width: $desktops) {
+            transform: unset;
+        }
+    }
+    &.prices{
+        max-width: 220px;
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width: $smallPhones) {
+            max-width: 310px;
+        }
+        @media (min-width: $tablets) {
+            max-width: unset;
+        }
+        @media (min-width: $desktops) {
+            max-width: unset;
+            margin-left: unset;
+            margin-right: unset;
+        }
+    }
+}
+ul.ul1{
+    max-width: 250px;
+    @media (min-width: $smallPhones) {
+        max-width: 320px;
+    }
+    @media (min-width: $tablets) {
+        max-width: unset;
+    }
 }
 .logo-menu{
-    width: 150px;
+    width: 100px;
 }
 .no-border{
     border: none;
@@ -132,7 +214,7 @@ nav{
     }
 }
 .hambmenu{
-    height: 30px;
+    height: 20px;
 }
 .dropdown-menu{
     border: none;
@@ -151,6 +233,7 @@ nav{
             outline: none;
         }
         .saiba-mais{
+            margin-bottom: .1rem;
             color: gray;
         }
     }
@@ -286,6 +369,8 @@ a{
     margin-left: 10%;
     &.yellow{
         background: $yellow;
+        width: 3.3rem;
+        height: 23rem;
         @media (min-width: $desktops) {
             width: 7rem;
             height: 39rem;
@@ -308,18 +393,29 @@ a{
             height: 45rem;
             margin-top: 0;
         }
+        @media (min-width: $fullHdDesktops) {
+            height: 50rem;
+            margin-top: -9.4rem;
+            margin-left: 0;
+        }
     }
     &.red{
         background-color: $mod_red;
         z-index: 1;
+        @media (min-width: $smallPhones) {
+            height: 17rem;
+        }
+        @media (min-width: $tablets) {
+            height: 25rem;
+        }
         @media (min-width: $desktops) {
             width: 6rem;
-            height: 29rem;
+            height: 32rem;
             margin-left: 15%;
         }
         @media (min-width: $largeDesktops) {
             width: 6rem;
-            height: 23rem;
+            height: 26rem;
             margin-left: 7%;
         }
         @media (min-width: $fullHdDesktops) {
@@ -387,7 +483,7 @@ a{
         margin-top: 700px;
     }
     @media (min-width: $fullHdDesktops) {
-        margin-top: 400px;
+        margin-top: 520px;
     }
 }
 .mt-xs-0{
@@ -403,8 +499,9 @@ a{
 .over-x-h{
     overflow-x: hidden;
 }
-img{
-    .submenu &{
+.submenu{
+    padding-left: 7px;
+    img{
         height: 10px;
     }
 }
@@ -427,13 +524,14 @@ ul.detalhes{
 }
 #ytframe{
     width: 80%;
+    height: 135px;
     margin: 50px auto;
     box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.23);
     z-index: 1;
     position: relative;
     @media (min-width: $smallPhones) {
         width: 90%;
-        height: 230px;
+        height: 180px;
     }
     @media (min-width: $smartphones) {
         width: 80%;
@@ -462,23 +560,53 @@ ul.detalhes{
     img.profile{
         border-radius: 50%;
         margin: 10px;
+        height: 120px;
+        @media (min-width: $tablets) {
+            height: 200px;
+        }
         @media (min-width: $desktops) {
             width: 100%;
+            height: auto;
             max-width: 216px;
         }
     }
     p.profile{
         font-weight: bold;
     }
+    .text, .identidade{
+        max-width: 220px;
+        @media (min-width: $smallPhones) {
+            max-width: 280px;
+        }
+        @media (min-width: $tablets) {
+            max-width: 80%;
+        }
+        @media (min-width: $desktops) {
+            max-width: unset;
+        }
+        @media (min-width: $largeDesktops) {
+            max-width: 700px;
+        }
+    }
     .text{
         position: relative;
-        max-width: 80%;
         margin: 50px auto 0;
         color: $primary;
         p{
             font-size: 24px;
             line-height: 30px;
+            @media (min-width: $smallPhones) {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 224px;
+            }
+            @media (min-width: $tablets) {
+                max-width: 80%;
+                font-size: 50px;
+                line-height: 55px;
+            }
             @media (min-width: $desktops) {
+                max-width: 690px;
                 font-size: 37px;
                 line-height: 40px;
             }
@@ -496,14 +624,26 @@ ul.detalhes{
         }
     }
     .identidade{
-        max-width: 80%;
         color: $primary;
         margin: 0 auto 50px;
         p{
             font-size: .8rem;
+            @media (min-width: $smallPhones) {
+                font-size: 15px;
+                max-width: 245px;
+                line-height: 17px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            @media (min-width: $tablets) {
+                font-size: 27px;
+                max-width: 440px;
+                line-height: 30px;
+            }
             @media (min-width: $desktops) {
                 font-size: 21px;
                 line-height: 25px;
+                max-width: 700px;
             }
         }
     }
@@ -537,6 +677,7 @@ table.prices{
                 @media (min-width: $desktops) {
                     font-size: 16px;
                     line-height: 29px;
+                    text-align: center;
                 }
             }
         }
@@ -560,8 +701,11 @@ table.prices{
                     font-size: 1rem;
                 }
                 @media (min-width: $desktops) {
-                    font-size: 18px;
+                    font-size: 17px;
                     padding: 20px;
+                }
+                @media (min-width: $largeDesktops) {
+                    font-size: 18px;
                 }
             }
         }
@@ -574,17 +718,17 @@ table.prices{
     }
     p, span{
         font-size: 1.3rem;
+        @media (min-width: $largeDesktops) {
+            font-size: 1.2rem;
+        }
     }
 }
 .left-right{
     margin-bottom: 50px;
     img{
-        transform: translateX(-10%);
-        width: 90%;
+        transform: translateX(-6%);
+        width: 95%;
         margin-bottom: 30px;
-        @media (min-width: $smallPhones) {
-            transform: translateX(-12%);
-        }
     }
     h2, p{
         padding-left: 2rem;
@@ -598,15 +742,11 @@ table.prices{
     margin-bottom: 50px;
     text-align: right;
     h2, p{
-        padding-left: 3rem;
-        padding-right: 3rem;
-        @media (min-width: $smallPhones) {
-            padding-left: 2rem;
-            padding-right: 2rem;
-        }
+        padding-left: .5rem;
+        padding-right: 2rem;
     }
     img{
-        width: 90%;
+        width: 95%;
         transform: translateX(6%);
         margin-bottom: 30px;
     }
@@ -700,6 +840,20 @@ footer{
 .internal-wip{
     margin-top: 120px;
 }
+.mobile-wip{
+    p{
+        max-width: 238px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.2rem;
+        @media (min-width: $smallPhones) {
+            max-width: 313px;
+        }
+        @media (min-width: $tablets) {
+            max-width: 373px;
+        }
+    }
+}
 .dropdown-menu.active{
     @media (min-width: $desktops) {
         background-color: white;
@@ -749,6 +903,9 @@ footer{
     }
     p{
         font-size: .8rem;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 .escada >{
@@ -770,6 +927,15 @@ footer{
         }
     }
 }
+.proExclusivo{
+    max-width: 230px;
+    @media (min-width: $smallPhones) {
+        max-width: 300px;
+    }
+    @media (min-width: $tablets) {
+        max-width: unset;
+    }
+}
 .row-lg{
     @media (min-width: $desktops) {
         display: flex;
@@ -782,10 +948,16 @@ footer{
     img{
         width: 110%;
         height: auto;
+        @media (min-width: $largeDesktops) {
+            width: 112%;
+        }
         &.ml{
             transform: translateX(-40px);
+            @media (min-width: $desktops) {
+                transform: translateX(-47px);
+            }
             @media (min-width: $largeDesktops) {
-                transform: translateX(-100px);
+                transform: translateX(-130px);
             }
             @media (min-width: $fullHdDesktops) {
                 transform: translateX(-180px);
@@ -803,25 +975,42 @@ footer{
 }
 .simple{
     p{
+        max-width: 225px;
+        margin-right: auto;
+        margin-left: auto;
+        @media (min-width: $smallPhones) {
+            max-width: 285px;
+        }
+        @media (min-width: $tablets) {
+            max-width: 355px;
+        }
         @media (min-width: $desktops) {
+            max-width: 170px;
             font-size: .7rem;
         }
-    }
-}
-h2.simples{
-    max-width: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    @media (min-width: $smallPhones) {
-        max-width: 300px;
-    }
-    @media (min-width: $desktops) {
-        max-width: unset;
+        @media (min-width: $largeDesktops) {
+            max-width: 230px;
+        }
     }
 }
 .col-hd-1 {
     @media (min-width: $fullHdDesktops) {
         flex: 0 0 8.333333%;
         max-width: 8.333333%;
+    }
+}
+.discprofiler{
+    p{
+        line-height: 1.2rem;
+    }
+}
+.right-t{
+    @media (min-width: $largeDesktops) {
+        transform: translateX(-40px);
+    }
+    h2, p{
+        @media (min-width: $largeDesktops) {
+            width: 700px;
+        }
     }
 }

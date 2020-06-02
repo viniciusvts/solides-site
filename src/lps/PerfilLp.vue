@@ -18,12 +18,11 @@
 
     <div class="collapse navbar-collapse" :class="{'active': controls.expandMenu}">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a @click="togleConteudo(null)"
+        <li @click="togleConteudo(null)"
           @mouseover="togleConteudo(true)"
           @mouseout="togleConteudo(false)"
-          class="nav-link p-0"
-          href="javascript: void(0)">
+        class="nav-item">
+          <a class="nav-link p-0" href="javascript: void(0)">
             Conteúdo
             <span v-if="controls.expandConteudo" class="submenu">
               <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
@@ -36,8 +35,6 @@
           </a>
           <div
           :class="{'active': controls.expandConteudo}"
-          @mouseover="togleConteudo(true)"
-          @mouseout="togleConteudo(false)"
           class="dropdown-menu conteudo"
           aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="https://blog.solides.com.br/">Blog da Sólides</a>
@@ -50,12 +47,11 @@
             <p class="d-none d-lg-block">Calculadora de rotatividade</p>
           </div>
         </li>
-        <li class="nav-item">
-          <a @click="togleCursos(null)"
+        <li @click="togleCursos(null)"
           @mouseover="togleCursos(true)"
           @mouseout="togleCursos(false)"
-          class="nav-link p-0"
-          href="javascript: void(0)">
+        class="nav-item">
+          <a class="nav-link p-0" href="javascript: void(0)">
             Cursos
             <span v-if="controls.expandCursos" class="submenu">
               <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
@@ -68,8 +64,6 @@
           </a>
           <div
           :class="{'active': controls.expandCursos}"
-          @mouseover="togleCursos(true)"
-          @mouseout="togleCursos(false)"
           class="dropdown-menu cursos"
           aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="https://universidade.solides.com.br/course/people-analytics/">Engenharia de Cargos<p class="saiba-mais d-lg-none">Saiba mais >></p></a>

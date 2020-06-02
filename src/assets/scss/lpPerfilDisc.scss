@@ -1045,3 +1045,13 @@ footer{
         }
     }
 }
+img.valpor{
+    width: 60%;
+    height: 100%;
+    @media (min-width: $desktops) {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+

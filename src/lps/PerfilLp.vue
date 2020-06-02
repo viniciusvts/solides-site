@@ -19,8 +19,8 @@
     <div class="collapse navbar-collapse" :class="{'active': controls.expandMenu}">
       <ul class="navbar-nav">
         <li @click="togleConteudo(null)"
-          @mouseover="togleConteudo(true)"
-          @mouseout="togleConteudo(false)"
+        @mouseover="togleConteudo(true)"
+        @mouseout="togleConteudo(false)"
         class="nav-item">
           <a class="nav-link p-0" href="javascript: void(0)">
             Conteúdo
@@ -48,8 +48,8 @@
           </div>
         </li>
         <li @click="togleCursos(null)"
-          @mouseover="togleCursos(true)"
-          @mouseout="togleCursos(false)"
+        @mouseover="togleCursos(true)"
+        @mouseout="togleCursos(false)"
         class="nav-item">
           <a class="nav-link p-0" href="javascript: void(0)">
             Cursos
@@ -355,7 +355,7 @@
         <div class="vertical-pill green"></div>
       </div>
       <div class="text-left to-right-70 mt-30 mt-xs-0 mt-lg-5">
-        <h2 v-html="lp.acf.titulo10" class="pr-5"></h2>
+        <h2 v-html="lp.acf.titulo10" class="color-almostBlack pr-5"></h2>
       </div>
       <div class="profiler-content-lg d-none d-lg-block">
         <a class="color-almostBlack" :href="lp.acf.link_1_secao_10">

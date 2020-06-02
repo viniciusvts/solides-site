@@ -225,6 +225,24 @@ nav{
     &.active{
         display: block;
     }
+    &.conteudo{
+        @media (min-width: $desktops) {
+            transform: translateX(-60px)!important; // bootstrap
+            min-width: 330px;
+        }
+        @media (min-width: $largeDesktops) {
+            transform: translateX(-40px)!important; // bootstrap
+        }
+    }
+    &.cursos{
+        @media (min-width: $desktops) {
+            min-width: unset;
+            transform: translateX(-55px)!important; // bootstrap
+        }
+        @media (min-width: $largeDesktops) {
+            transform: translateX(-50px)!important; // bootstrap
+        }
+    }
     .dropdown-item{
         color: whitesmoke;
         padding-left: 0;

@@ -125,8 +125,18 @@ ul.ul1{
 }
 .collapse{
     margin-left: 5%;
+    @media (min-width: $desktops) {
+        margin-left: 0;
+    }
     &.active{
         display: block;
+    }
+    .navbar-nav{
+        @media (min-width: $desktops) {
+            width: fit-content;
+            margin-right: auto;
+            margin-left: auto;
+        }
     }
 }
 nav{

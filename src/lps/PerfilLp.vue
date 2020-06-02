@@ -161,7 +161,7 @@
   </div>
   <img class="frame" src="@/assets/img/frame1.png" alt="">
   <!--como o profiler...-->
-  <div class="container pb-60">
+  <div class="container">
     <div class="row ml-lg-0">
       <div class="to-left-30">
         <div class="vertical-pill cyan"></div>
@@ -200,7 +200,7 @@
   </div>
   <!--como o profiler... detalhes-->
   <div class="container d-lg-none">
-      <p v-html="lp.acf.texto4" class="pl-4 w-80"></p>
+      <p v-html="lp.acf.texto4" class="pt-4 pl-4 w-80"></p>
       <ul class="detalhes pl-4 ul1">
         <li class="font-weight-bold">
           <span v-html="lp.acf.mil_analistas" class="color-cyan bold"></span> analistas comportamentais formados
@@ -220,7 +220,8 @@
       </a>
     </div>
   </div>
-  <img class="frame rotate-180" src="@/assets/img/frame1.png" alt="">
+  <img class="frame d-none d-lg-block" src="@/assets/img/frame2.png" alt="">
+  <img class="frame rotate-180 d-lg-none" src="@/assets/img/frame1.png" alt="">
   <!--validado por-->
   <div class="bg-light">
     <div class="container pb-60">

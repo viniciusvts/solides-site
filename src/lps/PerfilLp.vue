@@ -19,7 +19,11 @@
     <div class="collapse navbar-collapse" :class="{'active': controls.expandMenu}">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a @click="togleConteudo" class="nav-link p-0" href="javascript: void(0)">
+          <a @click="togleConteudo(null)"
+          @mouseover="togleConteudo(true)"
+          @mouseout="togleConteudo(false)"
+          class="nav-link p-0"
+          href="javascript: void(0)">
             Conteúdo
             <span v-if="controls.expandConteudo" class="submenu">
               <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
@@ -32,7 +36,9 @@
           </a>
           <div
           :class="{'active': controls.expandConteudo}"
-          class="dropdown-menu"
+          @mouseover="togleConteudo(true)"
+          @mouseout="togleConteudo(false)"
+          class="dropdown-menu conteudo"
           aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="https://blog.solides.com.br/">Blog da Sólides</a>
             <p class="d-none d-lg-block">Os melhores conteúdos para gestão de pessoas</p>
@@ -45,7 +51,11 @@
           </div>
         </li>
         <li class="nav-item">
-          <a @click="togleCursos" class="nav-link p-0" href="javascript: void(0)">
+          <a @click="togleCursos(null)"
+          @mouseover="togleCursos(true)"
+          @mouseout="togleCursos(false)"
+          class="nav-link p-0"
+          href="javascript: void(0)">
             Cursos
             <span v-if="controls.expandCursos" class="submenu">
               <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
@@ -58,7 +68,9 @@
           </a>
           <div
           :class="{'active': controls.expandCursos}"
-          class="dropdown-menu"
+          @mouseover="togleCursos(true)"
+          @mouseout="togleCursos(false)"
+          class="dropdown-menu cursos"
           aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="https://universidade.solides.com.br/course/people-analytics/">Engenharia de Cargos<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
             <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
@@ -494,17 +506,21 @@ export default {
   },
   methods: {
     togleMenu () { this.controls.expandMenu = !this.controls.expandMenu },
-    togleConteudo () {
-      this.controls.expandConteudo = !this.controls.expandConteudo
-      if (window.screen.width >= 998){
+    togleConteudo (flag) {
+      if (flag == null) {
+        this.controls.expandConteudo = !this.controls.expandConteudo
         this.controls.expandCursos = false
+        return;
       }
+      this.controls.expandConteudo = flag
     },
-    togleCursos () {
-      this.controls.expandCursos = !this.controls.expandCursos
-      if (window.screen.width >= 998){
+    togleCursos (flag) {
+      if (flag == null) {
+        this.controls.expandCursos = !this.controls.expandCursos
         this.controls.expandConteudo = false
+        return;
       }
+      this.controls.expandCursos = flag
     },
     getLP () {
       this.$http.getLPsById(this.lpId)

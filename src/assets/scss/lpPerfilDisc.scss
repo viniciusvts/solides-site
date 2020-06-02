@@ -105,6 +105,7 @@ h2{
             max-width: unset;
             margin-left: unset;
             margin-right: unset;
+            transform: translateY(50px);
         }
     }
 }
@@ -118,7 +119,12 @@ ul.ul1{
     }
 }
 .logo-menu{
-    width: 100px;
+    width: 87px;
+    height: 20px;
+    @media (min-width: $desktops) {
+        width: 170px;
+        height: 40px;
+    }
 }
 .no-border{
     border: none;
@@ -132,10 +138,12 @@ ul.ul1{
         display: block;
     }
     .navbar-nav{
+        margin-right: auto;
         @media (min-width: $desktops) {
             width: fit-content;
             margin-right: auto;
             margin-left: auto;
+            padding-right: 200px;
         }
     }
 }
@@ -191,13 +199,6 @@ nav{
         background-color: $primary;
     }
 }
-.navbar-nav{
-    margin-right: auto;
-    @media (min-width: $desktops) {
-        margin-right: unset;
-        width: 100%;
-    }
-}
 .nav-item{
     margin-top: 30px;
     @media (min-width: $desktops) {
@@ -207,8 +208,11 @@ nav{
         max-width: none;
         position: relative;
         min-height: 1px;
-        padding-right: 15px;
+        padding-right: 8px;
         padding-left: 15px;
+        @media (min-width: $largeDesktops) {
+            padding-right: 15px;
+        }
     }
     .nav-link{
         color: whitesmoke!important;
@@ -430,8 +434,9 @@ a{
     &.red{
         background-color: $mod_red;
         z-index: 1;
+        height: 22rem;
         @media (min-width: $smallPhones) {
-            height: 17rem;
+            height: 20rem;
         }
         @media (min-width: $tablets) {
             height: 25rem;
@@ -462,7 +467,7 @@ a{
         }
     }
 }
-@each $marginPx in 30 50 70 120 180{
+@each $marginPx in 30 40 50 70 120 180{
     .mt-#{$marginPx} {
         margin-top: $marginPx + px;
     }
@@ -692,6 +697,7 @@ ul.detalhes{
 
 table.prices{
     border-radius: 10px;
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.23);
     thead{
         tr{
             background-color: #F8F9FA;
@@ -742,7 +748,7 @@ table.prices{
 .price-details{
     line-height: normal;
     @media (min-width: $desktops) {
-        margin-top: -60px;
+        margin-top: -75px;
     }
     p, span{
         font-size: 1.3rem;
@@ -785,21 +791,30 @@ footer{
     width: 100%;
     bottom: 0;
     background: #3f1d82;
+    img.logo-menu{
+        width: 156px;
+        height: 36px;
+        @media (min-width: $desktops) {
+            width: 222px;
+            height: 51px;
+        }
+    }
     ul{
         li{
             margin-bottom: 15px;
             @media (min-width: $desktops) {
                 margin-bottom: 0;
             }
+            &, & *{
+                @media (min-width: $desktops) {
+                    font-size: 18px;
+                    line-height: 40px;
+                }
+            }
             .estado{
                 font-weight: bold;
             }
             a{
-                &, & *{
-                    @media (min-width: $desktops) {
-                        font-size: .6rem;
-                    }
-                }
                 color: $color_light;
                 &:hover{
                     color: $color_light;
@@ -973,6 +988,12 @@ footer{
     }
 }
 .profiler-content-lg{
+    h2{
+        line-height: 50px;
+    }
+    p{
+        line-height: 42px;
+    }
     img{
         width: 110%;
         height: auto;
@@ -1055,3 +1076,11 @@ img.valpor{
 }
 
 
+
+
+/// correção da barra de cookie
+#hs-eu-cookie-confirmation,
+#hs-eu-cookie-confirmation-inner,
+#hs-eu-confirmation-button{
+    font-size: 18px;
+}

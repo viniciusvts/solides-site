@@ -119,8 +119,8 @@ ul.ul1{
     }
 }
 .logo-menu{
-    width: 87px;
-    height: 20px;
+    width: 103px;
+    height: 23px;
     @media (min-width: $desktops) {
         width: 170px;
         height: 40px;
@@ -130,10 +130,7 @@ ul.ul1{
     border: none;
 }
 .collapse{
-    margin-left: 5%;
-    @media (min-width: $desktops) {
-        margin-left: 0;
-    }
+    margin-left: 0;
     &.active{
         display: block;
     }
@@ -148,7 +145,7 @@ ul.ul1{
     }
 }
 .navbar{
-    
+    padding: 15px 20px;
     @media (min-width: $desktops) {
         padding: 20px 0;
     }
@@ -212,6 +209,8 @@ nav{
     }
     &.navbar.active{
         background-color: $primary;
+        min-height: 100vh;
+        align-items: start;
     }
 }
 .nav-item{

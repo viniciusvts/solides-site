@@ -749,19 +749,23 @@ ul.detalhes{
 table.prices{
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.23);
+
+    @media (min-width: $tablets) {
+        box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.09);
+    }
     thead{
         tr{
             background-color: #F8F9FA;
             th{
-                font-size: .8rem;
+                font-size: .6rem;
                 padding: .75rem .3rem;
                 border-top: none;
+                vertical-align: middle;
                 @media (min-width: $tablets) {
                     font-size: 1rem;
                 }
                 @media (min-width: $desktops) {
-                    font-size: 16px;
+                    font-size: 18px;
                     line-height: 29px;
                     text-align: center;
                 }

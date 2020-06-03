@@ -319,7 +319,7 @@
               <tr>
                 <th class="w-25" scope="col">Quantidade de créditos</th>
                 <th class="w-25" scope="col">Valor por crédito</th>
-                <th class="w-50" scope="col">Parcelamento no cartão</th>
+                <th class="w-25" scope="col">Parcelamento no cartão</th>
               </tr>
             </thead>
             <tbody>

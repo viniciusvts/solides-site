@@ -37,7 +37,7 @@ html{
     scroll-behavior: smooth;
 }
 h2{
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: bold;
     line-height: 1.8rem;
     &.simples{
@@ -1062,6 +1062,7 @@ footer{
     }
     p{
         line-height: 1.2rem;
+        max-width: 730px;        
     }
 }
 .right-t{

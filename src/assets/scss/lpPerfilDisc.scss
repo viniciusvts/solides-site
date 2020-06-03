@@ -411,7 +411,10 @@ a{
         width: 177%;
         margin-left: -50%;
         z-index: -5;
-        margin-bottom: -40px;
+
+        @media (min-width: $tablets) {
+            margin-bottom: -40px;            
+        }
     
         @media (min-width: $fullHdDesktops) {
             margin-left: -80%;

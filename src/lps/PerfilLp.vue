@@ -88,7 +88,7 @@
           </li>
           <li class="nav-item showOnScroll d-none" :class="{'active': controls.scroll}">
             <a class="nav-link p-0" href="https://checkout.solides.com.br/">
-              <button class="badge badge-pill blue-back color-white two-in-a-row">Comprar Agora</button>
+              <button class="badge badge-pill blue-back color-white two-in-a-row">Comprar agora</button>
             </a>
           </li>
           <li class="nav-item showOnScroll d-none" :class="{'active': controls.scroll}">
@@ -109,7 +109,7 @@
         <!--exibe apenas em desktop -->
         <div class="mt-70 pr-0 d-none d-lg-block">
           <a href="https://checkout.solides.com.br/" class="pr-0">
-            <button class="badge badge-pill mx-button blue-back color-white two-in-a-row">Comprar Agora</button>
+            <button class="badge badge-pill mx-button blue-back color-white two-in-a-row">Comprar agora</button>
           </a>
           <a href="#form" class="pr-0">
             <button class="badge badge-pill mx-button blue-outline two-in-a-row">Fale com um especialista</button>
@@ -134,7 +134,7 @@
     </div>
     <div class="centerize-itens mt-70 d-lg-none">
       <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-button blue-back two-in-a-row color-white">Comprar Agora</button>
+        <button class="badge badge-pill mx-button blue-back two-in-a-row color-white">Comprar agora</button>
       </a>
       <a href="#form">
         <button class="badge badge-pill mx-button blue-outline two-in-a-row">Fale com um especialista</button>

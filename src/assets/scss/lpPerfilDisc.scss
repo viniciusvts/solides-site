@@ -35,7 +35,9 @@ $almostBlack: #3D3B3B;
 }
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden
 }
+
 h2{
     font-size: 1.3rem;
     font-weight: bold;
@@ -680,13 +682,28 @@ ul.detalhes{
         }
         .asp{
             position: absolute;
+
+            @media (min-width: $tablets) {
+                &.begin{
+                    top: -42px;
+                    left: -37px;
+                    width: 80px;
+                }
+                &.end{
+                    top: 49px;
+                    right: -3px;
+                    width: 80px;
+                }
+            }
             &.begin{
-                top: -25px;
-                left: -25px;
+                top: -29px;
+                left: -28px;
+                width: 60px;
             }
             &.end{
-                bottom: 5px;
-                right: 5px;
+                top: 159px;
+                right: -28px;
+                width: 60px;            
             }
         }
     }

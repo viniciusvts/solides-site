@@ -346,9 +346,17 @@
   </div>
   <!-- form aqui -->
   <div class="bg-gray" id="form">
-    <div class="container pt-60 pb-60">
-      <h2 class="color-primary text-center simples">Conheça todos os benefícios do Profiler</h2>
+    <div class="container pt-60 pb-1">
+      <h2 class="color-primary text-center form">Conheça todos os benefícios do Profiler</h2>
       <div class="hsform"></div>
+      <p class="privacy color-primary">
+        A Sólides nunca enviará qualquer tipo de spam. Consulte nossa 
+        <strong>
+          <a href="https://www.solides.com.br/politica-de-privacidade" class="color-primary">
+            política de privacidade.
+          </a>
+        </strong>
+      </p>
     </div>
   </div>
   <img class="frame" src="@/assets/img/form-frame.png">
@@ -498,7 +506,7 @@ export default {
   mounted () {
     this.getLP()
     window.addEventListener('scroll', this.handleScroll)
-    this.startHsForm();
+    this.startHsForm('.hsform');
   },
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll);
@@ -536,12 +544,14 @@ export default {
     handleScroll () {
       this.controls.scroll = (window.scrollY >= 800)
     },
-    startHsForm () {
-      window.hbspt.forms.create({
-        portalId: "6009739",
-        formId: "aa14808c-6ee3-4ff3-9a79-aa376731e05b",
-        target: ".hsform"
-      });
+    startHsForm (selector) {
+      setTimeout(() => {
+        window.hbspt.forms.create({
+          portalId: "6009739",
+          formId: "aa14808c-6ee3-4ff3-9a79-aa376731e05b",
+          target: selector
+        });
+      }, 5000);
     },
     scrollSmothTo (event) {
       // dont work

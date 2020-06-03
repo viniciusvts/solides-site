@@ -40,7 +40,7 @@ html{
 }
 
 h2{
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: bold;
     line-height: 1.8rem;
     &.simples{
@@ -379,13 +379,13 @@ a{
     background-color: $gray;
 }
 .to-right-30{
-    width: 30%;
+    width: 40%;
     float: right;
     @media (min-width: $largeDesktops) {
         width: 30%;
     }
     img{
-        width: 200%;
+        width: 177%;
         margin-left: -35%;
         z-index: 9;
         position: relative;
@@ -402,7 +402,7 @@ a{
     }
 }
 .to-left-70{
-    width: 70%;
+    width: 60%;
     float: left;
     @media (min-width: $largeDesktops) {
         width: 69%;
@@ -485,7 +485,7 @@ a{
         background-color: $mod_red;
         z-index: 1;
         height: 22rem;
-        margin-left: 0%;
+        margin-left: 10%;
         margin-top: 30px;
         @media (min-width: $smallPhones) {
             height: 20rem;

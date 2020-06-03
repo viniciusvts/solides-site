@@ -263,14 +263,14 @@
   <div class="container pt-60">
     <h2 v-html="lp.acf.titulo7" class="text-center color-primary simples"></h2>
     <div class="mt-5 text-center row simple">
-      <div v-for="(wf, index) in lp.acf.workflow_comprar7" :key="index" class="col-12 col-lg-4 mt-50">
+      <div v-for="(wf, index) in lp.acf.workflow_comprar7" :key="index" class="col-12 col-lg-4">
         <img :src="wf.imagem.sizes.medium" :alt="wf.imagem.alt" class="h-50">
         <p class="color-primary mt-3 px-5 px-lg-2 font-weight-bold">{{wf.text}}</p>
       </div>
     </div>
     <div class="centerize-itens mt-30">
       <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-button blue-back color-white">Comprar agora</button>
+        <button class="badge badge-pill mx-button blue-back color-white mb-30">Comprar agora</button>
       </a>
     </div>
   </div>

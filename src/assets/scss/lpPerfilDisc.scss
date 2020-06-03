@@ -44,6 +44,7 @@ h2{
         max-width: 210px;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 80px;
         @media (min-width: $smallPhones) {
             max-width: 265px;
         }
@@ -1067,6 +1068,7 @@ footer{
         max-width: 225px;
         margin-right: auto;
         margin-left: auto;
+        margin-bottom: 80px;
         @media (min-width: $smallPhones) {
             max-width: 285px;
         }

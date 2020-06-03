@@ -312,6 +312,9 @@ nav{
 button{
     &.badge{
         padding: .4rem;
+        @media (min-width: $tablets) {
+            padding: 15px 30px;
+        }
         &.two-in-a-row{            
             @media (min-width: $tablets) {
                 padding: 15px 30px;
@@ -357,7 +360,7 @@ a{
     background-color: $gray;
 }
 .to-right-30{
-    width: 40%;
+    width: 30%;
     float: right;
     @media (min-width: $largeDesktops) {
         width: 30%;
@@ -380,7 +383,7 @@ a{
     }
 }
 .to-left-70{
-    width: 60%;
+    width: 70%;
     float: left;
     @media (min-width: $largeDesktops) {
         width: 69%;
@@ -405,8 +408,11 @@ a{
     width: 40%;
     float: left;
     img{
-        width: 200%;
+        width: 177%;
         margin-left: -50%;
+        z-index: -5;
+        margin-bottom: -40px;
+    
         @media (min-width: $fullHdDesktops) {
             margin-left: -80%;
         }
@@ -445,6 +451,7 @@ a{
             width: 7rem;
             height: 45rem;
             margin-top: 0;
+            margin-left: 2%;
         }
         @media (min-width: $fullHdDesktops) {
             height: 50rem;
@@ -977,19 +984,24 @@ footer{
 .escada >{
     @media (min-width: $desktops) {
         *:first-child{
-            margin-left: 0;
+            margin-left: 40px;
+            margin-bottom: 50px;
         }
         *:nth-child(2){
-            margin-left: 60px;
+            margin-left: 115px;
+            margin-bottom: 50px;
         }
         *:nth-child(3){
-            margin-left: 120px;
+            margin-left: 150px;
+            margin-bottom: 50px;
         }
         *:nth-child(4){
             margin-left: 180px;
+            margin-bottom: 50px;
         }
         *:nth-child(n+5){
             margin-left: 240px;
+            margin-bottom: 50px;
         }
     }
 }

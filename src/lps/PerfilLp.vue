@@ -1,6 +1,7 @@
 <template>
 <div v-if="lp" class="lpPerfilDisc over-x-h">
-  <nav
+  <div class="container">
+      <nav
   :class="{'active': controls.expandMenu, 'scrolled': controls.scroll}"
   class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="javascript: void(0)">
@@ -97,6 +98,7 @@
       </ul>
     </div>
   </nav>
+  </div>
   <div class="container mt-70 pb-60 mt-md-120">
     <div class="row ml-0">
       <div class="text-left color-primary to-left-70 mt-70 discprofiler">

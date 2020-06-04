@@ -526,13 +526,14 @@ a{
             height: 37rem;
         }
         @media (min-width: $largeDesktops) {
-            width: 7rem;
+            width: 6rem;
             height: 38rem;
-            margin-left: 7%;
+            margin-left: 13%;
         }
         @media (min-width: $fullHdDesktops) {
             width: 7rem;
             height: 35rem;
+            margin-left: 11%;
         }
     }
     &.cyan{

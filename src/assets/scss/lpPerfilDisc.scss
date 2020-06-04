@@ -72,7 +72,8 @@ h2{
             max-width: 750px;
         }
         @media (min-width: $largeDesktops) {
-            max-width: unset;
+            font-size: 42px;
+            max-width: 900px;
         }
     }
     &.t4{
@@ -106,7 +107,8 @@ h2{
             max-width: unset;
         }
         @media (min-width: $desktops) {
-            max-width: unset;
+            font-size: 42px;
+            max-width: 475px;
             margin-left: unset;
             margin-right: unset;
             transform: translateY(50px);
@@ -125,8 +127,34 @@ h2{
         }
         @media (min-width: $desktops) {
             max-width: unset;
+            margin-top: 60px;
+            margin-bottom: 70px;
         }
     }
+    &.bestContent{
+        @media (min-width: $desktops) {
+            font-size: 42px;
+        }
+    }
+    &.bestContentSub{
+        @media (min-width: $desktops) {
+            font-size: 34px;
+        }
+        &.right{
+            @media (min-width: $desktops) {
+                width: 450px;
+            }
+        }
+        &.left{
+            @media (min-width: $desktops) {
+                margin-left: auto;
+                width: 550px;
+            }
+        }
+    }
+}
+.trtrx-bcf{
+    transform: translateX(150px);
 }
 ul.ul1{
     max-width: 250px;
@@ -210,7 +238,7 @@ nav{
                     padding: 0;
                 }
                 button.badge{
-                    font-weight: normal;
+                    font-weight: bold;
                     padding: 0.3rem .5rem;
                     margin-top: -5%;
                 }
@@ -267,10 +295,29 @@ nav{
     border: none;
     background-color: inherit;
     @media (min-width: $desktops) {
-        background-color: solid 1px $primary;
-    }
-    &.active{
+        background-color: white;
+        box-shadow: 0 10px 40px 22px rgba(0, 0, 0, 0.09);
+        border-radius: 50px;
+        padding-top: 40px;
+        margin-left: -50%;
+        margin-top: 25px;//a setinha
+        &::before{
+            $height: 26px;
+            content: "";
+            position: absolute;
+            width: 0; 
+            height: 0; 
+            border-left: $height/2 solid transparent;
+            border-right: $height/2 solid transparent;
+            border-bottom: $height solid white;
+            left: 50%;
+            margin-left: -$height/2;
+            top: (1-$height);
+        }
         display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .5s, visibility .5s step-end;
     }
     &.conteudo{
         @media (min-width: $desktops) {
@@ -284,17 +331,19 @@ nav{
     &.cursos{
         @media (min-width: $desktops) {
             min-width: unset;
-            transform: translateX(-55px)!important; // bootstrap
+            transform: translateX(-90px)!important; // bootstrap
         }
         @media (min-width: $largeDesktops) {
-            transform: translateX(-50px)!important; // bootstrap
+            transform: translateX(-70px)!important; // bootstrap
         }
     }
     .dropdown-item{
         color: whitesmoke;
         padding-left: 0;
-        @media (min-width: $desktops) {
-            font-size: 24px;
+        @media (min-width: $desktops){
+            color: $primary;
+            padding: 0.25rem 1.5rem 0 1.5rem!important;
+            font-size: 16px;
             font-weight: 900;
         }
         &:focus, &:active{
@@ -304,6 +353,26 @@ nav{
         .saiba-mais{
             margin-bottom: .1rem;
             color: gray;
+        }
+    }
+    p{
+        @media (min-width: $desktops) {
+            font-size: 16px;
+            line-height: 22px;
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 1.5rem;
+            padding-right: 1rem;
+            margin-bottom: .4rem;
+            color: #727272;
+        }
+    }
+    &.active{
+        display: block;
+        @media (min-width: $desktops) {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity .5s, visibility .5s step-start;
         }
     }
 }
@@ -393,7 +462,7 @@ a{
             width: 180%;
         }
         @media (min-width: $largeDesktops) {
-            margin-left: -50%;
+            margin-left: -35%;
             width: 240%;
         }
         @media (min-width: $fullHdDesktops) {
@@ -568,7 +637,7 @@ a{
         margin-top: 700px;
     }
     @media (min-width: $fullHdDesktops) {
-        margin-top: 520px;
+        margin-top: 700px;//520px;
     }
 }
 .mt-xs-0{
@@ -611,9 +680,11 @@ ul.detalhes{
     width: 80%;
     height: 135px;
     margin: 50px auto;
-    box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.23);
     z-index: 1;
     position: relative;
+    border-radius: 15px;
+    box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.23);
+    overflow: hidden;
     @media (min-width: $smallPhones) {
         width: 90%;
         height: 180px;
@@ -636,9 +707,6 @@ ul.detalhes{
     @media (min-width: $fullHdDesktops) {
         width: 80%;
         height: 530px;
-    }
-    iframe{
-        border-radius: 15px;
     }
 }
 .depoimento{
@@ -698,7 +766,16 @@ ul.detalhes{
         }
         .asp{
             position: absolute;
-
+            &.begin{
+                top: -29px;
+                left: -28px;
+                width: 60px;
+            }
+            &.end{
+                bottom: -25px;
+                right: -10px;
+                width: 60px;            
+            }
             @media (min-width: $tablets) {
                 &.begin{
                     top: -42px;
@@ -706,20 +783,10 @@ ul.detalhes{
                     width: 80px;
                 }
                 &.end{
-                    top: 49px;
-                    right: -3px;
+                    bottom: 0px;
+                    right: 0px;
                     width: 80px;
                 }
-            }
-            &.begin{
-                top: -29px;
-                left: -28px;
-                width: 60px;
-            }
-            &.end{
-                top: 159px;
-                right: -28px;
-                width: 60px;            
             }
         }
     }
@@ -804,11 +871,11 @@ table.prices{
                     font-size: 0.7rem;
                 }
                 @media (min-width: $tablets) {
-                    font-size: 1rem;
+                    font-size: 18px;
                 }
                 @media (min-width: $desktops) {
-                    font-size: 17px;
-                    padding: 20px;
+                    font-size: 16px;
+                    padding: 20px 10px;
                 }
                 @media (min-width: $largeDesktops) {
                     font-size: 18px;
@@ -969,45 +1036,8 @@ footer{
         }
     }
 }
-.dropdown-menu.active{
-    @media (min-width: $desktops) {
-        background-color: white;
-        box-shadow: 0 10px 40px 22px rgba(0, 0, 0, 0.09);
-        border-radius: 50px;
-        padding-top: 40px;
-        margin-left: -50%;
-        margin-top: 25px;//a setinha
-        &::before{
-            $height: 26px;
-            content: "";
-            position: absolute;
-            width: 0; 
-            height: 0; 
-            border-left: $height/2 solid transparent;
-            border-right: $height/2 solid transparent;
-            border-bottom: $height solid white;
-            left: 50%;
-            margin-left: -$height/2;
-            top: (1-$height);
-        }
-        a{
-            color: $primary;
-            padding: 0.25rem 1.5rem 0 1.5rem!important;
-        }
-        P{
-            font-size: 18px;
-            line-height: 22px;
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 1.5rem;
-            padding-right: .3rem;
-            color: #727272;
-        }
-    }
-}
 .pf-details{
     font-size: 0.7rem;
-    font-weight: bold;
 }
 .profiler-competencias{
     img{
@@ -1071,12 +1101,23 @@ footer{
     }
     p{
         line-height: 42px;
+        @media (min-width: $largeDesktops) {
+            font-size: 26px;
+            width: 460px;
+        }
+        &.left{
+            @media (min-width: $largeDesktops) {
+                margin-left: auto;
+                margin-right: 0;
+                width: 500px;
+            }
+        }
     }
     img{
         width: 110%;
         height: auto;
         @media (min-width: $largeDesktops) {
-            width: 112%;
+            width: 145%;
         }
         &.ml{
             transform: translateX(-40px);
@@ -1154,18 +1195,13 @@ footer{
     @media (min-width: $largeDesktops) {
         transform: translateX(-40px);
     }
-    h2, p{
-        @media (min-width: $largeDesktops) {
-            width: 700px;
-        }
-    }
 }
 img.valpor{
     width: 60%;
     height: 100%;
     @media (min-width: $desktops) {
-        width: 80%;
-        height: 80%;
+        width: 70%;
+        height: 70%;
     }
 }
 
@@ -1203,7 +1239,7 @@ p.privacy{
             margin: 20px auto;
         }
         @media (min-width: $desktops) {
-            margin: 30px auto;
+            margin: 13px auto;
         }
     }
     input, select{
@@ -1224,10 +1260,10 @@ p.privacy{
         }
         @media (min-width: $tablets) {
             width: 420px;
-            height: 60px;
+            height: 46px;
             border-radius: 30px;
             padding-left: 25px;
-            font-size: 25px;
+            font-size: 16px;
         }
         &:focus{
             outline: none;

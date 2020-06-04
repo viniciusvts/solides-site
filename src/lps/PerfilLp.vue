@@ -105,7 +105,7 @@
     <div class="row ml-0">
       <div class="text-left color-primary to-left-70 mt-70 discprofiler">
         <h2 v-html="lp.acf.titulo1" class="mt-lg-70 mt-xl-120 mb-4 mb-lg-3"></h2>
-        <p v-html="lp.acf.texto1" class="font-weight-bold"></p>
+        <p v-html="lp.acf.texto1"></p>
         <!--exibe apenas em desktop -->
         <div class="mt-70 pr-0 d-none d-lg-block">
           <a href="https://checkout.solides.com.br/" class="pr-0">
@@ -180,13 +180,13 @@
           <p v-html="lp.acf.texto4" class="mt-lg-4 mb-lg-4 color-almostBlack"></p>
           <ul class="detalhes pl-0 ul1">
             <li class="font-weight-bold mb-lg-4">
-              <span v-html="lp.acf.mil_analistas" class="color-cyan bold"></span> analistas comportamentais formados
+              <span v-html="lp.acf.mil_analistas" class="color-cyan font-weight-bold"></span> analistas comportamentais formados
             </li>
             <li class="font-weight-bold mb-lg-4">
-              <span v-html="lp.acf.milhoes_relatorios" class="color-cyan bold"></span> de relatórios
+              <span v-html="lp.acf.milhoes_relatorios" class="color-cyan font-weight-bold"></span> de relatórios
             </li>
             <li class="font-weight-bold mb-lg-4">
-              <span v-html="lp.acf.parceiros" class="color-cyan bold"></span> parceiros
+              <span v-html="lp.acf.parceiros" class="color-cyan font-weight-bold"></span> parceiros
             </li>
           </ul>
           <div class="container mt-5">
@@ -224,7 +224,7 @@
       </a>
     </div>
   </div>
-  <img class="frame d-none d-lg-block" src="@/assets/img/frame2.png" alt="">
+  <img class="frame d-none d-lg-block" src="@/assets/img/svg/frame2.png" alt="">
   <img class="frame rotate-180 d-lg-none" src="@/assets/img/frame1.png" alt="">
   <!--validado por-->
   <div class="bg-light">
@@ -367,7 +367,7 @@
         <div class="vertical-pill green"></div>
       </div>
       <div class="text-left to-right-70 mt-30 mt-xs-0 mt-lg-5">
-        <h2 v-html="lp.acf.titulo10" class="color-almostBlack pr-5"></h2>
+        <h2 v-html="lp.acf.titulo10" class="color-almostBlack pr-5 bestContent"></h2>
       </div>
       <div class="profiler-content-lg d-none d-lg-block">
         <a class="color-almostBlack" :href="lp.acf.link_1_secao_10">
@@ -377,8 +377,8 @@
               :src="lp.acf.imagem_1_secao_10.sizes.large"
               :alt="lp.acf.imagem_1_secao_10.alt">
             </div>
-            <div class="col-7 ml-fhd--100">
-              <h2 v-html="lp.acf.subtitulo_1_secao_10"></h2>
+            <div class="col-7 trtrx-bcf">
+              <h2 v-html="lp.acf.subtitulo_1_secao_10" class="bestContentSub right"></h2>
               <p v-html="lp.acf.texto_1_secao_10"></p>
             </div>
           </div>
@@ -386,8 +386,8 @@
         <a class="color-almostBlack" :href="lp.acf.link_2_secao_10">
           <div class="row mt-70">
             <div class="col-7 text-right right-t">
-              <h2 v-html="lp.acf.subtitulo_2_secao_10"></h2>
-              <p v-html="lp.acf.texto_2_secao_10"></p>
+              <h2 v-html="lp.acf.subtitulo_2_secao_10" class="bestContentSub left"></h2>
+              <p v-html="lp.acf.texto_2_secao_10" class="left"></p>
             </div>
             <div class="col-5">
               <img class="mr"
@@ -403,8 +403,8 @@
               :src="lp.acf.imagem_3_secao_10.sizes.large"
               :alt="lp.acf.imagem_3_secao_10.alt">
             </div>
-            <div class="col-7 ml-fhd--100">
-              <h2 v-html="lp.acf.subtitulo_3_secao_10"></h2>
+            <div class="col-7 trtrx-bcf">
+              <h2 v-html="lp.acf.subtitulo_3_secao_10" class="bestContentSub right"></h2>
               <p v-html="lp.acf.texto_3_secao_10"></p>
             </div>
           </div>
@@ -498,7 +498,9 @@ export default {
       controls: {
         expandMenu: false,
         expandConteudo: false,
+        expandConteudoTimeout: false,
         expandCursos: false,
+        expandCursosTimeout: false,
         scroll: false
       },
     }

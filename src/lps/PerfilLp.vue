@@ -121,10 +121,10 @@
     </div>
   </nav>
 
-  <div class="container mt-70 pb-60 mt-md-120">
+  <div class="container mt-70 pb-40 pb-lg-60 mt-md-120">
     <div class="row ml-0">
       <div class="text-left color-primary to-left-70 mt-70 discprofiler">
-        <h2 v-html="lp.acf.titulo1" class="mt-lg-70 mb-4 mb-lg-3"></h2>
+        <h2 v-html="lp.acf.titulo1" class="mt-3 mt-lg-70 mb-4 mb-lg-3"></h2>
         <p v-html="lp.acf.texto1"></p>
         <!--exibe apenas em desktop -->
         <div class="mt-70 pr-0 d-none d-lg-block">
@@ -152,22 +152,22 @@
         <img src="@/assets/img/cabeçalho-perfil-disc-finalizado 1.png" alt="mulher trabalhando no computador">
       </div>
     </div>
-    <div class="centerize-itens mt-70 d-lg-none">
+    <div class="mt-50 mt-lg-70 d-lg-none">
       <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-button blue-back two-in-a-row color-white">Comprar agora</button>
+        <button class="badge badge-pill mr-1 blue-back two-in-a-row color-white">Comprar agora</button>
       </a>
       <a href="#form">
-        <button class="badge badge-pill mx-button blue-outline two-in-a-row">Fale com um especialista</button>
+        <button class="badge badge-pill ml-1 blue-outline two-in-a-row">Fale com um especialista</button>
       </a>
     </div>
   </div>
   <!--profiler-->
-  <div class="container pt-60 pb-60 text-center d-lg-none color-almostBlack mobile-wip">
+  <div class="container pt-40 pt-lg-60 pb-60 text-center d-lg-none color-almostBlack mobile-wip">
     <h2 v-html="lp.acf.titulo2" class="mb-4 mb-md-5"></h2>
-    <p v-html="lp.acf.texto2" class="font-weight-bold"></p>
+    <p v-html="lp.acf.texto2"></p>
     <div class="centerize-itens mt-50">
       <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-2 blue-back color-white">Quero fazer o Profiler</button>
+        <button class="badge badge-pill mx-2 blue-back color-white valPorBadge">Quero fazer o Profiler</button>
       </a>
     </div>
   </div>
@@ -193,7 +193,7 @@
   </div>
   <img class="frame" src="@/assets/img/frame1.png" alt="">
   <!--como o profiler...-->
-  <div class="container">
+  <div class="container pt-60 pt-lg-0">
     <div class="row ml-lg-0">
       <div class="to-left-30">
         <div class="vertical-pill cyan"></div>
@@ -234,21 +234,21 @@
   <div class="container d-lg-none">
       <p v-html="lp.acf.texto4" class="pt-4 pl-4 w-80"></p>
       <ul class="detalhes pl-4 ul1">
-        <li class="font-weight-bold">
-          <span v-html="lp.acf.mil_analistas" class="color-cyan bold"></span> analistas comportamentais formados
+        <li>
+          <span v-html="lp.acf.mil_analistas" class="color-cyan bold font-weight-bold"></span> analistas comportamentais formados
         </li>
-        <li class="font-weight-bold">
-          <span v-html="lp.acf.milhoes_relatorios" class="color-cyan bold"></span> de relatórios
+        <li>
+          <span v-html="lp.acf.milhoes_relatorios" class="color-cyan bold font-weight-bold"></span> de relatórios
         </li>
-        <li class="font-weight-bold">
-          <span v-html="lp.acf.parceiros" class="color-cyan bold"></span> parceiros
+        <li>
+          <span v-html="lp.acf.parceiros" class="color-cyan bold font-weight-bold"></span> parceiros
         </li>
       </ul>
-    <div class="container mt-5 px-3">
+    <div class="container mt-3 mt-lg-5 px-3">
       <h2 v-html="lp.acf.titulo5" class="simples mx-0"></h2>
       <div v-html="lp.acf.texto5" class="proExclusivo"></div>
       <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-button yellow-back color-white">Quero saber mais</button>
+        <button class="badge badge-pill yellow-back color-white exclusivo">Quero saber mais</button>
       </a>
     </div>
   </div>
@@ -256,11 +256,11 @@
   <img class="frame rotate-180 d-lg-none" src="@/assets/img/frame1.png" alt="">
   <!--validado por-->
   <div class="bg-light">
-    <div class="container pb-60">
-      <h2 v-html="lp.acf.titulo6" class="ml-4"></h2>
+    <div class="container pb-40 pb-lg-60">
+      <h2 v-html="lp.acf.titulo6" class="ml-4 trtr-valPor"></h2>
       <div class="row ml-4">
         <div class="text-left color-primary to-left-70">
-          <div class="row pr-md-0 text-md-center">
+          <div class="row pr-md-0 text-md-center trtr-valPor">
             <div class="col-12 col-md-4 pr-md-0 mt-40">
               <img src="@/assets/img/usp.png" alt="usp" class="valpor">
             </div>
@@ -281,24 +281,24 @@
       <div class="text-center text-lg-left mt-30 row-lg">
         <div class="d-none d-lg-block col-2 col-hd-1"></div>
         <a href="https://checkout.solides.com.br/">
-          <button class="badge badge-pill mx-button red-back color-white">Compre Agora</button>
+          <button class="badge badge-pill mx-button red-back color-white valPorBadge">Compre Agora</button>
         </a>
       </div>
     </div>
   </div>
   <img class="frame" src="@/assets/img/frame1.png" alt="">
   <!--simlpes contratar...-->
-  <div class="container pt-60">
+  <div class="container pt-40 pt-lg-60">
     <h2 v-html="lp.acf.titulo7" class="text-center color-primary simples"></h2>
     <div class="mt-5 text-center row simple">
       <div v-for="(wf, index) in lp.acf.workflow_comprar7" :key="index" class="col-12 col-lg-4">
-        <img :src="wf.imagem.sizes.medium" :alt="wf.imagem.alt" class="h-50">
+        <img :src="wf.imagem.sizes.medium" :alt="wf.imagem.alt">
         <p class="color-primary mt-3 px-5 px-lg-2 font-weight-bold">{{wf.text}}</p>
       </div>
     </div>
-    <div class="centerize-itens mt-30">
+    <div class="centerize-itens mt-0 mt-lg-30">
       <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-button blue-back color-white mb-30">Comprar agora</button>
+        <button class="badge badge-pill mx-button blue-back color-white mb-30 valPorBadge">Comprar agora</button>
       </a>
     </div>
   </div>
@@ -330,8 +330,7 @@
         <h2
         v-html="lp.acf.tabela_titulo"
         class="color-primary col-12 col-lg-6 text-lg-left prices"></h2>
-        <p class="mt-4 mb-4 col-12 col-lg-6 text-lg-right credit-price">
-          <span v-html="lp.acf.tabela_texto_destaque" class="color-cyan bold"></span>
+        <p class="mt-4 mb-4 col-12 col-lg-6 text-lg-right credit-price color-cyan bold" v-html="lp.acf.tabela_texto_destaque">
         </p>
       </div>
       <div class="row mb-5">
@@ -366,7 +365,7 @@
         </div>
         <div class="col-12 col-lg-3 text-left text-lg-right">
           <a href="https://checkout.solides.com.br/">
-            <button class="badge badge-pill mx-button blue-back color-white">Comprar agora</button>
+            <button class="badge badge-pill mx-button blue-back color-white valPorBadge">Comprar agora</button>
           </a>
         </div>
       </div>
@@ -395,7 +394,7 @@
         <div class="vertical-pill green"></div>
       </div>
       <div class="text-left to-right-70 mt-30 mt-xs-0 mt-lg-5">
-        <h2 v-html="lp.acf.titulo10" class="color-almostBlack pr-5 bestContent"></h2>
+        <h2 v-html="lp.acf.titulo10" class="color-almostBlack bestContent"></h2>
       </div>
       <div class="profiler-content-lg d-none d-lg-block">
         <a class="color-almostBlack" :href="lp.acf.link_1_secao_10">

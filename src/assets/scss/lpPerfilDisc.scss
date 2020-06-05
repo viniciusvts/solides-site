@@ -40,29 +40,30 @@ html{
 }
 
 h2{
-    font-size: 1.4rem;
+    font-size: 24px;
     font-weight: bold;
     line-height: 1.8rem;
     @media (min-width: $desktops) {
         font-size: 42px;
     }
     &.simples{
-        max-width: 210px;
+        max-width: 220px;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 80px;
+        margin-bottom: 30px;
         @media (min-width: $smallPhones) {
             max-width: 265px;
         }
         @media (min-width: $tablets) {
-            max-width: 330px;
+            max-width: 225px;
+            margin-bottom: 80px;
         }
         @media (min-width: $desktops) {
             max-width: unset;
         }
     }
     &.t2{
-        max-width: 235px;
+        max-width: 250px;
         margin-left: auto;
         margin-right: auto;
         @media (min-width: $smallPhones) {
@@ -100,7 +101,7 @@ h2{
         }
     }
     &.prices{
-        max-width: 220px;
+        max-width: 240px;
         margin-left: auto;
         margin-right: auto;
         @media (min-width: $smallPhones) {
@@ -118,7 +119,7 @@ h2{
         }
     }
     &.form{
-        max-width: 210px;
+        max-width: 230px;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 40px;
@@ -135,8 +136,10 @@ h2{
         }
     }
     &.bestContent{
+        padding-right: 1rem;
         @media (min-width: $desktops) {
             font-size: 42px;
+            padding-right: 3rem;
         }
     }
     &.bestContentSub{
@@ -158,6 +161,9 @@ h2{
 }
 .trtrx-bcf{
     transform: translateX(150px);
+}
+.trtr-valPor{
+    transform: translateX(20px);
 }
 ul.ul1{
     max-width: 250px;
@@ -403,10 +409,28 @@ nav{
 button{
     &.badge{
         padding: .4rem;
+        font-size: 13px;
+        @media (min-width: $smallPhones) {
+            font-size: 15px;
+        }
         @media (min-width: $tablets) {
             padding: 15px 30px;
+            font-size: 19px;
+        }
+        @media (min-width: $desktops) {
+            font-size: 25.5px;
         }
         &.two-in-a-row{            
+            @media (min-width: $tablets) {
+                padding: 15px 30px;
+            }
+        }
+        &.exclusivo{
+            margin-top: 20px;
+            padding: 10px 27px;
+        }
+        &.valPorBadge{
+            padding: 8px 35px;
             @media (min-width: $tablets) {
                 padding: 15px 30px;
             }
@@ -458,7 +482,7 @@ a{
     }
     img{
         width: 177%;
-        margin-left: -35%;
+        margin-left: -25%;
         z-index: 9;
         position: relative;
         @media (min-width: $desktops) {
@@ -500,10 +524,11 @@ a{
     float: left;
     img{
         width: 177%;
-        margin-left: -50%;
+        margin-left: -35%;
         z-index: -5;
 
         @media (min-width: $tablets) {
+            margin-left: -50%;
             margin-bottom: -40px;            
         }
     
@@ -523,10 +548,12 @@ a{
         background: $yellow;
         width: 3.3rem;
         height: 21rem;
+        margin-left: 13%;
         z-index: 9;
         @media (min-width: $desktops) {
             width: 7rem;
             height: 37rem;
+            margin-left: 10%;
         }
         @media (min-width: $largeDesktops) {
             width: 6rem;
@@ -582,6 +609,7 @@ a{
     }
     &.green{
         background-color: $green;
+        height: 22rem;
         @media (min-width: $desktops) {
             width: 7rem;
             height: 25rem;
@@ -603,7 +631,7 @@ a{
     }
     .mt-lg-#{$marginPx} {
         @media (min-width: $desktops) {
-            margin-top: $marginPx + px;
+            margin-top: $marginPx + px!important;
         }
     }
     .mt-xl-#{$marginPx} {
@@ -615,12 +643,22 @@ a{
         margin-bottom: $marginPx + px;
     }
 }
-@each $padding in 60 120{
+@each $padding in 40 60 120{
     .pt-#{$padding} {
         padding-top: $padding + px;
     }
+    .pt-lg-#{$padding} {
+        @media (min-width: $desktops) {
+            padding-top: $padding + px;
+        }
+    }
     .pb-#{$padding} {
         padding-bottom: $padding + px;
+    }
+    .pb-lg-#{$padding} {
+        @media (min-width: $desktops) {
+            padding-bottom: $padding + px;
+        }
     }
 }
 .text-profiler{
@@ -677,13 +715,16 @@ a{
 ul.detalhes{
     list-style-type: none;
     li{
-        margin-bottom: 10px;
+        margin-bottom: 21px;
+        @media (min-width: $desktops) {
+            margin-bottom: 10px;
+        }
     }
 }
 #ytframe{
     width: 80%;
     height: 135px;
-    margin: 50px auto;
+    margin: 90px auto 30px;
     z-index: 1;
     position: relative;
     border-radius: 15px;
@@ -692,6 +733,7 @@ ul.detalhes{
     @media (min-width: $smallPhones) {
         width: 90%;
         height: 180px;
+        margin: 50px auto;
     }
     @media (min-width: $smartphones) {
         width: 80%;
@@ -824,9 +866,12 @@ ul.detalhes{
     max-width: unset;
     margin-left: unset;
     font-weight: bold;
-
+    font-size: 20px;
+    @media (min-width: $tablets) {
+        font-size: 25px;
+    }
     @media (min-width: $desktops) {
-        max-width: 200px;
+        max-width: 260px;
         margin-left: auto;
         font-size: 42px;
         line-height: 40px;        
@@ -868,12 +913,9 @@ table.prices{
                 background-color: #F8F9FA;
             }
             td{
-                font-size: .8rem;
+                font-size: 10px;
                 padding: .75rem .1rem;
                 font-weight: bold;
-                @media (min-width: $smallPhones) {
-                    font-size: 0.7rem;
-                }
                 @media (min-width: $tablets) {
                     font-size: 18px;
                 }
@@ -894,7 +936,13 @@ table.prices{
         margin-top: -75px;
     }
     p, span{
-        font-size: 1.3rem;
+        font-size: 18px;
+        @media (min-width: $tablets) {
+            font-size: 20px;
+        }
+        @media (min-width: $desktops) {
+            font-size: 25px;
+        }
         @media (min-width: $largeDesktops) {
             font-size: 36px;
         }
@@ -918,8 +966,12 @@ table.prices{
 .right-left{
     margin-bottom: 50px;
     text-align: right;
-    h2, p{
+    h2{
         padding-left: .5rem;
+        padding-right: 2rem;
+    }
+    p{
+        padding-left: 2.5rem;
         padding-right: 2rem;
     }
     img{
@@ -1028,10 +1080,11 @@ footer{
 }
 .mobile-wip{
     p{
-        max-width: 238px;
+        max-width: 227px;
+        font-weight: bold;
         margin-left: auto;
         margin-right: auto;
-        line-height: 1.2rem;
+        line-height: 1.6rem;
         @media (min-width: $smallPhones) {
             max-width: 313px;
         }
@@ -1083,12 +1136,25 @@ footer{
     }
 }
 .proExclusivo{
-    max-width: 230px;
+    max-width: 240px;
     @media (min-width: $smallPhones) {
         max-width: 300px;
     }
     @media (min-width: $tablets) {
         max-width: unset;
+    }
+    p{
+        font-size: 18px;
+        margin-bottom: 8px;
+        @media (min-width: $smallPhones) {
+            font-size: 20px;
+        }
+        @media (min-width: $tablets) {
+            font-size: 25px;
+        }
+        @media (min-width: $largeDesktops) {
+            font-size: 34px;
+        }
     }
 }
 .row-lg{
@@ -1150,7 +1216,7 @@ footer{
         max-width: 225px;
         margin-right: auto;
         margin-left: auto;
-        margin-bottom: 80px;
+        margin-bottom: -70px;
         @media (min-width: $smallPhones) {
             max-width: 285px;
         }
@@ -1160,9 +1226,16 @@ footer{
         @media (min-width: $desktops) {
             max-width: 170px;
             font-size: .7rem;
+            margin-bottom: 80px;
         }
         @media (min-width: $largeDesktops) {
             max-width: 230px;
+        }
+    }
+    img{
+        height: 45%;
+        @media (min-width: $desktops) {
+            height: 50%;
         }
     }
 }
@@ -1176,17 +1249,6 @@ footer{
     @media (min-width: 360px) and  (max-width: 767px){
         margin-top: 120px;
     }
-
-    @media (max-width: 359px){
-        h2{
-            margin-top: 34px;
-            max-width: 170px;
-        }
-        P{
-            font-size: 14px;
-        }
-    }
-    
     p{
         line-height: 1.2rem;  
     }
@@ -1304,10 +1366,14 @@ p.privacy{
 .tooltip.competencias{
     background-color: white;
     box-shadow: 0 10px 40px 22px rgba(0, 0, 0, 0.09);
-    border-radius: 20px;
-    margin-top: 60px;
-    margin-left: 30px;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-left: -10px;
     max-width: 185px;
+    @media (min-width: $desktops) {
+        margin-top: 60px;
+        margin-left: 30px;
+    }
     &::before{
         $height: 26px;
         content: "";
@@ -1327,17 +1393,15 @@ p.privacy{
         text-align: center;
         color: #2F0A77;
         margin: 0;
-        padding: 10px 20px;
+        padding: 20px;
     }
     opacity: 0;
     visibility: hidden;
     transition: opacity .5s, visibility .5s step-end;
     &.active{
-        @media (min-width: $desktops) {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity .5s, visibility .5s step-start;
-        }
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .5s, visibility .5s step-start;
     }
 }
 .no-decoration{

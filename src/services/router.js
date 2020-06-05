@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import Api from '@/services/ApiRest.js'
 
-const Home = () => import('@/views/Home.vue')
+// const Home = () => import('@/views/Home.vue')
 const PerfilLp = () => import('@/lps/PerfilLp.vue')
 
 Vue.use(VueRouter)
@@ -12,7 +12,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: PerfilLp,
   },
   {
     path: '/perfil-disc-lp/',

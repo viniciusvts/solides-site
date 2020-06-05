@@ -711,7 +711,7 @@ a{
         margin-top: 500px;
     }
     @media (min-width: $largeDesktops) {
-        margin-top: 600px; // 700px
+        margin-top: 700px; // 700px
     }
 }
 .mt-xs-0{
@@ -1029,8 +1029,8 @@ footer{
         width: 156px;
         height: 36px;
         @media (min-width: $desktops) {
-            width: 222px;
-            height: 51px;
+            width: 140px;
+            height: 32px;
         }
     }
     ul{
@@ -1304,9 +1304,20 @@ footer{
 img.valpor{
     max-height: 100%;
     max-width: 60%;
+    &[src*="finep"]{
+        @media (min-width: $tablets) {
+            transform: translateY(-6px);
+        }
+        @media (min-width: $desktops) {
+            transform: translateY(-18px);
+        }
+        @media (min-width: $largeDesktops) {
+            transform: translateY(-30px);
+        }
+    }
     @media (min-width: $desktops) {
         max-height: 70%;
-        max-width: 60%;
+        max-width: 80%;
     }
 }
 

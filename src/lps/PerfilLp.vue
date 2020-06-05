@@ -205,15 +205,15 @@
         <h2 v-html="lp.acf.titulo4" class="color-almostBlack text-right text-lg-left trtr-profiler t4"></h2>
         <!--so aparece em desktop -->
         <div class="d-none d-lg-block">
-          <p v-html="lp.acf.texto4" class="mt-lg-4 mb-lg-4 color-almostBlack"></p>
+          <p v-html="lp.acf.texto4" class="mt-lg-4 mb-lg-4 color-almostBlack p-lg-28"></p>
           <ul class="detalhes pl-0 ul1">
-            <li class="mb-lg-4">
+            <li class="mb-lg-4 p-lg-28">
               <span v-html="lp.acf.mil_analistas" class="color-cyan font-weight-bold"></span> analistas comportamentais formados
             </li>
-            <li class="mb-lg-4">
+            <li class="mb-lg-4 p-lg-28">
               <span v-html="lp.acf.milhoes_relatorios" class="color-cyan font-weight-bold"></span> de relatórios
             </li>
-            <li class="mb-lg-4">
+            <li class="mb-lg-4 p-lg-28">
               <span v-html="lp.acf.parceiros" class="color-cyan font-weight-bold"></span> parceiros
             </li>
           </ul>
@@ -289,8 +289,8 @@
   <img class="frame" src="@/assets/img/frame1.png" alt="">
   <!--simlpes contratar...-->
   <div class="container pt-40 pt-lg-60">
-    <h2 v-html="lp.acf.titulo7" class="text-center color-primary simples"></h2>
-    <div class="mt-5 text-center row simple">
+    <h2 v-html="lp.acf.titulo7" class="text-center color-primary t7"></h2>
+    <div class="mt-5 mt-lg-0 text-center row simple">
       <div v-for="(wf, index) in lp.acf.workflow_comprar7" :key="index" class="col-12 col-lg-4">
         <img :src="wf.imagem.sizes.medium" :alt="wf.imagem.alt">
         <p class="color-primary mt-3 px-5 px-lg-2 font-weight-bold">{{wf.text}}</p>
@@ -365,7 +365,7 @@
         </div>
         <div class="col-12 col-lg-3 text-left text-lg-right">
           <a href="https://checkout.solides.com.br/">
-            <button class="badge badge-pill mx-button blue-back color-white valPorBadge">Comprar agora</button>
+            <button class="badge badge-pill mx-button blue-back color-white valPorBadge trtry-price">Comprar agora</button>
           </a>
         </div>
       </div>
@@ -581,8 +581,6 @@ export default {
         return;
       }
       this.competenciasTooltip[index] = flag
-      console.log('tooltip', index, flag)
-      console.log('this.competenciasTooltip[index]', this.competenciasTooltip[index])
     },
     getLP () {
       this.$http.getLPsById(this.lpId)

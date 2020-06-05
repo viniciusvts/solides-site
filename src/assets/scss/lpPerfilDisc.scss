@@ -43,6 +43,9 @@ h2{
     font-size: 1.4rem;
     font-weight: bold;
     line-height: 1.8rem;
+    @media (min-width: $desktops) {
+        font-size: 42px;
+    }
     &.simples{
         max-width: 210px;
         margin-left: auto;
@@ -331,10 +334,10 @@ nav{
     &.cursos{
         @media (min-width: $desktops) {
             min-width: unset;
-            transform: translateX(-90px)!important; // bootstrap
+            transform: translateX(-50px)!important; // bootstrap
         }
         @media (min-width: $largeDesktops) {
-            transform: translateX(-70px)!important; // bootstrap
+            transform: translateX(-40px)!important; // bootstrap
         }
     }
     .dropdown-item{
@@ -893,7 +896,7 @@ table.prices{
     p, span{
         font-size: 1.3rem;
         @media (min-width: $largeDesktops) {
-            font-size: 1.2rem;
+            font-size: 36px;
         }
     }
 }
@@ -1021,7 +1024,7 @@ footer{
 }
 /// wip = what is profiler ;)
 .internal-wip{
-    margin-top: 160px;
+    margin-top: 210px;
 }
 .mobile-wip{
     p{
@@ -1198,11 +1201,11 @@ footer{
     }
 }
 img.valpor{
-    width: 60%;
-    height: 100%;
+    max-height: 100%;
+    max-width: 60%;
     @media (min-width: $desktops) {
-        width: 70%;
-        height: 70%;
+        max-height: 70%;
+        max-width: 80%;
     }
 }
 
@@ -1296,5 +1299,50 @@ p.privacy{
             background-size: 13px;
             background-position: 390px;
         }
+    }
+}
+.tooltip.competencias{
+    background-color: white;
+    box-shadow: 0 10px 40px 22px rgba(0, 0, 0, 0.09);
+    border-radius: 20px;
+    margin-top: 60px;
+    margin-left: 30px;
+    max-width: 185px;
+    &::before{
+        $height: 26px;
+        content: "";
+        position: absolute;
+        width: 0; 
+        height: 0; 
+        border-left: $height/2 solid transparent;
+        border-right: $height/2 solid transparent;
+        border-bottom: $height solid white;
+        left: 50%;
+        margin-left: -$height/2;
+        top: (1-$height);
+    }
+    p{
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #2F0A77;
+        margin: 0;
+        padding: 10px 20px;
+    }
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s step-end;
+    &.active{
+        @media (min-width: $desktops) {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity .5s, visibility .5s step-start;
+        }
+    }
+}
+.no-decoration{
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
     }
 }

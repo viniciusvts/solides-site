@@ -40,13 +40,23 @@
             class="dropdown-menu conteudo"
             aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="https://blog.solides.com.br/">Blog da Sólides</a>
-              <p class="d-none d-lg-block">Os melhores conteúdos para gestão de pessoas</p>
+              <a href="https://blog.solides.com.br/" class="no-decoration">
+                <p class="d-none d-lg-block">
+                  Os melhores conteúdos para gestão de pessoas
+                </p>
+              </a>
               <a class="dropdown-item" href="https://www.rhportal.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346">RH Portal</a>
-              <p class="d-none d-lg-block">Os melhores conteúdos sobre gestão de pessoas</p>
+              <a href="https://www.rhportal.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346" class="no-decoration">
+                <p class="d-none d-lg-block">Os melhores conteúdos sobre gestão de pessoas</p>
+              </a>
               <a class="dropdown-item" href="https://solides.com.br/materiais-educativos/">Materiais</a>
-              <p class="d-none d-lg-block">Os melhores conteúdos para gestão de pessoas</p>
+              <a href="https://solides.com.br/materiais-educativos/" class="no-decoration">
+                <p class="d-none d-lg-block">Os melhores conteúdos para gestão de pessoas</p>
+              </a>
               <a class="dropdown-item" href="https://contratarerradocustacaro.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346">Ferramentas</a>
-              <p class="d-none d-lg-block">Calculadora de rotatividade</p>
+              <a href="https://contratarerradocustacaro.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346" class="no-decoration">
+                <p class="d-none d-lg-block">Calculadora de rotatividade</p>
+              </a>
             </div>
           </li>
           <li @click="togleCursos(null)"
@@ -69,15 +79,25 @@
             class="dropdown-menu cursos"
             aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="https://universidade.solides.com.br/course/people-analytics/">Engenharia de Cargos<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-              <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+              <a class="no-decoration" href="https://universidade.solides.com.br/course/people-analytics/">
+                <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+              </a>
               <a class="dropdown-item " href="https://universidade.solides.com.br/course/people-analytics/">People Analytics<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-              <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+              <a class="no-decoration" href="https://universidade.solides.com.br/course/people-analytics/">
+                <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+              </a>
               <a class="dropdown-item" href="https://universidade.solides.com.br/course/rh-tecnologico/">RH Tecnológico<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-              <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+              <a class="no-decoration" href="https://universidade.solides.com.br/course/rh-tecnologico/">
+                <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+              </a>
               <a class="dropdown-item" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">Recrutamento e Seleção<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-              <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+              <a class="no-decoration" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">
+                <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+              </a>
               <a class="dropdown-item" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">Gestão Comportamental<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-              <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+              <a class="no-decoration" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">
+                <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+              </a>
             </div>
           </li>
           <li class="nav-item">
@@ -104,23 +124,23 @@
   <div class="container mt-70 pb-60 mt-md-120">
     <div class="row ml-0">
       <div class="text-left color-primary to-left-70 mt-70 discprofiler">
-        <h2 v-html="lp.acf.titulo1" class="mt-lg-70 mt-xl-120 mb-4 mb-lg-3"></h2>
+        <h2 v-html="lp.acf.titulo1" class="mt-lg-70 mb-4 mb-lg-3"></h2>
         <p v-html="lp.acf.texto1"></p>
         <!--exibe apenas em desktop -->
         <div class="mt-70 pr-0 d-none d-lg-block">
           <a href="https://checkout.solides.com.br/" class="pr-0">
-            <button class="badge badge-pill mx-button blue-back color-white two-in-a-row">Comprar agora</button>
+            <button class="badge badge-pill mr-1 blue-back color-white two-in-a-row">Comprar agora</button>
           </a>
           <a href="#form" class="pr-0">
-            <button class="badge badge-pill mx-button blue-outline two-in-a-row">Fale com um especialista</button>
+            <button class="badge badge-pill ml-1 blue-outline two-in-a-row">Fale com um especialista</button>
           </a>
           <!--profiler-->
-          <div class="text-right pr-0 trx-60 color-almostBlack internal-wip">
+          <div class="text-right pr-0 trx-60 color-almostBlack internal-wip mt-xl-120">
             <h2 v-html="lp.acf.titulo2" class="mb-2 pr-0"></h2>
             <p v-html="lp.acf.texto2" class="pr-0 pf-details"></p>
             <div class="mt-50 pr-0">
               <a href="https://checkout.solides.com.br/" class="pr-0">
-                <button class="badge badge-pill mx-2 blue-back color-white">Quero fazer o Profiler</button>
+                <button class="badge badge-pill blue-back color-white">Quero fazer o Profiler</button>
               </a>
             </div>
           </div>
@@ -156,8 +176,16 @@
     <div class="container pt-60 text-center">
       <h2 v-html="lp.acf.titulo3" class="mb-5 color-primary t2"></h2>
       <div class="row profiler-competencias">
-        <div v-for="(gal, index) in lp.acf.gal3" :key="index" class="col-6 col-md-3 mb-lg-2">
+        <div v-for="(gal, index) in lp.acf.gal3"
+        :key="index"
+        @click="togleTooltip(null, index)"
+        @mouseover="togleTooltip(true, index)"
+        @mouseout="togleTooltip(false, index)"
+        class="col-6 col-md-3 mb-lg-2">
           <img :src="gal.imagem.sizes.medium" :alt="gal.imagem.alt">
+          <div class="tooltip competencias" :class="{'active': competenciasTooltip[index]}">
+            <p v-html="gal.tooltip"></p>
+          </div>
           <p v-html="gal.texto" class="color-primary font-weight-bold"></p>
         </div>
       </div>
@@ -179,13 +207,13 @@
         <div class="d-none d-lg-block">
           <p v-html="lp.acf.texto4" class="mt-lg-4 mb-lg-4 color-almostBlack"></p>
           <ul class="detalhes pl-0 ul1">
-            <li class="font-weight-bold mb-lg-4">
+            <li class="mb-lg-4">
               <span v-html="lp.acf.mil_analistas" class="color-cyan font-weight-bold"></span> analistas comportamentais formados
             </li>
-            <li class="font-weight-bold mb-lg-4">
+            <li class="mb-lg-4">
               <span v-html="lp.acf.milhoes_relatorios" class="color-cyan font-weight-bold"></span> de relatórios
             </li>
-            <li class="font-weight-bold mb-lg-4">
+            <li class="mb-lg-4">
               <span v-html="lp.acf.parceiros" class="color-cyan font-weight-bold"></span> parceiros
             </li>
           </ul>
@@ -359,7 +387,7 @@
       </p>
     </div>
   </div>
-  <img class="frame" src="@/assets/img/form-frame.png">
+  <img class="frame" src="@/assets/img/svg/frame-form.svg">
   <!-- melhor conteúdo sobre o profiler -->
   <div class="container pt-60 pb-2">
     <div class="row ml-0 bestcontent-profiler">
@@ -498,11 +526,27 @@ export default {
       controls: {
         expandMenu: false,
         expandConteudo: false,
-        expandConteudoTimeout: false,
         expandCursos: false,
-        expandCursosTimeout: false,
         scroll: false
       },
+      /** os tooltips só funcionaram definindo previamente os indices
+       * gera-los dinamicamente não tem funcionado
+       */
+      competenciasTooltip:{
+        "0":false,
+        "1":false,
+        "2":false,
+        "3":false,
+        "4":false,
+        "5":false,
+        "6":false,
+        "7":false,
+        "8":false,
+        "9":false,
+        "10":false,
+        "11":false,
+        "12":false
+      }
     }
   },
   mounted () {
@@ -530,6 +574,16 @@ export default {
         return;
       }
       this.controls.expandCursos = flag
+    },
+    togleTooltip (flag, index) {
+      if (typeof index == 'undefined') return new TypeError('É necessário um valor para index')
+      if (flag == null) {
+        this.competenciasTooltip[index] = !this.competenciasTooltip[index]
+        return;
+      }
+      this.competenciasTooltip[index] = flag
+      console.log('tooltip', index, flag)
+      console.log('this.competenciasTooltip[index]', this.competenciasTooltip[index])
     },
     getLP () {
       this.$http.getLPsById(this.lpId)

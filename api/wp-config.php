@@ -37,7 +37,16 @@ switch ($server_addr) {
         $dev_mod = 'false';
         $wp_home = 'https://solides.dnadevendas.com.br/api/';
         $wp_siteurl = 'https://solides.dnadevendas.com.br/api';
-		break;
+        break;
+    default:
+        $dbhost_default = 'solides-server.coizjp8kk45g.us-east-1.rds.amazonaws.com';
+        $dbname = 'perfilDisc_db';
+        $dbuser_default = 'perfilDisc_usr';
+        $dbpassword_default = 'P3rf1D2019';
+        $dev_mod = 'false';
+        $wp_home = 'https://perfildisc.com.br/api/';
+        $wp_siteurl = 'https://perfildisc.com.br/api';
+        break;
 }
 
 define('WP_HOME',$wp_home);

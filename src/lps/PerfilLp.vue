@@ -610,6 +610,8 @@ export default {
       .then(json => {
         this.lp = json
         document.title = this.lp.title.rendered
+          this.$root.meta.title = this.lp.yoast_title;
+          this.$root.meta.tags = this.lp.yoast_meta;
       });
     },
     handleScroll () {

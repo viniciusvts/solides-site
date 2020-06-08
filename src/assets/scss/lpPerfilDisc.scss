@@ -1347,6 +1347,15 @@ img.valpor{
 #hs-eu-confirmation-button{
     font-size: 18px;
 }
+#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button {
+    font-size: 12px;
+    @media (min-width: $tablets) {
+        font-size: 14px;
+    }
+    @media (min-width: $largeDesktops) {
+        font-size: 17px;
+    }
+}
 
 // hs form
 p.privacy{

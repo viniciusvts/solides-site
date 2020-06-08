@@ -457,7 +457,7 @@ button{
             font-size: 15px;
         }
         @media (min-width: $tablets) {
-            padding: 15px 30px;
+            padding: 12px 20px;
             font-size: 19px;
         }
         @media (min-width: $desktops) {
@@ -465,7 +465,7 @@ button{
         }
         &.two-in-a-row{            
             @media (min-width: $tablets) {
-                padding: 15px 30px;
+                padding: 12px 20px;
             }
         }
         &.exclusivo{

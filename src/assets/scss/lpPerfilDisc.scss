@@ -389,6 +389,10 @@ nav{
             transform: translateX(-40px)!important; // bootstrap
         }
     }
+    .drop-item:hover{
+        text-decoration: none;
+        background-color: #f8f9fa;
+    }
     .dropdown-item{
         color: whitesmoke;
         padding-left: 0;
@@ -401,6 +405,10 @@ nav{
         &:focus, &:active{
             background-color: inherit;
             outline: none;
+        }
+        &:hover{
+            text-decoration: none;
+            background-color: unset;
         }
         .saiba-mais{
             margin-bottom: .1rem;

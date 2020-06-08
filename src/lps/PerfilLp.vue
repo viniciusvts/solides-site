@@ -39,24 +39,32 @@
             :class="{'active': controls.expandConteudo}"
             class="dropdown-menu conteudo"
             aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="https://blog.solides.com.br/">Blog da Sólides</a>
-              <a href="https://blog.solides.com.br/" class="no-decoration">
-                <p class="d-none d-lg-block">
-                  Os melhores conteúdos para gestão de pessoas
-                </p>
-              </a>
-              <a class="dropdown-item" href="https://www.rhportal.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346">RH Portal</a>
-              <a href="https://www.rhportal.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346" class="no-decoration">
-                <p class="d-none d-lg-block">Os melhores conteúdos sobre gestão de pessoas</p>
-              </a>
-              <a class="dropdown-item" href="https://solides.com.br/materiais-educativos/">Materiais</a>
-              <a href="https://solides.com.br/materiais-educativos/" class="no-decoration">
-                <p class="d-none d-lg-block">Os melhores conteúdos para gestão de pessoas</p>
-              </a>
-              <a class="dropdown-item" href="https://contratarerradocustacaro.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346">Ferramentas</a>
-              <a href="https://contratarerradocustacaro.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346" class="no-decoration">
-                <p class="d-none d-lg-block">Calculadora de rotatividade</p>
-              </a>
+              <div class="drop-item">
+                <a class="dropdown-item" href="https://blog.solides.com.br/">Blog da Sólides</a>
+                <a href="https://blog.solides.com.br/" class="no-decoration">
+                  <p class="d-none d-lg-block">
+                    Os melhores conteúdos para gestão de pessoas
+                  </p>
+                </a>
+              </div>
+              <div class="drop-item">
+                <a class="dropdown-item" href="https://www.rhportal.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346">RH Portal</a>
+                <a href="https://www.rhportal.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346" class="no-decoration">
+                  <p class="d-none d-lg-block">Os melhores conteúdos sobre gestão de pessoas</p>
+                </a>
+              </div>
+              <div class="drop-item">
+                <a class="dropdown-item" href="https://solides.com.br/materiais-educativos/">Materiais</a>
+                <a href="https://solides.com.br/materiais-educativos/" class="no-decoration">
+                  <p class="d-none d-lg-block">Os melhores conteúdos para gestão de pessoas</p>
+                </a>
+              </div>
+              <div class="drop-item">
+                <a class="dropdown-item" href="https://contratarerradocustacaro.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346">Ferramentas</a>
+                <a href="https://contratarerradocustacaro.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346" class="no-decoration">
+                  <p class="d-none d-lg-block">Calculadora de rotatividade</p>
+                </a>
+              </div>
             </div>
           </li>
           <li @click="togleCursos(null)"
@@ -78,26 +86,36 @@
             :class="{'active': controls.expandCursos}"
             class="dropdown-menu cursos"
             aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="https://universidade.solides.com.br/course/people-analytics/">Engenharia de Cargos<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-              <a class="no-decoration" href="https://universidade.solides.com.br/course/people-analytics/">
-                <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
-              </a>
-              <a class="dropdown-item " href="https://universidade.solides.com.br/course/people-analytics/">People Analytics<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-              <a class="no-decoration" href="https://universidade.solides.com.br/course/people-analytics/">
-                <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
-              </a>
-              <a class="dropdown-item" href="https://universidade.solides.com.br/course/rh-tecnologico/">RH Tecnológico<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-              <a class="no-decoration" href="https://universidade.solides.com.br/course/rh-tecnologico/">
-                <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
-              </a>
-              <a class="dropdown-item" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">Recrutamento e Seleção<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-              <a class="no-decoration" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">
-                <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
-              </a>
-              <a class="dropdown-item" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">Gestão Comportamental<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-              <a class="no-decoration" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">
-                <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
-              </a>
+              <div class="drop-item">
+                <a class="dropdown-item" href="https://universidade.solides.com.br/course/people-analytics/">Engenharia de Cargos<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a class="no-decoration" href="https://universidade.solides.com.br/course/people-analytics/">
+                  <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+                </a>
+              </div>
+              <div class="drop-item">
+                <a class="dropdown-item " href="https://universidade.solides.com.br/course/people-analytics/">People Analytics<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a class="no-decoration" href="https://universidade.solides.com.br/course/people-analytics/">
+                  <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+                </a>
+              </div>
+              <div class="drop-item">
+                <a class="dropdown-item" href="https://universidade.solides.com.br/course/rh-tecnologico/">RH Tecnológico<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a class="no-decoration" href="https://universidade.solides.com.br/course/rh-tecnologico/">
+                  <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+                </a>
+              </div>
+              <div class="drop-item">
+                <a class="dropdown-item" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">Recrutamento e Seleção<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a class="no-decoration" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">
+                  <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+                </a>
+              </div>
+              <div class="drop-item">
+                <a class="dropdown-item" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">Gestão Comportamental<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a class="no-decoration" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">
+                  <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+                </a>
+              </div>
             </div>
           </li>
           <li class="nav-item">
@@ -167,7 +185,7 @@
     <p v-html="lp.acf.texto2"></p>
     <div class="centerize-itens mt-50">
       <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-2 blue-back color-white valPorBadge">Quero fazer o Profiler</button>
+        <button class="badge badge-pill mx-2 blue-back color-white">Quero fazer o Profiler</button>
       </a>
     </div>
   </div>
@@ -281,7 +299,7 @@
       <div class="text-center text-lg-left mt-30 row-lg">
         <div class="d-none d-lg-block col-2 col-hd-1"></div>
         <a href="https://checkout.solides.com.br/">
-          <button class="badge badge-pill mx-button red-back color-white valPorBadge">Compre Agora</button>
+          <button class="badge badge-pill mx-button red-back color-white">Compre Agora</button>
         </a>
       </div>
     </div>
@@ -298,7 +316,7 @@
     </div>
     <div class="centerize-itens mt-0 mt-lg-30">
       <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-button blue-back color-white mb-30 valPorBadge">Comprar agora</button>
+        <button class="badge badge-pill mx-button blue-back color-white mb-30">Comprar agora</button>
       </a>
     </div>
   </div>
@@ -365,7 +383,7 @@
         </div>
         <div class="col-12 col-lg-3 text-left text-lg-right">
           <a href="https://checkout.solides.com.br/">
-            <button class="badge badge-pill mx-button blue-back color-white valPorBadge trtry-price">Comprar agora</button>
+            <button class="badge badge-pill mx-button blue-back color-white trtry-price">Comprar agora</button>
           </a>
         </div>
       </div>

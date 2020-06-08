@@ -461,6 +461,7 @@ button{
     &.badge{
         padding: .4rem;
         font-size: 13px;
+        cursor: pointer;
         @media (min-width: $smallPhones) {
             font-size: 15px;
         }

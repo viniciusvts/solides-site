@@ -242,7 +242,7 @@
               <a :href="lp.acf.botao_1_secao_5[0].link">
                 <button 
                 class="badge badge-pill mx-button yellow-back color-white">
-                {{lp.acf.botao_1_secao_5[0].text}}
+                {{lp.acf.botao_1_secao_5[0].texto}}
                 </button>
               </a>
             </div>

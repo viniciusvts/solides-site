@@ -239,8 +239,11 @@
             <h2 v-html="lp.acf.titulo5" class="mb-lg-4 color-almostBlack"></h2>
             <div v-html="lp.acf.texto5" class="escada color-almostBlack"></div>
             <div class="text-right">
-              <a href="https://checkout.solides.com.br/">
-                <button class="badge badge-pill mx-button yellow-back color-white">Quero saber mais</button>
+              <a :href="lp.acf.botao_1_secao_5[0].link">
+                <button 
+                class="badge badge-pill mx-button yellow-back color-white">
+                {{lp.acf.botao_1_secao_5[0].text}}
+                </button>
               </a>
             </div>
           </div>

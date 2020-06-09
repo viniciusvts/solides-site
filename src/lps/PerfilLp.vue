@@ -125,13 +125,13 @@
             <a class="nav-link p-0" href="https://materiais.solides.com.br/parceria">Seja Parceiro</a>
           </li>
           <li class="nav-item showOnScroll d-none" :class="{'active': controls.scroll}">
-            <a class="nav-link p-0" href="https://checkout.solides.com.br/">
-              <button class="badge badge-pill blue-back color-white two-in-a-row">Comprar agora</button>
+            <a class="nav-link p-0" :href="lp.acf.botao_navbar_1[0].link">
+              <button class="badge badge-pill blue-back color-white two-in-a-row">{{lp.acf.botao_navbar_1[0].texto}}</button>
             </a>
           </li>
           <li class="nav-item showOnScroll d-none" :class="{'active': controls.scroll}">
-            <a class="nav-link p-0" href="#form">
-              <button class="badge badge-pill blue-outline two-in-a-row">Fale com um especialista</button>
+            <a class="nav-link p-0" :href="lp.acf.botao_navbar_2[0].link">
+              <button class="badge badge-pill blue-outline two-in-a-row">{{lp.acf.botao_navbar_2[0].texto}}</button>
             </a>
           </li>
         </ul>
@@ -146,19 +146,19 @@
         <p v-html="lp.acf.texto1"></p>
         <!--exibe apenas em desktop -->
         <div class="mt-70 pr-0 d-none d-lg-block">
-          <a href="https://checkout.solides.com.br/" class="pr-0">
-            <button class="badge badge-pill mr-1 blue-back color-white two-in-a-row">Comprar agora</button>
+          <a :href="lp.acf.botao_1_secao_1[0].link" class="pr-0">
+            <button class="badge badge-pill mr-1 blue-back color-white two-in-a-row">{{lp.acf.botao_1_secao_1[0].texto}}</button>
           </a>
-          <a href="#form" class="pr-0">
-            <button class="badge badge-pill ml-1 blue-outline two-in-a-row">Fale com um especialista</button>
+          <a :href="lp.acf.botao_2_secao_1[0].link" class="pr-0">
+            <button class="badge badge-pill ml-1 blue-outline two-in-a-row">{{lp.acf.botao_2_secao_1[0].texto}}</button>
           </a>
           <!--profiler-->
           <div class="text-right pr-0 trx-60 color-almostBlack internal-wip mt-xl-120">
             <h2 v-html="lp.acf.titulo2" class="mb-2 pr-0"></h2>
             <p v-html="lp.acf.texto2" class="pr-0 pf-details"></p>
             <div class="mt-50 pr-0">
-              <a href="https://checkout.solides.com.br/" class="pr-0">
-                <button class="badge badge-pill blue-back color-white">Quero fazer o Profiler</button>
+              <a :href="lp.acf.botao_1_secao_2[0].link" class="pr-0">
+                <button class="badge badge-pill blue-back color-white">{{lp.acf.botao_1_secao_2[0].texto}}</button>
               </a>
             </div>
           </div>
@@ -171,11 +171,11 @@
       </div>
     </div>
     <div class="mt-50 mt-lg-70 d-lg-none">
-      <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mr-1 blue-back two-in-a-row color-white">Comprar agora</button>
+      <a :href="lp.acf.botao_1_secao_1[0].link">
+        <button class="badge badge-pill mr-1 blue-back two-in-a-row color-white">{{lp.acf.botao_1_secao_1[0].texto}}</button>
       </a>
-      <a href="#form">
-        <button class="badge badge-pill ml-1 blue-outline two-in-a-row">Fale com um especialista</button>
+      <a :href="lp.acf.botao_2_secao_1[0].link">
+        <button class="badge badge-pill ml-1 blue-outline two-in-a-row">{{lp.acf.botao_2_secao_1[0].texto}}</button>
       </a>
     </div>
   </div>
@@ -184,8 +184,8 @@
     <h2 v-html="lp.acf.titulo2" class="mb-4 mb-md-5"></h2>
     <p v-html="lp.acf.texto2"></p>
     <div class="centerize-itens mt-50">
-      <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-2 blue-back color-white">Quero fazer o Profiler</button>
+      <a :href="lp.acf.botao_1_secao_2[0].link">
+        <button class="badge badge-pill mx-2 blue-back color-white">{{lp.acf.botao_1_secao_2[0].texto}}</button>
       </a>
     </div>
   </div>
@@ -265,8 +265,8 @@
     <div class="container mt-3 mt-lg-5 px-3">
       <h2 v-html="lp.acf.titulo5" class="simples mx-0"></h2>
       <div v-html="lp.acf.texto5" class="proExclusivo"></div>
-      <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill yellow-back color-white exclusivo">Quero saber mais</button>
+      <a :href="lp.acf.botao_1_secao_5[0].link">
+        <button class="badge badge-pill yellow-back color-white exclusivo">{{lp.acf.botao_1_secao_5[0].texto}}</button>
       </a>
     </div>
   </div>
@@ -298,8 +298,8 @@
       </div>
       <div class="text-center text-lg-left mt-30 row-lg">
         <div class="d-none d-lg-block col-2 col-hd-1"></div>
-        <a href="https://checkout.solides.com.br/">
-          <button class="badge badge-pill mx-button red-back color-white">Compre Agora</button>
+        <a :href="lp.acf.botao_1_secao_6[0].link">
+          <button class="badge badge-pill mx-button red-back color-white">{{lp.acf.botao_1_secao_6[0].texto}}</button>
         </a>
       </div>
     </div>
@@ -315,8 +315,8 @@
       </div>
     </div>
     <div class="centerize-itens mt-0 mt-lg-30">
-      <a href="https://checkout.solides.com.br/">
-        <button class="badge badge-pill mx-button blue-back color-white mb-30">Comprar agora</button>
+      <a :href="lp.acf.botao_1_secao_7[0].link">
+        <button class="badge badge-pill mx-button blue-back color-white mb-30">{{lp.acf.botao_1_secao_7[0].texto}}</button>
       </a>
     </div>
   </div>
@@ -382,8 +382,8 @@
           <p><span class="font-weight-bold">Inclui:</span><br>Relatório DISC;<br>Plataforma web para gerenciar avaliações;</p>
         </div>
         <div class="col-12 col-lg-3 text-left text-lg-right">
-          <a href="https://checkout.solides.com.br/">
-            <button class="badge badge-pill mx-button blue-back color-white trtry-price">Comprar agora</button>
+          <a :href="lp.acf.botao_1_secao_tabela[0].link">
+            <button class="badge badge-pill mx-button blue-back color-white trtry-price">{{lp.acf.botao_1_secao_tabela[0].texto}}</button>
           </a>
         </div>
       </div>

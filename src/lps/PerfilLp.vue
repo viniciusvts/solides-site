@@ -539,7 +539,7 @@ export default {
     return {
       lpId: 6,
       lp: null,
-      mensagem: 'Carregando...',
+      mensagem: '',
       controls: {
         expandMenu: false,
         expandConteudo: false,

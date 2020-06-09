@@ -1,9 +1,6 @@
 <template>
   <div class="loading">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <img src="@/assets/img/icone_novo_camadas_2.gif" alt="" srcset="">
   </div>
 </template>
 

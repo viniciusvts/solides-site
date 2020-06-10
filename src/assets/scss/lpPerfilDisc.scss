@@ -537,6 +537,9 @@ a{
         margin-left: -25%;
         z-index: 9;
         position: relative;
+        @media (min-width: $smallPhones) {
+            margin-top: 20px;
+        }
         @media (min-width: $desktops) {
             width: 180%;
         }
@@ -602,6 +605,9 @@ a{
         height: 21rem;
         margin-left: 13%;
         z-index: 9;
+        @media (min-width: $smallPhones) {
+            margin-top: 20px;
+        }
         @media (min-width: $desktops) {
             width: 7rem;
             height: 37rem;

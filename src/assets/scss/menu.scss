@@ -1,0 +1,238 @@
+@import "./variables.scss";
+
+$primary: #2F0A77;
+
+.logo-menu{
+    width: 103px;
+    height: 23px;
+    @media (min-width: $desktops) {
+        width: 140px;
+        height: 32px;
+    }
+}
+.collapse{
+    margin-left: 0;
+    &.active{
+        display: block;
+    }
+    .navbar-nav{
+        margin-right: auto;
+        @media (min-width: $desktops) {
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 200px;
+            margin-top: 16px;
+        }
+    }
+}
+.navbar{
+    padding: 15px 20px;
+    @media (min-width: $desktops) {
+        padding: 5px;
+    }
+}
+
+nav{
+    position: fixed!important;
+    z-index: 10;
+    width: 100%;
+    top: 0;
+    background-color: white;
+
+    ul{
+        font-weight: bold;
+        p{
+            font-weight: 100;
+        }
+    }
+
+    @media (max-width: $desktops) {
+        .collapse.navbar-collapse{
+            padding-bottom: 30px;
+        }
+    }
+    @media (min-width: $desktops) and (max-width: $largeDesktops) {
+        .nav-item{
+            padding-left: 0;
+        }
+    }
+    @media (min-width: $desktops) {
+        transition: all 1s;
+        .navbar-brand{
+            padding-top: 0;
+        }
+        a, span, button.badge{
+            font-size: 18px;
+        }
+        &.scrolled{
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.23);
+            transition: all 1s;
+            // .nav-item{
+            //     a, span, ul li a{
+            //         padding: 0;
+            //     }
+            //     button.badge{
+            //         font-weight: bold;
+            //         padding: 8px 18px 10px 18px;
+            //         margin-top: -7px;
+            //     }
+            // }
+            // .collapse.navbar-collapse{
+            //     margin: 0;
+            // }
+        }
+        .showOnScroll{
+            display: none;
+            &.active{
+                display: block!important;
+            }
+        }
+    }
+    &.navbar.active{
+        background-color: $primary;
+        min-height: 100vh;
+        align-items: start;
+    }
+}
+.nav-item{
+    margin-top: 30px;
+    @media (min-width: $desktops) {
+        margin-top: 0;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+        position: relative;
+        min-height: 1px;
+        padding-right: 8px;
+        padding-left: 15px;
+        @media (min-width: $largeDesktops) {
+            padding-right: 15px;
+        }
+    }
+    .nav-link{
+        color: whitesmoke!important;
+        &:hover{
+            color: white;
+        }
+        @media (min-width: $desktops) {
+            color: $primary!important;
+            &:hover{
+                color: white;
+            }
+        }
+    }
+}
+.hambmenu{
+    height: 20px;
+}
+.dropdown-menu{
+    border: none;
+    background-color: inherit;
+    @media (min-width: $desktops) {
+        background-color: white;
+        box-shadow: 0 10px 40px 22px rgba(0, 0, 0, 0.09);
+        border-radius: 50px;
+        padding-top: 40px;
+        margin-left: -50%;
+        margin-top: 25px;//a setinha
+        &::before{
+            $height: 26px;
+            content: "";
+            position: absolute;
+            width: 0; 
+            height: 0; 
+            border-left: $height/2 solid transparent;
+            border-right: $height/2 solid transparent;
+            border-bottom: $height solid white;
+            left: 50%;
+            margin-left: -$height/2;
+            top: (1-$height);
+        }
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .5s, visibility .5s step-end;
+    }
+    &.conteudo{
+        @media (min-width: $desktops) {
+            transform: translateX(-60px)!important; // bootstrap
+            min-width: 330px;
+        }
+        @media (min-width: $largeDesktops) {
+            transform: translateX(-40px)!important; // bootstrap
+        }
+    }
+    &.cursos{
+        @media (min-width: $desktops) {
+            min-width: unset;
+            transform: translateX(-50px)!important; // bootstrap
+        }
+        @media (min-width: $largeDesktops) {
+            transform: translateX(-40px)!important; // bootstrap
+        }
+    }
+    .drop-item:hover{
+        text-decoration: none;
+        background-color: #f8f9fa;
+    }
+    .dropdown-item{
+        color: whitesmoke;
+        padding-left: 0;
+        @media (min-width: $desktops){
+            color: $primary;
+            padding: 0.25rem 1.5rem 0 1.5rem!important;
+            font-size: 16px;
+            font-weight: 900;
+        }
+        &:focus, &:active{
+            background-color: inherit;
+            outline: none;
+        }
+        &:hover{
+            text-decoration: none;
+            background-color: unset;
+        }
+        .saiba-mais{
+            margin-bottom: .1rem;
+            color: gray;
+        }
+    }
+    p{
+        @media (min-width: $desktops) {
+            font-size: 16px;
+            line-height: 22px;
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 1.5rem;
+            padding-right: 1rem;
+            margin-bottom: .4rem;
+            color: #727272;
+        }
+    }
+    &.active{
+        display: block;
+        @media (min-width: $desktops) {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity .5s, visibility .5s step-start;
+        }
+    }
+}
+.submenu{
+    padding-left: 7px;
+    img{
+        height: 10px;
+    }
+}
+.navbar-toggler:focus, .navbar-toggler:hover {
+    text-decoration: none;
+}
+button:focus {
+    outline: none;
+}
+.no-border {
+    border: none;
+}

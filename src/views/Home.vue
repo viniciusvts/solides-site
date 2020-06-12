@@ -1,11 +1,6 @@
 <template>
-  <div class="hello">
+  <div class="home">
     <h1>Home Landing Pages</h1>
-    <ul>
-      <li v-for="(route, index) in routes" :key="index">
-        <router-link :to="{ name: route.name }">{{route.name}}</router-link>
-      </li>
-    </ul>
   </div>
 </template>
 
@@ -17,11 +12,9 @@ export default {
       routes: null
     }
   },
-  created () {
-    this.routes = this.$router.options.routes
-  }
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+  @import '@/assets/scss/home.scss';
 </style>

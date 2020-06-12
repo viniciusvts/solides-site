@@ -1,0 +1,75 @@
+@import "./variables.scss";
+
+$color_light: #F4F0EB;
+.no-border{
+    border: none;
+}
+@each $marginPx in 30 50 {
+    .mt-#{$marginPx} {
+        margin-top: $marginPx + px;
+    }
+    .mb-#{$marginPx} {
+        margin-bottom: $marginPx + px;
+    }
+}
+.over-x-h{
+    overflow-x: hidden;
+}
+
+footer{
+    margin-top: -1px;
+    width: 100%;
+    bottom: 0;
+    background: #3f1d82;
+    img.logo-menu{
+        width: 156px;
+        height: 36px;
+        @media (min-width: $desktops) {
+            width: 140px;
+            height: 32px;
+        }
+    }
+    ul{
+        li{
+            margin-bottom: 15px;
+            @media (min-width: $desktops) {
+                margin-bottom: 0;
+            }
+            &, & *{
+                @media (min-width: $desktops) {
+                    font-size: 18px;
+                    line-height: 40px;
+                }
+            }
+            .estado{
+                font-weight: bold;
+            }
+            a{
+                color: $color_light;
+                &:hover{
+                    color: $color_light;
+                    text-decoration: none;
+                }
+            }
+        }
+        &.numbers{
+            @media (min-width: $desktops) {
+                margin-left: auto;
+                width: fit-content;
+            }
+        }
+        &.social{
+            @media (min-width: $desktops) {
+                margin-left: auto;
+                width: fit-content;
+            }
+            img{
+                padding-right: 10px;
+                height: 1rem;
+                @media (min-width: $desktops) {
+                    height: .6rem;
+                }
+            }
+        }
+    }
+}

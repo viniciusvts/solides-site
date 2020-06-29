@@ -1,0 +1,59 @@
+@import './variables';
+$purple: #5F4A87;
+.como-estamos-ajudando{
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    overflow-y: hidden;
+    .vertical-pill{
+        position: absolute;
+        border-radius: 100px;
+        min-width: 10px;
+        min-height: 20px;
+        z-index: 0;
+        transform: translateY(-50px);
+        @media (min-width: $desktops) {
+            left: 133px;
+            width: 211px;
+            height: 1000px;
+            transform: translateY(-350px);
+            z-index: -1;
+        }
+        &.yellow{
+            background: #FFBA00;
+        }
+    }
+    h2{
+        font-weight: bold;
+        font-size: 42px;
+        line-height: 50px;
+        font-feature-settings: 'liga' off;
+        color: $purple;
+        ///
+        max-width: 480px;
+        margin-bottom: 100px;
+    }
+    .text{
+        p{
+            font-family: Lato;
+            font-weight: 300;
+            font-size: 38px;
+            line-height: 46px;
+            margin-bottom: 100px;
+            @media (min-width: $desktops) {
+                &:nth-child(n+4){
+                    transform: translateX(-150px);
+                    max-width: 750px;
+                }
+            }
+            strong{
+                font-weight: 900;
+                color: $purple;
+            }
+        }
+    }
+    .container{
+        @media (min-width: $hdDesktops) {
+            max-width: 1240px;
+        }
+    }
+}

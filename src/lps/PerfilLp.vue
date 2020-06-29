@@ -87,8 +87,8 @@
             class="dropdown-menu cursos"
             aria-labelledby="navbarDropdown">
               <div class="drop-item">
-                <a class="dropdown-item" href="https://universidade.solides.com.br/course/people-analytics/">Engenharia de Cargos<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-                <a class="no-decoration" href="https://universidade.solides.com.br/course/people-analytics/">
+                <a class="dropdown-item" href="https://universidade.solides.com.br/course/engenharia-de-cargos-do-recrutamento-a-retencao/">Engenharia de Cargos<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a class="no-decoration" href="https://universidade.solides.com.br/course/engenharia-de-cargos-do-recrutamento-a-retencao/">
                   <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
                 </a>
               </div>
@@ -105,8 +105,8 @@
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">Recrutamento e Seleção<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-                <a class="no-decoration" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">
+                <a class="dropdown-item" href="https://universidade.solides.com.br/course/recrutamento-e-selecao/">Recrutamento e Seleção<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a class="no-decoration" href="https://universidade.solides.com.br/course/recrutamento-e-selecao/">
                   <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
                 </a>
               </div>
@@ -407,7 +407,7 @@
       </p>
     </div>
   </div>
-  <img class="frame" src="@/assets/img/svg/frame-form.svg">
+  <img class="frame p-r" src="@/assets/img/svg/frame-form.svg">
   <!-- melhor conteúdo sobre o profiler -->
   <div class="container pt-60 pb-2">
     <div class="row ml-0 bestcontent-profiler">
@@ -417,46 +417,44 @@
       <div class="text-left to-right-70 mt-30 mt-xs-0 mt-lg-5">
         <h2 v-html="lp.acf.titulo10" class="color-almostBlack bestContent"></h2>
       </div>
-      <div class="profiler-content-lg d-none d-lg-block">
-        <a class="color-almostBlack" :href="lp.acf.link_1_secao_10">
-          <div class="row mt-70">
-            <div class="col-5">
-              <img class="ml"
-              :src="lp.acf.imagem_1_secao_10.sizes.large"
-              :alt="lp.acf.imagem_1_secao_10.alt">
+      <div class="blog-cards d-none d-lg-block">
+        <div class="container">
+          <div class="cards row">
+            <div class="col-12 col-lg-4">
+              <a :href="lp.acf.link_1_secao_10">
+                <div class="card">
+                  <img :src="lp.acf.imagem_1_secao_10.sizes.large"
+                  :alt="lp.acf.imagem_1_secao_10.alt"
+                  class="img-header">
+                  <h3 v-html="lp.acf.subtitulo_1_secao_10" class="title"></h3>
+                  <p v-html="lp.acf.texto_1_secao_10" class="text"></p>
+                </div>
+              </a>
             </div>
-            <div class="col-7 trtrx-bcf">
-              <h2 v-html="lp.acf.subtitulo_1_secao_10" class="bestContentSub right"></h2>
-              <p v-html="lp.acf.texto_1_secao_10"></p>
+            <div class="col-12 col-lg-4">
+              <a :href="lp.acf.link_2_secao_10">
+                <div class="card">
+                  <img :src="lp.acf.imagem_2_secao_10.sizes.large"
+                  :alt="lp.acf.imagem_2_secao_10.alt"
+                  class="img-header">
+                  <h3 v-html="lp.acf.subtitulo_2_secao_10" class="title"></h3>
+                  <p v-html="lp.acf.texto_2_secao_10" class="text"></p>
+                </div>
+              </a>
             </div>
-          </div>
-        </a>
-        <a class="color-almostBlack" :href="lp.acf.link_2_secao_10">
-          <div class="row mt-70">
-            <div class="col-7 text-right right-t">
-              <h2 v-html="lp.acf.subtitulo_2_secao_10" class="bestContentSub left"></h2>
-              <p v-html="lp.acf.texto_2_secao_10" class="left"></p>
-            </div>
-            <div class="col-5">
-              <img class="mr"
-              :src="lp.acf.imagem_2_secao_10.sizes.large"
-              :alt="lp.acf.imagem_2_secao_10.alt">
-            </div>
-          </div>
-        </a>
-        <a class="color-almostBlack" :href="lp.acf.link_3_secao_10">
-          <div class="row mt-70">
-            <div class="col-5">
-              <img class="ml"
-              :src="lp.acf.imagem_3_secao_10.sizes.large"
-              :alt="lp.acf.imagem_3_secao_10.alt">
-            </div>
-            <div class="col-7 trtrx-bcf">
-              <h2 v-html="lp.acf.subtitulo_3_secao_10" class="bestContentSub right"></h2>
-              <p v-html="lp.acf.texto_3_secao_10"></p>
+            <div class="col-12 col-lg-4">
+              <a :href="lp.acf.link_1_secao_10">
+                <div class="card">
+                  <img :src="lp.acf.imagem_3_secao_10.sizes.large"
+                  :alt="lp.acf.imagem_3_secao_10.alt"
+                  class="img-header">
+                  <h3 v-html="lp.acf.subtitulo_3_secao_10" class="title"></h3>
+                  <p v-html="lp.acf.texto_3_secao_10" class="text"></p>
+                </div>
+              </a>
             </div>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </div>

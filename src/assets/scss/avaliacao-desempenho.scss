@@ -1,0 +1,62 @@
+@import './variables.scss';
+.avaliacao-desempenho{
+    padding-top: 125px;
+    padding-bottom: 175px;
+    h2{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 38px;
+        line-height: 46px;
+        font-feature-settings: 'liga' off;
+        color: #000000;
+        ///
+        margin-bottom: 20px;
+    }
+    .text{
+        width: 85%;
+        margin-left: auto;
+        *{
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 29px;
+            display: flex;
+            align-items: center;
+            ///
+            margin-bottom: 40px;
+            width: 101%;
+        }
+    }
+    button{
+        &.purple{
+            background: #5F4A87;
+            border: 2px solid #5F4A87;
+        }
+        &.badge{
+            padding: 9.5px 8px;
+            font-size: 13px;
+            cursor: pointer;
+            @media (min-width: $smallPhones) {
+                font-size: 15px;
+            }
+            @media (min-width: $tablets) {
+                padding: 14px 35px;
+                font-size: 19px;
+            }
+            @media (min-width: $desktops) {
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 29px;
+                text-align: center;
+            }
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+    .vertical-center{
+        height: fit-content;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}

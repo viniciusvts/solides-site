@@ -1,0 +1,39 @@
+@import './variables.scss';
+.principais-clientes{
+    padding-top: 175px;
+    padding-bottom: 100px;
+    h2{  
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 42px;
+        line-height: 50px;
+        font-feature-settings: 'liga' off;
+        color: #5F4A87;
+        ///
+        margin-bottom: 54px;
+    }
+    .vertical-pill{
+        position: absolute;
+        border-radius: 100px;
+        min-width: 10px;
+        min-height: 20px;
+        z-index: -1;
+        transform: translateY(-50px);
+        @media (min-width: $desktops) {
+            right: 123px;
+            width: 211px;
+            height: 800px;
+            transform: translateY(-100px);
+        }
+        &.green{
+            background: #57DD6D;
+        }
+    }
+    .clientes{
+        img{
+            height: 111px;
+            margin-bottom: 60px;
+        }
+    }
+}

@@ -88,8 +88,8 @@
             class="dropdown-menu cursos"
             aria-labelledby="navbarDropdown">
               <div class="drop-item">
-                <a class="dropdown-item" href="https://universidade.solides.com.br/course/people-analytics/">Engenharia de Cargos<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-                <a class="no-decoration" href="https://universidade.solides.com.br/course/people-analytics/">
+                <a class="dropdown-item" href="https://universidade.solides.com.br/course/engenharia-de-cargos-do-recrutamento-a-retencao/">Engenharia de Cargos<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a class="no-decoration" href="https://universidade.solides.com.br/course/engenharia-de-cargos-do-recrutamento-a-retencao/">
                   <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
                 </a>
               </div>
@@ -106,8 +106,8 @@
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">Recrutamento e Seleção<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-                <a class="no-decoration" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">
+                <a class="dropdown-item" href="https://universidade.solides.com.br/course/recrutamento-e-selecao/">Recrutamento e Seleção<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a class="no-decoration" href="https://universidade.solides.com.br/course/recrutamento-e-selecao/">
                   <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
                 </a>
               </div>

@@ -1,12 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Api from '@/services/ApiRest.js'
 
 const Home = () => import('@/views/Home.vue')
 const PerfilLp = () => import('@/lps/PerfilLp.vue')
 
 Vue.use(VueRouter)
-// Vue.use(Api)
 
 const routes = [
   {
@@ -15,7 +13,7 @@ const routes = [
     component: Home,
   },
   {
-    path: '/perfil-disc-lp/',
+    path: '/lps/perfil-disc-lp/',
     name: 'perfil-lp',
     component: PerfilLp,
   },

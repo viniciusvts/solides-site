@@ -4,7 +4,7 @@
     <transition mode="out-in">
       <router-view/>
     </transition>
-    <Foot v-if="!isLP" />
+    <Foot class="p-r" v-if="!isLP" />
   </div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap');
 @import "@/assets/scss/variables.scss";
 *, ::after, ::before{
     font-family: 'Lato', 'Roboto', sans-serif;
@@ -42,7 +42,8 @@ export default {
         font-size: 25px;
     }
     @media (min-width: $largeDesktops) {
-        font-size: 34px;
+        font-size: 31px;
     }
 }
+.p-r{position: relative;}
 </style>

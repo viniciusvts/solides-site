@@ -1,8 +1,8 @@
 <template>
-<div>
+<div v-if="footer">
   <img class="w-100" src="@/assets/img/svg/footer-frame.svg" alt="">
   <footer class="over-x-h">
-    <div v-if="footer" class="container">
+    <div class="container">
       <div class="row px-4">
         <div class="col-12">
           <img class="logo-menu mb-50" 

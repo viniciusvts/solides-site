@@ -9,10 +9,10 @@ html{
     overflow-x: hidden
 }
 .home{
-    background-color: whitesmoke;
-    z-index: -1;
-    margin-top: 60px;
-    min-height: 2000px;
+    padding-top: 60px;
+    @media (min-width: $desktops) {
+        padding-top: 80px;
+    }
 }
 /// correção da barra de cookie
 #hs-eu-cookie-confirmation,

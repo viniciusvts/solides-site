@@ -1,0 +1,84 @@
+@import "./variables.scss";
+$purple: #5F4A87;
+$purple_border: #2F0A77;
+.auto-rs{
+    .content{
+        background: #F3F3F3;
+        padding-top: 4.5rem;
+        padding-bottom: 1rem;
+    }
+    h2{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 42px;
+        line-height: 50px;
+        text-align: center;
+        color: #000000;
+        ///
+        margin-bottom: 26px;
+    }
+    .text{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 31px;
+        line-height: 37px;
+        text-align: center;
+        color: #000000;
+        ///
+        margin-bottom: 74px;
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width: $desktops) {
+            max-width: 714px;
+        }
+    }
+    .centerize{
+        width: fit-content;
+        margin-right: auto;
+        margin-left: auto;
+        button{
+            margin: 0 10px;
+        }
+    }
+    .frame{
+        width: 100%;
+        height: 75px;
+        @media (min-width: $smallPhones) {
+            height: 100px;
+        }
+        @media (min-width: $tablets) {
+            height: 150px;
+        }
+        @media (min-width: $desktops) {
+            height: 150px;
+        }
+    }
+    button{
+        &.badge{
+            padding: 9.5px 8px;
+            font-size: 13px;
+            cursor: pointer;
+            @media (min-width: $smallPhones) {
+                font-size: 15px;
+            }
+            @media (min-width: $tablets) {
+                padding: 12px 20px;
+                font-size: 19px;
+            }
+            @media (min-width: $desktops) {
+                font-size: 25.5px;
+            }
+        }
+        &.purple-back{
+            background: $purple;
+            border: 2px solid $purple_border;
+        }
+        &.purple-outline{
+            color: $purple;
+            background-color: inherit;
+            border: 2px solid $purple;
+        }
+    }
+}

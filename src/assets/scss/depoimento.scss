@@ -4,17 +4,32 @@
         background-color: #F3F3F3;
         padding-top: 2rem;
         padding-bottom: 6rem;
+        @media (min-width: $desktops) {
+            padding-top: 20px;
+            padding-bottom: 70px;
+        }
         h2{
             font-family: Lato;
             font-style: normal;
             font-weight: bold;
-            font-size: 42px;
-            line-height: 50px;
+            font-size: 24px;
+            line-height: 29px;
             font-feature-settings: 'liga' off;
             color: #5F4A87;
             ///
             text-align: center;
-            margin-bottom: 78px;
+            margin-bottom: 35px;
+            width: 200px;
+            margin-left: 100px;
+            text-align: left;
+            @media (min-width: $desktops) {
+                font-size: 42px;
+                line-height: 50px;
+                margin-bottom: 78px;
+                width: unset;
+                margin-left: unset;
+                text-align: center;
+            }
         }
     }
     .frame{
@@ -36,14 +51,73 @@
     // owl changes
     ///overflow estava escondendo o box shadow
     .owl-carousel .owl-stage-outer{
-        overflow: unset;
+        overflow: hidden;
+        @media (min-width: $desktops) {
+            overflow: unset;
+        }
     }
     .owl-item{
+        .item{
+            display: flex;
+        }
         iframe{
-            border-radius: 30px;
+            border-radius: 10px;
+            width: 262px;
+            height: 119px;
+            margin-left: auto;
+            margin-right: auto;
+            @media (min-width: $desktops) {
+                border-radius: 30px;
+                width: 615px;
+                height: 320px;
+            }
         }
         &.active.center iframe{
             box-shadow: 0px 50px 20px -20px rgba(0, 0, 0, 0.23);
+        }
+    }
+    @media (max-width: $desktops) {
+        ///dots
+        $red: #DA222B;
+        $yellow:#FFB800;
+        $green: #26C740;
+        $blue: #0EA2D0;
+        /// define tamanho dos quadrados da nav
+        .owl-theme .owl-dots .owl-dot span {
+            width: 20px;
+            height: 5px;
+            margin: 0;
+            border-radius: 0;
+            // @media (min-width: $desktops) {
+            //     width: 20px;
+            //     height: 10px;
+            // }
+        }
+        /// difine um hover de leve
+        .owl-theme .owl-dots .owl-dot:hover span {
+            transform: scale(1.2);
+        }
+        /// define a ordem de cores
+        .owl-theme .owl-dots .owl-dot:nth-child(4n+1) span {
+            background-color: $red;
+        }
+        .owl-theme .owl-dots .owl-dot:nth-child(4n+2) span {
+            background-color: $yellow;
+        }
+        .owl-theme .owl-dots .owl-dot:nth-child(4n+3) span {
+            background-color: $green;
+        }
+        .owl-theme .owl-dots .owl-dot:nth-child(4n) span {
+            background-color: $blue;
+        }
+        // define que o primeiro e último tem radius
+        .owl-theme .owl-dots .owl-dot:first-child span {
+            border-bottom-left-radius: 50px;
+            border-top-left-radius: 50px;
+        }
+        .owl-theme .owl-dots .owl-dot:last-child span {
+            border-bottom-right-radius: 50px;
+            border-top-right-radius: 50px;
         }
     }
 }

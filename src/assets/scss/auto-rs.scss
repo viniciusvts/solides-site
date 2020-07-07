@@ -11,26 +11,34 @@ $purple_border: #2F0A77;
         font-family: Lato;
         font-style: normal;
         font-weight: 900;
-        font-size: 42px;
-        line-height: 50px;
+        font-size: 24px;
+        line-height: 29px;
         text-align: center;
         color: #000000;
         ///
         margin-bottom: 26px;
+        @media (min-width: $desktops) {
+            font-size: 42px;
+            line-height: 50px;
+        }
     }
     .text{
         font-family: Lato;
         font-style: normal;
         font-weight: normal;
-        font-size: 31px;
-        line-height: 37px;
+        font-size: 16px;
+        line-height: 19px;
         text-align: center;
         color: #000000;
         ///
-        margin-bottom: 74px;
+        margin-bottom: 35px;
         margin-left: auto;
         margin-right: auto;
+        max-width: 230px;
         @media (min-width: $desktops) {
+            font-size: 31px;
+            line-height: 37px;
+            margin-bottom: 74px;
             max-width: 714px;
         }
     }
@@ -38,6 +46,7 @@ $purple_border: #2F0A77;
         width: fit-content;
         margin-right: auto;
         margin-left: auto;
+        text-align: center;
         button{
             margin: 0 10px;
         }
@@ -57,8 +66,9 @@ $purple_border: #2F0A77;
     }
     button{
         &.badge{
-            padding: 9.5px 8px;
+            padding: 7px 15px;
             font-size: 13px;
+            margin-bottom: 5px;
             cursor: pointer;
             @media (min-width: $smallPhones) {
                 font-size: 15px;
@@ -80,5 +90,8 @@ $purple_border: #2F0A77;
             background-color: inherit;
             border: 2px solid $purple;
         }
+    }
+    .tr-roty-180 {
+        transform: rotateY(180deg);
     }
 }

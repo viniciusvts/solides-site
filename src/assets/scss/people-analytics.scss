@@ -1,41 +1,77 @@
 @import './variables.scss';
 .people-analytics{
     .content{
-        padding-top: 250px;
-        padding-bottom: 200px;
+        padding-top: 70px;
+        padding-bottom: 50px;
         background-color: #F3F3F3;
+        @media (min-width: $desktops) {
+            padding-top: 250px;
+            padding-bottom: 200px;
+        }
     }
     h2{
         font-family: Lato;
         font-style: normal;
         font-weight: bold;
-        font-size: 38px;
-        display: flex;
+        font-size: 24px;
+        line-height: 29px;
         align-items: center;
         letter-spacing: -0.05em;
-        margin-bottom: 27px;
+        margin-bottom: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width: $desktops) {
+            font-size: 38px;
+            line-height: 46px;
+            margin-bottom: 27px;
+        }
+    }
+    .imagem{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        @media (min-width: $desktops) {
+            margin-bottom: 0;
+        }
     }
     .text{
+        margin-bottom: 30px;
+        @media (min-width: $desktops) {
+            margin-bottom: 0;
+        }
         *{
             font-family: Lato;
             font-style: normal;
             font-weight: 500;
-            font-size: 24px;
-            line-height: 32px;
+            font-size: 16px;
+            line-height: 24px;
             display: flex;
             align-items: center;
             ///
-            width: 101%;
+            width: 282px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            @media (min-width: $desktops) {
+                font-size: 24px;
+                line-height: 32px;
+                width: 101%;
+                text-align: left;
+                margin-left: unset;
+                margin-right: unset;
+            }
         }
     }
     button{
         font-weight: 900;
-        font-size: 24px;
         line-height: 29px;
         text-align: center;
         &.badge{
-            padding: 9.5px 8px;
+            padding: 3px 20px;
             font-size: 13px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
             cursor: pointer;
             @media (min-width: $smallPhones) {
                 font-size: 15px;
@@ -43,6 +79,8 @@
             @media (min-width: $tablets) {
                 padding: 12px 20px;
                 font-size: 19px;
+                margin-left: unset;
+                margin-right: unset;
             }
             @media (min-width: $desktops) {
                 font-size: 25.5px;

@@ -1,0 +1,27 @@
+@import './variables.scss';
+.title-h2-center{
+    text-align: center;
+    background-color: #F3F3F3;
+    padding: 35px 0;
+    @media (min-width: $desktops) {
+        padding: 50px 0;
+    }
+    h2{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        font-feature-settings: 'liga' off;
+        margin-bottom: 0;
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width: $desktops) {
+            font-size: 42px;
+            line-height: 50px;
+            width: unset;
+        }
+    }
+  }

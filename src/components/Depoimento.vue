@@ -48,7 +48,7 @@ export default {
         0: {
           items: 1,
           nav: false,
-          loop: true
+          loop: false
         },
         1200: {
           items: 2,

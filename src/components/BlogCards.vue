@@ -4,7 +4,7 @@
       <div class="vertical-pill red"></div>
       <h2 class="title">Melhores conteúdos sobre gestão de pessoas</h2>
       <div class="cards row">
-        <div v-for="n in 3" :key="n" class="col-12 col-lg-4">
+        <div v-for="n in 3" :key="n" class="col-10 mx-auto col-lg-4">
           <a href="javascript: void(0)">
             <div class="card">
               <img src="@/assets/img/guia-da-metodologia.png" alt="" class="img-header">

@@ -2,8 +2,9 @@
   <div class="avaliacao-desempenho">
     <div class="container">
       <div class="row">
-        <div class="col-6 text-right vertical-center">
+        <div class="col-12 col-lg-6 text-center text-lg-right vertical-center">
           <h2>Avaliação de desempenho</h2>
+          <img src="@/assets/img/avaliacao-desempenho.png" alt="" class="img-mobile d-lg-none">
           <div class="text">
             <p>
               Conheça o modelo rápido eficiente e avançado de análise de desempenho.
@@ -14,9 +15,9 @@
             Saiba mais sobre a Avaliação
           </button>
         </div>
-        <div class="col-1"></div>
-        <div class="col-5">
-          <img src="@/assets/img/avaliacao-desempenho.png" alt="" class="w-100">
+        <div class="col-1 d-none d-lg-block"></div>
+        <div class="col-12 col-lg-5">
+          <img src="@/assets/img/avaliacao-desempenho.png" alt="" class="w-100 d-none d-lg-block">
         </div>
       </div>
     </div>

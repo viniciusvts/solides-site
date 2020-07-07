@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-    <img class="frame" src="@/assets/img/svg/frame-form-home.svg" alt="">
+    <img class="frame tr-roty-180" src="@/assets/img/svg/frame-form-home.svg" alt="">
   </div>
 </template>
 

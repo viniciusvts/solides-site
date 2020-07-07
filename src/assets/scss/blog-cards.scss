@@ -1,19 +1,30 @@
 @import "./variables.scss";
 .blog-cards{
-    background-color: white;
-    padding: 120px 0 60px;
+    padding: 40px 0;
+    @media (min-width: $desktops) {
+        padding: 120px 0 40px;
+    }
     h2{
         z-index: 1;
         &.title{
             font-family: Lato;
             font-style: normal;
             font-weight: 900;
-            font-size: 42px;
-            line-height: 50px;
+            font-size: 20px;
+            line-height: 24px;
             color: #000000;
 
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             padding-left: 10px;
+            width: 175px;
+            margin-left: 60px;
+            @media (min-width: $desktops) {
+                font-size: 42px;
+                line-height: 50px;
+                margin-bottom: 80px;
+                width: unset;
+                margin-left: unset;
+            }
         }
     }
     .cards{
@@ -22,32 +33,50 @@
     }
     .card{
         background-color: #F3F3F3;
-        padding: 35px 29px;
+        padding: 20px;
         border-radius: 10px;
         box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+        margin-bottom: 15px;
+        @media (min-width: $desktops) {
+            padding: 35px 29px;
+            margin-bottom: 0;
+        }
         img.img-header{
             width: 100%;
-            height: 227px;
+            height: 130px;
             object-fit: cover;
             margin-bottom: 20px;
+            @media (min-width: $desktops) {
+                height: 227px;
+            }
         }
         h3.title{
             font-family: Lato;
             font-style: normal;
             font-weight: bold;
-            font-size: 18px;
-            line-height: 22px;
+            font-size: 12px;
+            line-height: 14px;
             color: #000000;
             max-width: 90%;
+            margin-bottom: 5px;
+            @media (min-width: $desktops) {
+                margin-bottom: 20px;
+                font-size: 18px;
+                line-height: 22px;
+            }
         }
         p.text{
             font-family: Lato;
             font-style: normal;
             font-weight: normal;
-            font-size: 14px;
-            line-height: 17px;
+            font-size: 8px;
+            line-height: 10px;
             color: #3D3B3B;
             margin-bottom: 0;
+            @media (min-width: $desktops) {
+                font-size: 14px;
+                line-height: 17px;
+            }
         }
     }
     .vertical-pill{
@@ -55,9 +84,15 @@
         border-radius: 100px;
         min-width: 10px;
         min-height: 20px;
-        z-index: 0;
+        z-index: -1;
         transform: translateY(-50px);
+        ///
+        left: 20px;
+        width: 50px;
+        height: 250px;
+        transform: translateY(-110px);
         @media (min-width: $desktops) {
+            left: unset;
             right: 123px;
             width: 211px;
             height: 1100px;

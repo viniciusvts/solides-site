@@ -2,28 +2,44 @@
 $purple: #5F4A87;
 $purple_border: #2F0A77;
 .rh-poderoso{
-    padding-top: 150px;
-    padding-bottom: 240px;
+    padding-top: 65px;
+    padding-bottom: 60px;
+    @media (min-width: $desktops) {
+        padding-top: 150px;
+        padding-bottom: 240px;
+    }
     h2{
         font-weight: bold;
-        font-size: 42px;
-        line-height: 50px;
-        margin-bottom: 45px;
+        font-size: 24px;
+        line-height: 29px;
+        margin-bottom: 35px;
         @media (min-width: $desktops) {
             max-width: 800px;
+            font-size: 42px;
+            line-height: 50px;
+            margin-bottom: 45px;
         }
     }
     .text{
         font-style: normal;
         font-weight: normal;
-        font-size: 31px;
-        line-height: 37px;
-        margin-bottom: 42px;
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 93px;
+        @media (min-width: $desktops) {
+            font-size: 31px;
+            line-height: 37px;
+            margin-bottom: 42px;
+        }
     }
     button{
         margin-right: 20px;
+        margin-bottom: 10px;
+        @media (min-width: $desktops) {
+            margin-bottom: 0px;
+        }
         &.badge{
-            padding: 9.5px 8px;
+            padding: 6px 8px;
             font-size: 13px;
             cursor: pointer;
             @media (min-width: $smallPhones) {
@@ -57,10 +73,11 @@ $purple_border: #2F0A77;
     .vertical-pill{
         position: absolute;
         border-radius: 100px;
-        min-width: 10px;
-        min-height: 20px;
+        right: 19px;
+        width: 54px;
+        height: 327px;
         z-index: -2;
-        transform: translateY(-50px);
+        transform: translateY(-35px);
         @media (min-width: $desktops) {
             right: 123px;
             width: 211px;

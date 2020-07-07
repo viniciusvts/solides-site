@@ -2,8 +2,9 @@
   <div class="box-cultural">
     <div class="container">
       <div class="row">
-        <div class="col-6 text-right vertical-center">
+        <div class="col-12 col-lg-6 text-center text-lg-right vertical-center">
           <h2 class="novo">9box Cultural</h2>
+          <img src="@/assets/img/box-cultural.png" alt="" class="img-mobile d-lg-none">
           <div class="text">
             <p>Entenda mais sobre o 9box e como a Sólides está revolucionando esse método.</p>
           </div>
@@ -11,9 +12,9 @@
             Descubra todas as novidades
           </button>
         </div>
-        <div class="col-1"></div>
-        <div class="col-5">
-          <img src="@/assets/img/box-cultural.png" alt="" class="w-100">
+        <div class="col-1 d-none d-lg-block"></div>
+        <div class="col-12 col-lg-5">
+          <img src="@/assets/img/box-cultural.png" alt="" class="w-100 d-none d-lg-block">
         </div>
       </div>
     </div>

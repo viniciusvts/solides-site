@@ -3,12 +3,15 @@
     <div class="content">
       <div class="container">
         <div class="row">
-          <div class="col-5">
+          <div class="d-lg-none col-12">
+            <h2 class="text-center">People Analytics</h2>
+          </div>
+          <div class="col-11 col-lg-5 imagem">
             <img src="@/assets/img/people-analytics.png" alt="" class="w-100">
           </div>
-          <div class="col-1"></div>
-          <div class="col-6 vertical-center">
-            <h2>People Analytics</h2>
+          <div class="d-none d-lg-block col-1"></div>
+          <div class="col-12 col-lg-6 vertical-center">
+            <h2 class="d-none d-lg-block">People Analytics</h2>
             <div class="text">
               <p>Pessoas tranformam empresas. É por isso que a Sólides tem ferramentas
                 que encontram o colaborador certo e criam um processo seletivo mais ágil.

@@ -1,48 +1,77 @@
 @import './variables';
 $purple: #5F4A87;
 .como-estamos-ajudando{
-    padding-top: 6rem;
-    padding-bottom: 4rem;
+    padding-top: 40px;
+    padding-bottom: 30px;
     overflow-y: hidden;
+    @media (min-width: $desktops) {
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+    }
     .vertical-pill{
         position: absolute;
         border-radius: 100px;
         min-width: 10px;
         min-height: 20px;
-        z-index: 0;
+        z-index: -1;
         transform: translateY(-50px);
         @media (min-width: $desktops) {
             left: 133px;
             width: 211px;
             height: 1000px;
             transform: translateY(-350px);
-            z-index: -1;
         }
         &.yellow{
             background: #FFBA00;
+            display: none;
+            @media (min-width: $desktops) {
+                display: block;
+            }
+        }
+        &.green{
+            background: #57DD6D;
+            width: 54px;
+            height: 330px;
+            right: 26px;
+            transform: translateY(-70px);
+            @media (min-width: $desktops) {
+                display: none;
+            }
         }
     }
     h2{
         font-weight: bold;
-        font-size: 42px;
-        line-height: 50px;
+        font-size: 24px;
+        line-height: 29px;
         font-feature-settings: 'liga' off;
         color: $purple;
         ///
         max-width: 480px;
-        margin-bottom: 100px;
+        margin-bottom: 40px;
+        @media (min-width: $desktops) {
+            font-size: 42px;
+            line-height: 50px;
+            margin-bottom: 100px;
+        }
     }
     .text{
         p{
             font-family: Lato;
             font-weight: 300;
-            font-size: 38px;
-            line-height: 46px;
-            margin-bottom: 100px;
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 30px;
+            &:nth-child(n+4){
+                width: 240px;
+            }
             @media (min-width: $desktops) {
+                font-size: 38px;
+                line-height: 46px;
+                margin-bottom: 100px;
                 &:nth-child(n+4){
                     transform: translateX(-150px);
                     max-width: 750px;
+                    width: unset;
                 }
             }
             strong{

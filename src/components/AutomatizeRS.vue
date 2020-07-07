@@ -7,12 +7,12 @@
           <p>Com a sólides você automatiza seus processos, tornado-os muito mais eficientes</p>
         </div>
         <div class="centerize">
-          <a href="#">
+          <router-link :to="{ name: 'Contato' }">
             <button class="badge badge-pill purple-back">Experimente grátis</button>
-          </a>
-          <a href="#">
+          </router-link>
+          <router-link :to="{ name: 'Contato' }">
             <button class="badge badge-pill purple-outline">Fale com um especialista</button>
-          </a>
+          </router-link>
         </div>
       </div>
     </div>

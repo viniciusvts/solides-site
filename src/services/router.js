@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 const Home = () => import('@/views/Home.vue')
+const Contato = () => import('@/views/Contato.vue')
 const PerfilLp = () => import('@/lps/PerfilLp.vue')
 
 Vue.use(VueRouter)
@@ -11,6 +12,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+  },
+  {
+    path: '/contato',
+    name: 'Contato',
+    component: Contato,
   },
   {
     path: '/lps/perfil-disc-lp/',

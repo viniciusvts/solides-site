@@ -10,12 +10,12 @@
           desenvolvimento e retenção de profissionais</p>
       </div>
       <div class="buttons">
-        <a href="#">
+        <router-link  :to="{ name: 'Contato' }">
           <button class="badge badge-pill purple-back">Experimente grátis</button>
-        </a>
-        <a href="#">
+        </router-link>
+        <router-link  :to="{ name: 'Contato' }">
           <button class="badge badge-pill purple-outline">Fale com um especialista</button>
-        </a>
+        </router-link>
       </div>
     </div>
   </div>

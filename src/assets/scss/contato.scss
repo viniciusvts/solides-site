@@ -1,0 +1,158 @@
+@import "./variables.scss";
+$cinza: #F3F3F3;
+body, nav{
+    background-color: $cinza;
+}
+.backwhite{
+    background-color: white;
+    @media (min-width: $desktops) {
+        background-color: $cinza;
+    }
+}
+.absolute.backwhite{
+    width: 95%;
+    height: 500px;
+    position: absolute;
+}
+.contato{
+    padding-top: 150px;
+    @media (min-width: $desktops) {
+        padding-top: 180px;
+    }
+    h1{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        width: 270px;
+        margin-bottom: 25px;
+        @media (min-width: $desktops) {
+            font-size: 48px;
+            line-height: 58px;
+            text-align: center;
+            width: unset;
+            max-width: 900px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 25px;
+        }
+    }
+    p{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        @media (min-width: $desktops) {
+            font-size: 33px;
+            line-height: 40px;
+            text-align: center;
+        }
+        &.first{
+            margin-bottom: 190px;
+            width: 215px;
+            @media (min-width: $desktops) {
+                margin-bottom: 25px;
+                width: unset;
+            }
+        }
+        &.detail{
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+            text-align: center;
+
+            color: #5F4A87;
+            margin-top: 190px;
+            margin-bottom: 0;
+            padding-bottom: 30px;
+            @media (min-width: $desktops) {
+                font-size: 36px;
+                line-height: 43px;
+                text-align: left;
+                margin-top: 120px;
+                max-width: 490px;
+                margin-left: auto;
+            }
+        }
+    }
+    h2{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        margin-bottom: 40px;
+        width: 210px;
+        @media (min-width: $desktops) {
+            font-size: 36px;
+            line-height: 43px;
+            margin-bottom: 100px;
+            width: 570px;
+        }
+    }
+    form{
+        background: #5F4A87;
+        box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        text-align: center;
+        width: 235px;
+        @media (min-width: $desktops) {
+            width: 800px;
+        }
+        input{
+            background: #FFFFFF;
+            border: 1px solid rgba(66, 82, 110, 0.25);
+            box-shadow: inset 0px 1px 3px #DDDDDD;
+            border-radius: 60px;
+            margin: 5px auto;
+            padding: 4px 10px;
+            font-weight: bold;
+            font-size: 8px;
+            line-height: 10px;
+            @media (min-width: $desktops) {
+                margin: 20px auto;
+                padding: 20px 30px;
+                font-size: 18px;
+                line-height: 22px;
+            }
+            &::placeholder{
+                color: #878787;
+            }
+            &:first-child{
+                margin-top: 20px;
+                @media (min-width: $desktops) {
+                    margin-top: 60px;
+                }
+            }
+            &:last-of-type{
+                margin-bottom: 16px;
+                @media (min-width: $desktops) {
+                    margin-bottom: 40px;
+                }
+            }
+        }
+        button{
+            background: #FAB80E;
+            border: 1px solid #CC9C1F;
+            border-radius: 33px;;
+            font-weight: 900;
+            font-size: 8px;
+            line-height: 10px;
+            text-align: center;
+            
+            color: #2F0A77;
+            padding: 3px 5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            @media (min-width: $desktops) {
+                font-size: 18px;
+                line-height: 22px;
+                padding: 20px 50px;
+                margin-bottom: 60px;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@import './variables.scss';
+.recrutamento-e-selecao-view{
+    padding-top: 60px;
+    @media (min-width: $desktops) {
+        padding-top: 80px;
+    }
+    .pt-160{
+        padding-top: 160px;
+    }
+    .gray{
+        background: #F3F3F3;
+    }
+}

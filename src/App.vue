@@ -45,5 +45,24 @@ export default {
         font-size: 31px;
     }
 }
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden
+}
 .p-r{position: relative;}
+/// correção da barra de cookie
+#hs-eu-cookie-confirmation,
+#hs-eu-cookie-confirmation-inner,
+#hs-eu-confirmation-button{
+    font-size: 18px;
+}
+#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button {
+    font-size: 12px;
+    @media (min-width: $tablets) {
+        font-size: 14px;
+    }
+    @media (min-width: $largeDesktops) {
+        font-size: 17px;
+    }
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="auto-rs">
-    <div class="content">
+    <div class="content" :class="{'bkwhite': backwhite}">
       <div class="container">
         <h2>Automatize seu R&S e tranforme seu RH agora</h2>
         <div class="text">
@@ -16,13 +16,16 @@
         </div>
       </div>
     </div>
-    <img class="frame tr-roty-180" src="@/assets/img/svg/frame-form-home.svg" alt="">
+    <img v-if="!backwhite" class="frame tr-roty-180" src="@/assets/img/svg/frame-form-home.svg" alt="">
   </div>
 </template>
 
 <script>
 export default {
-  name: "AutomatizeRS"
+  name: "AutomatizeRS",
+  props : {
+    backwhite: Boolean,
+  }
 };
 </script>
 

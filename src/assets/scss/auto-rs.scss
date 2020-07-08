@@ -7,6 +7,9 @@ $purple_border: #2F0A77;
         padding-top: 4.5rem;
         padding-bottom: 1rem;
     }
+    .content.bkwhite{
+        background: white!important;
+    }
     h2{
         font-family: Lato;
         font-style: normal;
@@ -87,7 +90,7 @@ $purple_border: #2F0A77;
         }
         &.purple-outline{
             color: $purple;
-            background-color: inherit;
+            background-color: white;
             border: 2px solid $purple;
         }
     }

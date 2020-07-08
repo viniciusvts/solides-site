@@ -1,8 +1,5 @@
 @import "./variables.scss";
 $cinza: #F3F3F3;
-body, nav{
-    background-color: $cinza;
-}
 .backwhite{
     background-color: white;
     @media (min-width: $desktops) {

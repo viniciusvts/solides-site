@@ -4,25 +4,20 @@
       <div class="container">
         <div class="row">
           <div class="d-lg-none col-12">
-            <h2 class="text-center">Recrutamento e seleção</h2>
+            <h2 class="text-center">Processo seletivo</h2>
           </div>
           <div class="col-11 col-lg-5 imagem">
-            <img src="@/assets/img/conheca-plataforma.png" alt="" class="w-100">
+            <img src="@/assets/img//svg/processo-seletivo.svg" alt="" class="w-100">
           </div>
           <div class="d-none d-lg-block col-1"></div>
           <div class="col-12 col-lg-6 vertical-center">
-            <h2 class="d-none d-lg-block">Recrutamento e seleção</h2>
+            <h2 class="d-none d-lg-block">Processo seletivo</h2>
             <div class="text">
               <p>Pessoas tranformam empresas. É por isso que a Sólides tem ferramentas
                 que encontram o colaborador certo e criam um processo seletivo mais ágil.
                 Tudo com um custo menor e com menos erros.
               </p>
             </div>
-            <router-link :to="{ name: 'RecrutamentoESelecao' }">
-              <button class="badge badge-pill purple">
-                Conheça mais sobre o Recrutamento
-              </button>
-            </router-link>
           </div>
         </div>
       </div>
@@ -33,7 +28,7 @@
 
 <script>
 export default {
-  name: "RecrutamentoSelecao"
+  name: "ProcessoSeletivo"
 };
 </script>
 

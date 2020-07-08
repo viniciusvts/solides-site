@@ -3,6 +3,11 @@ import VueRouter from 'vue-router'
 
 const Home = () => import('@/views/Home.vue')
 const Contato = () => import('@/views/Contato.vue')
+const RecrutamentoESelecao = () => import('@/views/RecrutamentoESelecao.vue')
+const AvaliacaoDesempenho = () => import('@/views/AvaliacaoDesempenho.vue')
+const PesquisaClima = () => import('@/views/PesquisaClima.vue')
+const BoxCultural = () => import('@/views/BoxCultural.vue')
+const PeopleAnalytics = () => import('@/views/PeopleAnalytics.vue')
 const PerfilLp = () => import('@/lps/PerfilLp.vue')
 
 Vue.use(VueRouter)
@@ -17,6 +22,31 @@ const routes = [
     path: '/contato',
     name: 'Contato',
     component: Contato,
+  },
+  {
+    path: '/recrutamento-e-selecao',
+    name: 'RecrutamentoESelecao',
+    component: RecrutamentoESelecao,
+  },
+  {
+    path: '/avaliacao-de-desempenho',
+    name: 'AvaliacaoDesempenho',
+    component: AvaliacaoDesempenho,
+  },
+  {
+    path: '/pesquisa-de-clima',
+    name: 'PesquisaClima',
+    component: PesquisaClima,
+  },
+  {
+    path: '/box-cultural',
+    name: 'BoxCultural',
+    component: BoxCultural,
+  },
+  {
+    path: '/people-analytics',
+    name: 'PeopleAnalytics',
+    component: PeopleAnalytics,
   },
   {
     path: '/lps/perfil-disc-lp/',

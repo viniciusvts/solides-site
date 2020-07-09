@@ -10,7 +10,6 @@
         <BancoDeTalentos />
         <Curriculo />
         <AutomatizeRS :backwhite="true"/>
-        <div class="gray"></div>
     </div>
 </template>
 <script>

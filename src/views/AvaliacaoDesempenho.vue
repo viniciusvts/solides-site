@@ -34,4 +34,10 @@ export default {
 
 <style lang="scss">
     @import '@/assets/scss/avaliacao-desempenho-view.scss';
+    .gray{
+        background: #F3F3F3;
+        width: 100%;
+        height: 300px;
+        position: absolute;
+    }
 </style>

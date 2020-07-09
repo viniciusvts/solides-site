@@ -11,9 +11,11 @@
               Processo de avaliação completo e dinâmico
             </p>
           </div>
-          <button class="badge badge-pill purple">
-            Saiba mais sobre a Avaliação
-          </button>
+          <router-link :to="{ name: 'AvaliacaoDesempenho' }">
+            <button class="badge badge-pill purple">
+              Saiba mais sobre a Avaliação
+            </button>
+          </router-link>
         </div>
         <div class="col-1 d-none d-lg-block"></div>
         <div class="col-12 col-lg-5">

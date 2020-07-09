@@ -19,9 +19,11 @@
                 Tudo com um custo menor e com menos erros.
               </p>
             </div>
-            <button class="badge badge-pill purple">
-              Saiba mais sobre Pesquisa de Clima
-            </button>
+            <router-link :to="{ name: 'PesquisaClima' }">
+              <button class="badge badge-pill purple">
+                Saiba mais sobre Pesquisa de Clima
+              </button>
+            </router-link>
           </div>
         </div>
       </div>

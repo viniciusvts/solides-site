@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-    <img v-if="!backwhite" class="frame tr-roty-180" src="@/assets/img/svg/frame-form-home.svg" alt="">
+    <img v-if="showFrame" class="frame tr-roty-180" src="@/assets/img/svg/frame-form-home.svg" alt="">
   </div>
 </template>
 
@@ -25,6 +25,12 @@ export default {
   name: "AutomatizeRS",
   props : {
     backwhite: Boolean,
+    backGray: Boolean,
+  },
+  computed: {
+    showFrame(){
+      return !(this.backwhite || this.backGray)
+    }
   }
 };
 </script>

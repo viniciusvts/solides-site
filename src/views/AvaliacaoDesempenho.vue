@@ -1,11 +1,34 @@
 <template>
     <div class="avaliacao-desempenho-view">
-        <h1>hello mundo</h1>
+        <AvaliacaoDesenpenhoHead />
+        <TitleH2Center text="Conheça a ferramenta" class="pt-160" />
+        <Personalizacao />
+        <CombinacaoPerfeita />
+        <Avaliacoes90a360 />
+        <HistoricoAvaliacoes />
+        <AutomatizeRS :backGray="true" />
+        <div class="gray"></div>
     </div>
 </template>
 <script>
+import AvaliacaoDesenpenhoHead from '@/components/AvaliacaoDesenpenhoHead.vue'
+import TitleH2Center from '@/components/TitleH2Center.vue'
+import Personalizacao from '@/components/Personalizacao.vue'
+import CombinacaoPerfeita from '@/components/CombinacaoPerfeita.vue'
+import Avaliacoes90a360 from '@/components/Avaliacoes90a360.vue'
+import HistoricoAvaliacoes from '@/components/HistoricoAvaliacoes.vue'
+import AutomatizeRS from '@/components/AutomatizeRS.vue'
 export default {
-  name: "AvaliacaoDesempenho"
+  name: "AvaliacaoDesempenho",
+  components: {
+    AvaliacaoDesenpenhoHead,
+    TitleH2Center,
+    Personalizacao,
+    CombinacaoPerfeita,
+    Avaliacoes90a360,
+    HistoricoAvaliacoes,
+    AutomatizeRS,
+  }
 };
 </script>
 

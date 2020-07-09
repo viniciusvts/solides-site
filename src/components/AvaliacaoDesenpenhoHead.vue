@@ -1,6 +1,6 @@
 <template>
     <div class="recrutamento-e-selecao-head container">
-        <div class="vertical-pill blue"></div>
+        <div class="vertical-pill red"></div>
         <div class="col-10 col-lg-70">
             <h2>Avaliação de desempenho</h2>
             <div class="text">

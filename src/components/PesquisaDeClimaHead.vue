@@ -1,6 +1,6 @@
 <template>
     <div class="recrutamento-e-selecao-head container">
-        <div class="vertical-pill blue"></div>
+        <div class="vertical-pill green"></div>
         <div class="col-10 col-lg-70">
             <h2>Pesquisa de Clima</h2>
             <div class="text">

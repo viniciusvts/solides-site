@@ -90,6 +90,9 @@ $purple_border: #2F0A77;
         &.red{
             background: #D74149;
         }
+        &.green{
+            background: #57DD6D;
+        }
     }
     .col-lg-70{
         @media (min-width: $desktops) {

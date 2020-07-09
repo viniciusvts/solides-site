@@ -7,7 +7,7 @@
             <h2 class="text-center">Lista de Vagas</h2>
           </div>
           <div class="col-11 col-lg-5 imagem">
-            <img src="@/assets/img//svg/lista-de-vagas.svg" alt="" class="w-100">
+            <img src="@/assets/img/svg/lista-de-vagas.svg" alt="" class="w-100">
           </div>
           <div class="d-none d-lg-block col-1"></div>
           <div class="col-12 col-lg-6 vertical-center">

@@ -1,0 +1,10 @@
+@import './variables.scss';
+.people-analytics-view{
+    padding-top: 60px;
+    @media (min-width: $desktops) {
+        padding-top: 80px;
+    }
+    .pt-160{
+        padding-top: 160px;
+    }
+}

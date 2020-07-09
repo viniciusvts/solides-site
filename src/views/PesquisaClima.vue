@@ -23,7 +23,7 @@ import PesquisasDiversas from '@/components/PesquisasDiversas.vue'
 import RelatorioDeResultados from '@/components/RelatorioDeResultados.vue'
 import AutomatizeRS from '@/components/AutomatizeRS.vue'
 export default {
-  name: "AvaliacaoDesempenho",
+  name: "PesquisaClima",
   components: {
     PesquisaDeClimaHead,
     TitleH2Center,

@@ -16,7 +16,7 @@ import Comportamento from '@/components/Comportamento.vue'
 import ReportCards from '@/components/ReportCards.vue'
 import AutomatizeRS from '@/components/AutomatizeRS.vue'
 export default {
-  name: "AvaliacaoDesempenho",
+  name: "BoxCultural",
   components: {
     BoxCulturalHead,
     TitleH2Center,

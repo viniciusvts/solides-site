@@ -8,9 +8,11 @@
           <div class="text">
             <p>Entenda mais sobre o 9box e como a Sólides está revolucionando esse método.</p>
           </div>
-          <button class="badge badge-pill purple">
-            Descubra todas as novidades
-          </button>
+          <router-link :to="{name: 'BoxCultural'}">
+            <button class="badge badge-pill purple">
+              Descubra todas as novidades
+            </button>
+          </router-link>
         </div>
         <div class="col-1 d-none d-lg-block"></div>
         <div class="col-12 col-lg-5">

@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-12 col-lg-6 text-center text-lg-right vertical-center">
           <h2>Alinha Espectativas</h2>
-          <img src="@/assets/img/svg/combinacao-perfeita.svg" alt="" class="img-mobile d-lg-none">
+          <img src="@/assets/img/svg/alinha-expectativas.svg" alt="" class="img-mobile d-lg-none">
           <div class="text">
             <p>
               Espectativas alinhadas entre colaborador e empresa

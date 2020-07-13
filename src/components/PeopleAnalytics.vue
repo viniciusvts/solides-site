@@ -4,25 +4,18 @@
       <div class="container">
         <div class="row">
           <div class="d-lg-none col-12">
-            <h2 class="text-center">People Analytics</h2>
+            <h2 class="text-center" v-html="data.titulo"></h2>
           </div>
           <div class="col-11 col-lg-5 imagem">
-            <img src="@/assets/img/people-analytics.png" alt="" class="w-100">
+            <img :src="data.imagem.url" :alt="data.imagem.alt" class="w-100">
           </div>
           <div class="d-none d-lg-block col-1"></div>
           <div class="col-12 col-lg-6 vertical-center">
-            <h2 class="d-none d-lg-block">People Analytics</h2>
-            <div class="text">
-              <p>Pessoas tranformam empresas. É por isso que a Sólides tem ferramentas
-                que encontram o colaborador certo e criam um processo seletivo mais ágil.
-                Tudo com um custo menor e com menos erros.
-              </p>
-            </div>
-            <router-link :to="{ name: 'PeopleAnalytics' }">
-              <button class="badge badge-pill purple">
-                Conheça mais sobre essa ferramenta
-              </button>
-            </router-link>
+            <h2 class="d-none d-lg-block" v-html="data.titulo"></h2>
+            <div class="text" v-html="data.texto"></div>
+            <a :href="data.botao.url">
+              <button class="badge badge-pill purple" v-html="data.botao.title"></button>
+            </a>
           </div>
         </div>
       </div>
@@ -33,7 +26,10 @@
 
 <script>
 export default {
-  name: "PeopleAnalytics"
+  name: "PeopleAnalytics",
+  props: {
+    data: Object
+  }
 };
 </script>
 

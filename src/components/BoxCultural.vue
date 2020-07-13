@@ -3,20 +3,16 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-6 text-center text-lg-right vertical-center">
-          <h2 class="novo">9box Cultural</h2>
-          <img src="@/assets/img/box-cultural.png" alt="" class="img-mobile d-lg-none">
-          <div class="text">
-            <p>Entenda mais sobre o 9box e como a Sólides está revolucionando esse método.</p>
-          </div>
-          <router-link :to="{name: 'BoxCultural'}">
-            <button class="badge badge-pill purple">
-              Descubra todas as novidades
-            </button>
-          </router-link>
+          <h2 class="novo" v-html="data.titulo"></h2>
+          <img :src="data.imagem.url" :alt="data.imagem.alt" class="img-mobile d-lg-none">
+          <div class="text" v-html="data.texto"></div>
+          <a :href="data.botao.url">
+            <button class="badge badge-pill purple" v-html="data.botao.title"></button>
+          </a>
         </div>
         <div class="col-1 d-none d-lg-block"></div>
         <div class="col-12 col-lg-5">
-          <img src="@/assets/img/box-cultural.png" alt="" class="w-100 d-none d-lg-block">
+          <img :src="data.imagem.url" :alt="data.imagem.alt" class="w-100 d-none d-lg-block">
         </div>
       </div>
     </div>
@@ -25,7 +21,10 @@
 
 <script>
 export default {
-  name: "BoxCultural"
+  name: "BoxCultural",
+  props: {
+    data: Object
+  }
 };
 </script>
 

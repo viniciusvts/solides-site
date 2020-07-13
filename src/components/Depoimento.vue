@@ -2,34 +2,10 @@
   <div class="depoimento">
     <img class="frame tr-rotx-180" src="@/assets/img/svg/frame-form-home.svg" alt="">
     <div class="content">
-      <h2>Veja o que eles tem a dizer</h2>
+      <h2 v-html="data.titulo"></h2>
       <div class="carrossel">
         <carousel :responsive="carrossel">
-          <div class="item">
-            <iframe
-            width="620"
-            height="315"
-            src="https://www.youtube.com/embed/HryNv5QHpgE"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-          </div>
-          <div class="item">
-            <iframe 
-            width="620"
-            height="315"
-            src="https://www.youtube.com/embed/-daBzRg3Xds"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-          </div>
-          <div class="item">
-            <iframe 
-            width="620"
-            height="315" src="https://www.youtube.com/embed/5FA82atSlv0"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+          <div class="item" v-for="(em, index) in data.embed" :key="index" v-html="em.embed">
           </div>
         </carousel>
       </div>
@@ -41,6 +17,9 @@
 import carousel from 'vue-owl-carousel'
 export default {
   name: "Depoimento",
+  props: {
+    data: Object
+  },
   components: { carousel },
   data () {
     return {

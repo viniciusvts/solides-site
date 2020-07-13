@@ -41,5 +41,16 @@ const apiRest = {
     let url = baseURL + 'api/wp-json/wp/v2/lps/' + id;
     return fetch(url);
   },
+
+  /**
+   * Resgata uma página pelo seu id
+   * @param {number} id - Id da página
+   * @author Vinicius de Santana
+   */
+  getPageById(id) {
+    if (!Number.isInteger(id))  throw new TypeError("O parametro precisa ser um número inteiro");
+    let url = baseURL + 'api/wp-json/wp/v2/pages/' + id;
+    return fetch(url);
+  },
 };
 export default apiRest;

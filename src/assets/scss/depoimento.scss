@@ -59,13 +59,13 @@
     .owl-item{
         .item{
             display: flex;
+            margin-left: auto;
+            margin-right: auto;
         }
         iframe{
             border-radius: 10px;
             width: 262px;
             height: 119px;
-            margin-left: auto;
-            margin-right: auto;
             @media (min-width: $desktops) {
                 border-radius: 30px;
                 width: 615px;

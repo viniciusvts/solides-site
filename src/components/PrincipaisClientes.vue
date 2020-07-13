@@ -1,32 +1,14 @@
 <template>
   <div class="principais-clientes container">
     <div class="vertical-pill green"></div>
-    <h2>Principais Clientes</h2>
+    <h2 v-html="data.titulo"></h2>
     <div class="clientes row col-12 col-lg-9 no-gutters text-center">
-      <div class="space"></div>
-      <div class="col variable-col">
-        <img src="@/assets/img/svg/siccob-logo-grayscale.svg" alt="">
-      </div>
-      <div class="space"></div>
-      <div class="col variable-col">
-        <img src="@/assets/img/svg/minas-logo-grayscale.svg" alt="">
-      </div>
-      <div class="space"></div>
-      <div class="col variable-col">
-        <img src="@/assets/img/svg/simpla-logo-grayscale.svg" alt="">
-      </div>
-      <div class="space"></div>
-      <div class="col variable-col">
-        <img src="@/assets/img/svg/siccob-logo-grayscale.svg" alt="">
-      </div>
-      <div class="space"></div>
-      <div class="col variable-col">
-        <img src="@/assets/img/svg/unimed-logo-grayscale.svg" alt="">
-      </div>
-      <div class="space"></div>
-      <div class="col variable-col">
-        <img src="@/assets/img/svg/unimed-logo-grayscale.svg" alt="">
-      </div>
+      <template v-for="img in data.imagem">
+        <div class="space" :key="img.key"></div>
+        <div class="col variable-col" :key="img.key">
+          <img :src="img.url" :alt="img.alt">
+        </div>
+      </template>
     </div>
     <div class="vertical-pill yellow"></div>
   </div>
@@ -34,7 +16,10 @@
 
 <script>
 export default {
-  name: "PrincipaisClientes"
+  name: "PrincipaisClientes",
+  props: {
+    data: Object
+  }
 };
 </script>
 

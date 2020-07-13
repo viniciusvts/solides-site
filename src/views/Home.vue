@@ -1,19 +1,19 @@
 <template>
   <div class="home">
-    <RHPoderoso />
-    <SoftwareRH />
-    <TitleH2Center text="Conheça nossa plataforma" />
-    <RecrutamentoSelecao />
-    <AvaliacaoDesempenho />
-    <PesquisaClima />
-    <BoxCultural />
-    <PeopleAnalytics />
-    <Profiler />
-    <PrincipaisClientes />
-    <Depoimento />
-    <ComoEstamosAjudando />
-    <AutomatizeRS />
-    <BlogCards />
+    <RHPoderoso :data="pageData.acf.primeira_dobra" />
+    <SoftwareRH :data="pageData.acf.segunda_dobra" />
+    <TitleH2Center :text="pageData.acf.titulo_dobra" />
+    <RecrutamentoSelecao :data="pageData.acf.terceira_dobra" />
+    <AvaliacaoDesempenho :data="pageData.acf.quarta_dobra" />
+    <PesquisaClima :data="pageData.acf.quinta_dobra" />
+    <BoxCultural :data="pageData.acf.sexta_dobra" />
+    <PeopleAnalytics :data="pageData.acf.setima_dobra" />
+    <Profiler :data="pageData.acf.oitava_dobra" />
+    <PrincipaisClientes :data="pageData.acf.principais_clientes" />
+    <Depoimento :data="pageData.acf.depoimentos" />
+    <ComoEstamosAjudando :data="pageData.acf.como_ajudamos" />
+    <AutomatizeRS :data="pageData.acf.cta" />
+    <BlogCards :data="pageData.acf.conteudos" />
   </div>
 </template>
 
@@ -52,9 +52,22 @@ export default {
   },
   data () {
     return {
-      routes: null
+      pageId: 2,
+      pageData: null
     }
   },
+  created () {
+    this.getPost();
+  },
+  methods: {
+    getPost () {
+      this.$http.getPageById(2)
+      .then(res => res.json() )
+      .then(json => {
+        this.pageData = json
+      })
+    }
+  }
 }
 </script>
 

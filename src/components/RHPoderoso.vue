@@ -1,21 +1,17 @@
 <template>
   <div class="rh-poderoso container">
     <div class="vertical-pill blue"></div>
-    <img class="d-none d-lg-block" src="@/assets/img/rh-poderoso3.png" alt="">
+    <img class="d-none d-lg-block" :src="data.imagem.url" :alt="data.imagem.alt">
     <div class="col-10 col-lg-70">
-      <h2>O RH fica mais poderoso com tudo em um só lugar</h2>
-      <div class="text">
-        <p>A Sólides usa inteligência de dados, People Analytics e Perfil 
-          Comportamental para Recrutamento e Seleção, 
-          desenvolvimento e retenção de profissionais</p>
-      </div>
+      <h2 v-html="data.titulo"></h2>
+      <div class="text" v-html="data.texto"></div>
       <div class="buttons">
-        <router-link :to="{ name: 'Contato' }">
-          <button class="badge badge-pill purple-back">Experimente grátis</button>
-        </router-link>
-        <router-link :to="{ name: 'Contato' }">
-          <button class="badge badge-pill purple-outline">Fale com um especialista</button>
-        </router-link>
+        <a :href="data.botao_1.url">
+          <button class="badge badge-pill purple-back" v-html="data.botao_1.title"></button>
+        </a>
+        <a :href="data.botao_2.url">
+          <button class="badge badge-pill purple-outline" v-html="data.botao_2.title"></button>
+        </a>
       </div>
     </div>
   </div>
@@ -23,7 +19,10 @@
 
 <script>
 export default {
-  name: "RHPoderoso"
+  name: "RHPoderoso",
+  props: {
+    data: Object
+  }
 };
 </script>
 

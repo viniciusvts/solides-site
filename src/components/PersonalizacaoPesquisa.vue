@@ -5,19 +5,15 @@
       <div class="container">
         <div class="row">
           <div class="d-lg-none col-12">
-            <h2 class="text-center">Personalização</h2>
+            <h2 class="text-center" v-html="data.titulo"></h2>
           </div>
           <div class="col-11 col-lg-5 imagem">
-            <img src="@/assets/img/svg/personalização-da-pesquisa.svg" alt="" class="w-100">
+            <img :src="data.imagem.url" :alt="data.imagem.alt" class="w-100">
           </div>
           <div class="d-none d-lg-block col-1"></div>
           <div class="col-12 col-lg-6 vertical-center">
-            <h2 class="d-none d-lg-block">Personalização</h2>
-            <div class="text">
-              <p>
-                Perguntas e formatos de pesquisa personalizáveis
-              </p>
-            </div>
+            <h2 class="d-none d-lg-block" v-html="data.titulo"></h2>
+            <div class="text" v-html="data.texto"></div>
           </div>
         </div>
       </div>
@@ -27,7 +23,10 @@
 
 <script>
 export default {
-  name: "PersonalizacaoPesquisa"
+  name: "PersonalizacaoPesquisa",
+  props: {
+    data: Object
+  }
 };
 </script>
 

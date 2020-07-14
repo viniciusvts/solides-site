@@ -1,14 +1,14 @@
 <template>
     <div class="pesquisa-clima-view">
-        <PesquisaDeClimaHead />
-        <TitleH2Center text="Conheça a ferramenta" class="pt-160" />
-        <RetencaoDeTalentos />
-        <AlinhaEspectativas />
-        <PersonalizacaoPesquisa />
-        <Automacao />
-        <PesquisasDiversas />
-        <RelatorioDeResultados />
-        <AutomatizeRS :backGray="true" />
+        <PesquisaDeClimaHead :data="pageData.acf.primeira_dobra" />
+        <TitleH2Center class="pt-160" :text="pageData.acf.titulo_dobra" />
+        <RetencaoDeTalentos :data="pageData.acf.segunda_dobra" />
+        <AlinhaEspectativas :data="pageData.acf.terceira_dobra" />
+        <PersonalizacaoPesquisa :data="pageData.acf.quarta_dobra" />
+        <Automacao :data="pageData.acf.quinta_dobra" />
+        <PesquisasDiversas :data="pageData.acf.sexta_dobra" />
+        <RelatorioDeResultados :data="pageData.acf.setima_dobra" />
+        <AutomatizeRS :backGray="true" :data="pageData.acf.cta" />
         <div class="gray"></div>
     </div>
 </template>
@@ -34,6 +34,24 @@ export default {
     PesquisasDiversas,
     RelatorioDeResultados,
     AutomatizeRS,
+  },
+  data () {
+    return {
+      pageId: 350,
+      pageData: null
+    }
+  },
+  created () {
+    this.getPost();
+  },
+  methods: {
+    getPost () {
+      this.$http.getPageById(this.pageId)
+      .then(res => res.json() )
+      .then(json => {
+        this.pageData = json
+      })
+    }
   }
 };
 </script>

@@ -2,26 +2,25 @@
     <div class="recrutamento-e-selecao-head container">
         <div class="vertical-pill yellow"></div>
         <div class="col-10 col-lg-70">
-            <h2 class="newR">9box Cultural</h2>
-            <div class="text">
-                <p>A Sólides usa inteligência de dados, People Analytics e Perfil 
-                Comportamental para Recrutamento e Seleção, 
-                desenvolvimento e retenção de profissionais</p>
-            </div>
+            <h2 class="newR" v-html="data.titulo"></h2>
+            <div class="text" v-html="data.texto"></div>
             <div class="buttons">
-                <router-link :to="{ name: 'Contato' }">
-                <button class="badge badge-pill purple-back">Experimente grátis</button>
-                </router-link>
-                <router-link :to="{ name: 'Contato' }">
-                <button class="badge badge-pill purple-outline">Fale com um especialista</button>
-                </router-link>
+                <a :href="data.botao_1.url">
+                    <button class="badge badge-pill purple-back" v-html="data.botao_1.title"></button>
+                </a>
+                <a :href="data.botao_2.url">
+                    <button class="badge badge-pill purple-outline" v-html="data.botao_2.title"></button>
+                </a>
             </div>
         </div>
     </div>
 </template>
 <script>
 export default {
-  name: "BoxCulturalHead"
+  name: "BoxCulturalHead",
+  props: {
+    data: Object
+  }
 };
 </script>
 

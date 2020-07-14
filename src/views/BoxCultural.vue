@@ -1,11 +1,11 @@
 <template>
     <div class="box-cultural-view">
-        <BoxCulturalHead />
-        <TitleH2Center text="Conheça a ferramenta" class="pt-160" />
-        <Desempenho />
-        <Comportamento />
-        <ReportCards />
-        <AutomatizeRS :backwhite="true" />
+        <BoxCulturalHead :data="pageData.acf.primeira_dobra" />
+        <TitleH2Center class="pt-160" :text="pageData.acf.titulo_dobra" />
+        <Desempenho :data="pageData.acf.segunda_dobra" />
+        <Comportamento :data="pageData.acf.terceira_dobra" />
+        <ReportCards :data="pageData.acf.quarta_dobra" />
+        <AutomatizeRS :backwhite="true" :data="pageData.acf.cta" />
     </div>
 </template>
 <script>
@@ -24,6 +24,24 @@ export default {
     Comportamento,
     ReportCards,
     AutomatizeRS,
+  },
+  data () {
+    return {
+      pageId: 405,
+      pageData: null
+    }
+  },
+  created () {
+    this.getPost();
+  },
+  methods: {
+    getPost () {
+      this.$http.getPageById(this.pageId)
+      .then(res => res.json() )
+      .then(json => {
+        this.pageData = json
+      })
+    }
   }
 };
 </script>

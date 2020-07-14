@@ -1,12 +1,12 @@
 <template>
     <div class="avaliacao-desempenho-view">
-        <AvaliacaoDesenpenhoHead />
-        <TitleH2Center text="Conheça a ferramenta" class="pt-160" />
-        <Personalizacao />
-        <CombinacaoPerfeita />
-        <Avaliacoes90a360 />
-        <HistoricoAvaliacoes />
-        <AutomatizeRS :backGray="true" />
+        <AvaliacaoDesenpenhoHead :data="pageData.acf.primeira_dobra" />
+        <TitleH2Center class="pt-160" :text="pageData.acf.titulo_dobra" />
+        <Personalizacao :data="pageData.acf.segunda_dobra" />
+        <CombinacaoPerfeita :data="pageData.acf.terceira_dobra" />
+        <Avaliacoes90a360 :data="pageData.acf.quarta_dobra" />
+        <HistoricoAvaliacoes :data="pageData.acf.quinta_dobra" />
+        <AutomatizeRS :backGray="true" :data="pageData.acf.cta" />
         <div class="gray"></div>
     </div>
 </template>
@@ -28,6 +28,24 @@ export default {
     Avaliacoes90a360,
     HistoricoAvaliacoes,
     AutomatizeRS,
+  },
+  data () {
+    return {
+      pageId: 314,
+      pageData: null
+    }
+  },
+  created () {
+    this.getPost();
+  },
+  methods: {
+    getPost () {
+      this.$http.getPageById(this.pageId)
+      .then(res => res.json() )
+      .then(json => {
+        this.pageData = json
+      })
+    }
   }
 };
 </script>

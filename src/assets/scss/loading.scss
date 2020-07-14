@@ -2,6 +2,11 @@
 /// @author Vinicius de Santana
 $width: 200px;
 .loading {
+    background: white;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 10;
     img{
         width: $width;
         height: $width;

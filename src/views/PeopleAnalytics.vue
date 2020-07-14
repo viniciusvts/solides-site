@@ -1,5 +1,5 @@
 <template>
-  <div class="people-analytics-view">
+  <div v-if="pageData" class="people-analytics-view">
     <PeopleAnalyticsHead :data="pageData.acf.primeira_dobra" />
     <TitleH2Center class="pt-160" :text="pageData.acf.titulo_dobra" />
     <ComparacaoDePerfis :data="pageData.acf.segunda_dobra" />
@@ -8,6 +8,10 @@
     <EngenhariaDeCargos :data="pageData.acf.quinta_dobra" />
     <Dashboard :data="pageData.acf.sexta_dobra" />
     <AutomatizeRS :backwhite="true" :data="pageData.acf.cta" />
+  </div>
+  <div v-else>
+    <Loading></Loading>
+    <h4 class="text-center">{{mensagem}}</h4>
   </div>
 </template>
 <script>
@@ -19,6 +23,7 @@ import BuscaPerfilSemelhante from '@/components/BuscaPerfilSemelhante.vue'
 import EngenhariaDeCargos from '@/components/EngenhariaDeCargos.vue'
 import Dashboard from '@/components/Dashboard.vue'
 import AutomatizeRS from '@/components/AutomatizeRS.vue'
+import Loading from "@/components/Loading.vue"
 export default {
   name: "PeopleAnalytics",
   components: {
@@ -30,6 +35,7 @@ export default {
     EngenhariaDeCargos,
     Dashboard,
     AutomatizeRS,
+    Loading
   },
   data () {
     return {

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div v-if="pageData" class="home">
     <RHPoderoso :data="pageData.acf.primeira_dobra" />
     <SoftwareRH :data="pageData.acf.segunda_dobra" />
     <TitleH2Center :text="pageData.acf.titulo_dobra" />
@@ -14,6 +14,10 @@
     <ComoEstamosAjudando :data="pageData.acf.como_ajudamos" />
     <AutomatizeRS :data="pageData.acf.cta" />
     <BlogCards :data="pageData.acf.conteudos" />
+  </div>
+  <div v-else>
+    <Loading></Loading>
+    <h4 class="text-center">{{mensagem}}</h4>
   </div>
 </template>
 
@@ -32,6 +36,7 @@ import Depoimento from '@/components/Depoimento.vue'
 import ComoEstamosAjudando from '@/components/ComoEstamosAjudando.vue'
 import AutomatizeRS from '@/components/AutomatizeRS.vue'
 import BlogCards from '@/components/BlogCards.vue'
+import Loading from "@/components/Loading.vue"
 export default {
   name: 'Home',
   components:{
@@ -49,6 +54,7 @@ export default {
     ComoEstamosAjudando,
     AutomatizeRS,
     BlogCards,
+    Loading
   },
   data () {
     return {

@@ -1,12 +1,16 @@
 <template>
-    <div class="box-cultural-view">
-        <BoxCulturalHead :data="pageData.acf.primeira_dobra" />
-        <TitleH2Center class="pt-160" :text="pageData.acf.titulo_dobra" />
-        <Desempenho :data="pageData.acf.segunda_dobra" />
-        <Comportamento :data="pageData.acf.terceira_dobra" />
-        <ReportCards :data="pageData.acf.quarta_dobra" />
-        <AutomatizeRS :backwhite="true" :data="pageData.acf.cta" />
-    </div>
+  <div v-if="pageData" class="box-cultural-view">
+    <BoxCulturalHead :data="pageData.acf.primeira_dobra" />
+    <TitleH2Center class="pt-160" :text="pageData.acf.titulo_dobra" />
+    <Desempenho :data="pageData.acf.segunda_dobra" />
+    <Comportamento :data="pageData.acf.terceira_dobra" />
+    <ReportCards :data="pageData.acf.quarta_dobra" />
+    <AutomatizeRS :backwhite="true" :data="pageData.acf.cta" />
+  </div>
+  <div v-else>
+    <Loading></Loading>
+    <h4 class="text-center">{{mensagem}}</h4>
+  </div>
 </template>
 <script>
 import BoxCulturalHead from '@/components/BoxCulturalHead.vue'
@@ -15,6 +19,7 @@ import Desempenho from '@/components/Desempenho.vue'
 import Comportamento from '@/components/Comportamento.vue'
 import ReportCards from '@/components/ReportCards.vue'
 import AutomatizeRS from '@/components/AutomatizeRS.vue'
+import Loading from "@/components/Loading.vue"
 export default {
   name: "BoxCultural",
   components: {
@@ -24,6 +29,7 @@ export default {
     Comportamento,
     ReportCards,
     AutomatizeRS,
+    Loading
   },
   data () {
     return {

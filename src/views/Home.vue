@@ -61,7 +61,7 @@ export default {
   },
   methods: {
     getPost () {
-      this.$http.getPageById(2)
+      this.$http.getPageById(this.pageId)
       .then(res => res.json() )
       .then(json => {
         this.pageData = json

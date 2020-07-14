@@ -1,15 +1,15 @@
 <template>
     <div class="recrutamento-e-selecao-view">
-        <RecrutamentoESelecaoHead />
-        <TitleH2Center text="Conheça a ferramenta" class="pt-160" />
-        <ProcessoSeletivo />
-        <Recrutamento />
-        <CriarVagas />
-        <Automacao />
-        <ListaDeVagas />
-        <BancoDeTalentos />
-        <Curriculo />
-        <AutomatizeRS :backwhite="true"/>
+        <RecrutamentoESelecaoHead :data="pageData.acf.primeira_dobra" />
+        <TitleH2Center class="pt-160" :text="pageData.acf.titulo_dobra" />
+        <ProcessoSeletivo :data="pageData.acf.segunda_dobra" />
+        <Recrutamento :data="pageData.acf.terceira_dobra" />
+        <CriarVagas :data="pageData.acf.quarta_dobra" />
+        <Automacao :data="pageData.acf.quinta_dobra" />
+        <ListaDeVagas :data="pageData.acf.sexta_dobra" />
+        <BancoDeTalentos :data="pageData.acf.setima_dobra" />
+        <Curriculo :data="pageData.acf.oitava_dobra" />
+        <AutomatizeRS :backwhite="true" :data="pageData.acf.cta" />
     </div>
 </template>
 <script>
@@ -36,6 +36,24 @@ export default {
     BancoDeTalentos,
     Curriculo,
     AutomatizeRS,
+  },
+  data () {
+    return {
+      pageId: 295,
+      pageData: null
+    }
+  },
+  created () {
+    this.getPost();
+  },
+  methods: {
+    getPost () {
+      this.$http.getPageById(this.pageId)
+      .then(res => res.json() )
+      .then(json => {
+        this.pageData = json
+      })
+    }
   }
 };
 </script>

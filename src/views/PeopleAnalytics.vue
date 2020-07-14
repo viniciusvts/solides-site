@@ -1,14 +1,14 @@
 <template>
-    <div class="people-analytics-view">
-        <PeopleAnalyticsHead />
-        <TitleH2Center text="Conheça a ferramenta" class="pt-160" />
-        <ComparacaoDePerfis />
-        <AnaliseDeGrupo />
-        <BuscaPerfilSemelhante />
-        <EngenhariaDeCargos />
-        <Dashboard />
-        <AutomatizeRS :backwhite="true"/>
-    </div>
+  <div class="people-analytics-view">
+    <PeopleAnalyticsHead :data="pageData.acf.primeira_dobra" />
+    <TitleH2Center class="pt-160" :text="pageData.acf.titulo_dobra" />
+    <ComparacaoDePerfis :data="pageData.acf.segunda_dobra" />
+    <AnaliseDeGrupo :data="pageData.acf.terceira_dobra" />
+    <BuscaPerfilSemelhante :data="pageData.acf.quarta_dobra" />
+    <EngenhariaDeCargos :data="pageData.acf.quinta_dobra" />
+    <Dashboard :data="pageData.acf.sexta_dobra" />
+    <AutomatizeRS :backwhite="true" :data="pageData.acf.cta" />
+  </div>
 </template>
 <script>
 import PeopleAnalyticsHead from '@/components/PeopleAnalyticsHead.vue'
@@ -30,6 +30,24 @@ export default {
     EngenhariaDeCargos,
     Dashboard,
     AutomatizeRS,
+  },
+  data () {
+    return {
+      pageId: 481,
+      pageData: null
+    }
+  },
+  created () {
+    this.getPost();
+  },
+  methods: {
+    getPost () {
+      this.$http.getPageById(this.pageId)
+      .then(res => res.json() )
+      .then(json => {
+        this.pageData = json
+      })
+    }
   }
 };
 </script>

@@ -24,29 +24,34 @@ const routes = [
     component: Contato,
   },
   {
-    path: '/recrutamento-e-selecao',
+    path: '/produtos/recrutamento-e-selecao',
     name: 'RecrutamentoESelecao',
     component: RecrutamentoESelecao,
   },
   {
-    path: '/avaliacao-de-desempenho',
+    path: '/produtos/avaliacao-de-desempenho',
     name: 'AvaliacaoDesempenho',
     component: AvaliacaoDesempenho,
   },
   {
-    path: '/pesquisa-de-clima',
+    path: '/produtos/pesquisa-de-clima',
     name: 'PesquisaClima',
     component: PesquisaClima,
   },
   {
-    path: '/box-cultural',
+    path: '/produtos/box-cultural',
     name: 'BoxCultural',
     component: BoxCultural,
   },
   {
-    path: '/people-analytics',
+    path: '/produtos/people-analytics',
     name: 'PeopleAnalytics',
     component: PeopleAnalytics,
+  },
+  {
+    path: '/produtos/profiler',
+    name: 'perfil-lp',
+    component: PerfilLp,
   },
   {
     path: '/lps/perfil-disc-lp/',

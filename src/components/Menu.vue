@@ -38,40 +38,40 @@
             class="dropdown-menu conteudo"
             aria-labelledby="navbarDropdown">
               <div class="drop-item">
-                <a class="dropdown-item" href="https://perfildisc.com.br/">Profiler</a>
-                <a href="https://perfildisc.com.br/" class="no-decoration">
+                <a class="dropdown-item" href="/produtos/profiler">Profiler</a>
+                <a href="/produtos/profiler" class="no-decoration">
                   <p class="d-none d-lg-block">
                     Saiba mais.
                   </p>
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item" href="/recrutamento-e-selecao">Recrutamento e seleção</a>
-                <a href="/recrutamento-e-selecao" class="no-decoration">
+                <a class="dropdown-item" href="/produtos/recrutamento-e-selecao">Recrutamento e seleção</a>
+                <a href="/produtos/recrutamento-e-selecao" class="no-decoration">
                   <p class="d-none d-lg-block">Saiba mais.</p>
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item" href="/people-analytics">People Analytics</a>
-                <a href="/people-analytics" class="no-decoration">
+                <a class="dropdown-item" href="/produtos/people-analytics">People Analytics</a>
+                <a href="/produtos/people-analytics" class="no-decoration">
                   <p class="d-none d-lg-block">Saiba mais.</p>
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item" href="/avaliacao-de-desempenho">Avaliação de desempenho</a>
-                <a href="/avaliacao-de-desempenho" class="no-decoration">
+                <a class="dropdown-item" href="/produtos/avaliacao-de-desempenho">Avaliação de desempenho</a>
+                <a href="/produtos/avaliacao-de-desempenho" class="no-decoration">
                   <p class="d-none d-lg-block">Saiba mais.</p>
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item" href="/pesquisa-de-clima">Pesquisa de clima</a>
-                <a href="/pesquisa-de-clima" class="no-decoration">
+                <a class="dropdown-item" href="/produtos/pesquisa-de-clima">Pesquisa de clima</a>
+                <a href="/produtos/pesquisa-de-clima" class="no-decoration">
                   <p class="d-none d-lg-block">Saiba mais.</p>
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item" href="/box-cultural">9box Cultural</a>
-                <a href="/box-cultural" class="no-decoration">
+                <a class="dropdown-item" href="/produtos/box-cultural">9box Cultural</a>
+                <a href="/produtos/box-cultural" class="no-decoration">
                   <p class="d-none d-lg-block">Saiba mais.</p>
                 </a>
               </div>

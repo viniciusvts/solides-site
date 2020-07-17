@@ -63,7 +63,7 @@
         }
     }
     button{
-        font-weight: 700;
+        font-weight: bold;
         line-height: 29px;
         text-align: center;
         &.badge{
@@ -83,7 +83,7 @@
                 margin-right: unset;
             }
             @media (min-width: $desktops) {
-                font-size: 25.5px;
+                font-size: 24px;
             }
         }
         &.purple{

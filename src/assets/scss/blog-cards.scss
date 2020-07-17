@@ -4,6 +4,11 @@
     @media (min-width: $desktops) {
         padding: 120px 0 40px;
     }
+    & > .container{
+        @media (min-width: $fullHdDesktops) {
+            position: relative;
+        }
+    }
     h2{
         z-index: 1;
         &.title{

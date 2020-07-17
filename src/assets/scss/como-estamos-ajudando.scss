@@ -8,6 +8,11 @@ $purple: #5F4A87;
         padding-top: 6rem;
         padding-bottom: 4rem;
     }
+    & > .container{
+        @media (min-width: $fullHdDesktops) {
+            position: relative;
+        }
+    }
     .vertical-pill{
         position: absolute;
         border-radius: 100px;

@@ -71,6 +71,14 @@
                 width: 615px;
                 height: 320px;
             }
+            @media (min-width: $fullHdDesktops) {
+                width: 850px;
+                height: 450px;
+            }
+            @media (min-width: 2500px) { //wide
+                width: 1100px;
+                height: 600px;
+            }
         }
         &.active.center iframe{
             box-shadow: 0px 50px 20px -20px rgba(0, 0, 0, 0.23);

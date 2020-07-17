@@ -29,7 +29,7 @@ function custom_lps() {
 	);
 	$args = array(
 		'label'                 => __( 'Landing Pages', 'text_domain' ),
-		'description'           => __( 'Cadastrar Imóvels', 'text_domain' ),
+		'description'           => __( 'Cadastrar LPs', 'text_domain' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'thumbnail', ),
 		'taxonomies'            => array( 'categoria_Landing Pages' ),

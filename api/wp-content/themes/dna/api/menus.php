@@ -1,8 +1,13 @@
 <?php
 // create custom function to return nav menu
 function custom_wp_menu($req) {
-    // Replace your menu name, slug or ID carefully
-    return wp_get_nav_menu_items($req->get_param('menu_name'));
+  $theme_location = $req->get_param('menu_name');
+  $theme_locations = get_nav_menu_locations();
+  $menu_obj = get_term( $theme_locations[ $theme_location ], 'nav_menu' );
+  if ( $menu_obj )
+      return wp_get_nav_menu_items( $menu_obj->term_id);
+  else
+      return $menu_obj;
 }
 
 // create new endpoint route

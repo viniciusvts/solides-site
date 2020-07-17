@@ -2,7 +2,7 @@
  * define a url base do app
  * @author Vinicius de Santana
 */
-const baseURL = process.env.NODE_ENV === 'production' ? '/' : 'http://solides.localhost/';
+const baseURL = process.env.NODE_ENV === 'production' ? '/api/' : 'http://solides.localhost/api/';
 /**
  * Comunicação com o servidor DNA
  * @author Vinicius de Santana
@@ -24,7 +24,7 @@ const apiRest = {
       //remove p último &
       urlArgs = urlArgs.substr(0, urlArgs.length-1);
     }
-    let url = baseURL + 'api/wp-json/wp/v2/posts/';
+    let url = baseURL + 'wp-json/wp/v2/posts/';
     if (urlArgs.length > 0){
       url += "?" + urlArgs;
     }
@@ -38,7 +38,7 @@ const apiRest = {
    */
   getLPsById(id) {
     if (!Number.isInteger(id))  throw new TypeError("O parametro precisa ser um número inteiro");
-    let url = baseURL + 'api/wp-json/wp/v2/lps/' + id;
+    let url = baseURL + 'wp-json/wp/v2/lps/' + id;
     return fetch(url);
   },
 
@@ -49,7 +49,17 @@ const apiRest = {
    */
   getPageById(id) {
     if (!Number.isInteger(id))  throw new TypeError("O parametro precisa ser um número inteiro");
-    let url = baseURL + 'api/wp-json/wp/v2/pages/' + id;
+    let url = baseURL + 'wp-json/wp/v2/pages/' + id;
+    return fetch(url);
+  },
+
+  /**
+   * Resgata um menu baseado no location registrado pelo tema
+   * @param {String} locationName - Id da página
+   * @author Vinicius de Santana
+   */
+  getMenuByLocationName(locationName) {
+    let url = baseURL + 'wp-json/dna_theme/v1/menu?menu_name=' + locationName;
     return fetch(url);
   },
 };

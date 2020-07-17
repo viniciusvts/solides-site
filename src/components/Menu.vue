@@ -18,8 +18,64 @@
 
       <div class="collapse navbar-collapse" :class="{'active': controls.expandMenu}">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link p-0" href="javascript: void(0)">Produtos</a>
+          <li @click="togleProdutos"
+          @mouseover="togleProdutos(true)"
+          @mouseout="togleProdutos(false)"
+          class="nav-item">
+            <a class="nav-link p-0" href="javascript: void(0)">
+              Produtos
+              <span v-if="controls.expandProdutos" class="submenu">
+                <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
+                <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-cima-primary.png" alt="menu">
+              </span>
+              <span v-else class="submenu">
+                <img class="d-lg-none" src="@/assets/img/seta-pra-baixo.png" alt="menu">
+                <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-baixo-primary.png" alt="menu">
+              </span>
+            </a>
+            <div
+            :class="{'active': controls.expandProdutos}"
+            class="dropdown-menu conteudo"
+            aria-labelledby="navbarDropdown">
+              <div class="drop-item">
+                <a class="dropdown-item" href="https://perfildisc.com.br/">Profiler</a>
+                <a href="https://perfildisc.com.br/" class="no-decoration">
+                  <p class="d-none d-lg-block">
+                    Saiba mais.
+                  </p>
+                </a>
+              </div>
+              <div class="drop-item">
+                <a class="dropdown-item" href="/recrutamento-e-selecao">Recrutamento e seleção</a>
+                <a href="/recrutamento-e-selecao" class="no-decoration">
+                  <p class="d-none d-lg-block">Saiba mais.</p>
+                </a>
+              </div>
+              <div class="drop-item">
+                <a class="dropdown-item" href="/people-analytics">People Analytics</a>
+                <a href="/people-analytics" class="no-decoration">
+                  <p class="d-none d-lg-block">Saiba mais.</p>
+                </a>
+              </div>
+              <div class="drop-item">
+                <a class="dropdown-item" href="/avaliacao-de-desempenho">Avaliação de desempenho</a>
+                <a href="/avaliacao-de-desempenho" class="no-decoration">
+                  <p class="d-none d-lg-block">Saiba mais.</p>
+                </a>
+              </div>
+              <div class="drop-item">
+                <a class="dropdown-item" href="/pesquisa-de-clima">Pesquisa de clima</a>
+                <a href="/pesquisa-de-clima" class="no-decoration">
+                  <p class="d-none d-lg-block">Saiba mais.</p>
+                </a>
+              </div>
+              <div class="drop-item">
+                <a class="dropdown-item" href="/box-cultural">9box Cultural</a>
+                <a href="/box-cultural" class="no-decoration">
+                  <p class="d-none d-lg-block">Saiba mais.</p>
+                </a>
+              </div>
+            </div>
           </li>
           <li @click="togleConteudo(null)"
           @mouseover="togleConteudo(true)"
@@ -146,8 +202,11 @@ export default {
   name: 'Menu',
   data () {
     return {
+      menuLocationName: 'main-menu',
+      menuData: null,
       controls: {
         expandMenu: false,
+        expandProdutos: false,
         expandConteudo: false,
         expandCursos: false,
         scroll: false
@@ -161,10 +220,31 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
+    getMenu () {
+      this.$http.getMenuByLocationName(this.menuLocationName)
+      .then(resp => resp.json())
+      .then(json => {
+        this.menuData = json
+      })
+    },
+    toglesub (evt, flag) {
+      console.log('evt =>', evt)
+      console.log('flag =>', flag)
+    },
     togleMenu () { this.controls.expandMenu = !this.controls.expandMenu },
+    togleProdutos (flag) {
+      if (flag == null) {
+        this.controls.expandProdutos = !this.controls.expandProdutos
+        this.controls.expandConteudo = false
+        this.controls.expandCursos = false
+        return;
+      }
+      this.controls.expandProdutos = flag
+    },
     togleConteudo (flag) {
       if (flag == null) {
         this.controls.expandConteudo = !this.controls.expandConteudo
+        this.controls.expandProdutos = false
         this.controls.expandCursos = false
         return;
       }
@@ -173,6 +253,7 @@ export default {
     togleCursos (flag) {
       if (flag == null) {
         this.controls.expandCursos = !this.controls.expandCursos
+        this.controls.expandProdutos = false
         this.controls.expandConteudo = false
         return;
       }

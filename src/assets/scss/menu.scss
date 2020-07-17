@@ -1,7 +1,8 @@
 @import "./variables.scss";
 
 $primary: #2F0A77;
-
+$blue_buttons: #0087A4;
+$blue_buttons_border: #0CAED1;
 .logo-menu{
     width: 103px;
     height: 23px;
@@ -70,19 +71,19 @@ nav{
         &.scrolled{
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.23);
             transition: all 1s;
-            // .nav-item{
-            //     a, span, ul li a{
-            //         padding: 0;
-            //     }
-            //     button.badge{
-            //         font-weight: bold;
-            //         padding: 8px 18px 10px 18px;
-            //         margin-top: -7px;
-            //     }
-            // }
-            // .collapse.navbar-collapse{
-            //     margin: 0;
-            // }
+            .nav-item{
+                a, span, ul li a{
+                    padding: 0;
+                }
+                button.badge{
+                    font-weight: bold;
+                    padding: 8px 18px 10px 18px;
+                    margin-top: -7px;
+                }
+            }
+            .collapse.navbar-collapse{
+                margin: 0;
+            }
         }
         .showOnScroll{
             display: none;
@@ -233,6 +234,27 @@ nav{
 button:focus {
     outline: none;
 }
+button{
+    &.badge{
+        &.two-in-a-row{            
+            @media (min-width: $tablets) {
+                padding: 12px 20px;
+            }
+        }
+    }
+}
 .no-border {
     border: none;
+}
+.blue-back{
+    background: $blue_buttons;
+    border: 2px solid $blue_buttons_border;
+}
+.blue-outline{
+    color: $blue_buttons;
+    background-color: inherit;
+    border: 2px solid $blue_buttons;
+}
+.color-white{
+    color: white;
 }

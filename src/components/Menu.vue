@@ -125,6 +125,16 @@
           <li class="nav-item">
             <a class="nav-link p-0" href="javascript: void(0)">Login >></a>
           </li>
+          <li class="nav-item showOnScroll d-none" :class="{'active': controls.scroll}">
+            <a class="nav-link p-0" href="https://checkout.solides.com.br/">
+              <button class="badge badge-pill blue-back color-white two-in-a-row">Comprar agora</button>
+            </a>
+          </li>
+          <li class="nav-item showOnScroll d-none" :class="{'active': controls.scroll}">
+            <a class="nav-link p-0" href="https://perfildisc.com.br/#form">
+              <button class="badge badge-pill blue-outline two-in-a-row">Fale com um especialista</button>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

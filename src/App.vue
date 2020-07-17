@@ -49,6 +49,9 @@ html{
     scroll-behavior: smooth;
     overflow-x: hidden
 }
+a:hover{
+  text-decoration: none;
+}
 .p-r{position: relative;}
 /// correção da barra de cookie
 #hs-eu-cookie-confirmation,

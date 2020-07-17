@@ -52,6 +52,16 @@ const apiRest = {
     let url = baseURL + 'wp-json/wp/v2/pages/' + id;
     return fetch(url);
   },
+  /**
+   * Resgata um produto pelo seu id
+   * @param {number} id - Id da página
+   * @author Vinicius de Santana
+   */
+  getProdutosById(id) {
+    if (!Number.isInteger(id))  throw new TypeError("O parametro precisa ser um número inteiro");
+    let url = baseURL + 'wp-json/wp/v2/produtos/' + id;
+    return fetch(url);
+  },
 
   /**
    * Resgata um menu baseado no location registrado pelo tema

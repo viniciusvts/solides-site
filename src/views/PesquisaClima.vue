@@ -43,7 +43,7 @@ export default {
   },
   data () {
     return {
-      pageId: 350,
+      pageId: 566,
       pageData: null
     }
   },
@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     getPost () {
-      this.$http.getPageById(this.pageId)
+      this.$http.getProdutosById(this.pageId)
       .then(res => res.json() )
       .then(json => {
         this.pageData = json

@@ -8,6 +8,7 @@ const AvaliacaoDesempenho = () => import('@/views/AvaliacaoDesempenho.vue')
 const PesquisaClima = () => import('@/views/PesquisaClima.vue')
 const BoxCultural = () => import('@/views/BoxCultural.vue')
 const PeopleAnalytics = () => import('@/views/PeopleAnalytics.vue')
+const Profiler = () => import('@/views/Profiler.vue')
 const PerfilLp = () => import('@/lps/PerfilLp.vue')
 
 Vue.use(VueRouter)
@@ -50,8 +51,8 @@ const routes = [
   },
   {
     path: '/produtos/profiler',
-    name: 'perfil-lp',
-    component: PerfilLp,
+    name: 'Profiler',
+    component: Profiler,
   },
   {
     path: '/lps/perfil-disc-lp/',

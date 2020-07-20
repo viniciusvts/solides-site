@@ -10,6 +10,7 @@ const BoxCultural = () => import('@/views/BoxCultural.vue')
 const PeopleAnalytics = () => import('@/views/PeopleAnalytics.vue')
 const Profiler = () => import('@/views/Profiler.vue')
 // const PerfilLp = () => import('@/lps/PerfilLp.vue')
+const PaginaNaoEncontrada = () => import('@/views/PaginaNaoEncontrada.vue')
 
 Vue.use(VueRouter)
 
@@ -59,6 +60,11 @@ const routes = [
   //   name: 'perfil-lp',
   //   component: PerfilLp,
   // },
+  {
+    path: '*',
+    name: 'Não encontrado',
+    component: PaginaNaoEncontrada,
+  },
 ]
 
 const router = new VueRouter({

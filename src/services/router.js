@@ -9,7 +9,7 @@ const PesquisaClima = () => import('@/views/PesquisaClima.vue')
 const BoxCultural = () => import('@/views/BoxCultural.vue')
 const PeopleAnalytics = () => import('@/views/PeopleAnalytics.vue')
 const Profiler = () => import('@/views/Profiler.vue')
-const PerfilLp = () => import('@/lps/PerfilLp.vue')
+// const PerfilLp = () => import('@/lps/PerfilLp.vue')
 
 Vue.use(VueRouter)
 
@@ -54,11 +54,11 @@ const routes = [
     name: 'Profiler',
     component: Profiler,
   },
-  {
-    path: '/lps/perfil-disc-lp/',
-    name: 'perfil-lp',
-    component: PerfilLp,
-  },
+  // {
+  //   path: '/lps/perfil-disc-lp/',
+  //   name: 'perfil-lp',
+  //   component: PerfilLp,
+  // },
 ]
 
 const router = new VueRouter({

@@ -9,6 +9,7 @@ const PesquisaClima = () => import('@/views/PesquisaClima.vue')
 const BoxCultural = () => import('@/views/BoxCultural.vue')
 const PeopleAnalytics = () => import('@/views/PeopleAnalytics.vue')
 const Profiler = () => import('@/views/Profiler.vue')
+const Planos = () => import('@/views/Planos.vue')
 // const PerfilLp = () => import('@/lps/PerfilLp.vue')
 const PaginaNaoEncontrada = () => import('@/views/PaginaNaoEncontrada.vue')
 
@@ -54,6 +55,11 @@ const routes = [
     path: '/produtos/profiler',
     name: 'Profiler',
     component: Profiler,
+  },
+  {
+    path: '/planos',
+    name: 'Planos',
+    component: Planos,
   },
   // {
   //   path: '/lps/perfil-disc-lp/',

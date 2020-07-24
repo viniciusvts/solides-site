@@ -11,6 +11,7 @@ const Profiler = () => import('@/views/Profiler.vue')
 const Planos = () => import('@/views/Planos.vue')
 const FalarComEspecialista = () => import('@/views/FalarComEspecialista.vue')
 const PedirDemo = () => import('@/views/PedirDemo.vue')
+const Contato = () => import('@/views/Contato.vue')
 // const PerfilLp = () => import('@/lps/PerfilLp.vue')
 const PaginaNaoEncontrada = () => import('@/views/PaginaNaoEncontrada.vue')
 
@@ -66,6 +67,11 @@ const routes = [
     path: '/pedir-uma-demo',
     name: 'PedirDemo',
     component: PedirDemo,
+  },
+  {
+    path: '/contato',
+    name: 'Contato',
+    component: Contato,
   },
   // {
   //   path: '/lps/perfil-disc-lp/',

@@ -1,0 +1,175 @@
+@import "./variables.scss";
+$cinza: #F3F3F3;
+.backwhite{
+    background-color: white;
+    @media (min-width: $desktops) {
+        background-color: $cinza;
+    }
+}
+.absolute.backwhite{
+    width: 95%;
+    height: 500px;
+    position: absolute;
+}
+.pedir-demo{
+    padding-top: 150px;
+    @media (min-width: $desktops) {
+        padding-top: 180px;
+    }
+    h1{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 31px;
+        line-height: 37px;
+        width: 215px;
+        margin-bottom: 25px;
+        margin-right: auto;
+        margin-left: auto;
+        @media (min-width: $desktops) {
+            font-size: 48px;
+            line-height: 58px;
+            text-align: center;
+            width: unset;
+            max-width: 750px;
+            margin-bottom: 25px;
+        }
+    }
+    p{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 24px;
+        @media (min-width: $desktops) {
+            font-size: 33px;
+            line-height: 40px;
+            text-align: center;
+        }
+        &.first{
+            margin-bottom: 100px;
+            width: 245px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #5F4A87;
+            @media (min-width: $desktops) {
+                margin-bottom: 75px;
+                width: unset;
+                color: black;
+            }
+        }
+        &.detail{
+            font-size: 18px;
+            line-height: 22px;
+            text-align: center;
+            text-align: left;
+
+            color: #5F4A87;
+            margin-top: 100px;
+            margin-bottom: 0;
+            padding-bottom: 90px;
+            width: 240px;
+            margin-right: auto;
+            margin-left: auto;
+            @media (min-width: $desktops) {
+                font-weight: bold;
+                font-size: 36px;
+                line-height: 43px;
+                margin-top: 120px;
+                width: unset;
+                max-width: 490px;
+                margin-right: unset;
+                margin-left: auto;
+                padding-bottom: 30px;
+            }
+        }
+        b, span, strong{
+            font-size: inherit;
+        }
+    }
+    h2{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        margin-bottom: 40px;
+        width: 210px;
+        @media (min-width: $desktops) {
+            font-size: 36px;
+            line-height: 43px;
+            margin-bottom: 100px;
+            width: 570px;
+        }
+    }
+    form{
+        background: #32A0DA;
+        box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        text-align: center;
+        width: 285px;
+        @media (min-width: $desktops) {
+            width: 800px;
+        }
+        input:first-child{
+            margin-top: 20px;
+            @media (min-width: $desktops) {
+                margin-top: 60px;
+            }
+        }
+        select{
+            appearance: none;
+            background-image: url('../assets/img/svg/arrow-down.svg');
+            background-size: 10px;
+            background-repeat: no-repeat;
+            background-position: top 9px right 15px;
+            @media (min-width: $desktops) {
+                background-size: unset;
+                background-position: top 25px right 30px;
+            }
+        }
+        input, select{
+            background-color: #FFFFFF;
+            border: 1px solid rgba(66, 82, 110, 0.25);
+            box-shadow: inset 0px 1px 3px #DDDDDD;
+            border-radius: 60px;
+            margin: 6px auto;
+            padding: 6px 10px;
+            font-weight: bold;
+            font-size: 8px;
+            line-height: 10px;
+            color: #878787;
+            @media (min-width: $desktops) {
+                margin: 20px auto;
+                padding: 20px 30px;
+                font-size: 18px;
+                line-height: 22px;
+            }
+            &::placeholder, option{
+                color: #878787;
+            }
+        }
+        button{
+            background: #FAB80E;
+            border: 1px solid #CC9C1F;
+            border-radius: 33px;;
+            font-weight: 900;
+            font-size: 8px;
+            line-height: 10px;
+            text-align: center;
+            
+            color: #2F0A77;
+            padding: 3px 5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            @media (min-width: $desktops) {
+                color: white;
+                font-size: 18px;
+                line-height: 22px;
+                padding: 20px 50px;
+                margin-bottom: 60px;
+            }
+        }
+    }
+}

@@ -10,8 +10,8 @@
         <input class="col-12" type="text" 
             name="name" id="name" placeholder="E-mail corporativo">
         <input class="col-12" type="text" 
-            name="tel" id="tel" placeholder="Telefone com dd ou Whatsapp"
-        v-on:keyup="execMascara">
+            name="tel" id="tel" placeholder="Telefone com DDD ou Whatsapp"
+            v-on:keyup="execMascara">
         <input class="col-12" type="text" 
             name="cargo" id="cargo" placeholder="Cargo">
         <button type="submit" class="ml-auto">Falar com um especialista</button>

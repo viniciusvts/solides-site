@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 const Home = () => import('@/views/Home.vue')
-const Contato = () => import('@/views/Contato.vue')
 const RecrutamentoESelecao = () => import('@/views/RecrutamentoESelecao.vue')
 const AvaliacaoDesempenho = () => import('@/views/AvaliacaoDesempenho.vue')
 const PesquisaClima = () => import('@/views/PesquisaClima.vue')
@@ -10,6 +9,7 @@ const BoxCultural = () => import('@/views/BoxCultural.vue')
 const PeopleAnalytics = () => import('@/views/PeopleAnalytics.vue')
 const Profiler = () => import('@/views/Profiler.vue')
 const Planos = () => import('@/views/Planos.vue')
+const FalarComEspecialista = () => import('@/views/FalarComEspecialista.vue')
 const PedirDemo = () => import('@/views/PedirDemo.vue')
 // const PerfilLp = () => import('@/lps/PerfilLp.vue')
 const PaginaNaoEncontrada = () => import('@/views/PaginaNaoEncontrada.vue')
@@ -21,11 +21,6 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-  },
-  {
-    path: '/contato',
-    name: 'Contato',
-    component: Contato,
   },
   {
     path: '/produtos/recrutamento-e-selecao',
@@ -61,6 +56,11 @@ const routes = [
     path: '/planos',
     name: 'Planos',
     component: Planos,
+  },
+  {
+    path: '/falar-com-um-especialista',
+    name: 'FalarComEspecialista',
+    component: FalarComEspecialista,
   },
   {
     path: '/pedir-uma-demo',

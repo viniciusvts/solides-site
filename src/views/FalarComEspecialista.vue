@@ -1,5 +1,5 @@
 <template>
-  <div class="contato container">
+  <div class="falar-com-um-especialista container">
     <h1>A plataforma completa de RH com People Analytics e Gestão Comportamental</h1>
     <p class="first">Recrutamento e seleção, desenvolvimento e retenção <b>em um só lugar</b></p>
     <h2 class="mx-auto">Saiba como o seu RH pode <b>aumentar a produtividade em até 50%</b></h2>
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: 'Contato',
+  name: 'FalarComEspecialista',
   data () {
     return {
       form: {}
@@ -42,5 +42,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '@/assets/scss/contato.scss';
+  @import '@/assets/scss/falar-com-um-especialista.scss';
 </style>

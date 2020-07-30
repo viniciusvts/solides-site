@@ -17,7 +17,6 @@
   </div>
   <div v-else>
     <Loading></Loading>
-    <h4 class="text-center">{{mensagem}}</h4>
   </div>
 </template>
 

@@ -10,6 +10,7 @@ const PeopleAnalytics = () => import('@/views/PeopleAnalytics.vue')
 const Profiler = () => import('@/views/Profiler.vue')
 const Planos = () => import('@/views/Planos.vue')
 const PoliticaPrivacidade = () => import('@/views/PoliticaPrivacidade.vue')
+const Sobre = () => import('@/views/Sobre.vue')
 const FalarComEspecialista = () => import('@/views/FalarComEspecialista.vue')
 const PedirDemo = () => import('@/views/PedirDemo.vue')
 const Contato = () => import('@/views/Contato.vue')
@@ -63,6 +64,11 @@ const routes = [
     path: '/politica-de-privacidade',
     name: 'PoliticaPrivacidade',
     component: PoliticaPrivacidade,
+  },
+  {
+    path: '/sobre-nos',
+    name: 'Sobre',
+    component: Sobre,
   },
   {
     path: '/falar-com-um-especialista',

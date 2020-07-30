@@ -1,0 +1,82 @@
+@import './variables.scss';
+.premiacoes{
+    .content{
+        padding-top: 35px;
+        padding-bottom: 40px;
+        background-color: #F3F3F3;
+        @media (min-width: $desktops) {
+            padding-top: 200px;
+            padding-bottom: 200px;
+        }
+    }
+    h2{
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 23px;
+        margin-bottom: 20px;
+        @media (min-width: $desktops) {
+            font-size: 38px;
+            line-height: 57px;
+            margin-bottom: 50px;
+        }
+    }
+    .text{
+        width: 253px;
+        @media (min-width: $desktops) {
+            width: unset;
+        }
+        *{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 21px;
+            @media (min-width: $smallPhones) {
+                font-size: 15px;
+                line-height: 19px;
+                width: unset;
+            }
+            @media (min-width: $desktops) {
+                font-size: 18px;
+                line-height: 27px;
+            }
+        }
+        ul{
+            list-style: none;
+            padding-left: 17px;
+            @media (min-width: $desktops) {
+                padding-left: 40px;
+            }
+            li{
+                @media (min-width: $desktops) {
+                    margin-bottom: 0;
+                }
+                &::before {
+                    content: '▶';
+                    position: absolute;
+                    left: 15px;
+                    color: #C4C4C4;
+                    font-size: 14px;
+                    @media (min-width: $desktops) {
+                        font-size: 23px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .tr-rotx-180 {
+        transform: rotateX(180deg);
+    }
+    .frame{
+        width: 100%;
+        height: 75px;
+        @media (min-width: $smallPhones) {
+            height: 100px;
+        }
+        @media (min-width: $tablets) {
+            height: 150px;
+        }
+        @media (min-width: $desktops) {
+            height: 150px;
+        }
+    }
+}

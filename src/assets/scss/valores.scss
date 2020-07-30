@@ -1,0 +1,75 @@
+@import './variables.scss';
+.valores{
+    .content{
+        padding-top: 35px;
+        padding-bottom: 150px;
+        background-color: #F3F3F3;
+        @media (min-width: $desktops) {
+            padding-top: 40px;
+            padding-bottom: 200px;
+        }
+    }
+    h2{
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 27px;
+        margin-bottom: 15px;
+        @media (min-width: $desktops) {
+            font-size: 38px;
+            line-height: 57px;
+            margin-bottom: 70px;
+        }
+    }
+    .valores-lista{
+        margin-bottom: 25px;
+        @media (min-width: $desktops) {
+            margin-bottom: 70px;
+        }
+        .number{
+            font-weight: 900;
+            font-size: 36px;
+            line-height: 43px;
+            color: #5F4A87;
+            align-self: flex-end;
+            margin-bottom: 5px;
+            @media (min-width: $desktops) {
+                font-size: 64px;
+                line-height: 77px;
+            }
+        }
+        .title{
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+            margin-top: 16px;
+            @media (min-width: $desktops) {
+                font-size: 24px;
+                line-height: 29px;
+            }
+        }
+        .text{
+            font-size: 14px;
+            line-height: 18px;
+            @media (min-width: $desktops) {
+                font-size: 18px;
+                line-height: 27px;
+            }
+        }
+    }
+    .tr-rotz-180 {
+        transform: rotateZ(180deg);
+    }
+    .frame{
+        width: 100%;
+        height: 75px;
+        @media (min-width: $smallPhones) {
+            height: 100px;
+        }
+        @media (min-width: $tablets) {
+            height: 150px;
+        }
+        @media (min-width: $desktops) {
+            height: 150px;
+        }
+    }
+}

@@ -14,6 +14,7 @@ const Sobre = () => import('@/views/Sobre.vue')
 const FalarComEspecialista = () => import('@/views/FalarComEspecialista.vue')
 const PedirDemo = () => import('@/views/PedirDemo.vue')
 const Contato = () => import('@/views/Contato.vue')
+const Obrigado = () => import('@/views/Obrigado.vue')
 // const PerfilLp = () => import('@/lps/PerfilLp.vue')
 const PaginaNaoEncontrada = () => import('@/views/PaginaNaoEncontrada.vue')
 
@@ -84,6 +85,11 @@ const routes = [
     path: '/contato',
     name: 'Contato',
     component: Contato,
+  },
+  {
+    path: '/obrigado',
+    name: 'Obrigado',
+    component: Obrigado,
   },
   // {
   //   path: '/lps/perfil-disc-lp/',

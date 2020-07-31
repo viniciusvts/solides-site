@@ -1,0 +1,125 @@
+@import '@/assets/scss/variables.scss';
+.trial-modal {
+    background: #5F4A87EE;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 100000;
+    display: none;
+    overflow-x: scroll;
+}
+.modal-out{
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .close{
+        font-family: monospace;
+        font-size: 14px;
+        color: white;
+        background-color: #FFBA00;
+        border-radius: 50%;
+        padding: 5px 10px 7px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        cursor: pointer;
+    }
+    .head{
+        margin-top: 50px;
+        margin-bottom: 0;
+        text-align: center;
+        @media (min-width: $desktops) {
+            margin-top: 30px;
+        }
+        h3{
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 29px;
+            color: #878787;
+            @media (min-width: $desktops) {
+                font-size: 40px;
+                line-height: 48px;
+            }
+        }
+        p{
+            font-weight: bold;
+            font-size: 8px;
+            line-height: 10px;
+            text-align: center;
+            color: #878787;
+            width: 140px;
+            @media (min-width: $desktops) {
+                font-size: 24px;
+                line-height: 29px;
+                width: 400px;
+            }
+        }
+    }
+    form{
+        text-align: center;
+        width: 285px;
+        @media (min-width: $desktops) {
+            width: 800px;
+        }
+        input:first-child{
+            margin-top: 0;
+        }
+        select{
+            appearance: none;
+            background-image: url('../assets/img/svg/arrow-down.svg');
+            background-size: 10px;
+            background-repeat: no-repeat;
+            background-position: top 9px right 15px;
+            @media (min-width: $desktops) {
+                background-size: unset;
+                background-position: top 18px right 30px;
+            }
+        }
+        input, select{
+            background-color: #FFFFFF;
+            border: 1px solid rgba(66, 82, 110, 0.25);
+            box-shadow: inset 0px 1px 3px #DDDDDD;
+            border-radius: 60px;
+            margin: 6px auto;
+            padding: 6px 10px;
+            font-weight: bold;
+            font-size: 10px;
+            line-height: 12px;
+            color: #878787;
+            @media (min-width: $desktops) {
+                margin: 10px auto;
+                padding: 15px 30px;
+                font-size: 18px;
+                line-height: 22px;
+            }
+            &::placeholder, option{
+                color: #878787;
+            }
+        }
+        button{
+            background: #FAB80E;
+            border: 1px solid #CC9C1F;
+            border-radius: 33px;;
+            font-weight: 900;
+            font-size: 8px;
+            line-height: 10px;
+            text-align: center;
+            
+            color: #2F0A77;
+            padding: 3px 5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            cursor: pointer;
+            @media (min-width: $desktops) {
+                color: white;
+                font-size: 18px;
+                line-height: 22px;
+                padding: 20px 50px;
+                margin-bottom: 60px;
+            }
+        }
+    }
+}

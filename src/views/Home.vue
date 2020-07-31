@@ -1,6 +1,6 @@
 <template>
   <div v-if="pageData" class="home">
-    <RHPoderoso :data="pageData.acf.primeira_dobra" />
+    <RHPoderoso v-on:trial-modal="setTrialModalOn" :data="pageData.acf.primeira_dobra" />
     <SoftwareRH :data="pageData.acf.segunda_dobra" />
     <TitleH2Center :text="pageData.acf.titulo_dobra" />
     <RecrutamentoSelecao :data="pageData.acf.terceira_dobra" />
@@ -14,6 +14,7 @@
     <ComoEstamosAjudando :data="pageData.acf.como_ajudamos" />
     <AutomatizeRS :data="pageData.acf.cta" />
     <BlogCards :data="pageData.acf.conteudos" />
+    <TrialModal :show="TrialModal" v-on:trial-modal-close="setTrialOff" />
   </div>
   <div v-else>
     <Loading></Loading>
@@ -35,6 +36,7 @@ import Depoimento from '@/components/Depoimento.vue'
 import ComoEstamosAjudando from '@/components/ComoEstamosAjudando.vue'
 import AutomatizeRS from '@/components/AutomatizeRS.vue'
 import BlogCards from '@/components/BlogCards.vue'
+import TrialModal from '@/components/TrialModal.vue'
 import Loading from "@/components/Loading.vue"
 export default {
   name: 'Home',
@@ -53,18 +55,26 @@ export default {
     ComoEstamosAjudando,
     AutomatizeRS,
     BlogCards,
+    TrialModal,
     Loading
   },
   data () {
     return {
       pageId: 2,
-      pageData: null
+      pageData: null,
+      TrialModal: false
     }
   },
   created () {
     this.getPost();
   },
   methods: {
+    setTrialModalOn () {
+      this.TrialModal = true
+    },
+    setTrialOff () {
+      this.TrialModal = false
+    },
     getPost () {
       this.$http.getPageById(this.pageId)
       .then(res => res.json() )

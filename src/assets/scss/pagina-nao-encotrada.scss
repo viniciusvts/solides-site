@@ -1,9 +1,6 @@
 @import "./variables.scss";
 .nao-encontrado{
     padding-top: 150px;
-    @media (min-width: $desktops) {
-        padding-top: 180px;
-    }
     .message{
         padding-bottom: 250px;
         @media (min-width: $desktops) {

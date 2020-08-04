@@ -1,13 +1,7 @@
 <template>
-  <div class="contato container">
-    <h1 class="text-center">Como podemos ajudar?</h1>
-    <div class="first-text text-center">
-    <p>
-      Use o formulário, telefones ou whatsapp
-    </p>
-    <p>
-      <b>Whatsapp: +55 31 99862-1861 (11) 4765-6674 | (21) 4042-3914 (31) 3262-3464</b>
-    </p>
+  <div v-if="pageData" class="contato container">
+    <h1 class="text-center" v-html="pageData.title.rendered"></h1>
+    <div class="first-text text-center" v-html="pageData.acf.text">
     </div>
     <form action="#" method="post" class="mx-auto">
       <div class="col-12 col-lg-11 mx-auto row">
@@ -24,17 +18,36 @@
     </form>
     <p class="detail">Faça como os clientes Sólides e transforme seu RH</p>
   </div>
+  <div v-else>
+    <Loading></Loading>
+  </div>
 </template>
 
 <script>
+import Loading from "@/components/Loading.vue"
 export default {
   name: 'Contato',
+  components: {
+    Loading,
+  },
   data () {
     return {
+      pageId: 706,
+      pageData: null,
       form: {}
     }
   },
+  created () {
+    this.getPost();
+  },
   methods: {
+    getPost () {
+      this.$http.getPageById(this.pageId)
+      .then(res => res.json() )
+      .then(json => {
+        this.pageData = json
+      })
+    },
     execMascara (evt) {
       let v = evt.target.value;
       v=v.replace(/\D/g,""); //Remove tudo o que não é dígito

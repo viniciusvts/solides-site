@@ -1,11 +1,11 @@
 <template>
   <div class="sobre-head container">
     <div class="vertical-pill green"></div>
-    <img class="d-lg-block" src="@/assets/img/marcus2.png" :alt="data.imagem.alt">
+    <img class="d-lg-block" :src="data.imagem.url" :alt="data.imagem.alt">
     <div class="row">
       <div class="col-8 col-lg-70">
-        <h1>Sobre nós</h1>
-        <div class="text">Transformamos empresas por meio das pessoas</div>
+        <h1 v-html="title"></h1>
+        <div class="text" v-html="data.text"></div>
       </div>
     </div>
   </div>
@@ -15,6 +15,7 @@
 export default {
   name: "SobreHead",
   props: {
+    title: String,
     data: Object
   }
 };

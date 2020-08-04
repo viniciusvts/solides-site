@@ -1,13 +1,13 @@
 <template>
   <div v-if="pageData" class="home">
-    <SobreHead :data="pageData.acf.primeira_dobra" />
-    <MissaoVisao :data="pageData.acf.primeira_dobra" />
-    <SolucaoParaEmpresas :data="pageData.acf.primeira_dobra" />
-    <Valores :data="pageData.acf.primeira_dobra" />
-    <ResponsabilidadeSocial :data="pageData.acf.primeira_dobra" />
-    <GestaoConsColabs :data="pageData.acf.primeira_dobra" />
-    <TransfGestaoTalentos :data="pageData.acf.primeira_dobra" />
-    <Premiacoes :data="pageData.acf.primeira_dobra" />
+    <SobreHead :data="pageData.acf.head" :title="pageData.title.rendered" />
+    <MissaoVisao :data="pageData.acf.missao_visao_valor" />
+    <SolucaoParaEmpresas :data="pageData.acf.solucao" />
+    <Valores :data="pageData.acf.valores" />
+    <ResponsabilidadeSocial :data="pageData.acf.resp_social" />
+    <GestaoConsColabs :data="pageData.acf.gestao" />
+    <TransfGestaoTalentos :data="pageData.acf.transf_analytics" />
+    <Premiacoes :data="pageData.acf.premiacoes" />
     <div class="gray"></div>
   </div>
   <div v-else>
@@ -40,7 +40,7 @@ export default {
   },
   data () {
     return {
-      pageId: 2,
+      pageId: 722,
       pageData: null
     }
   },

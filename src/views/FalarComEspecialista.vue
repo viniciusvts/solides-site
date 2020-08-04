@@ -1,8 +1,8 @@
 <template>
-  <div class="falar-com-um-especialista container">
-    <h1>A plataforma completa de RH com People Analytics e Gestão Comportamental</h1>
-    <p class="first">Recrutamento e seleção, desenvolvimento e retenção <b>em um só lugar</b></p>
-    <h2 class="mx-auto">Saiba como o seu RH pode <b>aumentar a produtividade em até 50%</b></h2>
+  <div v-if="pageData" class="falar-com-um-especialista container">
+    <h1 v-html="pageData.title.rendered"></h1>
+    <p class="first" v-html="pageData.acf.text"></p>
+    <h2 class="mx-auto" v-html="pageData.acf.sub"></h2>
     <form action="#" method="post" class="mx-auto">
       <div class="col-12 col-lg-11 mx-auto row">
         <input class="col-12" type="text" 
@@ -17,19 +17,38 @@
         <button type="submit" class="ml-auto">Falar com um especialista</button>
       </div>
     </form>
-    <p class="detail">Faça como os clientes Sólides e transforme seu RH</p>
+    <p class="detail" v-html="pageData.acf.detalhe"></p>
+  </div>
+  <div v-else>
+    <Loading></Loading>
   </div>
 </template>
 
 <script>
+import Loading from "@/components/Loading.vue"
 export default {
   name: 'FalarComEspecialista',
+  components: {
+    Loading,
+  },
   data () {
     return {
+      pageId: 698,
+      pageData: null,
       form: {}
     }
   },
+  created () {
+    this.getPost();
+  },
   methods: {
+    getPost () {
+      this.$http.getPageById(this.pageId)
+      .then(res => res.json() )
+      .then(json => {
+        this.pageData = json
+      })
+    },
     execMascara (evt) {
       let v = evt.target.value;
       v=v.replace(/\D/g,""); //Remove tudo o que não é dígito

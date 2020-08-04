@@ -47,9 +47,10 @@
                 line-height: 29px;
             }
         }
-        .text{
+        .text, .text *{
             font-size: 14px;
             line-height: 18px;
+            margin-bottom: 0;
             @media (min-width: $desktops) {
                 font-size: 18px;
                 line-height: 27px;

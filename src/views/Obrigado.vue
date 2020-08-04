@@ -5,11 +5,11 @@
         <div class="vertical-pill blue"></div>
         <div class="d-none d-lg-block col-1"></div>
         <div class="col-8 col-lg-9">
-            <h2>Obrigado</h2>
-            <div class="text">Um de nossos especialistas entrará em contato com você o mais breve possível</div>
+            <h1 v-html="pageData.title.rendered"></h1>
+            <div class="text" v-html="pageData.acf.texto"></div>
             <div class="buttons">
-                <a href="#">
-                    <button class="badge badge-pill purple-back">Retornar a página inicial</button>
+                <a :href="pageData.acf.link.url">
+                    <button class="badge badge-pill purple-back" v-html="pageData.acf.link.title"></button>
                 </a>
             </div>
         </div>
@@ -25,7 +25,7 @@ export default {
   name: "Obrigado",
   data () {
     return {
-      pageId: 2,
+      pageId: 773,
       pageData: null
     }
   },

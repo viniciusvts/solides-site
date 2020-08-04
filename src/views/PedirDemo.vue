@@ -1,7 +1,7 @@
 <template>
-  <div class="pedir-demo container">
-    <h1 class="text-center">Solicite uma demontração do sistema no formulário</h1>
-    <p class="first text-center">Recrutamento e seleção, desenvolvimento e retenção <b>em um só lugar</b></p>
+  <div v-if="pageData" class="pedir-demo container">
+    <h1 class="text-center" v-html="pageData.title.rendered"></h1>
+    <p class="first text-center" v-html="pageData.acf.text"></p>
     <form action="#" method="post" class="mx-auto">
       <div class="col-12 col-lg-11 mx-auto row">
         <input class="col-12" type="text" required
@@ -32,19 +32,38 @@
         <button type="submit" class="ml-auto mt-2">Pedir demontração</button>
       </div>
     </form>
-    <p class="detail">Faça como os clientes Sólides e transforme seu RH</p>
+    <p class="detail" v-html="pageData.acf.detalhe"></p>
+  </div>
+  <div v-else>
+    <Loading></Loading>
   </div>
 </template>
 
 <script>
+import Loading from "@/components/Loading.vue"
 export default {
   name: 'PedirDemo',
+  components: {
+    Loading,
+  },
   data () {
     return {
+      pageId: 688,
+      pageData: null,
       form: {}
     }
   },
+  created () {
+    this.getPost();
+  },
   methods: {
+    getPost () {
+      this.$http.getPageById(this.pageId)
+      .then(res => res.json() )
+      .then(json => {
+        this.pageData = json
+      })
+    },
     execMascara (evt) {
       let v = evt.target.value;
       v=v.replace(/\D/g,""); //Remove tudo o que não é dígito

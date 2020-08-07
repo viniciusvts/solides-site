@@ -37,8 +37,12 @@
         line-height: 18px;
         ///
         margin-bottom: 10px;
-        @media (min-width: $desktops) {
+        @media (min-width: $tablets) {
             width: unset;
+            font-size: 20px;
+            line-height: 25px;
+        }
+        @media (min-width: $desktops) {
             font-size: 38px;
             line-height: 57px;
             margin-bottom: 36px;
@@ -48,6 +52,9 @@
     .text{
         width: 254px;
         margin-bottom: 45px;
+        @media (min-width: $tablets) {
+            width: 600px;
+        }
         @media (min-width: $desktops) {
             margin-bottom: 100px;
             width: 740px;
@@ -56,6 +63,10 @@
             font-weight: 500;
             font-size: 14px;
             line-height: 17px;
+            @media (min-width: $tablets) {
+                font-size: 16px;
+                line-height: 22px;
+            }
             @media (min-width: $desktops) {
                 font-size: 18px;
                 line-height: 22px;

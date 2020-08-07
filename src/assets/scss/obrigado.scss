@@ -18,6 +18,12 @@ $purple_border: #2F0A77;
         text-align: right;
         margin-top: 60px;
         margin-bottom: 30px;
+        @media (min-width: $tablets) {
+            font-size: 40px;
+            line-height: 46px;
+            margin-bottom: 40px;
+            width: unset;
+        }
         @media (min-width: $desktops) {
             font-size: 55px;
             line-height: 66px;
@@ -34,7 +40,11 @@ $purple_border: #2F0A77;
         width: 150px;
         margin-left: auto;
         @media (min-width: $tablets) {
-            width: 150px;
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 120px;
+            width: 400px;
+            //width: 150px;
         }
         @media (min-width: $desktops) {
             font-size: 26px;
@@ -97,8 +107,9 @@ $purple_border: #2F0A77;
         }
         @media (min-width: $tablets) {
             right: 100px;
-            width: 90px;
+            width: 110px;
             height: 450px;
+            transform: translateY(50px);
         }
         @media (min-width: $desktops) {
             right: 123px;

@@ -26,6 +26,13 @@ $cinza: #F3F3F3;
         margin-bottom: 25px;
         margin-right: auto;
         margin-left: auto;
+        @media (min-width: $tablets) {
+            font-size: 40px;
+            line-height: 46px;
+            text-align: center;
+            margin-bottom: 40px;
+            width: unset;
+        }
         @media (min-width: $desktops) {
             font-size: 48px;
             line-height: 58px;
@@ -41,6 +48,12 @@ $cinza: #F3F3F3;
         font-weight: normal;
         font-size: 18px;
         line-height: 24px;
+        @media (min-width: $tablets) {
+            font-size: 22px;
+            line-height: 38px;
+            margin-bottom: 120px;
+            width: 440px;
+        }
         @media (min-width: $desktops) {
             font-size: 33px;
             line-height: 40px;
@@ -52,6 +65,13 @@ $cinza: #F3F3F3;
             margin-left: auto;
             margin-right: auto;
             color: #5F4A87;
+            @media (min-width: $tablets) {
+                margin-bottom: 50px;
+                width: 500px;
+                margin-right: auto;
+                margin-left: auto;
+                text-align: center;
+            }
             @media (min-width: $desktops) {
                 margin-bottom: 75px;
                 width: unset;
@@ -71,6 +91,15 @@ $cinza: #F3F3F3;
             width: 240px;
             margin-right: auto;
             margin-left: auto;
+            @media (min-width: $tablets) {
+                font-size: 24px;
+                line-height: 32px;
+                text-align: left;
+                margin-top: 75px;
+                width: 300px;
+                margin-left: auto;
+                margin-right: 50px;
+            }
             @media (min-width: $desktops) {
                 font-weight: bold;
                 font-size: 36px;
@@ -96,6 +125,12 @@ $cinza: #F3F3F3;
         text-align: center;
         margin-bottom: 40px;
         width: 210px;
+        @media (min-width: $tablets) {
+            font-size: 28px;
+            line-height: 43px;
+            margin-bottom: 100px;
+            width: 590px;
+        }
         @media (min-width: $desktops) {
             font-size: 36px;
             line-height: 43px;
@@ -109,11 +144,17 @@ $cinza: #F3F3F3;
         border-radius: 20px;
         text-align: center;
         width: 285px;
+        @media (min-width: $tablets) {
+            width: 500px;
+        }
         @media (min-width: $desktops) {
             width: 800px;
         }
         input:first-child{
             margin-top: 20px;
+            @media (min-width: $tablets) {
+                margin-top: 40px;
+            }
             @media (min-width: $desktops) {
                 margin-top: 60px;
             }
@@ -140,6 +181,12 @@ $cinza: #F3F3F3;
             font-size: 8px;
             line-height: 10px;
             color: #878787;
+            @media (min-width: $tablets) {
+                margin: 10px auto;
+                padding: 12px 15px;
+                font-size: 14px;
+                line-height: 18px;
+            }
             @media (min-width: $desktops) {
                 margin: 20px auto;
                 padding: 20px 30px;
@@ -163,6 +210,12 @@ $cinza: #F3F3F3;
             padding: 3px 5px;
             text-transform: uppercase;
             margin-bottom: 20px;
+            @media (min-width: $tablets) {
+                font-size: 14px;
+                line-height: 18px;
+                padding: 7px 30px;
+                margin-bottom: 40px;
+            }
             @media (min-width: $desktops) {
                 color: white;
                 font-size: 18px;

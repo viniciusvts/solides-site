@@ -14,6 +14,10 @@
         font-size: 18px;
         line-height: 27px;
         margin-bottom: 15px;
+        @media (min-width: $tablets) {
+            font-size: 24px;
+            line-height: 29px;
+        }
         @media (min-width: $desktops) {
             font-size: 38px;
             line-height: 57px;
@@ -32,6 +36,10 @@
             color: #5F4A87;
             align-self: flex-end;
             margin-bottom: 5px;
+            @media (min-width: $tablets) {
+                font-size: 46px;
+                line-height: 60px;
+            }
             @media (min-width: $desktops) {
                 font-size: 64px;
                 line-height: 77px;
@@ -42,6 +50,10 @@
             font-size: 18px;
             line-height: 22px;
             margin-top: 16px;
+            @media (min-width: $tablets) {
+                font-size: 22px;
+                line-height: 40px;
+            }
             @media (min-width: $desktops) {
                 font-size: 24px;
                 line-height: 29px;
@@ -51,6 +63,10 @@
             font-size: 14px;
             line-height: 18px;
             margin-bottom: 0;
+            @media (min-width: $tablets) {
+                font-size: 16px;
+                line-height: 22px;
+            }
             @media (min-width: $desktops) {
                 font-size: 18px;
                 line-height: 27px;

@@ -20,9 +20,13 @@
         margin-bottom: 40px;
         margin-left: auto;
         margin-right: auto;
+        @media (min-width: $tablets) {
+            font-size: 40px;
+            line-height: 46px;
+            margin-bottom: 40px;
+        }
         @media (min-width: $desktops) {
             font-size: 38px;
-            line-height: 46px;
             margin-bottom: 27px;
         }
     }
@@ -30,13 +34,30 @@
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 20px;
+        @media (min-width: $tablets) {
+            text-align: center;
+        }
         @media (min-width: $desktops) {
             margin-bottom: 0;
+        }
+        img{
+            width: 100%;
+            @media (min-width: $tablets) {
+                width: 60%;
+            }
+            @media (min-width: $desktops) {
+                width: 100%;
+            }
         }
     }
     .text{
         margin-bottom: 30px;
+        @media (min-width: $tablets) {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
         @media (min-width: $desktops) {
+            margin-top: 0;
             margin-bottom: 0;
         }
         *{
@@ -52,6 +73,11 @@
             text-align: center;
             margin-left: auto;
             margin-right: auto;
+            @media (min-width: $tablets) {
+                font-size: 21px;
+                line-height: 30px;
+                width: 500px;
+            }
             @media (min-width: $desktops) {
                 font-size: 24px;
                 line-height: 32px;
@@ -79,11 +105,11 @@
             @media (min-width: $tablets) {
                 padding: 12px 40px;
                 font-size: 19px;
-                margin-left: unset;
-                margin-right: unset;
             }
             @media (min-width: $desktops) {
                 font-size: 24px;
+                margin-left: unset;
+                margin-right: unset;
             }
         }
         &.purple{

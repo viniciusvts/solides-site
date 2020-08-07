@@ -22,6 +22,10 @@
         text-align: center;
         ///
         margin-bottom: 65px;
+        @media (min-width: $tablets){
+            font-size: 40px;
+            line-height: 46px;
+        }
         @media (min-width: $desktops) {
             font-size: 42px;
             line-height: 50px;
@@ -53,6 +57,12 @@
             height: 500px;
             left: 18px;
             top: 220px;
+            @media (min-width: $tablets){
+                width: 80px;
+                height: 400px;
+                left: 50px;
+                transform: translateY(70px);
+            }
             @media (min-width: $desktops) {
                 display: none;
             }
@@ -89,6 +99,9 @@
         img{
             margin-bottom: 45px;
             height: 46px;
+            @media (min-width: $tablets) {
+                height: 85px;
+            }
             @media (min-width: $desktops) {
                 margin-bottom: 60px;
                 width: unset;

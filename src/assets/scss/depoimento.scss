@@ -22,13 +22,17 @@
             width: 200px;
             margin-left: 100px;
             text-align: left;
-            @media (min-width: $desktops) {
-                font-size: 42px;
-                line-height: 50px;
+            @media (min-width: $tablets){
+                font-size: 40px;
+                line-height: 46px;
                 margin-bottom: 78px;
                 width: unset;
                 margin-left: unset;
                 text-align: center;
+            }
+            @media (min-width: $desktops) {
+                font-size: 42px;
+                line-height: 50px;
             }
         }
     }
@@ -66,6 +70,11 @@
             border-radius: 10px;
             width: 262px;
             height: 119px;
+            @media (min-width: $tablets) {
+                border-radius: 20px;
+                width: 450px;
+                height: 250px;
+            }
             @media (min-width: $desktops) {
                 border-radius: 30px;
                 width: 615px;
@@ -96,10 +105,10 @@
             height: 5px;
             margin: 0;
             border-radius: 0;
-            // @media (min-width: $desktops) {
-            //     width: 20px;
-            //     height: 10px;
-            // }
+            @media (min-width: $tablets) {
+                width: 30px;
+                height: 10px;
+            }
         }
         /// difine um hover de leve
         .owl-theme .owl-dots .owl-dot:hover span {

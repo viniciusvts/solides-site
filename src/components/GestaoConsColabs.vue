@@ -8,8 +8,8 @@
         </div>
         <div class="perfis col-lg-11 mx-auto px-0">
           <div class="item row col-lg" v-for="(item, index) in data.perfis_comportamentais" :key="index">
-            <div class="col-1 d-lg-none"></div>
-            <h2 class="col-2 col-lg-12" v-html="item.titulo"></h2>
+            <div class="col-1 col-md-2 d-lg-none"></div>
+            <h2 class="col-2 col-md-1 col-lg-12" v-html="item.titulo"></h2>
             <div class="col-1 d-lg-none"></div>
             <div class="text col-7 col-lg-12">
               <p v-html="item.texto"></p>

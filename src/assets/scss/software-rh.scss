@@ -18,6 +18,8 @@
         text-align: center;
         width: 260px;
         @media (min-width: $tablets) {
+            font-size: 33px;
+            line-height: 33px;
             width: unset;
             margin-left: unset;
             margin-right: unset;
@@ -28,7 +30,7 @@
             margin-bottom: 50px;
         }
     }
-    .text{
+    .text, .text *{
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
@@ -39,6 +41,9 @@
         text-align: center;
         width: 230px;
         @media (min-width: $tablets) {
+            font-size: 22px;
+            line-height: 22px;
+            margin-bottom: 80px;
             width: unset;
             margin-left: unset;
             margin-right: unset;

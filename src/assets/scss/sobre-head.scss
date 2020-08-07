@@ -18,6 +18,12 @@ $purple_border: #2F0A77;
         line-height: 37px;
         margin-bottom: 10px;
         text-align: right;
+        @media (min-width: $tablets) {
+            font-size: 40px;
+            line-height: 46px;
+            margin-bottom: 40px;
+            width: unset;
+        }
         @media (min-width: $desktops) {
             max-width: 800px;
             font-size: 55px;
@@ -34,6 +40,12 @@ $purple_border: #2F0A77;
         margin-bottom: 93px;
         color: #5F4A87;
         text-align: right;
+        @media (min-width: $tablets) {
+            font-size: 30px;
+            line-height: 38px;
+            margin-bottom: 120px;
+            width: 440px;
+        }
         @media (min-width: $desktops) {
             font-size: 55px;
             line-height: 66px;
@@ -48,6 +60,10 @@ $purple_border: #2F0A77;
         right: 0;
         width: 390px;
         z-index: -1;
+        @media (min-width: $tablets) {
+            top: 150px;
+            width: 550px;
+        }
         @media (min-width: $desktops) {
             top: 200px;
             width: 800px;
@@ -61,6 +77,12 @@ $purple_border: #2F0A77;
         height: 327px;
         z-index: -2;
         transform: translateY(40px);
+        @media (min-width: $tablets) {
+            right: 80px;
+            width: 150px;
+            height: 600px;
+            transform: translateY(-20px);
+        }
         @media (min-width: $desktops) {
             right: 123px;
             width: 211px;

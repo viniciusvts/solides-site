@@ -24,6 +24,10 @@
                 line-height: 30px;
                 width: unset;
             }
+            @media (min-width: $tablets) {
+                font-size: 24px;
+                line-height: 29px;
+            }
             @media (min-width: $desktops) {
                 font-size: 38px;
                 line-height: 57px;
@@ -45,6 +49,10 @@
                     font-size: 15px;
                     line-height: 19px;
                     width: unset;
+                }
+                @media (min-width: $tablets) {
+                    font-size: 16px;
+                    line-height: 22px;
                 }
                 @media (min-width: $desktops) {
                     font-size: 18px;
@@ -134,6 +142,10 @@
                 text-align: center;
                 writing-mode: tb;
                 transform: rotate(180deg);
+                @media (min-width: $tablets) {
+                    font-size: 20px;
+                    line-height: 25px;
+                }
                 @media (min-width: $desktops) {
                     font-size: 24px;
                     line-height: 29px;
@@ -151,6 +163,10 @@
                     font-weight: 500;
                     font-size: 14px;
                     line-height: 17px;
+                    @media (min-width: $tablets) {
+                        font-size: 16px;
+                        line-height: 22px;
+                    }
                     @media (min-width: $desktops) {
                         font-size: 18px;
                         line-height: 22px;
@@ -172,7 +188,7 @@
         }
         .text{
             width: 250px;
-            @media (min-width: $desktops) {
+            @media (min-width: $tablets) {
                 width: unset;
             }
             @media (min-width: $desktops) {
@@ -186,6 +202,10 @@
                     font-size: 15px;
                     line-height: 19px;
                     width: unset;
+                }
+                @media (min-width: $tablets) {
+                    font-size: 16px;
+                    line-height: 22px;
                 }
                 @media (min-width: $desktops) {
                     font-size: 18px;

@@ -15,12 +15,17 @@
         width: 220px;
         margin-left: auto;
         margin-right: auto;
+        @media (min-width: $tablets) {
+            font-size: 40px;
+            line-height: 46px;
+            margin-bottom: 40px;
+            width: unset;
+        }
         @media (min-width: $desktops) {
             font-size: 48px;
             line-height: 58px;
             text-align: left;
             margin-bottom: 60px;
-            width: unset;
         }
     }
     h2{
@@ -32,11 +37,16 @@
         margin-left: auto;
         text-align: center;
         margin-right: auto;
+        @media (min-width: $tablets) {
+            font-size: 22px;
+            line-height: 30px;
+            margin-bottom: 120px;
+            width: 440px;
+        }
         @media (min-width: $desktops) {
             font-size: 28px;
             line-height: 35px;
             text-align: left;
-            margin-bottom: 120px;
             width: unset;
         }
     }
@@ -47,6 +57,9 @@
         margin-left: auto;
         margin-right: auto;
         width: 260px;
+        @media (min-width: $tablets) {
+            width: 600px;
+        }
         @media (min-width: $desktops) {
             margin-bottom: 120px;
             width: 960px;
@@ -55,6 +68,10 @@
             font-weight: 500;
             font-size: 14px;
             line-height: 17px;
+            @media (min-width: $tablets) {
+                font-size: 20px;
+                line-height: 28px;
+            }
             @media (min-width: $desktops) {
                 font-size: 24px;
                 line-height: 35px;
@@ -69,6 +86,11 @@
         color: #5F4A87;
         width: 240px;
         margin-left: auto;
+        @media (min-width: $tablets) {
+            font-size: 20px;
+            line-height: 28px;
+            width: 350px;
+        }
         @media (min-width: $desktops) {
             font-size: 24px;
             line-height: 35px;

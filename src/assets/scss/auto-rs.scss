@@ -20,12 +20,16 @@ $purple_border: #2F0A77;
         color: #000000;
         ///
         margin-bottom: 26px;
+        @media (min-width: $tablets){
+            font-size: 30px;
+            line-height: 46px;
+        }
         @media (min-width: $desktops) {
             font-size: 42px;
             line-height: 50px;
         }
     }
-    .text{
+    .text, .text *{
         font-family: Lato;
         font-style: normal;
         font-weight: normal;
@@ -38,6 +42,11 @@ $purple_border: #2F0A77;
         margin-left: auto;
         margin-right: auto;
         max-width: 230px;
+        @media (min-width: $tablets){
+            font-size: 22px;
+            line-height: 33px;
+            max-width: 500px;
+        }
         @media (min-width: $desktops) {
             font-size: 31px;
             line-height: 37px;

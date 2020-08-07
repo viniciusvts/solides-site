@@ -18,11 +18,15 @@
         ///
         margin-bottom: 30px;
         transform: translateX(10%);
+        @media (min-width: $tablets) {
+            font-size: 40px;
+            line-height: 46px;
+            margin-bottom: 40px;
+            transform: translateX(0);
+        }
         @media (min-width: $desktops) {
             font-size: 38px;
-            line-height: 46px;
             margin-bottom: 20px;
-            transform: translateX(0);
         }
         &.novo{
             &::before{
@@ -55,9 +59,19 @@
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 10px;
+        @media (min-width: $tablets) {
+            text-align: center;
+            width: 60%;
+        }
     }
     .text{
+        @media (min-width: $tablets) {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
         @media (min-width: $desktops) {
+            margin-top: 0;
+            margin-bottom: 0;
             width: 85%;
             margin-left: auto;
         }
@@ -70,10 +84,18 @@
             ///
             margin-bottom: 20px;
             width: 101%;
+            @media (min-width: $tablets) {
+                font-size: 21px;
+                line-height: 30px;
+                width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
             @media (min-width: $desktops) {
                 font-size: 24px;
                 line-height: 29px;
                 margin-bottom: 40px;
+                width: unset;
             }
         }
     }

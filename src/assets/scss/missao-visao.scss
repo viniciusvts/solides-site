@@ -14,6 +14,10 @@
                 font-weight: bold;
                 font-size: 18px;
                 line-height: 27px;
+                @media (min-width: $tablets) {
+                    font-size: 24px;
+                    line-height: 29px;
+                }
                 @media (min-width: $desktops) {
                     font-size: 38px;
                     line-height: 27px;
@@ -24,6 +28,10 @@
                     font-weight: 500;
                     font-size: 14px;
                     line-height: 17px;
+                    @media (min-width: $tablets) {
+                        font-size: 16px;
+                        line-height: 19px;
+                    }
                     @media (min-width: $desktops) {
                         font-size: 24px;
                         line-height: 29px;
@@ -39,7 +47,7 @@
             .text{
                 *{
                     width: 155px;
-                    @media (min-width: $desktops) {
+                    @media (min-width: $tablets) {
                         width: unset;
                     }
                 }

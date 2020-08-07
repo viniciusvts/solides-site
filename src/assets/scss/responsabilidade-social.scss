@@ -20,6 +20,12 @@
         right: 30px;
         z-index: -1;
         transform: translateY(-130px);
+        @media (min-width: $tablets) {
+            right: 110px;
+            width: 100px;
+            height: 280px;
+            transform: translateY(-200px);
+        }
         @media (min-width: $desktops) {
             right: 133px;
             width: 211px;
@@ -39,6 +45,10 @@
         @media (min-width: $smallPhones) {
             font-size: 20px;
         }
+        @media (min-width: $tablets) {
+            font-size: 24px;
+            line-height: 29px;
+        }
         @media (min-width: $desktops) {
             font-size: 38px;
             line-height: 57px;
@@ -55,6 +65,9 @@
             @media (min-width: $smallPhones) {
                 width: 250px;
             }
+            @media (min-width: $smallPhones) {
+                width: 400px;
+            }
             @media (min-width: $desktops) {
                 width: unset;
             }
@@ -62,6 +75,10 @@
         *{
             font-size: 14px;
             line-height: 18px;
+            @media (min-width: $tablets) {
+                font-size: 16px;
+                line-height: 22px;
+            }
             @media (min-width: $desktops) {
                 font-size: 18px;
                 line-height: 22px;

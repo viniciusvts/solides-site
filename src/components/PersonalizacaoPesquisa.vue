@@ -8,7 +8,7 @@
             <h2 class="text-center" v-html="data.titulo"></h2>
           </div>
           <div class="col-11 col-lg-5 imagem">
-            <img :src="data.imagem.url" :alt="data.imagem.alt" class="w-100">
+            <img :src="data.imagem.url" :alt="data.imagem.alt">
           </div>
           <div class="d-none d-lg-block col-1"></div>
           <div class="col-12 col-lg-6 vertical-center">

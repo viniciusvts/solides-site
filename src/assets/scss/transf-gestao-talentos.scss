@@ -52,6 +52,9 @@
     .text{
         width: 254px;
         margin-bottom: 45px;
+        @media (min-width: $smallPhones) {
+            width: unset;
+        }
         @media (min-width: $tablets) {
             width: 600px;
         }

@@ -24,6 +24,10 @@ $cinza: #F3F3F3;
         line-height: 29px;
         width: 270px;
         margin-bottom: 25px;
+        @media (min-width: $smallPhones) {
+            margin-left: auto;
+            margin-right: auto;
+        }
         @media (min-width: $tablets) {
             font-size: 40px;
             line-height: 46px;
@@ -60,6 +64,12 @@ $cinza: #F3F3F3;
         &.first{
             margin-bottom: 190px;
             width: 215px;
+            @media (min-width: $smallPhones) {
+                margin-bottom: 100px;
+                width: 270px;
+                margin-left: auto;
+                margin-right: auto;
+            }
             @media (min-width: $tablets) {
                 margin-bottom: 50px;
                 width: 500px;
@@ -87,9 +97,8 @@ $cinza: #F3F3F3;
                 line-height: 32px;
                 text-align: left;
                 margin-top: 75px;
-                width: 300px;
+                max-width: 490px;
                 margin-left: auto;
-                margin-right: 50px;
             }
             @media (min-width: $desktops) {
                 font-size: 36px;

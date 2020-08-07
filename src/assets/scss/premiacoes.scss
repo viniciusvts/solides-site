@@ -27,7 +27,7 @@
     }
     .text{
         width: 253px;
-        @media (min-width: $tablets) {
+        @media (min-width: $smallPhones) {
             width: unset;
         }
         *{

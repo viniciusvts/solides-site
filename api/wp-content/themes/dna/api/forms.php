@@ -10,16 +10,19 @@ function dnaapi_falarComEspecialista($req){
   $email = $req->get_param('email');
   $telefone = $req->get_param('telefone');
   $cargo = $req->get_param('cargo');
+  $uriOrigem = $req->get_param('uriOrigem');
   // envia email
   $to = get_option('admin_email');
   $subject = 'Sólides Market Place - contato com o parceiro';
   $message = "Nome: ".$nome
       ."<br>Email: ".$email
       ."<br>telefone: ".$telefone
-      ."<br>cargo: ".$cargo;
+      ."<br>cargo: ".$cargo
+      ."<br>uriOrigem: ".$uriOrigem;
   $headers = array('Content-Type: text/html; charset=UTF-8');
   $wpmail = wp_mail( $to, $subject, $message, $headers );
-  $url = '/obrigado';
+  $uriOrigem = $uriOrigem;
+  $url = '/obrigado/?uriOrigem='. $uriOrigem;
   wp_redirect($url);
   exit;
 }
@@ -34,16 +37,19 @@ function dnaapi_contato($req){
   $email = $req->get_param('email');
   $telefone = $req->get_param('telefone');
   $mensagem = $req->get_param('mensagem');
+  $uriOrigem = $req->get_param('uriOrigem');
   // envia email
   $to = get_option('admin_email');
   $subject = 'Sólides Market Place - contato com o parceiro';
   $message = "Nome: ".$nome
       ."<br>Email: ".$email
       ."<br>telefone: ".$telefone
-      ."<br>mensagem: ".$mensagem;
+      ."<br>mensagem: ".$mensagem
+      ."<br>uriOrigem: ".$uriOrigem;
   $headers = array('Content-Type: text/html; charset=UTF-8');
   $wpmail = wp_mail( $to, $subject, $message, $headers );
-  $url = '/obrigado';
+  $uriOrigem = $uriOrigem;
+  $url = '/obrigado/?uriOrigem='. $uriOrigem;
   wp_redirect($url);
   exit;
 }
@@ -60,6 +66,7 @@ function dnaapi_pedirUmaDemo($req){
   $cargo = $req->get_param('cargo');
   $numColab = $req->get_param('numColab');
   $telefone = $req->get_param('telefone');
+  $uriOrigem = $req->get_param('uriOrigem');
   // envia email
   $to = get_option('admin_email');
   $subject = 'Sólides Market Place - contato com o parceiro';
@@ -68,10 +75,12 @@ function dnaapi_pedirUmaDemo($req){
       ."<br>empresa: ".$empresa
       ."<br>cargo: ".$cargo
       ."<br>numColab: ".$numColab
-      ."<br>telefone: ".$telefone;
+      ."<br>telefone: ".$telefone
+      ."<br>uriOrigem: ".$uriOrigem;
   $headers = array('Content-Type: text/html; charset=UTF-8');
   $wpmail = wp_mail( $to, $subject, $message, $headers );
-  $url = '/obrigado';
+  $uriOrigem = $uriOrigem;
+  $url = '/obrigado/?uriOrigem='. $uriOrigem;
   wp_redirect($url);
   exit;
 }

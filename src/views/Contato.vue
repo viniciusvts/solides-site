@@ -3,7 +3,7 @@
     <h1 class="text-center" v-html="pageData.title.rendered"></h1>
     <div class="first-text text-center" v-html="pageData.acf.text">
     </div>
-    <form :action="$http.baseURL + '/wp-json/dna_theme/v1/contato'" method="post" class="mx-auto">
+    <form :action="$http.baseURL + 'wp-json/dna_theme/v1/contato'" method="post" class="mx-auto">
       <div class="col-12 col-lg-11 mx-auto row">
         <input class="col-12" type="text" required
             name="nome" id="nome" placeholder="Nome">

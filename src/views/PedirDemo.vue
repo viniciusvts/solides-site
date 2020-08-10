@@ -2,10 +2,10 @@
   <div v-if="pageData" class="pedir-demo container">
     <h1 class="text-center" v-html="pageData.title.rendered"></h1>
     <p class="first text-center" v-html="pageData.acf.text"></p>
-    <form action="#" method="post" class="mx-auto">
+    <form :action="$http.baseURL + 'wp-json/dna_theme/v1/pedir-uma-demo/'" method="post" class="mx-auto">
       <div class="col-12 col-lg-11 mx-auto row">
         <input class="col-12" type="text" required
-            name="name" id="name" placeholder="Nome">
+            name="nome" id="nome" placeholder="Nome">
         <input class="col-12" type="email" required
             name="email" id="email" placeholder="E-mail corporativo">
         <input class="col-12" type="text" 
@@ -27,7 +27,7 @@
           <option value="50+">50+</option>
         </select>
         <input class="col-12" type="text" required
-            name="tel" id="tel" placeholder="Telefone com DDD ou Whatsapp"
+            name="telefone" id="telefone" placeholder="Telefone com DDD ou Whatsapp"
             v-on:keyup="execMascara">
         <button type="submit" class="ml-auto mt-2">Pedir demontração</button>
       </div>

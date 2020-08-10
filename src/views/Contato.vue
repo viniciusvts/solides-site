@@ -3,14 +3,14 @@
     <h1 class="text-center" v-html="pageData.title.rendered"></h1>
     <div class="first-text text-center" v-html="pageData.acf.text">
     </div>
-    <form action="#" method="post" class="mx-auto">
+    <form :action="$http.baseURL + '/wp-json/dna_theme/v1/contato'" method="post" class="mx-auto">
       <div class="col-12 col-lg-11 mx-auto row">
         <input class="col-12" type="text" required
-            name="name" id="name" placeholder="Nome">
+            name="nome" id="nome" placeholder="Nome">
         <input class="col-12" type="email" required
             name="email" id="email" placeholder="E-mail corporativo">
         <input class="col-12" type="text" required
-            name="tel" id="tel" placeholder="Telefone com DDD ou Whatsapp"
+            name="telefone" id="telefone" placeholder="Telefone com DDD ou Whatsapp"
             v-on:keyup="execMascara">
         <textarea name="mensagem" id="mensagem" cols="80" rows="6">Escreva sua mensagem aqui</textarea>
         <button type="submit" class="ml-auto mt-2">Enviar</button>

@@ -3,14 +3,14 @@
     <h1 v-html="pageData.title.rendered"></h1>
     <p class="first" v-html="pageData.acf.text"></p>
     <h2 class="mx-auto" v-html="pageData.acf.sub"></h2>
-    <form action="#" method="post" class="mx-auto">
+    <form :action="$http.baseURL + 'wp-json/dna_theme/v1/falar-com-especialista'" method="post" class="mx-auto">
       <div class="col-12 col-lg-11 mx-auto row">
         <input class="col-12" type="text" 
-            name="name" id="name" placeholder="Nome">
+            name="nome" id="nome" placeholder="Nome">
+        <input class="col-12" type="email" 
+            name="email" id="email" placeholder="E-mail corporativo">
         <input class="col-12" type="text" 
-            name="name" id="name" placeholder="E-mail corporativo">
-        <input class="col-12" type="text" 
-            name="tel" id="tel" placeholder="Telefone com DDD ou Whatsapp"
+            name="telefone" id="telefone" placeholder="Telefone com DDD ou Whatsapp"
             v-on:keyup="execMascara">
         <input class="col-12" type="text" 
             name="cargo" id="cargo" placeholder="Cargo">

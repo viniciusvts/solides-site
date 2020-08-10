@@ -13,6 +13,7 @@
             name="telefone" id="telefone" placeholder="Telefone com DDD ou Whatsapp"
             v-on:keyup="execMascara">
         <textarea name="mensagem" id="mensagem" cols="80" rows="6">Escreva sua mensagem aqui</textarea>
+        <input type="hidden" name="uriOrigem" :value="uriOrigem">
         <button type="submit" class="ml-auto mt-2">Enviar</button>
       </div>
     </form>
@@ -34,7 +35,7 @@ export default {
     return {
       pageId: 706,
       pageData: null,
-      form: {}
+      uriOrigem : location.pathname
     }
   },
   created () {

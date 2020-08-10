@@ -29,6 +29,7 @@
         <input class="col-12" type="text" required
             name="telefone" id="telefone" placeholder="Telefone com DDD ou Whatsapp"
             v-on:keyup="execMascara">
+        <input type="hidden" name="uriOrigem" :value="uriOrigem">
         <button type="submit" class="ml-auto mt-2">Pedir demontração</button>
       </div>
     </form>
@@ -50,7 +51,7 @@ export default {
     return {
       pageId: 688,
       pageData: null,
-      form: {}
+      uriOrigem : location.pathname
     }
   },
   created () {

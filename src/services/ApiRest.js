@@ -1,14 +1,13 @@
 /**
- * define a url base do app
- * @author Vinicius de Santana
-*/
-const baseURL = process.env.NODE_ENV === 'production' ? '/api/' : 'http://solides.localhost/api/';
-/**
  * Comunicação com o servidor DNA
  * @author Vinicius de Santana
- */
+*/
 const apiRest = {
-
+/**
+   * define a url base do app
+ * @author Vinicius de Santana
+ */
+  baseURL: process.env.NODE_ENV === 'production' ? '/api/' : 'http://solides.localhost/api/',
   /**
    * Resgata lista de posts informando ou não qual página
    * @param {[]} args - args do endpoint do wordpress
@@ -24,7 +23,7 @@ const apiRest = {
       //remove p último &
       urlArgs = urlArgs.substr(0, urlArgs.length-1);
     }
-    let url = baseURL + 'wp-json/wp/v2/posts/';
+    let url = this.baseURL + 'wp-json/wp/v2/posts/';
     if (urlArgs.length > 0){
       url += "?" + urlArgs;
     }
@@ -38,7 +37,7 @@ const apiRest = {
    */
   getLPsById(id) {
     if (!Number.isInteger(id))  throw new TypeError("O parametro precisa ser um número inteiro");
-    let url = baseURL + 'wp-json/wp/v2/lps/' + id;
+    let url = this.baseURL + 'wp-json/wp/v2/lps/' + id;
     return fetch(url);
   },
 
@@ -49,7 +48,7 @@ const apiRest = {
    */
   getPageById(id) {
     if (!Number.isInteger(id))  throw new TypeError("O parametro precisa ser um número inteiro");
-    let url = baseURL + 'wp-json/wp/v2/pages/' + id;
+    let url = this.baseURL + 'wp-json/wp/v2/pages/' + id;
     return fetch(url);
   },
   /**
@@ -59,7 +58,7 @@ const apiRest = {
    */
   getProdutosById(id) {
     if (!Number.isInteger(id))  throw new TypeError("O parametro precisa ser um número inteiro");
-    let url = baseURL + 'wp-json/wp/v2/produtos/' + id;
+    let url = this.baseURL + 'wp-json/wp/v2/produtos/' + id;
     return fetch(url);
   },
 
@@ -69,7 +68,7 @@ const apiRest = {
    * @author Vinicius de Santana
    */
   getMenuByLocationName(locationName) {
-    let url = baseURL + 'wp-json/dna_theme/v1/menu?menu_name=' + locationName;
+    let url = this.baseURL + 'wp-json/dna_theme/v1/menu?menu_name=' + locationName;
     return fetch(url);
   },
 };

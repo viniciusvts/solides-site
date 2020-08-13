@@ -181,8 +181,38 @@
           <li class="nav-item">
             <a class="nav-link p-0" href="https://materiais.solides.com.br/parceria">Seja Parceiro</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link p-0" href="javascript: void(0)">Login >></a>
+          <li @click="togleLogin(null)"
+          @mouseover="togleLogin(true)"
+          @mouseout="togleLogin(false)"
+          class="nav-item">
+            <a class="nav-link p-0" href="javascript: void(0)">
+              Login
+              <span v-if="controls.expandLogin" class="submenu">
+                <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
+                <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-cima-primary.png" alt="menu">
+              </span>
+              <span v-else class="submenu">
+                <img class="d-lg-none" src="@/assets/img/seta-pra-baixo.png" alt="menu">
+                <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-baixo-primary.png" alt="menu">
+              </span>
+            </a>
+            <div
+            :class="{'active': controls.expandLogin}"
+            class="dropdown-menu cursos"
+            aria-labelledby="navbarDropdown">
+              <div class="drop-item">
+                <a class="dropdown-item" href="https://system.solides.com/pt-BR/usuarios/sign_in">Sólides Gestão<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a class="no-decoration" href="https://system.solides.com/pt-BR/usuarios/sign_in">
+                  <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+                </a>
+              </div>
+              <div class="drop-item">
+                <a class="dropdown-item " href="http://www.solides.adm.br/solides/perfil">Sólides Profiler<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a class="no-decoration" href="http://www.solides.adm.br/solides/perfil">
+                  <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
+                </a>
+              </div>
+            </div>
           </li>
           <li class="nav-item showOnScroll d-none" :class="{'active': controls.scroll}">
             <a class="nav-link p-0" href="https://checkout.solides.com.br/">
@@ -212,6 +242,7 @@ export default {
         expandProdutos: false,
         expandConteudo: false,
         expandCursos: false,
+        expandLogin: false,
         scroll: false
       },
     }
@@ -240,6 +271,7 @@ export default {
         this.controls.expandProdutos = !this.controls.expandProdutos
         this.controls.expandConteudo = false
         this.controls.expandCursos = false
+        this.controls.expandLogin = false
         return;
       }
       this.controls.expandProdutos = flag
@@ -249,6 +281,7 @@ export default {
         this.controls.expandConteudo = !this.controls.expandConteudo
         this.controls.expandProdutos = false
         this.controls.expandCursos = false
+        this.controls.expandLogin = false
         return;
       }
       this.controls.expandConteudo = flag
@@ -258,9 +291,20 @@ export default {
         this.controls.expandCursos = !this.controls.expandCursos
         this.controls.expandProdutos = false
         this.controls.expandConteudo = false
+        this.controls.expandLogin = false
         return;
       }
       this.controls.expandCursos = flag
+    },
+    togleLogin (flag) {
+      if (flag == null) {
+        this.controls.expandLogin = !this.controls.expandLogin
+        this.controls.expandProdutos = false
+        this.controls.expandCursos = false
+        this.controls.expandConteudo = false
+        return;
+      }
+      this.controls.expandLogin = flag
     },
     handleScroll () {
       this.controls.scroll = (window.scrollY >= 800)

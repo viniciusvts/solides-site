@@ -7,6 +7,7 @@
     <Avaliacoes90a360 :data="pageData.acf.quarta_dobra" />
     <HistoricoAvaliacoes :data="pageData.acf.quinta_dobra" />
     <AutomatizeRS :backGray="true" :data="pageData.acf.cta" />
+    <TrialModal />
     <div class="gray"></div>
   </div>
   <div v-else>
@@ -21,6 +22,7 @@ import Personalizacao from '@/components/Personalizacao.vue'
 import CombinacaoPerfeita from '@/components/CombinacaoPerfeita.vue'
 import Avaliacoes90a360 from '@/components/Avaliacoes90a360.vue'
 import HistoricoAvaliacoes from '@/components/HistoricoAvaliacoes.vue'
+import TrialModal from '@/components/TrialModal.vue'
 import AutomatizeRS from '@/components/AutomatizeRS.vue'
 import Loading from "@/components/Loading.vue"
 export default {
@@ -33,6 +35,7 @@ export default {
     Avaliacoes90a360,
     HistoricoAvaliacoes,
     AutomatizeRS,
+    TrialModal,
     Loading
   },
   data () {

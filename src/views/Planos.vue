@@ -24,6 +24,7 @@
     <img src="/img/frame-form-home.9e9f2cf8.svg" alt="" class="frame tr-rotz-180 d-none d-lg-block">
     <AutomatizeRS :backGray="true" :data="pageData.acf.cta" />
     <div class="gray"></div>
+    <TrialModal />
   </div>
   <div v-else>
     <Loading></Loading>
@@ -32,11 +33,13 @@
 
 <script>
 import AutomatizeRS from '@/components/AutomatizeRS.vue'
+import TrialModal from '@/components/TrialModal.vue'
 import Loading from "@/components/Loading.vue"
 export default {
   name: 'Planos',
   components: {
     AutomatizeRS,
+    TrialModal,
     Loading,
   },
   data () {

@@ -1,6 +1,6 @@
 <template>
   <div v-if="pageData" class="home">
-    <RHPoderoso v-on:trial-modal="setTrialModalOn" :data="pageData.acf.primeira_dobra" />
+    <RHPoderoso :data="pageData.acf.primeira_dobra" />
     <SoftwareRH :data="pageData.acf.segunda_dobra" />
     <TitleH2Center :text="pageData.acf.titulo_dobra" />
     <RecrutamentoSelecao :data="pageData.acf.terceira_dobra" />
@@ -14,7 +14,7 @@
     <ComoEstamosAjudando :data="pageData.acf.como_ajudamos" />
     <AutomatizeRS :data="pageData.acf.cta" />
     <BlogCards :data="pageData.acf.conteudos" />
-    <TrialModal :show="TrialModal" v-on:trial-modal-close="setTrialOff" />
+    <TrialModal />
   </div>
   <div v-else>
     <Loading></Loading>
@@ -62,16 +62,12 @@ export default {
     return {
       pageId: 2,
       pageData: null,
-      TrialModal: false
     }
   },
   created () {
     this.getPost();
   },
   methods: {
-    setTrialModalOn () {
-      this.TrialModal = true
-    },
     setTrialOff () {
       this.TrialModal = false
     },

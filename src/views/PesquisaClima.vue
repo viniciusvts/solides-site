@@ -9,6 +9,7 @@
     <PesquisasDiversas :data="pageData.acf.sexta_dobra" />
     <RelatorioDeResultados :data="pageData.acf.setima_dobra" />
     <AutomatizeRS :backGray="true" :data="pageData.acf.cta" />
+    <TrialModal />
     <div class="gray"></div>
   </div>
   <div v-else>
@@ -26,6 +27,7 @@ import Automacao from '@/components/Automacao.vue'
 import PesquisasDiversas from '@/components/PesquisasDiversas.vue'
 import RelatorioDeResultados from '@/components/RelatorioDeResultados.vue'
 import AutomatizeRS from '@/components/AutomatizeRS.vue'
+import TrialModal from '@/components/TrialModal.vue'
 import Loading from "@/components/Loading.vue"
 export default {
   name: "PesquisaClima",
@@ -39,6 +41,7 @@ export default {
     PesquisasDiversas,
     RelatorioDeResultados,
     AutomatizeRS,
+    TrialModal,
     Loading
   },
   data () {

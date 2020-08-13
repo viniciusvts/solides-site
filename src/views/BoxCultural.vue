@@ -6,6 +6,7 @@
     <Comportamento :data="pageData.acf.terceira_dobra" />
     <ReportCards :data="pageData.acf.quarta_dobra" />
     <AutomatizeRS :backwhite="true" :data="pageData.acf.cta" />
+    <TrialModal />
   </div>
   <div v-else>
     <Loading></Loading>
@@ -19,6 +20,7 @@ import Desempenho from '@/components/Desempenho.vue'
 import Comportamento from '@/components/Comportamento.vue'
 import ReportCards from '@/components/ReportCards.vue'
 import AutomatizeRS from '@/components/AutomatizeRS.vue'
+import TrialModal from '@/components/TrialModal.vue'
 import Loading from "@/components/Loading.vue"
 export default {
   name: "BoxCultural",
@@ -29,6 +31,7 @@ export default {
     Comportamento,
     ReportCards,
     AutomatizeRS,
+    TrialModal,
     Loading
   },
   data () {

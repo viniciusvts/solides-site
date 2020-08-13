@@ -10,6 +10,7 @@
     <BancoDeTalentos :data="pageData.acf.setima_dobra" />
     <Curriculo :data="pageData.acf.oitava_dobra" />
     <AutomatizeRS :backwhite="true" :data="pageData.acf.cta" />
+    <TrialModal />
   </div>
   <div v-else>
     <Loading></Loading>
@@ -27,6 +28,7 @@ import ListaDeVagas from '@/components/ListaDeVagas.vue'
 import BancoDeTalentos from '@/components/BancoDeTalentos.vue'
 import Curriculo from '@/components/Curriculo.vue'
 import AutomatizeRS from '@/components/AutomatizeRS.vue'
+import TrialModal from '@/components/TrialModal.vue'
 import Loading from "@/components/Loading.vue"
 export default {
   name: "RecrutamentoESelecao",
@@ -41,6 +43,7 @@ export default {
     BancoDeTalentos,
     Curriculo,
     AutomatizeRS,
+    TrialModal,
     Loading
   },
   data () {

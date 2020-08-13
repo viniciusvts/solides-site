@@ -3,7 +3,7 @@
 
   <div class="container mt-70 pb-40 pb-lg-60 mt-md-120">
     <div class="row ml-0">
-      <div class="text-left color-primary to-left-70 mt-70 discprofiler">
+      <div class="text-left to-left-70 mt-70 discprofiler">
         <h1 v-html="lp.acf.titulo1" class="mt-3 mt-lg-70 mb-4 mb-lg-3"></h1>
         <p v-html="lp.acf.texto1"></p>
         <!--exibe apenas em desktop -->

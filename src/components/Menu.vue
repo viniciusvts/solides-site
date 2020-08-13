@@ -77,6 +77,9 @@
               </div>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link p-0" href="/planos">Planos</a>
+          </li>
           <li @click="togleConteudo(null)"
           @mouseover="togleConteudo(true)"
           @mouseout="togleConteudo(false)"

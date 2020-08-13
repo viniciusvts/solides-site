@@ -64,11 +64,13 @@ const apiRest = {
 
   /**
    * Resgata um menu baseado no location registrado pelo tema
-   * @param {String} locationName - Id da página
+   * @param {String} locationName - nome da posição registrada no tema
+   * @param {Boolean} acf - define se quer o conteúdo do custom post
    * @author Vinicius de Santana
    */
-  getMenuByLocationName(locationName) {
+  getMenuByLocationName(locationName, acf) {
     let url = this.baseURL + 'wp-json/dna_theme/v1/menu?menu_name=' + locationName;
+    if (acf) url += '&acf=true'
     return fetch(url);
   },
 };

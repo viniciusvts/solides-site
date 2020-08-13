@@ -11,21 +11,21 @@
         </div>
         <div class="col-12 col-lg-4 mb-30">
           <ul class="list-inline">
-            <li v-for="(foo, index) in footer.acf.footer_1" :key="index">
-              <a v-html="foo.texto" :href="foo.link"></a>
+            <li v-for="(foo, index) in menuFooter1Content" :key="index">
+              <a v-html="foo.title" :href="foo.url"></a>
             </li>
           </ul>
         </div>
         <div class="col-12 col-lg-5 mb-30">
           <ul class="list-inline numbers">
-            <li v-for="(foo, index) in footer.acf.footer_2" :key="index">
-              <a v-html="foo.texto" :href="foo.link"></a>
+            <li v-for="(foo, index) in menuFooter2Content" :key="index">
+              <a v-html="foo.title" :href="foo.url"></a>
             </li>
           </ul>
         </div>
         <div class="col-12 col-lg-3 mb-30">
           <ul class="list-inline social">
-            <li v-for="(foo, index) in footer.acf.footer_3" :key="index">
+            <li v-for="(foo, index) in menuFooter3Content.redes_sociais" :key="index">
               <a :href="foo.link">
                 <img :src="foo.imagem.sizes.medium" alt="linkedin">
                 {{foo.texto}}
@@ -45,7 +45,13 @@ export default {
   data () {
     return {
       footerId: 6,
-      footer: null
+      footer: null,
+      menuFooter1Name: 'menu-footer-1',
+      menuFooter2Name: 'menu-footer-2',
+      menuFooter3Name: 'menu-footer-3',
+      menuFooter1Content: null,
+      menuFooter2Content: null,
+      menuFooter3Content: null,
     }
   },
   mounted() {
@@ -53,6 +59,37 @@ export default {
   },
   methods: {
     getFoo () {
+      // pegar menu 1
+      this.$http.getMenuByLocationName(this.menuFooter1Name)
+      .then(res => {
+        if (!res.ok)
+          return
+        return res.json()
+      })
+      .then(json => {
+        this.menuFooter1Content = json
+      });
+      // pegar menu 2
+      this.$http.getMenuByLocationName(this.menuFooter2Name)
+      .then(res => {
+        if (!res.ok)
+          return
+        return res.json()
+      })
+      .then(json => {
+        this.menuFooter2Content = json
+      });
+      // pegar menu 3
+      this.$http.getMenuByLocationName(this.menuFooter3Name, true)
+      .then(res => {
+        if (!res.ok)
+          return
+        return res.json()
+      })
+      .then(json => {
+        this.menuFooter3Content = json
+      });
+
       this.$http.getLPsById(this.footerId)
       .then(res => {
         if (!res.ok)

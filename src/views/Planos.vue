@@ -1,6 +1,6 @@
 <template>
   <div v-if="pageData" class="planos-page">
-    <h1 class="text-center mb-5" v-html="pageData.title.rendered"></h1>
+    <h1 class="text-center mb-5 mb-lg-4" v-html="pageData.title.rendered"></h1>
     <div class="container mb-lg-5">
       <div class="row">
         <div v-for="(plan, index) in pageData.acf.planos_e_precos" :key="index"

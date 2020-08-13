@@ -2,6 +2,9 @@
 .planos-page{
     padding-top: 120px;
     @media (min-width: $desktops) {
+        padding-top: 120px;
+    }
+    @media (min-width: $fullHdDesktops) {
         padding-top: 180px;
     }
     h1{

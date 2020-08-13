@@ -34,7 +34,7 @@ export default {
           nav: false,
           loop: true,
           center: true,
-          mouseDrag: false
+          mouseDrag: true
         }
       }
     }

@@ -2,7 +2,7 @@
   <nav
   :class="{'active': controls.expandMenu, 'scrolled': controls.scroll}"
   class="navbar navbar-expand-lg navbar-light">
-    <div class="container">
+    <div class="container expandMenuOnScroll" :class="{'active': controls.scroll}">
       <router-link class="navbar-brand" :to="{ name: 'Home' }">
         <img 
         v-if="controls.expandMenu" 
@@ -214,13 +214,13 @@
               </div>
             </div>
           </li>
-          <li class="nav-item showOnScroll d-none" :class="{'active': controls.scroll}">
+          <li class="nav-item showOnScroll d-none d-lg-block" :class="{'active': controls.scroll}">
             <a class="nav-link p-0" href="https://checkout.solides.com.br/">
               <button class="badge badge-pill blue-back color-white two-in-a-row">Comprar agora</button>
             </a>
           </li>
-          <li class="nav-item showOnScroll d-none" :class="{'active': controls.scroll}">
-            <a class="nav-link p-0" href="https://perfildisc.com.br/#form">
+          <li class="nav-item showOnScroll d-none d-lg-block" :class="{'active': controls.scroll}">
+            <a class="nav-link p-0" href="/falar-com-um-especialista">
               <button class="badge badge-pill blue-outline two-in-a-row">Fale com um especialista</button>
             </a>
           </li>

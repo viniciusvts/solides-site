@@ -89,8 +89,8 @@ $purple_border: #2F0A77;
     }
     img{
         position: absolute;
-        top: 200px;
-        right: 0;
+        right: -100px;
+        bottom: -70px;
         width: 800px;
         z-index: -1;
     }

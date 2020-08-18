@@ -36,6 +36,7 @@ export default {
   },
   created () {
     this.getPost();
+    this.bgTransparentOnScroll()
   },
   methods: {
     setTrialModalOn () {
@@ -49,6 +50,17 @@ export default {
       .then(res => res.json() )
       .then(json => {
         this.pageData = json
+      })
+    },
+    bgTransparentOnScroll () {
+      const nav = document.querySelector('nav')
+      //primeiro já deixo tranparente
+      nav.classList.add('bgtransp')
+      // depois baseado no scroll lnaço a classe
+      window.addEventListener('scroll', () => {
+        console.log(window.scrollY)
+        if (window.scrollY <= 300) nav.classList.add('bgtransp')
+        else nav.classList.remove('bgtransp')
       })
     }
   }

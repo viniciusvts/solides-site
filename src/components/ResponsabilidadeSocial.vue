@@ -1,5 +1,5 @@
 <template>
-  <div class="responsabilidade-social">
+  <div class="responsabilidade-social" id="reponsabilidadeSocial">
     <div class="container">
       <div class="vertical-pill red"></div>
       <div class="row">

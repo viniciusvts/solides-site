@@ -53,7 +53,16 @@ export default {
       .then(res => res.json() )
       .then(json => {
         this.pageData = json
+        // aguarda um tempo para renderizar e manda alinha ao id se houver
+        setTimeout(this.hasHash, 1000)
       })
+    },
+    hasHash () {
+      const id = window.location.hash.substr(1)
+      if (!id) return
+      const elem = document.getElementById(id)
+      if (!elem) return
+      window.scrollTo(0, elem.getBoundingClientRect().top)
     }
   }
 }

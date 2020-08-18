@@ -1,6 +1,12 @@
 @import "./variables.scss";
 .nao-encontrado{
     padding-top: 150px;
+    //bg
+    background-image: url('../assets/img/tela-erro-404.gif');
+    background-size: auto 100vh;
+    @media (min-width: $desktops) {
+        background-size: 100vw auto;
+    }
     .message{
         padding-bottom: 250px;
         @media (min-width: $desktops) {

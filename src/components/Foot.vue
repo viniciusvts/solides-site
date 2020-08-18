@@ -1,5 +1,5 @@
 <template>
-<div v-if="footer">
+<div id="footer">
   <img class="w-100" src="@/assets/img/svg/footer-frame.svg" alt="">
   <footer class="over-x-h">
     <div class="container">
@@ -45,7 +45,6 @@ export default {
   data () {
     return {
       footerId: 6,
-      footer: null,
       menuFooter1Name: 'menu-footer-1',
       menuFooter2Name: 'menu-footer-2',
       menuFooter3Name: 'menu-footer-3',
@@ -88,16 +87,6 @@ export default {
       })
       .then(json => {
         this.menuFooter3Content = json
-      });
-
-      this.$http.getLPsById(this.footerId)
-      .then(res => {
-        if (!res.ok)
-          return
-        return res.json()
-      })
-      .then(json => {
-        this.footer = json
       });
     },
   }

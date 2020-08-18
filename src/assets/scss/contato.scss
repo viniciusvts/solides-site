@@ -229,4 +229,69 @@ $cinza: #F3F3F3;
             }
         }
     }
+    // hsform
+    form.hs-form{
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 20px;
+        padding-bottom: 1px;
+        @media (min-width: $tablets) {
+            padding-top: 40px;
+        }
+        ul.no-list.hs-error-msgs.inputs-list{
+            list-style: none;
+            padding: 0;
+            color: white;
+        }
+        input, select, textarea{
+            position: relative;
+            width: 90%;
+            flex: 0 0 90%;
+            max-width: 90%;
+            &:first-child{
+                margin: 6px auto;
+                @media (min-width: $tablets) {
+                    margin: 10px auto;
+                }
+                @media (min-width: $desktops) {
+                    margin: 13px auto;
+                }
+            }
+        }
+        input[type=submit]{
+            width: 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+            //
+            display: block;
+            background: #FAB80E;
+            border: 1px solid #CC9C1F;
+            border-radius: 33px;
+            font-weight: 900;
+            line-height: 10px;
+            text-align: center;
+            color: #2F0A77;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            margin-left: auto !important;
+            margin-top: 0.5rem !important;
+            margin-right: 15px;
+            @media (min-width: $tablets) {
+                margin-right: 30px;
+            }
+        }
+        label{
+            display: none;
+            &.hs-error-msg{
+                display: block;
+                font-size: 8px;
+                @media (min-width: $tablets) {
+                    font-size: 14px;
+                }
+                @media (min-width: $desktops) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
 }

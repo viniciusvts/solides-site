@@ -3,7 +3,8 @@
     <h1 class="text-center" v-html="pageData.title.rendered"></h1>
     <div class="first-text text-center" v-html="pageData.acf.text">
     </div>
-    <form :action="$http.baseURL + 'wp-json/dna_theme/v1/contato'" method="post" class="mx-auto">
+    <div id="hsform-contato"></div>
+    <!-- <form :action="$http.baseURL + 'wp-json/dna_theme/v1/contato'" method="post" class="mx-auto">
       <div class="col-12 col-lg-11 mx-auto row">
         <input class="col-12" type="text" required
             name="nome" id="nome" placeholder="Nome">
@@ -16,7 +17,7 @@
         <input type="hidden" name="uriOrigem" :value="uriOrigem">
         <button type="submit" class="ml-auto mt-2">Enviar</button>
       </div>
-    </form>
+    </form> -->
     <p class="detail">Faça como os clientes Sólides e transforme seu RH</p>
   </div>
   <div v-else>
@@ -40,6 +41,7 @@ export default {
   },
   created () {
     this.getPost();
+    this.startHsForm('#hsform-contato');
   },
   methods: {
     getPost () {
@@ -55,7 +57,16 @@ export default {
       v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
       v=v.replace(/(\d)(\d{4})$/,"$1-$2"); //Coloca - depois dos 4 digitos após ()
       evt.target.value = v;
-    }
+    },
+    startHsForm (selector) {
+      setTimeout(() => {
+        window.hbspt.forms.create({
+          portalId: "6009739",
+          formId: "8f653405-917b-43f7-b20a-4ba0c3f99ab8",
+          target: selector
+        });
+      }, 5000);
+    },
   }
 }
 </script>

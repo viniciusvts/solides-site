@@ -2,7 +2,8 @@
   <div v-if="pageData" class="pedir-demo container">
     <h1 class="text-center" v-html="pageData.title.rendered"></h1>
     <p class="first text-center" v-html="pageData.acf.text"></p>
-    <form :action="$http.baseURL + 'wp-json/dna_theme/v1/pedir-uma-demo/'" method="post" class="mx-auto">
+    <div id="hsform-pedirdemo"></div>
+    <!-- <form :action="$http.baseURL + 'wp-json/dna_theme/v1/pedir-uma-demo/'" method="post" class="mx-auto">
       <div class="col-12 col-lg-11 mx-auto row">
         <input class="col-12" type="text" required
             name="nome" id="nome" placeholder="Nome">
@@ -32,7 +33,7 @@
         <input type="hidden" name="uriOrigem" :value="uriOrigem">
         <button type="submit" class="ml-auto mt-2">Pedir demontração</button>
       </div>
-    </form>
+    </form> -->
     <p class="detail" v-html="pageData.acf.detalhe"></p>
   </div>
   <div v-else>
@@ -56,6 +57,7 @@ export default {
   },
   created () {
     this.getPost();
+    this.startHsForm('#hsform-pedirdemo');
   },
   methods: {
     getPost () {
@@ -71,7 +73,16 @@ export default {
       v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
       v=v.replace(/(\d)(\d{4})$/,"$1-$2"); //Coloca - depois dos 4 digitos após ()
       evt.target.value = v;
-    }
+    },
+    startHsForm (selector) {
+      setTimeout(() => {
+        window.hbspt.forms.create({
+          portalId: "6009739",
+          formId: "bc5d109b-a72b-4a16-a31f-7aea6d8917c2",
+          target: selector
+        });
+      }, 5000);
+    },
   }
 }
 </script>

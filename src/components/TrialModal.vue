@@ -11,30 +11,41 @@
           </div>
           <form action="#" method="post" class="mx-auto" @submit.prevent="sendForm">
             <div class="col-12 col-lg-11 mx-auto row">
-              <input class="col-12" type="text" required v-bind="form.nome"
-                  name="nome" id="nome" placeholder="Nome">
-              <input class="col-12" type="email" required v-bind="form.email"
+              <input class="col-12" type="text" required v-model="form.firstname"
+                  name="firstname" id="firstname" placeholder="Nome">
+              <input class="col-12" type="email" required v-model="form.email"
                   name="email" id="email" placeholder="E-mail corporativo">
-              <input class="col-12" type="text" v-bind="form.empresa"
-                  name="empresa" id="empresa" placeholder="Empresa">
-              <select class="col-12" name="cargo" id="cargo" required v-bind="form.cargo">
-                <option value="" selected disabled>Cargo</option>
-                <option value="CEO">CEO</option>
-                <option value="Sócio">Sócio</option>
-                <option value="Diretor">Diretor</option>
-                <option value="RH">RH</option>
+              <input class="col-12" type="text" v-model="form.company"
+                  name="company" id="company" placeholder="Empresa">
+              <select class="col-12" name="cargorh" id="cargorh" required v-model="form.cargorh">
+                <option value="" hidden="">Cargo</option>
+                <option value="Analista de RH">Analista de RH</option>
+                <option value="Business Partner de RH">Business Partner de RH</option>
+                <option value="Coordenador de RH">Coordenador de RH</option>
+                <option value="Diretor de RH">Diretor de RH</option>
+                <option value="Gerente de RH">Gerente de RH</option>
+                <option value="Sócio/CEO">Sócio/CEO</option>
+                <option value="Coach">Coach</option>
+                <option value="Consultor de RH">Consultor de RH</option>
+                <option value="Estagiário de RH">Estagiário de RH</option>
+                <option value="Professor">Professor</option>
+                <option value="Estudante">Estudante</option>
+                <option value="Buscando recolocação">Buscando recolocação</option>
+                <option value="Outros">Outros</option>
               </select>
-              <select class="col-12" name="numColab" id="numColab" required v-bind="form.numColab">
-                <option value="" selected disabled>Número de colaboradores</option>
-                <option value="1-2">1-2</option>
-                <option value="3-5">3-5</option>
-                <option value="6-15">6-15</option>
-                <option value="16-30">16-30</option>
-                <option value="30-50">30-50</option>
-                <option value="50+">50+</option>
+              <select class="col-12" name="tamanho_de_empresa" required v-model="form.tamanho_de_empresa">
+                <option value="" hidden="">Tamanho da empresa</option>
+                <option value="Até 14 funcionários">Até 14 funcionários</option>
+                <option value="De 15 a 29 funcionários">De 15 a 29 funcionários</option>
+                <option value="De 30 a 49 funcionários">De 30 a 49 funcionários</option>
+                <option value="De 50 a 99 funcionários">De 50 a 99 funcionários</option>
+                <option value="De 100 a 199 funcionários">De 100 a 199 funcionários</option>
+                <option value="De 200 a 499 funcionários">De 200 a 499 funcionários</option>
+                <option value="De 500 a 999 funcionários">De 500 a 999 funcionários</option>
+                <option value="1000 funcionários ou mais">1000 funcionários ou mais</option>
               </select>
-              <input class="col-12" type="text" required v-bind="form.telefone"
-                  name="tel" id="tel" placeholder="Telefone com DDD ou Whatsapp"
+              <input class="col-12" type="text" required v-model="form.phone"
+                  name="phone" id="phone" placeholder="Telefone com DDD ou Whatsapp"
                   v-on:keyup="execMascara">
               <button type="submit" class="ml-auto mt-2">Criar conta</button>
             </div>
@@ -54,12 +65,12 @@ export default {
       hashForShow: 'criar-conta',
       show: false,
       form: {
-        nome: '',
+        firstname: '',
         email: '',
-        empresa: '',
-        cargo: '',
-        numColab: '',
-        telefone: '',
+        company: '',
+        cargorh: '',
+        tamanho_de_empresa: '',
+        phone: '',
       }
     }
   },

@@ -201,16 +201,10 @@
             class="dropdown-menu cursos"
             aria-labelledby="navbarDropdown">
               <div class="drop-item">
-                <a class="dropdown-item" href="https://system.solides.com/pt-BR/usuarios/sign_in">Sólides Gestão<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-                <a class="no-decoration" href="https://system.solides.com/pt-BR/usuarios/sign_in">
-                  <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
-                </a>
+                <a class="dropdown-item" href="https://system.solides.com/pt-BR/usuarios/sign_in">Sólides Gestão</a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item " href="http://www.solides.adm.br/solides/perfil">Sólides Profiler<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-                <a class="no-decoration" href="http://www.solides.adm.br/solides/perfil">
-                  <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
-                </a>
+                <a class="dropdown-item " href="http://www.solides.adm.br/solides/perfil">Sólides Profiler</a>
               </div>
             </div>
           </li>

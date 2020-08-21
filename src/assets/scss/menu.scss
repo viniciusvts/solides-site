@@ -152,9 +152,10 @@ nav{
         box-shadow: 0 10px 40px 22px rgba(0, 0, 0, 0.09);
         border-radius: 50px;
         padding-top: 30px;
-        padding-bottom: 20px;
+        padding-bottom: 30px;
         margin-left: -50%;
         margin-top: 25px;//a setinha
+        overflow: hidden;
         &::before{
             $height: 26px;
             content: "";
@@ -189,6 +190,12 @@ nav{
         }
         @media (min-width: $largeDesktops) {
             transform: translateX(-40px)!important; // bootstrap
+        }
+    }
+    &.login .drop-item{
+        padding: 10px 0;
+        @media (min-width: $desktops) {
+            padding: 20px 0;
         }
     }
     .drop-item:hover{

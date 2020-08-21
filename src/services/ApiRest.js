@@ -160,7 +160,7 @@ const apiRest = {
    */
   sendToTrial(data) {
     if (typeof data == 'undefined') throw new TypeError("O parametro é obrigatório");
-    const url = "https://solides.adm.br/cit/trial";
+    const url = "https://cit.solides.adm.br/trial";
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
     return fetch(url, {

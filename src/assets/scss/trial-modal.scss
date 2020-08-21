@@ -122,5 +122,17 @@
                 margin-bottom: 40px;
             }
         }
+        .msg *{
+            font-weight: bold;
+            font-size: 8px;
+            line-height: 10px;
+            text-align: center;
+            color: #FFBA00;
+            width: 100%;
+            @media (min-width: $desktops) {
+                font-size: 18px;
+                line-height: 32px;
+            } 
+        }
     }
 }

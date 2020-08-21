@@ -47,7 +47,7 @@
               <input class="col-12" type="text" required v-model="form.phone"
                   name="phone" id="phone" placeholder="Telefone com DDD ou Whatsapp"
                   v-on:keyup="execMascara">
-              <div v-html="mensagem"></div>
+              <div v-html="mensagem" class="msg"></div>
               <button type="submit" class="ml-auto mt-2">Criar conta</button>
             </div>
           </form>
@@ -111,9 +111,14 @@ export default {
       this.$http.sendToTrial(this.form)
       .then( resp => resp.json())
       .then(json => {
-        console.log('sendToTrial request=> ', json)
-        // sessionStorage.setItem("person", JSON.stringify(json));
-        // window.location.href = "https://solides.com.br/sucesso";
+        console.log('trial => ', json)
+        // sexiste mensagem de erro:
+        if (typeof json.errors != 'undefined') {
+          this.mensagem = '<p>' + json.errors +'</p>'
+        } else {
+          this.mensagem = '<p>Usuário criado, redirecionando</p>'
+          window.location.href = json.link
+        }
       })
     },
     startHsForm (selector) {

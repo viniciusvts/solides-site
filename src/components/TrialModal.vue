@@ -47,9 +47,12 @@
               <input class="col-12" type="text" required v-model="form.phone"
                   name="phone" id="phone" placeholder="Telefone com DDD ou Whatsapp"
                   v-on:keyup="execMascara">
+              <div v-html="mensagem"></div>
               <button type="submit" class="ml-auto mt-2">Criar conta</button>
             </div>
           </form>
+          <!-- o objetivo aqui é pegar o token do hubspot e enviar com o form superior -->
+          <div id="hs-trial" style="display:none;"></div>
         </div>
       </div>
     </div>
@@ -63,6 +66,7 @@ export default {
     return {
       /** hash que vai ativar esse modal */
       hashForShow: 'criar-conta',
+      mensagem: '',
       show: false,
       form: {
         firstname: '',
@@ -75,6 +79,10 @@ export default {
     }
   },
   created () {
+    // aciona o form do hubspot para ter acesso ao cookie
+    this.startHsForm('#hs-trial');
+    // verifico o hash, e já adiciono o evento para o hash
+    this.hashOpenOrClose()
     window.addEventListener('hashchange', this.hashOpenOrClose)
   },
   methods: {
@@ -89,10 +97,33 @@ export default {
       evt.target.value = v;
     },
     sendForm () {
-      this.evtFormSend()
-      console.log(this.form)
-      // em caso de erro de envio
-      setTimeout(this.evtFormError(), 2000)
+      this.$http.sendToHS(this.form)
+      .then( resp => resp.json())
+      .then(json => {
+        this.mensagem = json.inlineMessage
+        // sessionStorage.setItem("person", JSON.stringify(json));
+        // depois de tudo certo, envia para o trial
+        this.sendToTrial()
+      })
+      .catch(() => {this.mensagem = '<p>Houve um erro, tente novamente mais tarde.</p>'} )
+    },
+    sendToTrial () {
+      this.$http.sendToTrial(this.form)
+      .then( resp => resp.json())
+      .then(json => {
+        console.log('sendToTrial request=> ', json)
+        // sessionStorage.setItem("person", JSON.stringify(json));
+        // window.location.href = "https://solides.com.br/sucesso";
+      })
+    },
+    startHsForm (selector) {
+      setTimeout(() => {
+        window.hbspt.forms.create({
+          portalId: "6009739",
+          formId: "30d1dad9-c9dc-4d98-bf18-ec30d2c19da2",
+          target: selector
+        });
+      }, 5000);
     },
     hashOpenOrClose () {
       const hashValue = window.location.hash.substr(1)

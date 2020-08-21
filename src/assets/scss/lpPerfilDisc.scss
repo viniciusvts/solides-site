@@ -1421,11 +1421,6 @@ img.valpor{
         }
     }
 }
-.container{
-    @media (min-width: $hdDesktops) {
-        max-width: 1240px;
-    }
-}
 .p-r{
     position: relative;
     z-index: 1;

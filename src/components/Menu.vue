@@ -210,7 +210,7 @@
           </li>
           <li class="nav-item showOnScroll d-none d-lg-block" :class="{'active': controls.scroll}">
             <a class="nav-link p-0" href="https://checkout.solides.com.br/">
-              <button class="badge badge-pill blue-back color-white two-in-a-row">Comprar agora</button>
+              <button class="badge badge-pill blue-back color-white two-in-a-row">{{agendarOuComprar}}</button>
             </a>
           </li>
           <li class="nav-item showOnScroll d-none d-lg-block" :class="{'active': controls.scroll}">
@@ -302,6 +302,12 @@ export default {
     },
     handleScroll () {
       this.controls.scroll = (window.scrollY >= 800)
+    }
+  },
+  computed: {
+    agendarOuComprar () {
+      if (this.$route.name == 'Profiler') return 'Comprar Agora'
+      return 'Agendar demonstração'
     }
   }
 }

@@ -2,7 +2,7 @@
   <div class="rh-poderoso container">
     <div class="vertical-pill blue"></div>
     <img class="d-none d-lg-block" :src="data.imagem.url" :alt="data.imagem.alt">
-    <div class="col-10 col-lg-70">
+    <div class="col-10 col-lg-70 pl-lg-0">
       <h2 v-html="data.titulo"></h2>
       <div class="text" v-html="data.texto"></div>
       <div class="buttons">

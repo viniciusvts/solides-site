@@ -198,7 +198,7 @@
             </a>
             <div
             :class="{'active': controls.expandLogin}"
-            class="dropdown-menu cursos"
+            class="dropdown-menu cursos login"
             aria-labelledby="navbarDropdown">
               <div class="drop-item">
                 <a class="dropdown-item" href="https://system.solides.com/pt-BR/usuarios/sign_in">Sólides Gestão</a>

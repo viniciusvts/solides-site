@@ -1,22 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-const Home = () => import('@/views/Home.vue')
-const RecrutamentoESelecao = () => import('@/views/RecrutamentoESelecao.vue')
-const AvaliacaoDesempenho = () => import('@/views/AvaliacaoDesempenho.vue')
-const PesquisaClima = () => import('@/views/PesquisaClima.vue')
-const BoxCultural = () => import('@/views/BoxCultural.vue')
-const PeopleAnalytics = () => import('@/views/PeopleAnalytics.vue')
-const Profiler = () => import('@/views/Profiler.vue')
-const Planos = () => import('@/views/Planos.vue')
-const PoliticaPrivacidade = () => import('@/views/PoliticaPrivacidade.vue')
-const Sobre = () => import('@/views/Sobre.vue')
-const FalarComEspecialista = () => import('@/views/FalarComEspecialista.vue')
-const PedirDemo = () => import('@/views/PedirDemo.vue')
-const Contato = () => import('@/views/Contato.vue')
-const Obrigado = () => import('@/views/Obrigado.vue')
-// const PerfilLp = () => import('@/lps/PerfilLp.vue')
-const PaginaNaoEncontrada = () => import('@/views/PaginaNaoEncontrada.vue')
+import Home from '@/views/Home.vue'
+import RecrutamentoESelecao from '@/views/RecrutamentoESelecao.vue'
+import AvaliacaoDesempenho from '@/views/AvaliacaoDesempenho.vue'
+import PesquisaClima from '@/views/PesquisaClima.vue'
+import BoxCultural from '@/views/BoxCultural.vue'
+import PeopleAnalytics from '@/views/PeopleAnalytics.vue'
+import Profiler from '@/views/Profiler.vue'
+import Planos from '@/views/Planos.vue'
+import PoliticaPrivacidade from '@/views/PoliticaPrivacidade.vue'
+import Sobre from '@/views/Sobre.vue'
+import FalarComEspecialista from '@/views/FalarComEspecialista.vue'
+import PedirDemo from '@/views/PedirDemo.vue'
+import Contato from '@/views/Contato.vue'
+import Obrigado from '@/views/Obrigado.vue'
+// import PerfilLp from '@/lps/PerfilLp.vue'
+import PaginaNaoEncontrada from '@/views/PaginaNaoEncontrada.vue'
 
 Vue.use(VueRouter)
 

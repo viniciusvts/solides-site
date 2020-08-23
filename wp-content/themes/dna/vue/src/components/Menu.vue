@@ -261,44 +261,32 @@ export default {
     },
     togleMenu () { this.controls.expandMenu = !this.controls.expandMenu },
     togleProdutos (flag) {
-      if (flag == null) {
-        this.controls.expandProdutos = !this.controls.expandProdutos
-        this.controls.expandConteudo = false
-        this.controls.expandCursos = false
-        this.controls.expandLogin = false
-        return;
-      }
-      this.controls.expandProdutos = flag
+      this.controls.expandConteudo = false
+      this.controls.expandCursos = false
+      this.controls.expandLogin = false
+      if (flag == null) this.controls.expandProdutos = !this.controls.expandProdutos
+      else this.controls.expandProdutos = flag
     },
     togleConteudo (flag) {
-      if (flag == null) {
-        this.controls.expandConteudo = !this.controls.expandConteudo
-        this.controls.expandProdutos = false
-        this.controls.expandCursos = false
-        this.controls.expandLogin = false
-        return;
-      }
-      this.controls.expandConteudo = flag
+      this.controls.expandProdutos = false
+      this.controls.expandCursos = false
+      this.controls.expandLogin = false
+      if (flag == null) this.controls.expandConteudo = !this.controls.expandConteudo
+      else this.controls.expandConteudo = flag
     },
     togleCursos (flag) {
-      if (flag == null) {
-        this.controls.expandCursos = !this.controls.expandCursos
-        this.controls.expandProdutos = false
-        this.controls.expandConteudo = false
-        this.controls.expandLogin = false
-        return;
-      }
-      this.controls.expandCursos = flag
+      this.controls.expandProdutos = false
+      this.controls.expandConteudo = false
+      this.controls.expandLogin = false
+      if (flag == null) this.controls.expandCursos = !this.controls.expandCursos
+      else this.controls.expandCursos = flag
     },
     togleLogin (flag) {
-      if (flag == null) {
-        this.controls.expandLogin = !this.controls.expandLogin
-        this.controls.expandProdutos = false
-        this.controls.expandCursos = false
-        this.controls.expandConteudo = false
-        return;
-      }
-      this.controls.expandLogin = flag
+      this.controls.expandProdutos = false
+      this.controls.expandCursos = false
+      this.controls.expandConteudo = false
+      if (flag == null) this.controls.expandLogin = !this.controls.expandLogin
+      else this.controls.expandLogin = flag
     },
     handleScroll () {
       this.controls.scroll = (window.scrollY >= 800)

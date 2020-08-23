@@ -193,9 +193,6 @@ nav{
     }
     &.login .drop-item{
         padding: 10px 0;
-        @media (min-width: $desktops) {
-            padding: 20px 0;
-        }
     }
     .drop-item:hover{
         text-decoration: none;

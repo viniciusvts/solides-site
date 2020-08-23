@@ -24,11 +24,11 @@
           class="nav-item">
             <a class="nav-link p-0" href="javascript: void(0)">
               Produtos
-              <span v-if="controls.expandProdutos" class="submenu">
+              <span :class="{'d-none': !controls.expandProdutos}" class="submenu">
                 <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
                 <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-cima-primary.png" alt="menu">
               </span>
-              <span v-else class="submenu">
+              <span :class="{'d-none': controls.expandProdutos}" class="submenu">
                 <img class="d-lg-none" src="@/assets/img/seta-pra-baixo.png" alt="menu">
                 <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-baixo-primary.png" alt="menu">
               </span>
@@ -86,11 +86,11 @@
           class="nav-item">
             <a class="nav-link p-0" href="javascript: void(0)">
               Conteúdos
-              <span v-if="controls.expandConteudo" class="submenu">
+              <span :class="{'d-none': !controls.expandConteudo}" class="submenu">
                 <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
                 <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-cima-primary.png" alt="menu">
               </span>
-              <span v-else class="submenu">
+              <span :class="{'d-none': controls.expandConteudo}" class="submenu">
                 <img class="d-lg-none" src="@/assets/img/seta-pra-baixo.png" alt="menu">
                 <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-baixo-primary.png" alt="menu">
               </span>
@@ -133,11 +133,11 @@
           class="nav-item">
             <a class="nav-link p-0" href="javascript: void(0)">
               Cursos
-              <span v-if="controls.expandCursos" class="submenu">
+              <span :class="{'d-none': !controls.expandCursos}" class="submenu">
                 <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
                 <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-cima-primary.png" alt="menu">
               </span>
-              <span v-else class="submenu">
+              <span :class="{'d-none': controls.expandCursos}" class="submenu">
                 <img class="d-lg-none" src="@/assets/img/seta-pra-baixo.png" alt="menu">
                 <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-baixo-primary.png" alt="menu">
               </span>
@@ -187,11 +187,11 @@
           class="nav-item">
             <a class="nav-link p-0" href="javascript: void(0)">
               Login
-              <span v-if="controls.expandLogin" class="submenu">
+              <span :class="{'d-none': !controls.expandLogin}" class="submenu">
                 <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
                 <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-cima-primary.png" alt="menu">
               </span>
-              <span v-else class="submenu">
+              <span :class="{'d-none': controls.expandLogin}" class="submenu">
                 <img class="d-lg-none" src="@/assets/img/seta-pra-baixo.png" alt="menu">
                 <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-baixo-primary.png" alt="menu">
               </span>

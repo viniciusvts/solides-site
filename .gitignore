@@ -1,6 +1,10 @@
 .DS_Store
-node_modules
-/dist
+**/node_modules
+**/dist
+
+#plugins
+/wp-content/plugins
+/wp-content/uploads
 
 # local env files
 .env.local
@@ -20,29 +24,14 @@ yarn-error.log*
 *.sln
 *.sw?
 
-#wordpress
-/api/.htaccess
-
-#ignora todos os plugins exceto o nosso ;)
-!api/wp-content/plugins/
-api/wp-content/plugins/*
-!api/wp-content/plugins/dna-custom/
-!api/wp-content/plugins/advanced-custom-fields-pro/
-!api/wp-content/plugins/acf-to-rest-api/
-!api/wp-content/plugins/safe-svg/
-
-#compiled files
-/js/
-/img/
-/css/
-favicon.ico
-index.html
-
 #servidor 
 .htaccess
+dna_site
 fix.php
 gulpfile.js
 info.php
+nrc-ferragens
+prestes  
 prototypes  
 robots.txt  
 yarn.lock

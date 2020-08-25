@@ -128,7 +128,7 @@ export default {
           formId: "30d1dad9-c9dc-4d98-bf18-ec30d2c19da2",
           target: selector
         });
-      }, 5000);
+      }, 2000);
     },
     hashOpenOrClose () {
       const hashValue = window.location.hash.substr(1)

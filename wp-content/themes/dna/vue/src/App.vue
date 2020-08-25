@@ -18,6 +18,11 @@ export default {
     Menu,
     Foot
   },
+  mounted() {
+    let script = document.createElement('script')
+    script.setAttribute('src', 'https://js.hsforms.net/forms/v2.js')
+    document.body.appendChild(script)
+  },
   computed: {
     isLP(){
       if (this.$route.name == 'perfil-lp') {

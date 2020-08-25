@@ -55,7 +55,7 @@ export default {
       uriOrigem : location.pathname
     }
   },
-  created () {
+  mounted () {
     this.getPost();
     this.startHsForm('#hsform-pedirdemo');
   },
@@ -81,7 +81,7 @@ export default {
           formId: "bc5d109b-a72b-4a16-a31f-7aea6d8917c2",
           target: selector
         });
-      }, 5000);
+      }, 1000);
     },
   }
 }

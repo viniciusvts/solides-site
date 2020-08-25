@@ -40,7 +40,7 @@ export default {
       uriOrigem : location.pathname
     }
   },
-  created () {
+  mounted () {
     this.getPost();
     this.startHsForm('#hsform-falarcomespecialista');
   },
@@ -66,7 +66,7 @@ export default {
           formId: "540ec64d-82d8-4246-9fdb-b04ea72aeea0",
           target: selector
         });
-      }, 5000);
+      }, 2000);
     },
   }
 }

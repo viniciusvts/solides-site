@@ -224,6 +224,9 @@ nav{
         .saiba-mais{
             margin-bottom: .1rem;
             color: gray;
+            &:focus{
+                outline: none;
+            }
         }
     }
     p{

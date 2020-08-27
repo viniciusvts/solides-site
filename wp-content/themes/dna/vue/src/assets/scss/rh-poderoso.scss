@@ -53,10 +53,7 @@ $purple_border: #2F0A77;
     }
     button{
         margin-right: 20px;
-        margin-bottom: 10px;
-        @media (min-width: $smallPhones) {
-            margin-bottom: 17px;
-        }
+        margin-bottom: 20px;
         @media (min-width: $desktops) {
             margin-bottom: 0px;
         }

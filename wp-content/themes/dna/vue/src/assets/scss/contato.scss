@@ -263,6 +263,7 @@ $cinza: #F3F3F3;
             flex: 0 0 50%;
             max-width: 50%;
             //
+            box-shadow: 0px 2px 7px #555;
             display: block;
             background: #FAB80E;
             border: 1px solid #CC9C1F;
@@ -279,6 +280,11 @@ $cinza: #F3F3F3;
             @media (min-width: $tablets) {
                 margin-right: 30px;
             }
+        }
+        .cookie-reset-container * {
+            font-size: 22px;
+            text-align: center;
+            color: whitesmoke;
         }
         label{
             display: none;

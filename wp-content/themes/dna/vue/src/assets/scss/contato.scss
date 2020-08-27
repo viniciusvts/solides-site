@@ -149,7 +149,7 @@ $cinza: #F3F3F3;
         box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25);
         border-radius: 20px;
         text-align: center;
-        width: 285px;
+        width: 290px;
         @media (min-width: $tablets) {
             width: 500px;
         }
@@ -171,9 +171,9 @@ $cinza: #F3F3F3;
             box-shadow: inset 0px 1px 3px #DDDDDD;
             border-radius: 60px;
             margin: 6px auto;
-            padding: 6px 10px;
+            padding: 7px 10px;
             font-weight: bold;
-            font-size: 8px;
+            font-size: 10px;
             line-height: 10px;
             color: #878787;
             @media (min-width: $tablets) {
@@ -184,7 +184,7 @@ $cinza: #F3F3F3;
             }
             @media (min-width: $desktops) {
                 margin: 13px auto;
-                padding: 15px 30px;
+                padding: 13px 30px;
                 font-size: 18px;
                 line-height: 22px;
             }
@@ -280,11 +280,20 @@ $cinza: #F3F3F3;
             @media (min-width: $tablets) {
                 margin-right: 30px;
             }
+            @media (min-width: $desktops) {
+                padding: 19px 30px;
+            }
         }
-        .cookie-reset-container * {
-            font-size: 22px;
+        .cookie-reset-container, .cookie-reset-container * {
             text-align: center;
+            font-size: 10px;
             color: whitesmoke;
+            @media (min-width: $tablets) {
+                font-size: 18px;
+            }
+            @media (min-width: $desktops) {
+                font-size: 22px;
+            }
         }
         label{
             display: none;

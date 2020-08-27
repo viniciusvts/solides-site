@@ -62,7 +62,7 @@ $cinza: #F3F3F3;
             text-align: center;
         }
         &.first{
-            margin-bottom: 190px;
+            margin-bottom: 40px;
             width: 215px;
             @media (min-width: $smallPhones) {
                 margin-bottom: 100px;
@@ -138,7 +138,7 @@ $cinza: #F3F3F3;
         box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25);
         border-radius: 20px;
         text-align: center;
-        width: 235px;
+        width: 290px;
         @media (min-width: $tablets) {
             width: 500px;
         }
@@ -150,9 +150,9 @@ $cinza: #F3F3F3;
             border: 1px solid rgba(66, 82, 110, 0.25);
             border-radius: 60px;
             margin: 5px auto;
-            padding: 4px 10px;
+            padding: 7px 10px;
             font-weight: bold;
-            font-size: 8px;
+            font-size: 10px;
             line-height: 10px;
             color: #878787;
             @media (min-width: $tablets) {
@@ -163,7 +163,7 @@ $cinza: #F3F3F3;
             }
             @media (min-width: $desktops) {
                 margin: 13px auto;
-                padding: 15px 30px;
+                padding: 13px 30px;
                 font-size: 18px;
                 line-height: 22px;
             }
@@ -194,7 +194,7 @@ $cinza: #F3F3F3;
             background-position: top 9px right 15px;
             @media (min-width: $desktops) {
                 background-size: unset;
-                background-position: top 25px right 30px;
+                background-position: top 21px right 30px;
             }
         }
         button{
@@ -277,11 +277,20 @@ $cinza: #F3F3F3;
             @media (min-width: $tablets) {
                 margin-right: 30px;
             }
+            @media (min-width: $desktops) {
+                padding: 19px 30px;
+            }
         }
-        .cookie-reset-container * {
-            font-size: 22px;
+        .cookie-reset-container, .cookie-reset-container * {
             text-align: center;
+            font-size: 10px;
             color: whitesmoke;
+            @media (min-width: $tablets) {
+                font-size: 18px;
+            }
+            @media (min-width: $desktops) {
+                font-size: 22px;
+            }
         }
         .field.hs-form-field{
             label *{

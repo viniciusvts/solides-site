@@ -350,6 +350,7 @@
       </div>
     </a>
   </div>
+  <TrialModal />
 </div>
 <div v-else>
   <Loading></Loading>
@@ -358,10 +359,14 @@
 </template>
 
 <script>
+import TrialModal from '@/components/TrialModal.vue'
 import Loading from "@/components/Loading.vue"
 export default {
   name: 'PerfilLp',
-  components: {Loading},
+  components: {
+    Loading,
+    TrialModal
+  },
   data () {
     return {
       lpId: 814,

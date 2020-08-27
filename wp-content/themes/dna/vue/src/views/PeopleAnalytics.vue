@@ -8,6 +8,7 @@
     <EngenhariaDeCargos :data="pageData.acf.quinta_dobra" />
     <Dashboard :data="pageData.acf.sexta_dobra" />
     <AutomatizeRS :backwhite="true" :data="pageData.acf.cta" />
+    <TrialModal />
   </div>
   <div v-else>
     <Loading></Loading>
@@ -23,6 +24,7 @@ import BuscaPerfilSemelhante from '@/components/BuscaPerfilSemelhante.vue'
 import EngenhariaDeCargos from '@/components/EngenhariaDeCargos.vue'
 import Dashboard from '@/components/Dashboard.vue'
 import AutomatizeRS from '@/components/AutomatizeRS.vue'
+import TrialModal from '@/components/TrialModal.vue'
 import Loading from "@/components/Loading.vue"
 export default {
   name: "PeopleAnalytics",
@@ -35,6 +37,7 @@ export default {
     EngenhariaDeCargos,
     Dashboard,
     AutomatizeRS,
+    TrialModal,
     Loading
   },
   data () {

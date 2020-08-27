@@ -325,6 +325,12 @@ $cinza: #F3F3F3;
                         label{
                             display: flex;
                         }
+                        span{
+                            margin: 6px;
+                            @media (min-width: $tablets) {
+                                margin: 3px;
+                            }
+                        }
                     }
                 }
             }

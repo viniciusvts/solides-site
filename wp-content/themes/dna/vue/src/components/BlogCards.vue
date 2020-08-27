@@ -4,7 +4,7 @@
       <div class="vertical-pill red"></div>
       <h2 class="title" v-html="data.titulo"></h2>
       <div class="cards row">
-        <div v-for="(card, index) in data.cards" :key="index" class="col-10 mx-auto col-md-6 col-lg-4">
+        <div v-for="(card, index) in data.cards" :key="index" class="col-12 mx-auto col-md-6 col-lg-4">
           <a :href="card.link">
             <div class="card">
               <img :src="card.imagem.sizes.large" :alt="card.imagem.alt" class="img-header">

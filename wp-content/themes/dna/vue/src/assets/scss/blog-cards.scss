@@ -53,7 +53,7 @@
         }
         img.img-header{
             width: 100%;
-            height: 130px;
+            height: 160px;
             object-fit: cover;
             margin-bottom: 20px;
             @media (min-width: $tablets) {
@@ -67,16 +67,11 @@
             font-family: Lato;
             font-style: normal;
             font-weight: bold;
-            font-size: 12px;
-            line-height: 14px;
+            font-size: 16px;
+            line-height: 20px;
             color: #000000;
             max-width: 90%;
-            margin-bottom: 5px;
-            @media (min-width: $tablets) {
-                margin-bottom: 17px;
-                font-size: 16px;
-                line-height: 20px;
-            }
+            margin-bottom: 17px;
             @media (min-width: $desktops) {
                 margin-bottom: 20px;
                 font-size: 18px;
@@ -87,13 +82,12 @@
             font-family: Lato;
             font-style: normal;
             font-weight: normal;
-            font-size: 8px;
-            line-height: 10px;
+            font-size: 10px;
+            line-height: 16px;
             color: #3D3B3B;
             margin-bottom: 0;
             @media (min-width: $tablets) {
                 font-size: 12px;
-                line-height: 14px;
             }
             @media (min-width: $desktops) {
                 font-size: 14px;

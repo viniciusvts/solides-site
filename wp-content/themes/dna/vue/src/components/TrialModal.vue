@@ -99,7 +99,7 @@ export default {
     sendForm () {
       this.$http.sendToHS(this.form)
       .then( resp => {
-        if (resp.status == 200){
+        if (resp.ok){
           return resp.json()
         } else {
           this.mensagem = '<p>Houve um erro, tente novamente mais tarde.</p>'
@@ -114,15 +114,23 @@ export default {
     },
     sendToTrial () {
       this.$http.sendToTrial(this.form)
-      .then( resp => resp.json())
+      .then( resp => {
+        if (resp.ok){
+          return resp.json()
+        } else {
+          this.mensagem = '<p>Houve um erro na requisição, tente novamente mais tarde.</p>'
+        }
+      })
       .then(json => {
         console.log('trial => ', json)
         // sexiste mensagem de erro:
-        if (typeof json.errors != 'undefined') {
+        if (typeof json.link != 'undefined') {
+          this.mensagem = '<p>Usuário criado, redirecionando...</p>'
+          window.location.href = json.link
+        } else if (typeof json.errors != 'undefined') {
           this.mensagem = '<p>' + json.errors +'</p>'
         } else {
-          this.mensagem = '<p>Usuário criado, redirecionando</p>'
-          window.location.href = json.link
+          this.mensagem = '<p>Houve um erro na resposta do servidor, tente novamente mais tarde.</p>'
         }
       })
     },

@@ -13,6 +13,12 @@ $blue_buttons_border: #2F0A77;
 }
 .collapse{
     margin-left: 0;
+    overflow-y: auto;
+    max-height: 90vh;
+    @media (min-width: $desktops) {
+        overflow-y: unset;
+        max-height: unset;
+    }
     &.active{
         display: block;
     }

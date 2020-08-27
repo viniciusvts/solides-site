@@ -81,7 +81,7 @@ export default {
           formId: "bc5d109b-a72b-4a16-a31f-7aea6d8917c2",
           target: selector
         });
-      }, 1000);
+      }, 3000);
     },
   }
 }

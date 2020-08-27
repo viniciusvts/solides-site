@@ -98,14 +98,19 @@ export default {
     },
     sendForm () {
       this.$http.sendToHS(this.form)
-      .then( resp => resp.json())
+      .then( resp => {
+        if (resp.status == 200){
+          return resp.json()
+        } else {
+          this.mensagem = '<p>Houve um erro, tente novamente mais tarde.</p>'
+        }
+      })
       .then(json => {
-        this.mensagem = json.inlineMessage
-        // sessionStorage.setItem("person", JSON.stringify(json));
-        // depois de tudo certo, envia para o trial
+        console.log('sendForm => ', json)
+        // mando uma mensagem no form e crio o user na plataforma Sólides
+        this.mensagem = '<p>Criando usuário...</p>'
         this.sendToTrial()
       })
-      .catch(() => {this.mensagem = '<p>Houve um erro, tente novamente mais tarde.</p>'} )
     },
     sendToTrial () {
       this.$http.sendToTrial(this.form)

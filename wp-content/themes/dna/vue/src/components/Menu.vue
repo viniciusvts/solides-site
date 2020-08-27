@@ -18,7 +18,7 @@
 
       <div class="collapse navbar-collapse" :class="{'active': controls.expandMenu}">
         <ul class="navbar-nav">
-          <li @click="togleProdutos"
+          <li @click="togleProdutos(null)"
           @mouseover="togleProdutos(true)"
           @mouseout="togleProdutos(false)"
           class="nav-item">

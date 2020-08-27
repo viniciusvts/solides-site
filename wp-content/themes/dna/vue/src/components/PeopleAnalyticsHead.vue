@@ -2,7 +2,7 @@
     <div class="recrutamento-e-selecao-head container">
         <div class="vertical-pill blue"></div>
         <div class="col-10 col-lg-70 pl-lg-0">
-            <h2 class="newR" v-html="data.titulo"></h2>
+            <h2 v-html="data.titulo"></h2>
             <div class="text" v-html="data.texto"></div>
             <div class="buttons">
                 <a :href="data.botao_1.url">

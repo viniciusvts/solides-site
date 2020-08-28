@@ -209,7 +209,7 @@
             </div>
           </li>
           <li class="nav-item showOnScroll d-none d-lg-block" :class="{'active': controls.scroll}">
-            <a class="nav-link p-0" href="https://checkout.solides.com.br/">
+            <a class="nav-link p-0" :href="checkoutOuDemo">
               <button class="badge badge-pill blue-back color-white two-in-a-row">{{agendarOuComprar}}</button>
             </a>
           </li>
@@ -296,6 +296,10 @@ export default {
     agendarOuComprar () {
       if (this.$route.name == 'Profiler') return 'Comprar Agora'
       return 'Agendar demonstração'
+    },
+    checkoutOuDemo () {
+      if (this.$route.name == 'Profiler') return 'https://checkout.solides.com.br/'
+      return '/pedir-uma-demo'
     }
   }
 }

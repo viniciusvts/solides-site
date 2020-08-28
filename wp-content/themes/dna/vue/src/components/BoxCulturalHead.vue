@@ -2,7 +2,7 @@
     <div class="recrutamento-e-selecao-head container">
         <div class="vertical-pill yellow"></div>
         <div class="col-10 col-lg-70 pl-lg-0">
-            <h2 class="newR" v-html="data.titulo"></h2>
+            <h1 class="newR" v-html="data.titulo"></h1>
             <div class="text" v-html="data.texto"></div>
             <div class="buttons">
                 <a :href="data.botao_1.url">
@@ -26,7 +26,7 @@ export default {
 
 <style lang="scss">
     @import '@/assets/scss/recrutamento-e-selecao-head.scss';
-    h2.newR{
+    h1.newR{
         &::after{
             content: "Novo";
             display: inline-block;

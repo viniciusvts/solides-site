@@ -3,7 +3,7 @@
     <div class="vertical-pill blue"></div>
     <img class="d-none d-lg-block" :src="data.imagem.url" :alt="data.imagem.alt">
     <div class="col-10 col-lg-70 pl-lg-0">
-      <h2 v-html="data.titulo"></h2>
+      <h1 v-html="data.titulo"></h1>
       <div class="text" v-html="data.texto"></div>
       <div class="buttons">
         <a :href="data.botao_1.url">

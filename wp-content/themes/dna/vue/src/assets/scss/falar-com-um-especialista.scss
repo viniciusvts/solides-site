@@ -12,8 +12,14 @@ $cinza: #F3F3F3;
     position: absolute;
 }
 .falar-com-um-especialista{
-    padding-top: 150px;
-    @media (min-width: $desktops) {
+    padding-top: 90px;
+    @media (min-width: $smallPhones) {
+        padding-top: 110px;
+    }
+    @media (min-width: $tablets) {
+        padding-top: 130px;
+    }
+    @media (min-width: $fullHdDesktops) {
         padding-top: 180px;
     }
     h1{
@@ -62,16 +68,15 @@ $cinza: #F3F3F3;
             text-align: center;
         }
         &.first{
-            margin-bottom: 40px;
+            margin-bottom: 25px;
             width: 215px;
             @media (min-width: $smallPhones) {
-                margin-bottom: 100px;
+                margin-bottom: 35px;
                 width: 270px;
                 margin-left: auto;
                 margin-right: auto;
             }
             @media (min-width: $tablets) {
-                margin-bottom: 50px;
                 width: 500px;
                 margin-right: auto;
                 margin-left: auto;
@@ -83,15 +88,17 @@ $cinza: #F3F3F3;
             }
         }
         &.detail{
-            font-weight: bold;
             font-size: 18px;
             line-height: 22px;
-            text-align: center;
+            text-align: left;
 
             color: #5F4A87;
-            margin-top: 190px;
+            margin-top: 50px;
             margin-bottom: 0;
             padding-bottom: 30px;
+            width: 240px;
+            margin-right: auto;
+            margin-left: auto;
             @media (min-width: $tablets) {
                 font-size: 24px;
                 line-height: 32px;
@@ -99,14 +106,18 @@ $cinza: #F3F3F3;
                 margin-top: 75px;
                 max-width: 490px;
                 margin-left: auto;
+                margin-right: 50px;
             }
             @media (min-width: $desktops) {
+                font-weight: bold;
                 font-size: 36px;
                 line-height: 43px;
-                text-align: left;
                 margin-top: 120px;
+                width: unset;
                 max-width: 490px;
+                margin-right: unset;
                 margin-left: auto;
+                padding-bottom: 30px;
             }
         }
     }
@@ -117,19 +128,22 @@ $cinza: #F3F3F3;
         font-size: 18px;
         line-height: 22px;
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 25px;
         width: 210px;
         @media (min-width: $tablets) {
             font-size: 28px;
             line-height: 43px;
-            margin-bottom: 100px;
+            margin-bottom: 35px;
             width: 590px;
         }
         @media (min-width: $desktops) {
             font-size: 36px;
             line-height: 43px;
-            margin-bottom: 100px;
+            margin-bottom: 50px;
             width: 590px;
+        }
+        @media (min-width: $fullHdDesktops) {
+            margin-bottom: 100px;
         }
         b { font-size: inherit;}
     }

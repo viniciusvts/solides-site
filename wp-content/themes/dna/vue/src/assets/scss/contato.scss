@@ -12,8 +12,14 @@ $cinza: #F3F3F3;
     position: absolute;
 }
 .contato{
-    padding-top: 150px;
-    @media (min-width: $desktops) {
+    padding-top: 90px;
+    @media (min-width: $smallPhones) {
+        padding-top: 110px;
+    }
+    @media (min-width: $tablets) {
+        padding-top: 130px;
+    }
+    @media (min-width: $fullHdDesktops) {
         padding-top: 180px;
     }
     h1{
@@ -23,7 +29,7 @@ $cinza: #F3F3F3;
         font-size: 31px;
         line-height: 37px;
         width: 215px;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         margin-right: auto;
         margin-left: auto;
         @media (min-width: $tablets) {
@@ -98,7 +104,7 @@ $cinza: #F3F3F3;
         }
     }
     .first-text{
-        margin-bottom: 100px;
+        margin-bottom: 25px;
         color: #5F4A87;
         @media (min-width: $desktops) {
             font-size: 24px;
@@ -113,6 +119,10 @@ $cinza: #F3F3F3;
             margin-right: auto;
             @media (min-width: $tablets) {
                 width: 410px;
+            }
+            @media (min-width: $desktops) {
+                width: 600px;
+                margin-bottom: 7px;            
             }
             &:nth-child(n+2){
                 width: 285px;

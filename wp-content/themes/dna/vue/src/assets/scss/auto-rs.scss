@@ -80,7 +80,7 @@ $purple_border: #2F0A77;
         &.badge{
             padding: 7px 15px;
             font-size: 13px;
-            margin-bottom: 5px;
+            margin-bottom: 20px;
             cursor: pointer;
             @media (min-width: $smallPhones) {
                 font-size: 15px;
@@ -90,6 +90,7 @@ $purple_border: #2F0A77;
                 font-size: 19px;
             }
             @media (min-width: $desktops) {
+                margin-bottom: 5px;
                 font-size: 24px;
             }
         }

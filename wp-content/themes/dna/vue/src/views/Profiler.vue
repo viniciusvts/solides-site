@@ -279,7 +279,7 @@
       <div class="text-left to-right-70 mt-30 mt-xs-0 mt-lg-5">
         <h2 v-html="lp.acf.titulo10" class="color-almostBlack bestContent"></h2>
       </div>
-      <div class="blog-cards d-none d-lg-block">
+      <div class="blog-cards">
         <div class="container">
           <div class="cards row">
             <div class="col-12 col-lg-4">
@@ -319,36 +319,6 @@
         </div>
       </div>
     </div>
-  </div>
-  <!-- melhor conteúdo sobre o profiler -->
-  <div class="container mt-xs-50 d-lg-none">
-    <a class="color-almostBlack" :href="lp.acf.link_1_secao_10">
-      <div class="left-right">
-        <img 
-        :src="lp.acf.imagem_1_secao_10.sizes.large"
-        :alt="lp.acf.imagem_1_secao_10.alt">
-        <h2 v-html="lp.acf.subtitulo_1_secao_10"></h2>
-        <p v-html="lp.acf.texto_1_secao_10"></p>
-      </div>
-    </a>
-    <a class="color-almostBlack" :href="lp.acf.link_2_secao_10">
-      <div class="right-left">
-        <img 
-        :src="lp.acf.imagem_2_secao_10.sizes.large"
-        :alt="lp.acf.imagem_2_secao_10.alt">
-        <h2 v-html="lp.acf.subtitulo_2_secao_10"></h2>
-        <p v-html="lp.acf.texto_2_secao_10"></p>
-      </div>
-    </a>
-    <a class="color-almostBlack" :href="lp.acf.link_3_secao_10">
-      <div class="left-right">
-        <img
-        :src="lp.acf.imagem_3_secao_10.sizes.large"
-        :alt="lp.acf.imagem_3_secao_10.alt">
-        <h2 v-html="lp.acf.subtitulo_3_secao_10"></h2>
-        <p v-html="lp.acf.texto_3_secao_10"></p>
-      </div>
-    </a>
   </div>
   <TrialModal />
 </div>

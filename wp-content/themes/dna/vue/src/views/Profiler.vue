@@ -131,7 +131,7 @@
       <h2 v-html="lp.acf.titulo5" class="simples mx-0"></h2>
       <div v-html="lp.acf.texto5" class="proExclusivo"></div>
       <a :href="lp.acf.botao_1_secao_5[0].link">
-        <button class="badge badge-pill yellow-back color-white exclusivo">{{lp.acf.botao_1_secao_5[0].texto}}</button>
+        <button class="badge badge-pill blue-back color-white exclusivo">{{lp.acf.botao_1_secao_5[0].texto}}</button>
       </a>
     </div>
   </div>

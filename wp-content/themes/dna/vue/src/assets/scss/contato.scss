@@ -242,6 +242,17 @@ $cinza: #F3F3F3;
             list-style: none;
             padding: 0;
             color: white;
+            label{
+                display: block;
+                font-size: 10px;
+                color: white;
+                @media (min-width: $tablets) {
+                    font-size: 18px;
+                }
+                @media (min-width: $desktops) {
+                    font-size: 22px;
+                }
+            }
         }
         input, select, textarea{
             position: relative;

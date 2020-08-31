@@ -118,7 +118,7 @@ export default {
         if (resp.ok){
           return resp.json()
         } else {
-          this.mensagem = '<p>Houve um erro na requisição, tente novamente mais tarde.</p>'
+          this.mensagem = '<p>Erro no cadastro, Usuário já existe.</p>'
         }
       })
       .then(json => {
@@ -130,7 +130,7 @@ export default {
         } else if (typeof json.errors != 'undefined') {
           this.mensagem = '<p>' + json.errors +'</p>'
         } else {
-          this.mensagem = '<p>Houve um erro na resposta do servidor, tente novamente mais tarde.</p>'
+          this.mensagem = '<p>Erro no cadastro, Usuário já existe.</p>'
         }
       })
     },

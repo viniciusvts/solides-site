@@ -55,7 +55,7 @@ $cinza: #F3F3F3;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
-        line-height: 19px;
+        line-height: 24px;
         @media (min-width: $tablets) {
             font-size: 22px;
             line-height: 38px;
@@ -89,7 +89,6 @@ $cinza: #F3F3F3;
         }
         &.detail{
             font-size: 18px;
-            line-height: 22px;
             text-align: left;
 
             color: #5F4A87;
@@ -126,7 +125,7 @@ $cinza: #F3F3F3;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
-        line-height: 22px;
+        line-height: 24px;
         text-align: center;
         margin-bottom: 25px;
         width: 210px;

@@ -34,7 +34,7 @@
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
-        line-height: 19px;
+        line-height: 24px;
         margin-bottom: 50px;
         margin-left: auto;
         margin-right: auto;
@@ -42,7 +42,6 @@
         width: 230px;
         @media (min-width: $tablets) {
             font-size: 22px;
-            line-height: 22px;
             margin-bottom: 80px;
             width: unset;
             margin-left: unset;

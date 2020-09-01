@@ -402,15 +402,4 @@ export default {
 
 <style lang="scss">
     @import '@/assets/scss/profiler-view.scss';
-    .lpPerfilDisc{
-      .blue-back {
-          background: #5F4A87;
-          border: 2px solid #2F0A77;
-      }
-      .blue-outline {
-          color: #5F4A87;
-          background-color: inherit;
-          border: 2px solid #5F4A87;
-      }
-    }
 </style>

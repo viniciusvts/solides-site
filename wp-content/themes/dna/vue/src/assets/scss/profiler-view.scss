@@ -16,19 +16,6 @@ $green: #57DD6D;
 $almostBlack: #3D3B3B;
 $borderbuttom: #673BBD;
 
-*, ::after, ::before{
-    font-family: 'Lato', 'Roboto', sans-serif;
-    font-size: 16px;
-    @media (min-width: $smallPhones) {
-        font-size: 20px;
-    }
-    @media (min-width: $tablets) {
-        font-size: 25px;
-    }
-    @media (min-width: $largeDesktops) {
-        font-size: 34px;
-    }
-}
 .font-roboto{
     &, & *{
         font-family: 'Roboto', sans-serif;

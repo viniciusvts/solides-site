@@ -40,12 +40,12 @@ switch ($server_addr) {
         break;
     default:
         $dbhost_default = 'solides-server.coizjp8kk45g.us-east-1.rds.amazonaws.com';
-        $dbname = 'perfilDisc_db';
-        $dbuser_default = 'perfilDisc_usr';
-        $dbpassword_default = 'P3rf1D2019';
+        $dbname = 'site_solides_db';
+        $dbuser_default = 'site_solides_usr';
+        $dbpassword_default = 'S0l1dEsS1t3';
         $dev_mod = 'false';
-        $wp_home = 'https://perfildisc.com.br/';
-        $wp_siteurl = 'https://perfildisc.com.br';
+        $wp_home = 'https://homol.solides.com.br/';
+        $wp_siteurl = 'https://homol.solides.com.br/';
         break;
 }
 

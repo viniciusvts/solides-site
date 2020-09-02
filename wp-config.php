@@ -25,7 +25,7 @@ switch ($server_addr) {
         $dbname = 'solides_db';
         $dbuser_default = 'root';
         $dbpassword_default = 'root';
-        $dev_mod = 'true';
+        $dev_mod = true;
         $wp_home = 'http://solides.localhost/';
         $wp_siteurl = 'http://solides.localhost/';
 		break;
@@ -34,7 +34,7 @@ switch ($server_addr) {
 		$dbname = 'solides_db';
 		$dbuser_default = 'wordpressuser';
 		$dbpassword_default = '53kmqydsxob789a';
-        $dev_mod = 'false';
+        $dev_mod = false;
         $wp_home = 'https://solides.dnadevendas.com.br/';
         $wp_siteurl = 'https://solides.dnadevendas.com.br';
         break;
@@ -43,7 +43,7 @@ switch ($server_addr) {
         $dbname = 'site_solides_db';
         $dbuser_default = 'site_solides_usr';
         $dbpassword_default = 'S0l1dEsS1t3';
-        $dev_mod = 'false';
+        $dev_mod = false;
         $wp_home = 'https://homol.solides.com.br/';
         $wp_siteurl = 'https://homol.solides.com.br/';
         break;

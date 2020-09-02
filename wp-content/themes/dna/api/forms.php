@@ -110,7 +110,8 @@ function dnaapi_register_ccp(){
         'cargo' => array(
           'required' => true,
         ),
-      )
+      ),
+      'permission_callback' => '__return_true'
     )
   );
   //contato
@@ -133,7 +134,8 @@ function dnaapi_register_ccp(){
         'mensagem' => array(
           'required' => true,
         ),
-      )
+      ),
+      'permission_callback' => '__return_true'
     )
   );
   //pedir uma demo
@@ -162,7 +164,8 @@ function dnaapi_register_ccp(){
         'telefone' => array(
           'required' => true,
         ),
-      )
+      ),
+      'permission_callback' => '__return_true'
     )
   );
 }

@@ -24,6 +24,7 @@ add_action( 'rest_api_init', function () {
             'description' => 'Valor irá indicar quantos itens por página será entregue',
             'default' => 'main-menu'
           )
-        )
+        ),
+        'permission_callback' => '__return_true'
     ));
 });

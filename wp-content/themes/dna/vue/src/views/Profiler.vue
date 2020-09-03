@@ -4,7 +4,7 @@
   <div class="container mt-70 pb-40 pb-lg-60 mt-md-120">
     <div class="row ml-0">
       <div class="text-left to-left-70 mt-70 discprofiler">
-        <h1 v-html="lp.acf.titulo1" class="mt-3 mb-4 mb-lg-3"></h1>
+        <h1 v-html="lp.acf.titulo1" class="mt-md-3 mb-4 mb-lg-3"></h1>
         <p v-html="lp.acf.texto1"></p>
         <!--exibe apenas em desktop -->
         <div class="mt-70 pr-0 d-none d-lg-block">
@@ -32,13 +32,17 @@
         <img src="@/assets/img/cabeçalho-perfil-disc-finalizado 1.png" alt="mulher trabalhando no computador">
       </div>
     </div>
-    <div class="mt-50 mt-lg-70 d-lg-none">
-      <a :href="lp.acf.botao_1_secao_1[0].link">
-        <button class="badge badge-pill mr-1 blue-back two-in-a-row color-white">{{lp.acf.botao_1_secao_1[0].texto}}</button>
-      </a>
-      <a :href="lp.acf.botao_2_secao_1[0].link">
-        <button class="badge badge-pill ml-1 blue-outline two-in-a-row">{{lp.acf.botao_2_secao_1[0].texto}}</button>
-      </a>
+    <div class="mt-4 mt-lg-70 d-lg-none head-buttons">
+      <button class="badge badge-pill mr-1 blue-back color-white">
+        <a :href="lp.acf.botao_1_secao_1[0].link">
+          {{lp.acf.botao_1_secao_1[0].texto}}
+        </a>
+      </button>
+        <button class="badge badge-pill blue-outline">
+          <a :href="lp.acf.botao_2_secao_1[0].link">
+            {{lp.acf.botao_2_secao_1[0].texto}}
+          </a>
+        </button>
     </div>
   </div>
   <!--profiler-->
@@ -271,7 +275,7 @@
   </div>
   <img class="frame p-r" src="@/assets/img/svg/frame-form.svg">
   <!-- melhor conteúdo sobre o profiler -->
-  <div class="container pt-60 pb-2">
+  <div class="pt-60 pb-2">
     <div class="row ml-0 bestcontent-profiler">
       <div class="to-left-30">
         <div class="vertical-pill green"></div>
@@ -279,42 +283,42 @@
       <div class="text-left to-right-70 mt-30 mt-xs-0 mt-lg-5">
         <h2 v-html="lp.acf.titulo10" class="color-almostBlack bestContent"></h2>
       </div>
-      <div class="blog-cards">
-        <div class="container">
-          <div class="cards row">
-            <div class="col-12 col-lg-4">
-              <a :href="lp.acf.link_1_secao_10">
-                <div class="card">
-                  <img :src="lp.acf.imagem_1_secao_10.sizes.large"
-                  :alt="lp.acf.imagem_1_secao_10.alt"
-                  class="img-header">
-                  <h3 v-html="lp.acf.subtitulo_1_secao_10" class="title"></h3>
-                  <p v-html="lp.acf.texto_1_secao_10" class="text"></p>
-                </div>
-              </a>
-            </div>
-            <div class="col-12 col-lg-4">
-              <a :href="lp.acf.link_2_secao_10">
-                <div class="card">
-                  <img :src="lp.acf.imagem_2_secao_10.sizes.large"
-                  :alt="lp.acf.imagem_2_secao_10.alt"
-                  class="img-header">
-                  <h3 v-html="lp.acf.subtitulo_2_secao_10" class="title"></h3>
-                  <p v-html="lp.acf.texto_2_secao_10" class="text"></p>
-                </div>
-              </a>
-            </div>
-            <div class="col-12 col-lg-4">
-              <a :href="lp.acf.link_1_secao_10">
-                <div class="card">
-                  <img :src="lp.acf.imagem_3_secao_10.sizes.large"
-                  :alt="lp.acf.imagem_3_secao_10.alt"
-                  class="img-header">
-                  <h3 v-html="lp.acf.subtitulo_3_secao_10" class="title"></h3>
-                  <p v-html="lp.acf.texto_3_secao_10" class="text"></p>
-                </div>
-              </a>
-            </div>
+    </div>
+    <div class="blog-cards">
+      <div class="container">
+        <div class="cards row">
+          <div class="col-12 col-md-6 col-lg-4 mx-auto">
+            <a :href="lp.acf.link_1_secao_10">
+              <div class="card">
+                <img :src="lp.acf.imagem_1_secao_10.sizes.large"
+                :alt="lp.acf.imagem_1_secao_10.alt"
+                class="img-header">
+                <h3 v-html="lp.acf.subtitulo_1_secao_10" class="title"></h3>
+                <p v-html="lp.acf.texto_1_secao_10" class="text"></p>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mx-auto">
+            <a :href="lp.acf.link_2_secao_10">
+              <div class="card">
+                <img :src="lp.acf.imagem_2_secao_10.sizes.large"
+                :alt="lp.acf.imagem_2_secao_10.alt"
+                class="img-header">
+                <h3 v-html="lp.acf.subtitulo_2_secao_10" class="title"></h3>
+                <p v-html="lp.acf.texto_2_secao_10" class="text"></p>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mx-auto">
+            <a :href="lp.acf.link_1_secao_10">
+              <div class="card">
+                <img :src="lp.acf.imagem_3_secao_10.sizes.large"
+                :alt="lp.acf.imagem_3_secao_10.alt"
+                class="img-header">
+                <h3 v-html="lp.acf.subtitulo_3_secao_10" class="title"></h3>
+                <p v-html="lp.acf.texto_3_secao_10" class="text"></p>
+              </div>
+            </a>
           </div>
         </div>
       </div>

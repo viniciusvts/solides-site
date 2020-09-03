@@ -269,6 +269,39 @@ $borderbuttom: #673BBD;
             outline: none;
         }
     }
+    .head-buttons{
+        button.badge{
+            padding: 6px 8px;
+            cursor: pointer;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            @media (min-width: $smallPhones) {
+                font-size: 16px;
+                padding: 7px 11px;
+            }
+            @media (min-width: $tablets) {
+                padding: 12px 20px;
+                font-size: 20px;
+            }
+            @media (min-width: $desktops) {
+                font-size: 24px;
+                margin-bottom: 0px;
+            }
+            a{
+                font-size: 13px;
+                @media (min-width: $smallPhones) {
+                    font-size: 16px;
+                }
+                @media (min-width: $tablets) {
+                    font-size: 20px;
+                }
+                @media (min-width: $desktops) {
+                    font-size: 24px;
+                }
+            }
+        }
+
+    }
     .color-primary{
         color: $primary;
     }
@@ -279,7 +312,9 @@ $borderbuttom: #673BBD;
         color: $almostBlack;
     }
     .color-white{
-        color: white;
+        &, a{
+            color: white;
+        }
     }
     a{
         &.color-black:hover{
@@ -299,7 +334,9 @@ $borderbuttom: #673BBD;
         border: 2px solid #2F0A77;
     }
     .blue-outline {
-        color: #5F4A87;
+        &, a{
+            color: #5F4A87;
+        }
         background-color: inherit;
         border: 2px solid #5F4A87;
     }
@@ -462,7 +499,7 @@ $borderbuttom: #673BBD;
             @media (min-width: $largeDesktops) {
                 z-index: 0;
                 height: 30rem;
-                margin-left: 5%;
+                margin-left: 10%;
             }
         }
     }
@@ -1145,6 +1182,7 @@ $borderbuttom: #673BBD;
     /// modifica a seção emelhores conteúdos profiler para cards
     .blog-cards{
         padding: 20px 0 100px;
+        width: 100%;
         h2{
             z-index: 1;
             &.title{
@@ -1165,23 +1203,23 @@ $borderbuttom: #673BBD;
         }
         .card{
             background-color: #F3F3F3;
-            padding: 35px 29px;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+            margin-bottom: 15px;
             min-height: 250px;
             @media (min-width: $desktops) {
                 min-height: 485px;
+                padding: 35px 29px;
+                margin-bottom: 0;
             }
             img.img-header{
                 width: 100%;
-                height: 150px;
+                height: 160px;
                 object-fit: cover;
                 margin-bottom: 20px;
-                @media (min-width: $smallPhones) {
-                    height: 200px;
-                }
                 @media (min-width: $tablets) {
-                    height: 360px;
+                    height: 170px;
                 }
                 @media (min-width: $desktops) {
                     height: 227px;
@@ -1192,14 +1230,12 @@ $borderbuttom: #673BBD;
                 font-style: normal;
                 font-weight: bold;
                 font-size: 16px;
-                line-height: 22px;
+                line-height: 20px;
                 color: #000000;
                 max-width: 90%;
-                @media (min-width: $tablets) {
-                    font-size: 30px;
-                    line-height: 45px;
-                }
+                margin-bottom: 17px;
                 @media (min-width: $desktops) {
+                    margin-bottom: 20px;
                     font-size: 18px;
                     line-height: 22px;
                 }
@@ -1208,17 +1244,16 @@ $borderbuttom: #673BBD;
                 font-family: Lato;
                 font-style: normal;
                 font-weight: normal;
-                font-size: 12px;
-                line-height: 17px;
+                font-size: 10px;
+                line-height: 16px;
                 color: #3D3B3B;
                 margin-bottom: 0;
                 @media (min-width: $tablets) {
-                    font-size: 26px;
-                    line-height: 39px;
+                    font-size: 12px;
                 }
                 @media (min-width: $desktops) {
                     font-size: 14px;
-                    line-height: 20px;
+                    line-height: 17px;
                 }
             }
         }

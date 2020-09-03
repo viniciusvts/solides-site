@@ -6,7 +6,7 @@
       <div class="row px-4">
         <div class="col-12">
           <img class="logo-menu mb-50" 
-          src="@/assets/img/solides-header-logo-white.png" 
+          src="@/assets/img/logo-solides-branca.png" 
           alt="logo da sólides branco">
         </div>
         <div class="col-12 col-lg-4 mb-30">

@@ -7,9 +7,9 @@
         <img 
         v-if="controls.expandMenu" 
         class="logo-menu" 
-        src="@/assets/img/logo-solides-branca.png" 
+        src="@/assets/img/svg/logo-branca.svg" 
         alt="logo da sólides branco">
-        <img v-else class="logo-menu" src="@/assets/img/logo-solides.png" alt="logo da sólides">
+        <img v-else class="logo-menu" src="@/assets/img/svg/logo.svg" alt="logo da sólides">
       </router-link>
       <button @click="togleMenu" class="navbar-toggler no-border" type="button">
         <img v-if="controls.expandMenu" class="hambmenu" src="@/assets/img/x.png" alt="menu">

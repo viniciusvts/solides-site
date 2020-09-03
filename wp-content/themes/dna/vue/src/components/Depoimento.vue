@@ -3,7 +3,7 @@
     <img class="frame tr-rotx-180" src="@/assets/img/svg/frame-form-home.svg" alt="">
     <div class="content">
       <h2 v-html="data.titulo"></h2>
-      <div class="carrossel">
+      <div class="carrossel" v-if="isPosition">
         <carousel :responsive="carrossel">
           <div class="item" v-for="(em, index) in data.embed" :key="index" v-html="em.embed">
           </div>
@@ -15,8 +15,10 @@
 
 <script>
 import carousel from 'vue-owl-carousel'
+import lazyComponent from '@/services/lazyComponent.js'
 export default {
   name: "Depoimento",
+  mixins: [lazyComponent],
   props: {
     data: Object
   },

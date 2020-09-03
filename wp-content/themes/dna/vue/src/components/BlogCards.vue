@@ -5,7 +5,7 @@
         <div class="container">
           <div class="vertical-pill red"></div>
           <h2 class="title" v-html="data.titulo"></h2>
-          <div class="cards row">
+          <div class="cards row" v-if="isPosition">
             <div v-for="(card, index) in data.cards" :key="index" class="col-12 mx-auto col-md-6 col-lg-4">
               <a :href="card.link">
                 <div class="card">
@@ -23,8 +23,10 @@
 </template>
 
 <script>
+import lazyComponent from '@/services/lazyComponent.js'
 export default {
   name: "BlogCards",
+  mixins: [lazyComponent],
   props: {
     data: Object
   },

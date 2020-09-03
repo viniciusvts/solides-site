@@ -1,6 +1,6 @@
 <template>
   <div class="loading">
-    <img src="@/assets/img/icone_novo_camadas_2.gif" alt="" srcset="">
+    <img src="@/assets/img/LoadP.gif" alt="Logo da sólides animado" srcset="">
   </div>
 </template>
 

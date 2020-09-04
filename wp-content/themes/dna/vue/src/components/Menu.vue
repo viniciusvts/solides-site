@@ -25,12 +25,12 @@
             <a class="nav-link p-0" href="javascript: void(0)">
               Produtos
               <span :class="{'d-none': !controls.expandProdutos}" class="submenu">
-                <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
-                <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-cima-primary.png" alt="menu">
+                <img class="d-lg-none" src="@/assets/img/svg/seta-branca-para-cima.svg" alt="menu">
+                <img class="d-none d-lg-inline" src="@/assets/img/svg/seta-azul-para-cima.svg" alt="menu">
               </span>
               <span :class="{'d-none': controls.expandProdutos}" class="submenu">
-                <img class="d-lg-none" src="@/assets/img/seta-pra-baixo.png" alt="menu">
-                <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-baixo-primary.png" alt="menu">
+                <img class="d-lg-none" src="@/assets/img/svg/seta-branca-para-baixo.svg" alt="menu">
+                <img class="d-none d-lg-inline" src="@/assets/img/svg/seta-azul-para-baixo.svg" alt="menu">
               </span>
             </a>
             <div
@@ -87,12 +87,12 @@
             <a class="nav-link p-0" href="javascript: void(0)">
               Conteúdos
               <span :class="{'d-none': !controls.expandConteudo}" class="submenu">
-                <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
-                <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-cima-primary.png" alt="menu">
+                <img class="d-lg-none" src="@/assets/img/svg/seta-branca-para-cima.svg" alt="menu">
+                <img class="d-none d-lg-inline" src="@/assets/img/svg/seta-azul-para-cima.svg" alt="menu">
               </span>
               <span :class="{'d-none': controls.expandConteudo}" class="submenu">
-                <img class="d-lg-none" src="@/assets/img/seta-pra-baixo.png" alt="menu">
-                <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-baixo-primary.png" alt="menu">
+                <img class="d-lg-none" src="@/assets/img/svg/seta-branca-para-baixo.svg" alt="menu">
+                <img class="d-none d-lg-inline" src="@/assets/img/svg/seta-azul-para-baixo.svg" alt="menu">
               </span>
             </a>
             <div
@@ -134,12 +134,12 @@
             <a class="nav-link p-0" href="javascript: void(0)">
               Cursos
               <span :class="{'d-none': !controls.expandCursos}" class="submenu">
-                <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
-                <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-cima-primary.png" alt="menu">
+                <img class="d-lg-none" src="@/assets/img/svg/seta-branca-para-cima.svg" alt="menu">
+                <img class="d-none d-lg-inline" src="@/assets/img/svg/seta-azul-para-cima.svg" alt="menu">
               </span>
               <span :class="{'d-none': controls.expandCursos}" class="submenu">
-                <img class="d-lg-none" src="@/assets/img/seta-pra-baixo.png" alt="menu">
-                <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-baixo-primary.png" alt="menu">
+                <img class="d-lg-none" src="@/assets/img/svg/seta-branca-para-baixo.svg" alt="menu">
+                <img class="d-none d-lg-inline" src="@/assets/img/svg/seta-azul-para-baixo.svg" alt="menu">
               </span>
             </a>
             <div
@@ -188,12 +188,12 @@
             <a class="nav-link p-0" href="javascript: void(0)">
               Login
               <span :class="{'d-none': !controls.expandLogin}" class="submenu">
-                <img class="d-lg-none" src="@/assets/img/seta-pra-cima.png" alt="menu">
-                <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-cima-primary.png" alt="menu">
+                <img class="d-lg-none" src="@/assets/img/svg/seta-branca-para-cima.svg" alt="menu">
+                <img class="d-none d-lg-inline" src="@/assets/img/svg/seta-azul-para-cima.svg" alt="menu">
               </span>
               <span :class="{'d-none': controls.expandLogin}" class="submenu">
-                <img class="d-lg-none" src="@/assets/img/seta-pra-baixo.png" alt="menu">
-                <img class="d-none d-lg-inline" src="@/assets/img/seta-pra-baixo-primary.png" alt="menu">
+                <img class="d-lg-none" src="@/assets/img/svg/seta-branca-para-baixo.svg" alt="menu">
+                <img class="d-none d-lg-inline" src="@/assets/img/svg/seta-azul-para-baixo.svg" alt="menu">
               </span>
             </a>
             <div

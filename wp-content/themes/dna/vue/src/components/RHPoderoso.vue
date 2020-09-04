@@ -1,7 +1,7 @@
 <template>
   <div class="rh-poderoso container">
     <div class="vertical-pill blue"></div>
-    <img class="d-none d-lg-block" :src="data.imagem.url" :alt="data.imagem.alt">
+    <img class="d-none d-lg-block" :src="data.imagem.url" :alt="data.imagem.alt" v-if="isDesktop">
     <div class="col-10 col-lg-70 pl-lg-0">
       <h1 v-html="data.titulo"></h1>
       <div class="text" v-html="data.texto"></div>
@@ -21,8 +21,13 @@
 export default {
   name: "RHPoderoso",
   props: {
-    data: Object
+    data: Object,
   },
+  computed: {
+    isDesktop: function () {
+      return screen.width > 767
+    }
+  }
 };
 </script>
 

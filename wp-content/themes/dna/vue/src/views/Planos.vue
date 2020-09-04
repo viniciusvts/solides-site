@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <img src="/img/frame-form-home.9e9f2cf8.svg" alt="" class="frame tr-rotz-180 d-none d-lg-block">
+    <img src="@/assets/img/svg/frame-form-home.svg" alt="" class="frame tr-rotz-180 d-none d-lg-block">
     <AutomatizeRS :backGray="true" :data="pageData.acf.cta" />
     <div class="gray"></div>
     <TrialModal />

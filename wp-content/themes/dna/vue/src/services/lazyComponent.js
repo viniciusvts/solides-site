@@ -18,7 +18,6 @@ const lazyComponent = {
         //remove listener
         document.removeEventListener('scroll', this.showIframesOnScroll);
       }
-      console.log(this.$el.offsetTop, bottomOfScreen, this.isPosition)
     }
   }
 };

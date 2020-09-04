@@ -200,9 +200,16 @@ nav{
     &.login .drop-item{
         padding: 10px 0;
     }
-    .drop-item:hover{
-        text-decoration: none;
-        background-color: #f8f9fa;
+    .drop-item{
+        &:hover{
+            @media (min-width: $desktops){
+                text-decoration: none;
+                background-color: #f8f9fa;
+            }
+        }
+        &:focus{
+            outline: none;
+        }
     }
     .dropdown-item{
         color: whitesmoke;

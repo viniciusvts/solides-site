@@ -29,7 +29,7 @@
       </div>
       <div class="to-right-30">
         <div class="vertical-pill yellow"></div>
-        <img src="@/assets/img/cabeçalho-perfil-disc-finalizado 1.png" alt="mulher trabalhando no computador">
+        <img :src="lp.acf.imagem_secao_1.sizes.large" :alt="lp.acf.imagem_secao_1.alt">
       </div>
     </div>
     <div class="mt-50 mt-lg-70 d-lg-none">
@@ -77,9 +77,7 @@
     <div class="row ml-lg-0">
       <div class="to-left-30">
         <div class="vertical-pill cyan"></div>
-        <img class="mt-img-profiler"
-        src="@/assets/img/Terceira-sessao-perfil-disc 2.png"
-        alt="homem achando solução na solides">
+        <img :src="lp.acf.imagem_secao_4.sizes.large" :alt="lp.acf.imagem_secao_4.alt" class="mt-img-profiler">
       </div>
       <div class="text-left to-right-70 mt-30 text-profiler">
         <h2 v-html="lp.acf.titulo4" class="color-almostBlack text-right text-lg-left trtr-profiler t4"></h2>
@@ -332,7 +330,7 @@
 import TrialModal from '@/components/TrialModal.vue'
 import Loading from "@/components/Loading.vue"
 export default {
-  name: 'PerfilLp',
+  name: 'Profiler',
   components: {
     Loading,
     TrialModal

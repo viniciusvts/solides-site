@@ -59,18 +59,13 @@ a:hover{
 }
 .p-r{position: relative;}
 /// correção da barra de cookie
-#hs-eu-cookie-confirmation,
-#hs-eu-cookie-confirmation-inner,
-#hs-eu-confirmation-button{
-    font-size: 18px;
-}
-#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button {
-    font-size: 12px;
+#hs-eu-cookie-confirmation, div#hs-eu-cookie-confirmation-inner, a#hs-eu-confirmation-button {
+    line-height: 16px;
     @media (min-width: $tablets) {
-        font-size: 14px;
+        line-height: 33px;
     }
     @media (min-width: $largeDesktops) {
-        font-size: 17px;
+        line-height: 35px;
     }
 }
 </style>

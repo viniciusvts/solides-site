@@ -39,6 +39,16 @@ export default {
 @import "@/assets/scss/variables.scss";
 *, ::after, ::before{
     font-family: 'Lato', 'Roboto', sans-serif;
+    font-size: 16px;
+    @media (min-width: $smallPhones) {
+        font-size: 20px;
+    }
+    @media (min-width: $tablets) {
+        font-size: 25px;
+    }
+    @media (min-width: $largeDesktops) {
+        font-size: 31px;
+    }
 }
 html{
     scroll-behavior: smooth;
@@ -50,10 +60,12 @@ a:hover{
 .p-r{position: relative;}
 /// correção da barra de cookie
 #hs-eu-cookie-confirmation, div#hs-eu-cookie-confirmation-inner, a#hs-eu-confirmation-button {
-    font-size: 12px;
-    line-height: 15px;
+  *{
+    font-size: 12px !important;
+    line-height: 15px !important;
     @media (min-width: $tablets) {
-      line-height: 18px;
+      line-height: 18px !important;
     }
+  }
 }
 </style>

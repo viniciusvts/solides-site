@@ -44,9 +44,11 @@ export default {
     },
     setMessage () {
       for (const item of this.pageData.acf.mensagem) {
-        // pega o parametro url de origem
-        const urlParams = new URLSearchParams(location.search)
-        const uriOrigem = urlParams.get('uriOrigem')
+        // pegava o parametro url de origem
+        // const urlParams = new URLSearchParams(location.search)
+        // const uriOrigem = urlParams.get('uriOrigem')
+        // agora pega o histórico
+        const uriOrigem = document.referrer
         // procura as urls cadastradas e define a mensagem
         if (item.pagina_de_origem.includes(uriOrigem)){
           this.message = item.texto

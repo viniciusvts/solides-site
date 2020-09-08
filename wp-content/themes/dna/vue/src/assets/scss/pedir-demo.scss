@@ -171,6 +171,18 @@ $cinza: #F3F3F3;
                 background-size: unset;
                 background-position: top 21px right 30px;
             }
+            option{
+                font-size: 10px;
+                line-height: 10px;
+                @media (min-width: $tablets) {
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+                @media (min-width: $desktops) {
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+            }
         }
         input, select{
             background-color: #FFFFFF;

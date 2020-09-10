@@ -149,6 +149,9 @@ $cinza: #F3F3F3;
         border-radius: 20px;
         text-align: center;
         width: 290px;
+        @media (min-width: $smallPhones) {
+            width: unset;
+        }
         @media (min-width: $tablets) {
             width: 500px;
         }
@@ -245,7 +248,13 @@ $cinza: #F3F3F3;
         margin-left: auto;
         padding-top: 20px;
         padding-bottom: 10px;
+        @media (min-width: $smallPhones) {
+            margin-right: 5px;
+            margin-left: 5px;
+        }
         @media (min-width: $tablets) {
+            margin-right: auto;
+            margin-left: auto;
             padding-top: 40px;
             padding-bottom: 20px;
         }

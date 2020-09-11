@@ -72,117 +72,34 @@
     </div>
   </div>
   <img class="frame" src="@/assets/img/frame1.png" alt="">
-  <!--como o profiler...-->
-  <div class="container pt-60 pt-lg-0">
-    <div class="row ml-lg-0">
-      <div class="to-left-30">
-        <div class="vertical-pill cyan"></div>
-        <img :src="lp.acf.imagem_secao_4.sizes.large" :alt="lp.acf.imagem_secao_4.alt" class="mt-img-profiler">
-      </div>
-      <div class="text-left to-right-70 mt-30 text-profiler">
-        <h2 v-html="lp.acf.titulo4" class="color-almostBlack text-right text-lg-left trtr-profiler t4"></h2>
-        <!--so aparece em desktop -->
-        <div class="d-none d-lg-block">
-          <p v-html="lp.acf.texto4" class="mt-lg-4 mb-lg-4 color-almostBlack p-lg-28"></p>
-          <ul class="detalhes pl-0 ul1">
-            <li class="mb-lg-4 p-lg-28">
-              <span v-html="lp.acf.mil_analistas" class="color-cyan font-weight-bold"></span> analistas comportamentais formados
-            </li>
-            <li class="mb-lg-4 p-lg-28">
-              <span v-html="lp.acf.milhoes_relatorios" class="color-cyan font-weight-bold"></span> de relatórios
-            </li>
-            <li class="mb-lg-4 p-lg-28">
-              <span v-html="lp.acf.parceiros" class="color-cyan font-weight-bold"></span> parceiros
-            </li>
-          </ul>
-          <div class="container mt-5">
-            <h2 v-html="lp.acf.titulo5" class="mb-lg-4 color-almostBlack"></h2>
-            <div v-html="lp.acf.texto5" class="escada color-almostBlack"></div>
-            <div class="text-right">
-              <a :href="lp.acf.botao_1_secao_5[0].link">
-                <button 
-                class="badge badge-pill mx-button blue-back color-white">
-                {{lp.acf.botao_1_secao_5[0].texto}}
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--como o profiler... detalhes-->
-  <div class="container d-lg-none">
-      <p v-html="lp.acf.texto4" class="pt-4 pl-4 w-80"></p>
-      <ul class="detalhes pl-4 ul1">
-        <li>
-          <span v-html="lp.acf.mil_analistas" class="color-cyan bold font-weight-bold"></span> analistas comportamentais formados
-        </li>
-        <li>
-          <span v-html="lp.acf.milhoes_relatorios" class="color-cyan bold font-weight-bold"></span> de relatórios
-        </li>
-        <li>
-          <span v-html="lp.acf.parceiros" class="color-cyan bold font-weight-bold"></span> parceiros
-        </li>
-      </ul>
-    <div class="container mt-3 mt-lg-5 px-3">
-      <h2 v-html="lp.acf.titulo5" class="simples mx-0"></h2>
-      <div v-html="lp.acf.texto5" class="proExclusivo"></div>
-      <a :href="lp.acf.botao_1_secao_5[0].link">
-        <button class="badge badge-pill blue-back color-white exclusivo">{{lp.acf.botao_1_secao_5[0].texto}}</button>
-      </a>
-    </div>
-  </div>
+  <ComoTemosAjudado
+    :titulo="lp.acf.titulo6"
+    :imgSrc="lp.acf.imagem_secao_4.sizes.large"
+    :imgAlt="lp.acf.imagem_secao_4.alt"
+    :titulo1="lp.acf.titulo4"
+    :texto1="lp.acf.texto4"
+    :analistas="lp.acf.mil_analistas"
+    :relatorios="lp.acf.milhoes_relatorios"
+    :parceiros="lp.acf.parceiros"
+    :titulo2="lp.acf.titulo5"
+    :texto2="lp.acf.texto5"
+    :btnLink="lp.acf.botao_1_secao_5[0].link"
+    :btnTexto="lp.acf.botao_1_secao_5[0].texto"
+  />
   <img class="frame d-none d-lg-block" src="@/assets/img/svg/frame2.png" alt="">
   <img class="frame rotate-180 d-lg-none" src="@/assets/img/frame1.png" alt="">
-  <!--validado por-->
-  <div class="bg-light">
-    <div class="container pb-40 pb-lg-60">
-      <h2 v-html="lp.acf.titulo6" class="ml-4 trtr-valPor"></h2>
-      <div class="row ml-4">
-        <div class="text-left color-primary to-left-70">
-          <div class="row pr-md-0 text-md-center trtr-valPor">
-            <div class="col-12 col-md-4 pr-md-0 mt-40">
-              <img src="@/assets/img/usp.png" alt="usp" class="valpor">
-            </div>
-            <div class="col-12 col-md-4 pr-md-0 mt-40">
-              <img src="@/assets/img/ufmg.png" alt="ufmg" class="valpor">
-            </div>
-            <div class="col-12 col-md-4 pr-md-0 mt-40">
-              <img src="@/assets/img/finep.png" alt="finep" class="valpor">
-            </div>
-          </div>
-        </div>
-        <div class="to-right-30">
-          <div class="vertical-pill red"></div>
-        </div>
-      </div>
-      <div v-html="lp.acf.iframe6" id="ytframe">
-      </div>
-      <div class="text-center text-lg-left mt-30 row-lg">
-        <div class="d-none d-lg-block col-2 col-hd-1"></div>
-        <a :href="lp.acf.botao_1_secao_6[0].link">
-          <button class="badge badge-pill mx-button blue-back color-white">{{lp.acf.botao_1_secao_6[0].texto}}</button>
-        </a>
-      </div>
-    </div>
-  </div>
-  <img class="frame" src="@/assets/img/frame1.png" alt="">
-  <!--simlpes contratar...-->
-  <div class="container pt-40 pt-lg-60">
-    <h2 v-html="lp.acf.titulo7" class="text-center color-primary t7"></h2>
-    <div class="mt-5 mt-lg-0 text-center row simple">
-      <div v-for="(wf, index) in lp.acf.workflow_comprar7" :key="index" class="col-12 col-lg-4">
-        <img :src="wf.imagem.sizes.medium" :alt="wf.imagem.alt">
-        <p class="color-primary mt-3 px-5 px-lg-2 font-weight-bold">{{wf.text}}</p>
-      </div>
-    </div>
-    <div class="centerize-itens mt-0 mt-lg-30">
-      <a :href="lp.acf.botao_1_secao_7[0].link">
-        <button class="badge badge-pill mx-button blue-back color-white mb-30">{{lp.acf.botao_1_secao_7[0].texto}}</button>
-      </a>
-    </div>
-  </div>
+  <ValidadoPor 
+    :titulo="lp.acf.titulo6"
+    :iframe="lp.acf.iframe6"
+    :linkhref="lp.acf.botao_1_secao_6[0].link"
+    :linkTexto="lp.acf.botao_1_secao_6[0].texto"
+  />
+  <Simples 
+    :titulo="lp.acf.titulo7"
+    :imgs="lp.acf.workflow_comprar7"
+    :linkhref="lp.acf.botao_1_secao_7[0].link"
+    :linkTexto="lp.acf.botao_1_secao_7[0].texto"
+  />
   <img class="frame rotate-180" src="@/assets/img/frame1.png" alt="">
   <!--depoimento-->
   <div class="bg-light">
@@ -204,54 +121,15 @@
     </div>
   </div>
   <img class="frame" src="@/assets/img/frame1.png" alt="" id="prices">
-  <!--tabela de preços-->
-  <div class="container pb-60 text-center">
-    <div class="container">
-      <div class="row">
-        <h2
-        v-html="lp.acf.tabela_titulo"
-        class="color-primary col-12 col-lg-6 text-lg-left prices"></h2>
-        <p class="mt-4 mb-4 col-12 col-lg-6 text-lg-right credit-price color-cyan bold" v-html="lp.acf.tabela_texto_destaque">
-        </p>
-      </div>
-      <div class="row mb-5">
-        <div class="d-none d-lg-block col-lg-6 align-lg-vertical">
-          <img
-          class="w-100"
-          :src="lp.acf.tabela_imagem_destaque.sizes.large"
-          :alt="lp.acf.tabela_imagem_destaque.alt">
-        </div>
-        <div class="col-12 col-lg-6">
-          <table class="table table-striped color-primary prices">
-            <thead>
-              <tr>
-                <th class="w-25" scope="col">Quantidade de créditos</th>
-                <th class="w-25" scope="col">Valor por crédito</th>
-                <th class="w-25" scope="col">Parcelamento no cartão</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(preco, index) in lp.acf.tabela_precos" :key="index">
-                <td>{{preco.quantidade_de_creditos}}</td>
-                <td>{{preco.valor_por_credito}}</td>
-                <td>{{preco.parcelamento_no_cartao}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-lg-9 text-left color-primary price-details">
-          <p><span class="font-weight-bold">Inclui:</span><br>Relatório DISC;<br>Plataforma web para gerenciar avaliações;</p>
-        </div>
-        <div class="col-12 col-lg-3 text-left text-lg-right">
-          <a :href="lp.acf.botao_1_secao_tabela[0].link">
-            <button class="badge badge-pill mx-button blue-back color-white trtry-price">{{lp.acf.botao_1_secao_tabela[0].texto}}</button>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <TabelaPrecos 
+    :titulo="lp.acf.tabela_titulo"
+    :txtDestaq="lp.acf.tabela_texto_destaque"
+    :imgSrc="lp.acf.tabela_imagem_destaque.sizes.large"
+    :imgAlt="lp.acf.tabela_imagem_destaque.alt"
+    :tblPreco="lp.acf.tabela_precos"
+    :linkhref="lp.acf.botao_1_secao_tabela[0].link"
+    :linkTexto="lp.acf.botao_1_secao_tabela[0].texto"
+  />
   <!-- form aqui -->
   <div class="bg-gray" id="form">
     <div class="container pt-60 pb-1">
@@ -268,56 +146,24 @@
     </div>
   </div>
   <img class="frame p-r" src="@/assets/img/svg/frame-form.svg">
-  <!-- melhor conteúdo sobre o profiler -->
-  <div class="container pt-60 pb-2">
-    <div class="row ml-0 bestcontent-profiler">
-      <div class="to-left-30">
-        <div class="vertical-pill green"></div>
-      </div>
-      <div class="text-left to-right-70 mt-30 mt-xs-0 mt-lg-5">
-        <h2 v-html="lp.acf.titulo10" class="color-almostBlack bestContent"></h2>
-      </div>
-      <div class="blog-cards">
-        <div class="container">
-          <div class="cards row">
-            <div class="col-12 col-lg-4">
-              <a :href="lp.acf.link_1_secao_10">
-                <div class="card">
-                  <img :src="lp.acf.imagem_1_secao_10.sizes.large"
-                  :alt="lp.acf.imagem_1_secao_10.alt"
-                  class="img-header">
-                  <h3 v-html="lp.acf.subtitulo_1_secao_10" class="title"></h3>
-                  <p v-html="lp.acf.texto_1_secao_10" class="text"></p>
-                </div>
-              </a>
-            </div>
-            <div class="col-12 col-lg-4">
-              <a :href="lp.acf.link_2_secao_10">
-                <div class="card">
-                  <img :src="lp.acf.imagem_2_secao_10.sizes.large"
-                  :alt="lp.acf.imagem_2_secao_10.alt"
-                  class="img-header">
-                  <h3 v-html="lp.acf.subtitulo_2_secao_10" class="title"></h3>
-                  <p v-html="lp.acf.texto_2_secao_10" class="text"></p>
-                </div>
-              </a>
-            </div>
-            <div class="col-12 col-lg-4">
-              <a :href="lp.acf.link_1_secao_10">
-                <div class="card">
-                  <img :src="lp.acf.imagem_3_secao_10.sizes.large"
-                  :alt="lp.acf.imagem_3_secao_10.alt"
-                  class="img-header">
-                  <h3 v-html="lp.acf.subtitulo_3_secao_10" class="title"></h3>
-                  <p v-html="lp.acf.texto_3_secao_10" class="text"></p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <MelhoresConteudos 
+    :titulo="lp.acf.titulo10"
+    :link1="lp.acf.link_1_secao_10"
+    :img1Src="lp.acf.imagem_1_secao_10.sizes.large"
+    :img1Alt="lp.acf.imagem_1_secao_10.alt"
+    :sub1="lp.acf.subtitulo_1_secao_10"
+    :texto1="lp.acf.texto_1_secao_10"
+    :link2="lp.acf.link_2_secao_10"
+    :img2Src="lp.acf.imagem_2_secao_10.sizes.large"
+    :img2Alt="lp.acf.imagem_2_secao_10.alt"
+    :sub2="lp.acf.subtitulo_2_secao_10"
+    :texto2="lp.acf.texto_2_secao_10"
+    :link3="lp.acf.link_3_secao_10"
+    :img3Src="lp.acf.imagem_3_secao_10.sizes.large"
+    :img3Alt="lp.acf.imagem_3_secao_10.alt"
+    :sub3="lp.acf.subtitulo_3_secao_10"
+    :texto3="lp.acf.texto_3_secao_10"
+  />
   <TrialModal />
 </div>
 <div v-else>
@@ -329,11 +175,21 @@
 <script>
 import TrialModal from '@/components/TrialModal.vue'
 import Loading from "@/components/Loading.vue"
+import ValidadoPor from "@/components/ValidadoPor.vue"
+import ComoTemosAjudado from "@/components/ComoTemosAjudado.vue"
+import Simples from "@/components/Simples.vue"
+import MelhoresConteudos from "@/components/MelhoresConteudos.vue"
+import TabelaPrecos from "@/components/TabelaPrecos.vue"
 export default {
   name: 'Profiler',
   components: {
     Loading,
-    TrialModal
+    TrialModal,
+    ValidadoPor,
+    ComoTemosAjudado,
+    Simples,
+    MelhoresConteudos,
+    TabelaPrecos
   },
   data () {
     return {

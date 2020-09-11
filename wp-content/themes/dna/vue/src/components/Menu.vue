@@ -201,10 +201,10 @@
             class="dropdown-menu cursos login"
             aria-labelledby="navbarDropdown">
               <div class="drop-item">
-                <a class="dropdown-item" href="https://system.solides.com/pt-BR/usuarios/sign_in">Sólides Gestão</a>
+                <a target="_blank" class="dropdown-item" href="https://system.solides.com/pt-BR/usuarios/sign_in">Sólides Gestão</a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item " href="http://www.solides.adm.br/solides/perfil">Sólides Profiler</a>
+                <a target="_blank" class="dropdown-item " href="http://www.solides.adm.br/solides/perfil">Sólides Profiler</a>
               </div>
             </div>
           </li>

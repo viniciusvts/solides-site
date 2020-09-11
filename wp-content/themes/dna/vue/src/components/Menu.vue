@@ -100,28 +100,28 @@
             class="dropdown-menu conteudo"
             aria-labelledby="navbarDropdown">
               <div class="drop-item">
-                <a class="dropdown-item" href="https://blog.solides.com.br/">Blog da Sólides</a>
-                <a href="https://blog.solides.com.br/" class="no-decoration">
+                <a target="_blank" class="dropdown-item" href="https://blog.solides.com.br/">Blog da Sólides</a>
+                <a target="_blank" href="https://blog.solides.com.br/" class="no-decoration">
                   <p class="d-none d-lg-block">
                     Os melhores conteúdos para gestão de pessoas
                   </p>
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item" href="https://www.rhportal.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346">RH Portal</a>
-                <a href="https://www.rhportal.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346" class="no-decoration">
+                <a target="_blank" class="dropdown-item" href="https://www.rhportal.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346">RH Portal</a>
+                <a target="_blank" href="https://www.rhportal.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346" class="no-decoration">
                   <p class="d-none d-lg-block">Os melhores conteúdos sobre gestão de pessoas</p>
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item" href="https://solides.com.br/materiais-educativos/">Materiais</a>
-                <a href="https://solides.com.br/materiais-educativos/" class="no-decoration">
+                <a target="_blank" class="dropdown-item" href="https://solides.com.br/materiais-educativos/">Materiais</a>
+                <a target="_blank" href="https://solides.com.br/materiais-educativos/" class="no-decoration">
                   <p class="d-none d-lg-block">Os melhores conteúdos para gestão de pessoas</p>
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item" href="https://contratarerradocustacaro.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346">Ferramentas</a>
-                <a href="https://contratarerradocustacaro.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346" class="no-decoration">
+                <a target="_blank" class="dropdown-item" href="https://contratarerradocustacaro.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346">Ferramentas</a>
+                <a target="_blank" href="https://contratarerradocustacaro.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346" class="no-decoration">
                   <p class="d-none d-lg-block">Calculadora de rotatividade</p>
                 </a>
               </div>
@@ -147,39 +147,39 @@
             class="dropdown-menu cursos"
             aria-labelledby="navbarDropdown">
               <div class="drop-item">
-                <a class="dropdown-item" href="https://universidade.solides.com.br/course/engenharia-de-cargos-do-recrutamento-a-retencao/">Engenharia de Cargos<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-                <a class="no-decoration" href="https://universidade.solides.com.br/course/engenharia-de-cargos-do-recrutamento-a-retencao/">
+                <a target="_blank" class="dropdown-item" href="https://universidade.solides.com.br/course/engenharia-de-cargos-do-recrutamento-a-retencao/">Engenharia de Cargos<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a target="_blank" class="no-decoration" href="https://universidade.solides.com.br/course/engenharia-de-cargos-do-recrutamento-a-retencao/">
                   <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item " href="https://universidade.solides.com.br/course/people-analytics/">People Analytics<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-                <a class="no-decoration" href="https://universidade.solides.com.br/course/people-analytics/">
+                <a target="_blank" class="dropdown-item " href="https://universidade.solides.com.br/course/people-analytics/">People Analytics<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a target="_blank" class="no-decoration" href="https://universidade.solides.com.br/course/people-analytics/">
                   <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item" href="https://universidade.solides.com.br/course/rh-tecnologico/">RH Tecnológico<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-                <a class="no-decoration" href="https://universidade.solides.com.br/course/rh-tecnologico/">
+                <a target="_blank" class="dropdown-item" href="https://universidade.solides.com.br/course/rh-tecnologico/">RH Tecnológico<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a target="_blank" class="no-decoration" href="https://universidade.solides.com.br/course/rh-tecnologico/">
                   <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item" href="https://universidade.solides.com.br/course/recrutamento-e-selecao/">Recrutamento e Seleção<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-                <a class="no-decoration" href="https://universidade.solides.com.br/course/recrutamento-e-selecao/">
+                <a target="_blank" class="dropdown-item" href="https://universidade.solides.com.br/course/recrutamento-e-selecao/">Recrutamento e Seleção<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a target="_blank" class="no-decoration" href="https://universidade.solides.com.br/course/recrutamento-e-selecao/">
                   <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">Gestão Comportamental<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
-                <a class="no-decoration" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">
+                <a target="_blank" class="dropdown-item" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">Gestão Comportamental<p class="saiba-mais d-lg-none">Saiba mais >></p></a>
+                <a target="_blank" class="no-decoration" href="https://universidade.solides.com.br/course/gestao-comportamental-na-pratica/">
                   <p class="saiba-mais d-none d-lg-block">Saiba mais >></p>
                 </a>
               </div>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link p-0" href="https://parcerias.solides.com.br/">Seja Parceiro</a>
+            <a target="_blank" class="nav-link p-0" href="https://parcerias.solides.com.br/">Seja Parceiro</a>
           </li>
           <li @click="togleLogin(null)"
           @mouseover="togleLogin(true)"

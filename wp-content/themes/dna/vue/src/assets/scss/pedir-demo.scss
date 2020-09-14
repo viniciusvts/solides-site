@@ -28,7 +28,6 @@ $cinza: #F3F3F3;
         font-weight: bold;
         font-size: 18px;
         line-height: 25px;
-        /* width: 215px; */
         margin-bottom: 15px;
         margin-right: auto;
         margin-left: auto;
@@ -67,7 +66,6 @@ $cinza: #F3F3F3;
         }
         &.first{
             margin-bottom: 25px;
-            /* width: 245px; */
             margin-left: auto;
             margin-right: auto;
             color: #5F4A87;
@@ -97,11 +95,9 @@ $cinza: #F3F3F3;
             margin-top: 50px;
             margin-bottom: 0;
             padding-bottom: 90px;
-            /* width: 240px; */
             margin-right: auto;
             margin-left: auto;
             @media (min-width: $smallPhones) {
-                //text-align: center;
                 margin-right: 30px;
                 margin-left: 30px;
             }

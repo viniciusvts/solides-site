@@ -26,13 +26,13 @@ $cinza: #F3F3F3;
         font-family: Lato;
         font-style: normal;
         font-weight: bold;
-        font-size: 24px;
-        line-height: 29px;
-        width: 270px;
-        margin-bottom: 25px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 25px;
+        margin-bottom: 15px;
         @media (min-width: $smallPhones) {
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 17px;
+            margin-right: 7px;
         }
         @media (min-width: $tablets) {
             font-size: 40px;
@@ -54,8 +54,8 @@ $cinza: #F3F3F3;
         font-family: Lato;
         font-style: normal;
         font-weight: normal;
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 15px;
+        line-height: 20px;
         @media (min-width: $tablets) {
             font-size: 22px;
             line-height: 38px;
@@ -69,12 +69,11 @@ $cinza: #F3F3F3;
         }
         &.first{
             margin-bottom: 25px;
-            width: 215px;
+            text-align: center;
             @media (min-width: $smallPhones) {
                 margin-bottom: 35px;
-                width: 270px;
-                margin-left: auto;
-                margin-right: auto;
+                margin-right: 17px;
+                margin-left: 7px;
             }
             @media (min-width: $tablets) {
                 width: 500px;
@@ -95,9 +94,12 @@ $cinza: #F3F3F3;
             margin-top: 50px;
             margin-bottom: 0;
             padding-bottom: 30px;
-            width: 240px;
             margin-right: auto;
             margin-left: auto;
+            @media (min-width: $smallPhones) {
+                margin-right: 30px;
+                margin-left: 30px;
+            }
             @media (min-width: $tablets) {
                 font-size: 24px;
                 line-height: 32px;
@@ -260,8 +262,8 @@ $cinza: #F3F3F3;
         padding-top: 20px;
         padding-bottom: 10px;
         @media (min-width: $smallPhones) {
-            margin-right: 5px;
-            margin-left: 5px;
+            margin-right: 17px;
+            margin-left: 7px;
         }
         @media (min-width: $tablets) {
             padding-top: 40px;

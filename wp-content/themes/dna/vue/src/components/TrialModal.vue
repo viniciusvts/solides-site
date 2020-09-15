@@ -7,7 +7,7 @@
           <div class="close" @click="removeHash">x</div>
           <div class="head mx-auto">
             <h3>Crie sua conta</h3>
-            <p>Faça a gestão de pessoas para RH da HR Tech que mais cresce no Brasil</p>
+            <p>Experimente todas as funcionalidades por 14 dias</p>
           </div>
           <form action="#" method="post" class="mx-auto" @submit.prevent="sendForm">
             <div class="col-12 col-lg-11 mx-auto row">

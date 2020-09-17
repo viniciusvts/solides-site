@@ -9,7 +9,7 @@
             <h3>Crie sua conta</h3>
             <p>Experimente todas as funcionalidades por 14 dias</p>
           </div>
-          <form action="#" method="post" class="mx-auto" @submit.prevent="sendForm">
+          <form id="criar-conta" action="#" method="post" class="mx-auto" @submit.prevent="sendForm">
             <div class="col-12 col-lg-11 mx-auto row">
               <input class="col-12" type="text" required v-model="form.firstname"
                   name="firstname" id="firstname" placeholder="Nome">

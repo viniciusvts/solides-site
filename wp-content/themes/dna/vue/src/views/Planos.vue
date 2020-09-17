@@ -13,7 +13,7 @@
             <div class="preco d-none d-lg-block" v-html="plan.precodetalhes"></div>
             <div class="mensagem d-none d-lg-block" v-html="plan.mensagem"></div>
             <a :href="plan.botao.url" class=" d-none d-lg-block">
-              <button class="badge badge-pill purple mx-auto mb-lg-60">{{plan.botao.title}}</button>
+              <button :id="'btn-'+index" class="badge badge-pill purple mx-auto mb-lg-60">{{plan.botao.title}}</button>
             </a>
             <div class="back-white d-none d-lg-block"></div>
             <div class="detalhes" v-html="plan.texto"></div>

@@ -3,7 +3,10 @@
     <h1 v-html="pageData.title.rendered"></h1>
     <p class="first" v-html="pageData.acf.text"></p>
     <h2 class="mx-auto" v-html="pageData.acf.sub"></h2>
-    <div id="hsform-falarcomespecialista"></div>
+    <div v-show="isLoadingForm" class="loading-form">
+      <img src="@/assets/img/svg/form-loading.svg" alt="Logo da sólides animado" srcset="">
+    </div>
+    <div v-show="!isLoadingForm" id="hsform-falarcomespecialista"></div>
     <!-- <form :action="$http.baseURL + 'wp-json/dna_theme/v1/falar-com-especialista'" method="post" class="mx-auto">
       <div class="col-12 col-lg-11 mx-auto row">
         <input class="col-12" type="text" 
@@ -37,6 +40,7 @@ export default {
     return {
       pageId: 698,
       pageData: null,
+      isLoadingForm: true,
       uriOrigem : location.pathname
     }
   },
@@ -66,7 +70,11 @@ export default {
           formId: "540ec64d-82d8-4246-9fdb-b04ea72aeea0",
           target: selector
         });
+        setTimeout(()=>{
+          this.isLoadingForm = false;
+        },500);
       }, 3000);
+     
     },
   }
 }

@@ -2,7 +2,10 @@
   <div v-if="pageData" class="pedir-demo container">
     <h1 class="text-center" v-html="pageData.title.rendered"></h1>
     <p class="first text-center" v-html="pageData.acf.text"></p>
-    <div id="hsform-pedirdemo"></div>
+    <div v-show="isLoadingForm" class="loading-form">
+      <img src="@/assets/img/svg/form-loading.svg" alt="Logo da sólides animado" srcset="">
+    </div>
+    <div v-show="!isLoadingForm" id="hsform-pedirdemo"></div>
     <!-- <form :action="$http.baseURL + 'wp-json/dna_theme/v1/pedir-uma-demo/'" method="post" class="mx-auto">
       <div class="col-12 col-lg-11 mx-auto row">
         <input class="col-12" type="text" required
@@ -52,7 +55,8 @@ export default {
     return {
       pageId: 688,
       pageData: null,
-      uriOrigem : location.pathname
+      uriOrigem : location.pathname,
+      isLoadingForm: true
     }
   },
   mounted () {
@@ -81,6 +85,9 @@ export default {
           formId: "bc5d109b-a72b-4a16-a31f-7aea6d8917c2",
           target: selector
         });
+        setTimeout(()=>{
+          this.isLoadingForm = false;
+        },500);
       }, 3000);
     },
   }

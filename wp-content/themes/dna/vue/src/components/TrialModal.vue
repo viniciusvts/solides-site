@@ -17,7 +17,8 @@
                   name="email" id="email" placeholder="E-mail corporativo">
               <input class="col-12" type="text" v-model="form.company"
                   name="company" id="company" placeholder="Empresa">
-              <select class="col-12" name="cargorh" id="cargorh" required v-model="form.cargorh">
+              <select class="col-12" name="cargorh" id="cargorh" required v-model="form.cargorh"
+                  v-on:change="changeShowDigiteCargo">
                 <option value="" hidden="">Cargo</option>
                 <option value="Analista de RH">Analista de RH</option>
                 <option value="Business Partner de RH">Business Partner de RH</option>
@@ -33,6 +34,8 @@
                 <option value="Buscando recolocação">Buscando recolocação</option>
                 <option value="Outros">Outros</option>
               </select>
+              <input class="jobtitle col-12" type="text" v-model="form.jobtitle" required
+                  v-if="showJobTitle" name="jobtitle" id="jobtitle" placeholder="Digite Seu Cargo">
               <select class="col-12" name="tamanho_de_empresa" required v-model="form.tamanho_de_empresa">
                 <option value="" hidden="">Tamanho da empresa</option>
                 <option value="1000 funcionários ou mais">1000 funcionários ou mais</option>
@@ -68,11 +71,13 @@ export default {
       hashForShow: 'criar-conta',
       mensagem: '',
       show: false,
+      showJobTitle: false,
       form: {
         firstname: '',
         email: '',
         company: '',
         cargorh: '',
+        jobtitle: '',
         tamanho_de_empresa: '',
         phone: '',
       }
@@ -147,6 +152,9 @@ export default {
       const hashValue = window.location.hash.substr(1)
       if (hashValue == this.hashForShow) this.show = true
       else this.show = false
+    },
+    changeShowDigiteCargo () {
+      this.showJobTitle = this.form.cargorh == "Outros";
     }
   }
 };

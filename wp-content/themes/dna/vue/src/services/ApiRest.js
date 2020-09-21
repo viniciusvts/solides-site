@@ -110,7 +110,7 @@ const apiRest = {
         },
         {
           name: "jobtitle",
-          value: data.cargorh,
+          value: data.jobtitle,
         },
         {
           name: "tamanho_de_empresa",

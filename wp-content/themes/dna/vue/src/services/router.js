@@ -17,6 +17,7 @@ import Contato from '@/views/Contato.vue'
 import Obrigado from '@/views/Obrigado.vue'
 // import PerfilLp from '@/lps/PerfilLp.vue'
 import PaginaNaoEncontrada from '@/views/PaginaNaoEncontrada.vue'
+import Materiais from '@/views/Materiais.vue'
 
 Vue.use(VueRouter)
 
@@ -90,6 +91,11 @@ const routes = [
     path: '/obrigado',
     name: 'Obrigado',
     component: Obrigado,
+  },
+  {
+    path: '/materiais',
+    name: 'Materiais',
+    component: Materiais,
   },
   // {
   //   path: '/lps/perfil-disc-lp/',

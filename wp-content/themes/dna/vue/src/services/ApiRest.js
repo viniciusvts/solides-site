@@ -88,7 +88,7 @@ const apiRest = {
    */
   sendToHS(data) {
     if (typeof data == 'undefined') throw new TypeError("O parametro é obrigatório");
-    const url = "https://api.hsforms.com/submissions/v3/integration/submit/6009739/3ac0494a-078a-4ab3-a051-125d521a1c26"
+    const url = "https://api.hsforms.com/submissions/v3/integration/submit/6009739/30d1dad9-c9dc-4d98-bf18-ec30d2c19da2"
     // monta os campos
     let dataForm = {
       fields: [

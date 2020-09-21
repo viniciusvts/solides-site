@@ -35,14 +35,14 @@
               </select>
               <select class="col-12" name="tamanho_de_empresa" required v-model="form.tamanho_de_empresa">
                 <option value="" hidden="">Tamanho da empresa</option>
-                <option value="Até 14 funcionários">Até 14 funcionários</option>
-                <option value="De 15 a 29 funcionários">De 15 a 29 funcionários</option>
-                <option value="De 30 a 49 funcionários">De 30 a 49 funcionários</option>
-                <option value="De 50 a 99 funcionários">De 50 a 99 funcionários</option>
-                <option value="De 100 a 199 funcionários">De 100 a 199 funcionários</option>
-                <option value="De 200 a 499 funcionários">De 200 a 499 funcionários</option>
-                <option value="De 500 a 999 funcionários">De 500 a 999 funcionários</option>
                 <option value="1000 funcionários ou mais">1000 funcionários ou mais</option>
+                <option value="De 500 a 999 funcionários">De 500 a 999 funcionários</option>
+                <option value="De 200 a 499 funcionários">De 200 a 499 funcionários</option>
+                <option value="De 100 a 199 funcionários">De 100 a 199 funcionários</option>
+                <option value="De 50 a 99 funcionários">De 50 a 99 funcionários</option>
+                <option value="De 30 a 49 funcionários">De 30 a 49 funcionários</option>
+                <option value="De 15 a 29 funcionários">De 15 a 29 funcionários</option>
+                <option value="Até 14 funcionários">Até 14 funcionários</option>
               </select>
               <input class="col-12" type="text" required v-model="form.phone"
                   name="phone" id="phone" placeholder="Telefone com DDD ou Whatsapp"

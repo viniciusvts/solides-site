@@ -12,6 +12,10 @@
       <div class="search">
         <input class="search-box" type="text" placeholder="Pesquisar"/>
       </div>
+      <div class="select-filtro">
+        <p>Filtrar materiais</p>
+        <select>
+      </div>
     </div>
   </div>
   <!--

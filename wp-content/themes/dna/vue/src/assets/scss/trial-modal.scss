@@ -76,7 +76,7 @@
             background-position: top 18px right 15px;
             @media (min-width: $desktops) {
                 background-size: unset;
-                background-position: top 18px right 30px;
+                background-position: top 22px right 30px;
             }
         }
         input, select{
@@ -100,6 +100,12 @@
             }
             &::placeholder, option{
                 color: #878787;
+                font-size: 14px;
+                line-height: 16px;
+                @media (min-width: $desktops) {
+                    font-size: 18px;
+                    line-height: 22px;
+                }
             }
         }
         button{

@@ -214,8 +214,8 @@
             </a>
           </li>
           <li class="nav-item showOnScroll d-none d-lg-block" :class="{'active': controls.scroll}">
-            <a class="nav-link p-0" href="/falar-com-um-especialista">
-              <button class="badge badge-pill blue-outline two-in-a-row">Fale com um especialista</button>
+            <a class="nav-link p-0" href="/#criar-conta">
+              <button class="badge badge-pill blue-outline two-in-a-row">Experimente Gratis</button>
             </a>
           </li>
         </ul>

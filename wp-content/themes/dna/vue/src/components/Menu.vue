@@ -214,8 +214,8 @@
             </a>
           </li>
           <li class="nav-item showOnScroll d-none d-lg-block" :class="{'active': controls.scroll}">
-            <a class="nav-link p-0" href="/#criar-conta">
-              <button class="badge badge-pill blue-outline two-in-a-row">Experimente Gratis</button>
+            <a class="nav-link p-0" :href="criarcontaOuScroll">
+              <button class="badge badge-pill blue-outline two-in-a-row">{{experimenteOuFale}}</button>
             </a>
           </li>
         </ul>
@@ -297,10 +297,18 @@ export default {
       if (this.$route.name == 'Profiler') return 'Comprar Agora'
       return 'Agendar demonstração'
     },
+    experimenteOuFale (){
+      if (this.$route.name == 'Profiler') return 'Fale com um especialista'
+      return 'Experimente Gratis'
+    },
     checkoutOuDemo () {
       if (this.$route.name == 'Profiler') return 'https://checkout.solides.com.br/'
       return '/pedir-uma-demo'
-    }
+    },
+    criarcontaOuScroll(){
+      if (this.$route.name == 'Profiler') return '#form'
+      return '/#criar-conta'
+    },
   }
 }
 </script>

@@ -133,6 +133,17 @@ $purple_border: #2F0A77;
             
         }
     }
+    .select-filtro{
+        display: flex;
+        color: #2F0A77;
+        @media (min-width: $desktops) {
+            font-size: 18px;
+            line-height: 22px;
+        }
+        select{
+            border: unset;
+        }
+    }
     .col-lg-70{
         @media (min-width: $desktops) {
             flex: 0 0 70%;

@@ -14,7 +14,18 @@
       </div>
       <div class="select-filtro">
         <p>Filtrar materiais</p>
-        <select>
+        <select class="col-12" name="categoria" >
+          <option value="">Categoria</option>
+          <option v-for="option in data.categorias" :key="option.id">
+            {{ option.categoria }}
+          </option>
+        </select>
+        <select class="col-12" name="formato" >
+          <option value="">Formato</option>
+          <option v-for="option in data.formatos" :key="option.id">
+            {{ option.formato }}
+          </option>
+        </select>
       </div>
     </div>
   </div>
@@ -46,6 +57,7 @@ export default {
   },
   computed: {
     isDesktop: function () {
+      console.log(this.data);
       return screen.width > 767
     }
   }

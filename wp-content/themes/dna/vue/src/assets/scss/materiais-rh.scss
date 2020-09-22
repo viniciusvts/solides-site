@@ -37,11 +37,8 @@ $purple_border: #2F0A77;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
-        line-height: 24px;
+        line-height: 19px;
         margin-bottom: 35px;
-        @media (min-width: $smallPhones) {
-            font-size: 19px;
-        }
         @media (min-width: $tablets) {
             font-size: 26px;
             line-height: 26px;
@@ -52,39 +49,6 @@ $purple_border: #2F0A77;
             margin-bottom: 42px;
         }
     }
-    button{
-        margin-right: 20px;
-        margin-bottom: 20px;
-        @media (min-width: $desktops) {
-            margin-bottom: 0px;
-        }
-        &.badge{
-            padding: 6px 8px;
-            font-size: 13px;
-            cursor: pointer;
-            @media (min-width: $smallPhones) {
-                font-size: 16px;
-                padding: 7px 11px;
-            }
-            @media (min-width: $tablets) {
-                padding: 12px 20px;
-                font-size: 20px;
-            }
-            @media (min-width: $desktops) {
-                font-size: 24px;
-            }
-        }
-        &.purple-back{
-            color: white;
-            background: $purple;
-            border: 2px solid $purple_border;
-        }
-        &.purple-outline{
-            color: $purple;
-            background-color: inherit;
-            border: 2px solid $purple;
-        }
-    }
     img{
         position: absolute;
         right: -100px;
@@ -92,28 +56,11 @@ $purple_border: #2F0A77;
         width: 800px;
         z-index: -1;
     }
-    .notebook{
-        .capa{
-            position: absolute;
-            width: 747px;
-            height: 1407px;
-            left: 1069.22px;
-            top: 198px;
-            background: #FFBA00;
-            border-radius: 90px;
-        }
-        .furo{
-            position: absolute;
-            border-radius: 50%;
-            width: 41px;
-            height: 41px;
-            left: 1063.22px;
-            top: 301px;
-            bottom: -30px;
-            background: #FFFFFF;
-        }
-    }
     .search{
+        margin-bottom: 12px;
+        @media (min-width: $desktops) {
+            margin-bottom: 15px;
+        }
         .search-box{
             border: 2px solid #5F4A87;
             box-sizing: border-box;
@@ -121,9 +68,10 @@ $purple_border: #2F0A77;
             width: 100%;
             appearance: none;
             background-image: url('../assets/img/svg/lupa.svg');
-            background-size: 10px;
+            background-size: 18px;
             background-repeat: no-repeat;
-            background-position: top 17px left 15px;
+            padding-left: 34px;
+            background-position: top 8px left 15px;
             @media (min-width: $desktops) {
                 background-size: unset;
                 background-position: top 9px left 15px;
@@ -135,13 +83,42 @@ $purple_border: #2F0A77;
     }
     .select-filtro{
         display: flex;
-        color: #2F0A77;
-        @media (min-width: $desktops) {
-            font-size: 18px;
-            line-height: 22px;
+        p{
+            color: #2F0A77;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 16px;
+            min-width: 100px;
+            padding-top: 1px;
+            @media (min-width: $desktops) {
+                font-size: 18px;
+                line-height: 22px;
+            }
         }
         select{
             border: unset;
+            color: #2F0A77;
+            width: 30%;
+            border-radius: 30px;
+            font-size: 18px;
+            height: 18px;
+            line-height: 22px;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 16px;
+            @media (min-width: $desktops) {
+                width: 20%;
+                font-size: 18px;
+                height: 22px;
+                line-height: 22px;
+                margin-left: 27px;
+            }
+            option{
+                @media (min-width: $desktops) {
+                    font-size: 18px;
+                    height: 22px;
+                }   
+            }
         }
     }
     .col-lg-70{

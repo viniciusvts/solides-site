@@ -1,0 +1,295 @@
+@import "./variables.scss";
+$azul_solides: #39BAD0;
+$roxo_solides: #5F4A87;
+$cinza_texto: #696161;
+$roxo_borda: #2F0A77;
+$verde_solides: #70B968;
+$verde_borda: #61A45A;
+$vermelho_solides: #D64149;
+.calc-rotat{
+    padding-top: 120px;
+    margin-bottom: 65px;
+    @media (min-width: $desktops) {
+        padding-top: 120px;
+    }
+    @media (min-width: $fullHdDesktops) {
+        padding-top: 180px;
+    }
+    h1{
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        @media (min-width: $tablets) {
+            color: $roxo_solides;
+        }
+        @media (min-width: $desktops) {
+            font-weight: 900;
+            font-size: 34px;
+            line-height: 51px;
+        }
+           
+    }
+    h2{
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 0;
+        @media (min-width: $tablets) {
+            font-size: 24px;
+            line-height: 29px;
+        }
+        @media (min-width: $desktops) {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    }
+    p{
+        font-size: 12px;
+        line-height: 19px;
+        @media (min-width: $tablets) {
+            font-size: 16px;
+            line-height: 19px;
+        }
+        @media (min-width: $desktops) {
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+    .head{
+        text-align: center;
+        margin-bottom: 50px;
+        .text{
+            @media (min-width: $tablets) {
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            @media (min-width: $desktops) {
+                max-width: 880px;
+                margin-bottom: 80px;
+            }
+            &, & *{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 19px;
+                @media (min-width: $tablets) {
+                    color: $roxo_solides;
+                }
+                @media (min-width: $desktops) {
+                    font-size: 34px;
+                    line-height: 51px;
+                }
+                span, b{
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .calc{
+        .left{
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: auto;
+            margin-right: auto;
+            .campos{
+                margin-bottom: 25px;
+                display: flex;
+            }
+            label{
+                font-weight: bold;
+                font-size: 13px;
+                line-height: 19px;
+                color: #70B968;
+                //
+                width: 45%;
+                margin-right: auto;
+                margin-bottom: 0;
+                @media (min-width: $desktops) {
+                    font-size: 21px;
+                    line-height: 25px;
+                    //
+                    width: 60%;
+                    margin-top: 6px;
+                }
+            }
+            input{
+                font-size: 18px;
+                line-height: 22px;
+                text-align: center;
+                //
+                background: #FFFFFF;
+                border: 2px solid rgba(66, 82, 110, 0.25);
+                box-shadow: inset 0px 1px 3px #DDDDDD;
+                border-radius: 60px;
+                //
+                width: 45%;
+                height: 29px;
+                margin-left: auto;
+                margin-top: auto;
+                margin-bottom: auto;
+                @media (min-width: $desktops) {
+                    height: 43px;
+                    width: 30%;
+                }
+                &, &::placeholder{
+                    color: $azul_solides;
+                }
+                &:focus{
+                    outline: none;
+                }
+            }
+            .text{
+                margin-bottom: 18px;
+                &, & *{
+                    margin-left: auto;
+                    margin-right: auto;
+                    font-size: 8px;
+                    line-height: 12px;
+                    @media (min-width: $tablets) {
+                        font-size: 13px;
+                        line-height: 19px;
+                    }
+                    @media (min-width: $desktops) {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+        .right{
+            .text{
+                color: $cinza_texto;
+                @media (min-width: $desktops) {
+                    max-width: 300px;
+                    margin-left: auto;
+                }
+                &, & *{
+                    font-weight: bold;
+                    font-size: 16px;
+                    line-height: 19px;
+                    text-align: center;
+                    @media (min-width: $desktops) {
+                        font-size: 21px;
+                        line-height: 25px;
+                    }
+                }
+            }
+            .resultado{
+                display: flex;
+                width: 220px;
+                height: 43px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 35px;
+                //
+                border: 2px solid $cinza_texto;
+                filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.25));
+                border-radius: 50px;
+                @media (min-width: $desktops) {
+                    width: 295px;
+                    height: 61px;
+                    margin-right: 0;
+                }
+                p{ 
+                    font-size: 21px;
+                    line-height: 25px;
+                    text-align: center;
+                    font-weight: 300;
+                    color: $cinza_texto;
+                    margin: auto;
+                    @media (min-width: $desktops) {
+                        font-size: 36px;
+                        line-height: 43px;
+                    }
+                }
+                &.calculado{
+                    p{
+                        color: $vermelho_solides;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+        .d-grid{
+            display: grid;
+        }
+        .btn-calcular-agora{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            @media (min-width: $desktops) {
+                margin-left: unset;
+            }
+        }
+        .btn-receba-relatorio{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            @media (min-width: $desktops) {
+                margin-right: unset;
+            }
+        }
+    }
+    .blueBtn{
+        width: 180px;
+        height: 33px;
+        color: white;
+        font-weight: 700;
+        //
+        margin-left: auto;
+        margin-right: auto;
+        background: $roxo_solides;
+        border: 2px solid $roxo_borda;
+        box-sizing: border-box;
+        border-radius: 33px;
+        @media (min-width: $desktops) {
+            width: 295px;
+            height: 53px;
+            font-size: 24px;
+            line-height: 29px;
+            //
+            margin-left: 0;
+        }
+    }
+    button{
+        cursor: pointer;
+    }
+    .grenBtn{
+        width: 265px;
+        height: 33px;
+        color: white;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 16px;
+        //
+        margin-left: auto;
+        margin-right: auto;
+        background: $verde_solides;
+        border: 2px solid $verde_borda;
+        box-sizing: border-box;
+        border-radius: 33px;
+        @media (min-width: $desktops) {
+            width: 470px;
+            height: 61px;
+            font-size: 24px;
+            line-height: 29px;
+            margin-right: 0;
+        }
+    }
+    .bigGreenEqual{
+        margin: 40px auto;
+        span{
+            display: block;
+            width: 75px;
+            height: 15px;
+            background: rgba(112, 185, 104, 0.95);
+            border-radius: 50px;
+            margin-bottom: 18px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

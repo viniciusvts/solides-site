@@ -7,7 +7,7 @@ const apiRest = {
    * define a url base do app
  * @author Vinicius de Santana
  */
-  baseURL: process.env.NODE_ENV === 'production' ? '/' : 'http://solides.localhost/',
+  baseURL: process.env.NODE_ENV === 'production' ? '/' : 'https://www.solides.com.br/',
   /**
    * Resgata lista de posts informando ou não qual página
    * @param {[]} args - args do endpoint do wordpress

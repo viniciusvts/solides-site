@@ -22,7 +22,7 @@
             <div class="vertical-pill red"></div>
           </div>
         </div>
-        <div v-html="iframe" id="ytframe" v-if="isPosition">
+        <div v-html="iframe" id="ytframe">
         </div>
         <div class="text-center text-lg-left mt-30 row-lg">
           <div class="d-none d-lg-block col-2 col-hd-1"></div>
@@ -37,10 +37,8 @@
 </template>
 
 <script>
-import lazyComponent from '@/services/lazyComponent.js'
 export default {
   name: "ValidadoPor",
-  mixins: [lazyComponent],
   props: {
     titulo: String,
     iframe: String,

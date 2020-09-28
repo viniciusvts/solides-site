@@ -3,7 +3,7 @@
     <!--simlpes contratar...-->
     <div class="container pt-40 pt-lg-60">
       <h2 v-html="titulo" class="text-center color-primary t7"></h2>
-      <div class="mt-5 mt-lg-0 text-center row simple" v-if="isPosition">
+      <div class="mt-5 mt-lg-0 text-center row simple">
         <div v-for="(wf, index) in imgs" :key="index" class="col-12 col-lg-4">
           <img :src="wf.imagem.sizes.medium" :alt="wf.imagem.alt">
           <p class="color-primary mt-3 px-5 px-lg-2 font-weight-bold">{{wf.text}}</p>
@@ -19,10 +19,8 @@
 </template>
 
 <script>
-import lazyComponent from '@/services/lazyComponent.js'
 export default {
   name: "Simples",
-  mixins: [lazyComponent],
   props: {
     titulo: String,
     imgs: Array,

@@ -219,6 +219,8 @@ export default {
   mounted () {
     this.getLP()
     this.startHsForm('.hsform');
+    // aguarda um tempo para renderizar e manda alinha ao id se houver
+    setTimeout(this.hasHash, 1000)
   },
   methods: {
     togleTooltip (flag, index) {
@@ -250,6 +252,13 @@ export default {
         });
       }, 5000);
     },
+    hasHash () {
+      const id = window.location.hash.substr(1)
+      if (!id) return
+      const elem = document.getElementById(id)
+      if (!elem) return
+      window.scrollTo(0, elem.getBoundingClientRect().top)
+    }
   }
 }
 </script>

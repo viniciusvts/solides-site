@@ -1,6 +1,6 @@
 <template>
   <div class="text">
-    <p>Como serão <span>{{data.vagasTotal}}</span> novos colaboradores, o custo total de perda de produtividade ao ano é:
+    <p>Como serão <span>{{data.vagasTotal}}</span> novos colaboradores, o custo total é de:
     </p>
   </div>
 </template>

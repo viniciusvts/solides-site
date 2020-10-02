@@ -15,6 +15,8 @@ import FalarComEspecialista from '@/views/FalarComEspecialista.vue'
 import PedirDemo from '@/views/PedirDemo.vue'
 import Contato from '@/views/Contato.vue'
 import Obrigado from '@/views/Obrigado.vue'
+import CalcRotat from '@/views/CalcRotat.vue'
+import CalcRotatResult from '@/views/CalcRotatResult.vue'
 // import PerfilLp from '@/lps/PerfilLp.vue'
 import PaginaNaoEncontrada from '@/views/PaginaNaoEncontrada.vue'
 import Materiais from '@/views/Materiais.vue'
@@ -96,6 +98,16 @@ const routes = [
     path: '/materiais',
     name: 'Materiais',
     component: Materiais,
+  },
+  {
+    path: '/calculadora-de-rotatividade',
+    name: 'CalcRotat',
+    component: CalcRotat,
+  },
+  {
+    path: '/rotatividade-resultado',
+    name: 'CalcRotatResult',
+    component: CalcRotatResult,
   },
   // {
   //   path: '/lps/perfil-disc-lp/',

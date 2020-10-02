@@ -8,6 +8,9 @@
     z-index: 100000;
     display: none;
     overflow-x: scroll;
+    &.rec-seu-rel-rotat{
+        background: #70B968EE;
+    }
 }
 .modal-out{
     background-color: #F3F3F3;
@@ -26,6 +29,9 @@
         right: 15px;
         top: 15px;
         cursor: pointer;
+        &.blue{
+            background-color: #39BAD0;
+        }
     }
     .head{
         margin-top: 15px;
@@ -107,6 +113,9 @@
                     line-height: 22px;
                 }
             }
+            option{
+                font-size: 12px;
+            }
         }
         button{
             background: #FAB80E;
@@ -130,6 +139,11 @@
                 margin-top: 10px;
                 margin-bottom: 40px;
                 height: unset;
+            }
+            &.blue{
+                background: #39BAD0;
+                border: 2px solid #288FA0;
+                color: white;
             }
         }
         .msg *{

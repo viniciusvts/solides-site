@@ -5,7 +5,7 @@
       <div class="row ml-lg-0">
         <div class="to-left-30">
           <div class="vertical-pill cyan"></div>
-          <img :src="imgSrc" :alt="imgAlt" class="mt-img-profiler" v-if="isPosition">
+          <img :src="imgSrc" :alt="imgAlt" class="mt-img-profiler">
         </div>
         <div class="text-left to-right-70 mt-30 text-profiler">
           <h2 v-html="titulo1" class="color-almostBlack text-right text-lg-left trtr-profiler t4"></h2>
@@ -65,10 +65,8 @@
 </template>
 
 <script>
-import lazyComponent from '@/services/lazyComponent.js'
 export default {
   name: "ComoTemosAjudado",
-  mixins: [lazyComponent],
   props: {
     imgSrc: String,
     imgAlt: String,

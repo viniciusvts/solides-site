@@ -6,10 +6,50 @@ $purple_border: #2F0A77;
     padding-bottom: 60px;
     @media (min-width: $desktops) {
         padding-top: 150px;
-        padding-bottom: 240px;
+        padding-bottom: 140px;
     }
     @media (min-width: $fullHdDesktops) {
         position: relative;
+    }
+    .to-right-30{
+        width: 40%;
+        float: right;
+        @media (min-width: $smallPhones) {
+            width: 35%;
+        }
+        @media (min-width: $desktops) {
+            position: absolute;
+            right: -250px;
+            bottom: -200px;
+            width: 30%;
+            z-index: -1;
+        }
+        @media (min-width: $largeDesktops) {
+            position: absolute;
+            right: -350px;
+            bottom: -400px;
+            width: 30%;
+            z-index: -1;
+        }
+        .img-book{
+            width: 177%;
+            margin-left: -25%;
+            z-index: 9;
+            position: relative;
+            @media (min-width: $smallPhones) {
+                margin-top: 20px;
+            }
+            @media (min-width: $desktops) {
+                width: 180%;
+            }
+            @media (min-width: $largeDesktops) {
+                margin-left: -35%;
+                width: 240%;
+            }
+            @media (min-width: $fullHdDesktops) {
+                margin-left: -15%;
+            }
+        }
     }
     h1{
         font-weight: bold;
@@ -20,16 +60,19 @@ $purple_border: #2F0A77;
         @media (min-width: $smallPhones) {
             font-size: 28px;
             line-height: 28px;
+            margin-right: 50px;
         }
         @media (min-width: $tablets) {
             font-size: 32px;
             line-height: 32px;
+            margin-right: unset;
         }
         @media (min-width: $desktops) {
             max-width: 800px;
             font-size: 42px;
             line-height: 50px;
             margin-bottom: 30px;
+            margin-right: unset;
         }
     }
     .text, .text *{
@@ -39,22 +82,16 @@ $purple_border: #2F0A77;
         font-size: 16px;
         line-height: 19px;
         margin-bottom: 35px;
+        margin-right: 10px;
         @media (min-width: $tablets) {
             font-size: 26px;
-            line-height: 26px;
+            line-height: 36px;
         }
         @media (min-width: $desktops) {
             font-size: 34px;
             line-height: 41px;
             margin-bottom: 42px;
         }
-    }
-    img{
-        position: absolute;
-        right: -100px;
-        bottom: -70px;
-        width: 800px;
-        z-index: -1;
     }
     .search{
         margin-bottom: 12px;
@@ -72,6 +109,11 @@ $purple_border: #2F0A77;
             background-repeat: no-repeat;
             padding-left: 34px;
             background-position: top 8px left 15px;
+            @media (min-width: $tablets) {
+                background-size: 20px;
+                background-position: top 9px left 15px;
+                padding-left: 44px;
+            }
             @media (min-width: $desktops) {
                 background-size: unset;
                 background-position: top 9px left 15px;
@@ -90,6 +132,10 @@ $purple_border: #2F0A77;
             line-height: 16px;
             min-width: 100px;
             padding-top: 1px;
+            @media (min-width: $tablets) {
+                font-size: 16px;
+                line-height: 22px;
+            }
             @media (min-width: $desktops) {
                 font-size: 18px;
                 line-height: 22px;
@@ -97,6 +143,7 @@ $purple_border: #2F0A77;
         }
         select{
             border: unset;
+            background-color: unset;
             color: #2F0A77;
             width: 30%;
             border-radius: 30px;
@@ -106,6 +153,11 @@ $purple_border: #2F0A77;
             font-weight: bold;
             font-size: 13px;
             line-height: 16px;
+            @media (min-width: $tablets) {
+                width: 20%;
+                font-size: 16px;
+                height: 22px;
+            }
             @media (min-width: $desktops) {
                 width: 20%;
                 font-size: 18px;

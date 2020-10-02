@@ -6,12 +6,64 @@
 }
 html{
     scroll-behavior: smooth;
-    overflow-x: hidden
+    overflow-x: hidden;
 }
 .materiais{
     padding-top: 60px;
     @media (min-width: $desktops) {
         padding-top: 80px;
+    }
+    .universidade-btn{
+        background-color: #F3F3F3;
+        text-align: center;
+        @media (min-width: $desktops) {
+            text-align: right;
+        }
+        .no-result{
+            text-align: center;
+            .no-result-title{
+                padding: 150px 30px 80px 30px;
+                font-weight: bold;
+                color: #2F0A77;
+                font-size: 50px;
+                line-height: 61px;
+            }
+            .no-result-desc{
+                padding: 30px 40px 40px 40px;
+                font-weight: bold;
+                color: #5F4A87;
+                font-size: 35px;
+                line-height: 49px;
+            }
+        }
+        .botao{
+            color: white;
+            background: #FFBA00;
+            border: 2px solid #D98726;
+            cursor: pointer;
+            font-size: 13px;
+            line-height: 16px;
+            font-weight: 900;
+            border-radius: 33px;
+            padding: 7px 8px 8px 10px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            @media (min-width: $smallPhones) {
+                font-size: 20px;
+                line-height: 25px;
+                padding: 5px 15px;
+            }
+            @media (min-width: $desktops) {
+                padding: 16px 14px 12px 19px;
+                font-size: 24px;
+                line-height: 29px;
+                margin-right: 80px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .over-x-h{
+        overflow-x: hidden;
     }
 }
 /// correção da barra de cookie

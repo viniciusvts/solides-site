@@ -1,10 +1,11 @@
 <template>
-  <div class="text bigRed" v-html="data"></div>
+  <div class="text bigRed" v-html="dataTexto"></div>
 </template>
 <script>
 export default {
   name: "CalcDataDinamico",
   props: {
+    dataTexto: Object,
     data: Object,
   }
 };

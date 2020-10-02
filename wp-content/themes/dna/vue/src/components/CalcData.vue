@@ -8,11 +8,11 @@
           </div>
           <div class="right col-11 col-md-6 my-md-auto pl-md-3 pr-md-0">
             <div class="text">
-              <CalcDataCustoRH v-if="calc == 'custorh'" />
-              <CalcDataEntrevGestor v-if="calc == 'entregestor'" />
-              <CalcDataDinamico v-if="calc == 'dinamico'" :data="data.texto_direitaabaixo" />
-              <CalcDataTreinaOrienta v-if="calc == 'treinaorienta'" />
-              <CalcDataPerdaProdu v-if="calc == 'perdaprod'" />
+              <CalcDataCustoRH v-if="custorh" :data="custorh" />
+              <CalcDataEntrevGestor v-if="entregestor" :data="entregestor" />
+              <CalcDataDinamico v-if="custoscolab" :data="custoscolab" :dataTexto="data.texto_direitaabaixo" />
+              <CalcDataTreinaOrienta v-if="custostreinador" :data="custostreinador" />
+              <CalcDataPerdaProdu v-if="perdaprod" :data="perdaprod" />
             </div>
           </div>
         </div>
@@ -23,7 +23,7 @@
             <p class="destaque" v-html="data.destaque"></p>
           </div>
           <div class="resultado">
-            <p>R$<span>4.400,00</span></p>
+            <p><span>{{getCusto()}}</span></p>
           </div>
         </div>
       </div>
@@ -60,7 +60,20 @@ export default {
     data: Object,
     signal: String,
     bg: String,
-    calc: String
+    custorh: Object,
+    entregestor: Object,
+    custoscolab: Object,
+    custostreinador: Object,
+    perdaprod: Object
+  },
+  methods: {
+    getCusto () {
+      if (this.custorh) return this.custorh.custoTotal
+      if (this.entregestor) return this.entregestor.custoTotal
+      if (this.custoscolab) return this.custoscolab.custoTotal
+      if (this.custostreinador) return this.custostreinador.custoTotal
+      if (this.perdaprod) return this.perdaprod.custoTotal
+    }
   }
 };
 </script>

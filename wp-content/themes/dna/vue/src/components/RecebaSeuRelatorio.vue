@@ -117,7 +117,8 @@ export default {
       //   this.mensagem = '<p>Criando usuário...</p>'
       //   this.sendToTrial()
       // })
-      location.href = '/rotatividade-resultado/'
+      // emite evento ok
+      this.$emit('relatorioOk', true);
     },
     sendToTrial () {
       this.$http.sendToTrial(this.form)

@@ -1,8 +1,8 @@
 <template>
   <div class="text">
-    <p>Tudo isso resulta num total de 22 horas para cada vaga. 
-      no seu caso são cerca de <span>176</span> horas gastas.
-      Considerando que a hora nessa etapa custa R$25,00, são R$<span>4.400,00</span>
+    <p>Tudo isso resulta num total de {{data.hrsPorVaga}} para cada vaga. 
+      no seu caso são cerca de <span>{{data.hrsRHTotal}}</span>.
+      Considerando que a hora nessa etapa custa R${{data.custoPorHora}}, são <span>{{data.custoTotal}}</span>
       de despesa por ano.
     </p>
   </div>

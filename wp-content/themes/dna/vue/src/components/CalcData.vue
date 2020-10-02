@@ -19,7 +19,7 @@
       </div>
       <div class="resultado-calculo container">
         <div class="d-flex col-11 col-md-5 mx-auto px-0">
-          <div class="col-7 pr-0 d-flex">
+          <div class="col-7 d-flex">
             <p class="destaque" v-html="data.destaque"></p>
           </div>
           <div class="resultado">

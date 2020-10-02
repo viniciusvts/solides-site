@@ -13,7 +13,7 @@
           </div>
           <div class="campos">
             <label for="taxaRot" v-html="pageData.acf.itens_calc.item_2"></label>
-            <input type="number" min="0" name="taxaRot" id="taxaRot" placeholder="46" v-model="calcVars.media_taxa_rotatividade">
+            <input type="number" min="1" name="taxaRot" id="taxaRot" placeholder="46" v-model="calcVars.media_taxa_rotatividade">
           </div>
           <div class="text" v-html="pageData.acf.itens_calc.anotacao"></div>
         </div>

@@ -2,7 +2,13 @@
 .videos-mt{
     padding-top: 70px;
     padding-bottom: 35px;
+    @media (min-width: $smallPhones) {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
     @media (min-width: $desktops) {
+        padding-left: unset;
+        padding-right: unset;
         padding-top: 102px;
         padding-bottom: 102px;
     }

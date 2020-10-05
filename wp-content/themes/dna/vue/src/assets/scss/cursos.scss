@@ -2,6 +2,14 @@
 .cursos-mt{
     padding-top: 70px;
     padding-bottom: 35px;
+    @media (min-width: $smallPhones) {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    @media (min-width: $tablets) {
+        padding-left: unset;
+        padding-right: unset
+    }
     @media (min-width: $desktops) {
         padding-top: 102px;
         padding-bottom: 190px;

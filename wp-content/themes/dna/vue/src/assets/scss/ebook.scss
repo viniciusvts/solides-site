@@ -28,15 +28,116 @@
         }
     }
     .card{
+        position: relative;
         box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
         margin-left: 3%;
         display: inline-flex;
         width: 45%;
         height: 164px;
-        border: 5px solid #D74149;
+        border: 5px solid;
         margin-bottom: 12px;
         padding: 0px 20px 0px 27px;
+        &:nth-child(4n){
+            border-color: #D74149;
+            .botao{
+                background: #D74149;
+                border: 2px solid #813337;
+            }
+        }
+        &:nth-child(4n+1){
+            border-color: #FFBA00;
+            .botao{
+                background: #FFBA00;
+                border: 2px solid #D98726;
+            }
+        }
+        &:nth-child(4n+2){
+            border-color: #70B968;
+            .botao{
+                background: #70B968;
+                border: 2px solid #086618;
+            }
+        }
+        &:nth-child(4n+3){
+            border-color: #00C9DB;
+            .botao{
+                background: #00C9DB;
+                border: 2px solid #0087A4;
+            }
+        }
+        &.E-book{
+            .botao{
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 30px;
+                @media (min-width: $desktops) {
+                    margin-bottom: 55px;
+                }
+                
+            }
+        }
+        &.Ferramenta{
+            padding: unset;
+            .titulo{
+                padding-left: 21px;
+                padding-right: 21px;
+            }
+            .img-ferramenta{
+                width: 90px;
+                height: 120px;
+                margin-top: 20px;
+                align-self: center;
+            }
+            a{
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                bottom: 0px;
+                .botao{
+                    margin-bottom: 30px;
+                    @media (min-width: $desktops) {
+                        margin-bottom: 55px;
+                    }
+                }
+            }
+        }
+        &.Infográfico{
+            padding: unset;
+            border-color: #5F4A87;
+            .infografico-background{
+                position: absolute;
+                height: 40%;
+                width: 100%;
+                bottom: 0;
+                z-index: 0;
+                background-color: #5F4A87;
+                border-top: 8px solid #5F4A87;
+                box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
+            }
+            .titulo{
+                position: absolute;
+                text-align: center;
+                bottom: 0;
+                margin-bottom: 23%;
+                color: white;
+                font-weight: 400;
+                padding-left: 21px;
+                padding-right: 21px;
+            }
+            a{
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                bottom: 0px;
+                .botao{
+                    bottom: 0;
+                    margin-bottom: 10%;
+                    background: #FFBA00;
+                    border: 2px solid #D98726;
+                }
+            }
+        }
         @media (min-width: $tablets) {
             height: 400px;
             margin-bottom: 30px;
@@ -44,7 +145,7 @@
         @media (min-width: $desktops) {
             width: 30%;
             height: 434px;
-            border: 8px solid #D74149;
+            border: 8px solid;
             margin-bottom: 70px;
             padding: 0px 21px 0px 31px;
         }
@@ -96,8 +197,6 @@
         }
         .botao{
             color: white;
-            background: #D74149;
-            border: 2px solid #813337;
             cursor: pointer;
             border-radius: 33px;
             height: 19px;

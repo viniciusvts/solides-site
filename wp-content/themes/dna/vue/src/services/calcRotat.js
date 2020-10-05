@@ -290,7 +290,9 @@ const calcRotat = {
      * @author Vinicius de Santana
     */
     calcularQtdDeRelatorios () {
-      var qtdRelatorios = (this.calcularMediaContratacaoAnual() * (this.calcularMediaContratacaoAnual()-1))
+      // está os dois com 'Number' pq estava concatenando em vez de somando
+      var qtdRelatorios = Number(this.calcularMediaContratacaoAnual() * this.txDemissComport) + Number(this.calcularMediaContratacaoAnual())
+      qtdRelatorios = qtdRelatorios * 3
       return qtdRelatorios
     },
   }

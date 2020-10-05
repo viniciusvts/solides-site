@@ -1,6 +1,6 @@
 <template>
   <div class="text">
-    <p><b>Ou R$<span>1.820,16</span> para as <span>8</span> vagas que você precisará preencher no ano!
+    <p><b>Ou <span>{{data.custoTotal}}</span> para as <span>{{data.vagasTotal}}</span> vagas que você precisará preencher no ano!
     </b></p>
   </div>
 </template>

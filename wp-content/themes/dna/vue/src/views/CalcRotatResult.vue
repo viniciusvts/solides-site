@@ -11,35 +11,85 @@
           <div class="col-6 left">
             <div class="col-12 col-md-5 d-md-flex">
               <div class="resultado my-md-auto">
-                <span>8</span>
+                <span>{{ calcularMediaContratacaoAnual() }}</span>
               </div>
             </div>
             <div class="col-12 col-md-7 text d-md-flex">
-              <p class=" my-md-auto">Todo ano você vai precisar contratar <span>8</span> pessoas</p>
+              <p class=" my-md-auto">Todo ano você vai precisar contratar <span>{{ calcularMediaContratacaoAnual() }}</span> pessoas</p>
             </div>
           </div>
           <div class="col-6 right">
             <div class="col-12 col-md-5 d-md-flex">
               <div class="resultado my-md-auto">
-                <span>7</span>
+                <span>{{ calcularSubstituicaoPorErroRecrutamento() }}</span>
               </div>
             </div>
             <div class="col-12 col-md-7 text d-md-flex">
-              <p class=" my-md-auto">Dentre elas, <span>7</span> pessoas serão substituídas por erro de recrutamento</p>
+              <p class=" my-md-auto">Dentre elas, <span>{{ calcularSubstituicaoPorErroRecrutamento() }}</span> pessoas serão substituídas por erro de recrutamento</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <CalcData :data="pageData.acf.custo_1" signal="sum" bg='gray' calc="custorh" />
-    <CalcData :data="pageData.acf.custo_2" signal="sum" calc="entregestor" />
-    <CalcData :data="pageData.acf.custo_3" signal="sum" bg='gray' calc="dinamico" />
-    <CalcData :data="pageData.acf.custo_4" signal="sum" calc="treinaorienta"/>
-    <CalcData :data="pageData.acf.custo_5" signal="equal" bg='gray' calc="perdaprod" />
+    <CalcData 
+    :data="pageData.acf.custo_1" 
+    signal="sum" 
+    bg='gray' 
+    :custorh="{
+      hrsPorVaga: calcularHoraRhPorVaga(true), 
+      hrsRHTotal: calcularHoraRhTotal(true), 
+      custoPorHora: calcVars.salario_hora_rh,
+      custoPorVaga: calcularCustoRhPorVaga(true), 
+      custoTotal: calcularCustoRhTotal(true)
+    }"
+    />
+    <CalcData 
+    :data="pageData.acf.custo_2" 
+    signal="sum" 
+    :entregestor="{
+      hrsPorVaga: calcularHoraGestorPorVaga(true), 
+      custoPorHora: calcVars.salario_hora_gestor,
+      custoPorVaga: calcularCustoGestorPorVaga(true), 
+      custoTotal: calcularCustoGestorTotal(true),
+      vagasTotal: calcularMediaContratacaoAnual(true)
+    }"
+    />
+    <CalcData
+    :data="pageData.acf.custo_3"
+    signal="sum" 
+    bg='gray' 
+    :custoscolab="{
+      custoMes: calcularSalarioColaboradorMes(true), 
+      custoTempoMedio: calcularSalarioColaboradorTempoMedio(true), 
+      custoTotal: calcularSalarioColaboradorTotal(true),
+    }"
+    />
+    <CalcData
+    :data="pageData.acf.custo_4" 
+    signal="sum" 
+    :custostreinador="{
+      custoGestor : calcularCustoTotalTreinamentoGestor(true),
+      custoTreinador : calcularCustoTotalTreinamentoTreinador(true),
+      custoContratado : calcularCustoTreinamentoContratado(true),
+      custoTotalPorColab : calcularCustoTotalTreinamentoPorColaborador(true),
+      custoTotal : calcularCustoTotalTreinamento(true),
+      vagasTotal: calcularMediaContratacaoAnual(true),
+    }"
+    />
+    <CalcData 
+    :data="pageData.acf.custo_5" 
+    signal="equal" 
+    bg='gray' 
+    :perdaprod="{
+      custoRescisao : calcularCustoRescisao(true),
+      custoTotal : calcularCustoRescisaoTotal(true),
+      vagasTotal: calcularMediaContratacaoAnual(true),
+    }"
+    />
     <div class="custo-total">
       <div class="text" v-html="pageData.acf.resultado.custo_total"></div>
       <div class="resultado-bgwhi-bdgray">
-        <span>R$88.542,08</span>
+        <span>{{calcularCustoTotal(true)}}</span>
       </div>
     </div>
     <img class="frame" src="@/assets/img/svg/framecalcrotat.svg" alt="">
@@ -49,7 +99,7 @@
           <h2 v-html="pageData.acf.resultado.custo_erro_de_contratacao"></h2>
           <p v-html="pageData.acf.resultado.custo_por_erro_detalhe"></p>
           <div class="resultado-bgwhi-bdgray">
-            <span>R$88.542,08</span>
+            <span>{{calcularCustoErroContratacao(true)}}</span>
           </div>
         </div>
         <div class="outros" v-html="pageData.acf.resultado.outros"></div>
@@ -59,7 +109,7 @@
       <div class="head" v-html="pageData.acf.solucao.head"></div>
       <div class="text container">
         <div class="text-1">
-          <p>Você precisará de <span>56</span> relatórios de <strong>avaliação comportamental</strong> de candidatos por ano</p>
+          <p>Você precisará de <span>{{calcularQtdDeRelatorios()}}</span> relatórios de <strong>avaliação comportamental</strong> de candidatos por ano</p>
         </div>
         <div class="text-2" v-html="pageData.acf.solucao.texto_2"></div>
         <div class="text-3" v-html="pageData.acf.solucao.texto_3"></div>
@@ -81,8 +131,10 @@
 <script>
 import Loading from "@/components/Loading.vue"
 import CalcData from "@/components/CalcData.vue"
+import calcRotat from '@/services/calcRotat.js'
 export default {
   name: 'CalcRotatResult',
+  mixins: [calcRotat],
   components: {
     Loading,
     CalcData,
@@ -91,19 +143,41 @@ export default {
     return {
       pageId: 1243,
       pageData: null,
-      calculado: false
+      
+      pageIdWithVars: 1278,
     }
   },
   created () {
     this.getPost();
   },
+  mounted () {
+    this.numFunc = Number(this.getUriParam('numFunc'))
+    this.taxaRot = Number(this.getUriParam('taxaRot'))
+  },
   methods: {
     getPost () {
+      //this post
       this.$http.getPageById(this.pageId)
       .then(res => res.json() )
       .then(json => {
         this.pageData = json
       })
+      //calc vars
+      this.$http.getPageById(this.pageIdWithVars)
+      .then(res => res.json() )
+      .then(json => {
+        this.calcVars = json.acf.calc_vars
+      })
+    },
+    getUriParam (param) {
+      var params = window.location.search.substr(1).split('&');
+      for (var i = 0; i < params.length; i++) {
+          var par = params[i].split('=');
+          if (par[0] == param) {
+              return decodeURIComponent(par[1]);
+          }
+      }
+      return false;
     }
   },
   computed: {

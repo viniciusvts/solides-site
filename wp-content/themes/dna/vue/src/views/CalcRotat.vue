@@ -9,11 +9,11 @@
         <div class="col-9 col-lg-5 left">
           <div class="campos">
             <label for="nFunc" v-html="pageData.acf.itens_calc.item_1"></label>
-            <input type="number" name="nFunc" id="nFunc" placeholder="0">
+            <input type="number" min="1" name="nFunc" id="nFunc" placeholder="10" v-model="numFunc">
           </div>
           <div class="campos">
             <label for="taxaRot" v-html="pageData.acf.itens_calc.item_2"></label>
-            <input type="number" name="taxaRot" id="taxaRot" placeholder="43,1">
+            <input type="number" min="1" name="taxaRot" id="taxaRot" placeholder="46" v-model="calcVars.media_taxa_rotatividade">
           </div>
           <div class="text" v-html="pageData.acf.itens_calc.anotacao"></div>
         </div>
@@ -24,13 +24,13 @@
         <div class="col-12 col-lg-5 right">
           <div class="text" v-html="pageData.acf.itens_calc.custo"></div>
           <div class="resultado" :class="{'calculado': calculado}">
-            <p>R$343.100,53</p>
+            <p>{{calculado}}</p>
           </div>
         </div>
         <div class="col-12 d-grid d-lg-flex">
           <button 
           v-if="!calculado || desktopScreen"
-          @click="calculado = !calculado"
+          @click="calcula"
           class="blueBtn btn-calcular-agora"
           v-html="pageData.acf.botoes.calcular"></button>
           <a href="#receba-seu-relatorio" class="btn-receba-relatorio">
@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <RecebaSeuRelatorio :data="pageData.acf.form" />
+    <RecebaSeuRelatorio :data="pageData.acf.form" @relatorioOk="relatorioOk" />
   </div>
   <div v-else>
     <Loading></Loading>
@@ -52,8 +52,10 @@
 <script>
 import RecebaSeuRelatorio from '@/components/RecebaSeuRelatorio.vue'
 import Loading from "@/components/Loading.vue"
+import calcRotat from '@/services/calcRotat.js'
 export default {
   name: 'CalcRotat',
+  mixins: [calcRotat],
   components: {
     RecebaSeuRelatorio,
     Loading,
@@ -62,7 +64,8 @@ export default {
     return {
       pageId: 1278,
       pageData: null,
-      calculado: false
+      calculado: 0,
+      numFunc: 0,
     }
   },
   created () {
@@ -74,7 +77,19 @@ export default {
       .then(res => res.json() )
       .then(json => {
         this.pageData = json
+        this.calcVars = json.acf.calc_vars
       })
+    },
+    calcula () {
+      this.calculado = this.calcularCustoTotal(true)
+    },
+    relatorioOk (data) {
+      if (data) {
+        var url = '/rotatividade-resultado/?'
+        url += 'numFunc=' + this.numFunc
+        url += '&taxaRot=' + this.calcVars.media_taxa_rotatividade
+        window.location = url
+      }
     }
   },
   computed: {

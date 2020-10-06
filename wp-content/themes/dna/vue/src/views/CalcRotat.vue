@@ -93,6 +93,7 @@ export default {
       })
     },
     calcula () {
+      if (this.numFunc < 1 || this.calcVars.media_taxa_rotatividade < 1) return alert('Preencha os campos!')
       this.calculado = this.calcularCustoTotal(true)
     },
     relatorioOk (data) {

@@ -9,11 +9,23 @@
         <div class="col-9 col-lg-5 left">
           <div class="campos">
             <label for="nFunc" v-html="pageData.acf.itens_calc.item_1"></label>
-            <input type="number" min="1" name="nFunc" id="nFunc" placeholder="10" v-model="numFunc">
+            <input type="number"
+            min="1" 
+            name="nFunc"
+            id="nFunc" 
+            placeholder="0" 
+            v-model="numFunc"
+            @change="onChangeValues">
           </div>
           <div class="campos">
             <label for="taxaRot" v-html="pageData.acf.itens_calc.item_2"></label>
-            <input type="number" min="1" name="taxaRot" id="taxaRot" placeholder="46" v-model="calcVars.media_taxa_rotatividade">
+            <input type="number"
+            min="1" 
+            name="taxaRot"
+            id="taxaRot" 
+            placeholder="0" 
+            v-model="calcVars.media_taxa_rotatividade"
+            @change="onChangeValues">
           </div>
           <div class="text" v-html="pageData.acf.itens_calc.anotacao"></div>
         </div>
@@ -90,6 +102,9 @@ export default {
         url += '&taxaRot=' + this.calcVars.media_taxa_rotatividade
         window.location = url
       }
+    },
+    onChangeValues () {
+      this.calculado = 0
     }
   },
   computed: {

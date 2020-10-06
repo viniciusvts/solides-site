@@ -54,7 +54,13 @@
         </div>
       </div>
     </div>
-    <RecebaSeuRelatorio :data="pageData.acf.form" @relatorioOk="relatorioOk" />
+    <RecebaSeuRelatorio 
+    :data="pageData.acf.form" 
+    @relatorioOk="relatorioOk"
+    :numFunc="numFunc"
+    :txRot="calcVars.media_taxa_rotatividade"
+    :custoRotat="calculado"
+    />
   </div>
   <div v-else>
     <Loading></Loading>

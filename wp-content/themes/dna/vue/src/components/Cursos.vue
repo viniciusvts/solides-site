@@ -9,13 +9,16 @@
         </a>
       </div>
       <div class="paginacao" v-if="totalPages > 1">
-        <button class="btn-pagina"  :class="{ 'active-btn': pageNumber-1==currentPage }" :id="'pag-materiais-'+pageNumber"
+        <button class="btn-pagina d-none d-md-inline"  :class="{ 'active-btn': pageNumber-1==currentPage }" :id="'pag-materiais-'+pageNumber"
         v-for="pageNumber in totalPages" :key="pageNumber" @click="setPage(pageNumber-1)">
           {{ pageNumber }}
         </button>
         <a class="link-mais" href="https://universidade.solides.com.br/">
-          <button class="btn-mais" id="btn-mais" >
+          <button class="btn-mais d-none d-md-inline" id="btn-mais" >
             mais
+          </button>
+          <button class="btn-mais d-md-none" id="btn-mais" >
+            Ver Mais
           </button>
         </a>
       </div>

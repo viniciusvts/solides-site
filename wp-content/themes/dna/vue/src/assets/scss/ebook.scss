@@ -37,7 +37,22 @@
         height: 164px;
         border: 5px solid;
         margin-bottom: 12px;
-        padding: 0px 20px 0px 27px;
+        padding: 2px 15px 2px 20px;
+        @media (min-width: $smallPhones) {
+            padding: 2px 20px 2px 27px;
+            height: 200px;
+        }
+        @media (min-width: $tablets) {
+            height: 400px;
+            margin-bottom: 30px;
+        }
+        @media (min-width: $desktops) {
+            width: 30%;
+            height: 434px;
+            border: 8px solid;
+            margin-bottom: 70px;
+            padding: 0px 21px 0px 31px;
+        }
         &:nth-child(4n){
             border-color: #D74149;
             .botao{
@@ -107,23 +122,47 @@
             border-color: #5F4A87;
             .infografico-background{
                 position: absolute;
-                height: 40%;
+                height: 45%;
                 width: 100%;
                 bottom: 0;
                 z-index: 0;
                 background-color: #5F4A87;
                 border-top: 8px solid #5F4A87;
                 box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
+                @media (min-width: $smallPhones) {
+                    height: 45%;
+                }
+                @media (min-width: $desktops) {
+                    height: 40%;
+                }
             }
             .titulo{
                 position: absolute;
                 text-align: center;
                 bottom: 0;
-                margin-bottom: 23%;
+                margin-bottom: 21%;
                 color: white;
                 font-weight: 400;
-                padding-left: 21px;
-                padding-right: 21px;
+                padding-left: 8px;
+                padding-right: 8px;
+                font-size: 10px;
+                line-height: 12px;
+                @media (min-width: $smallPhones) {
+                    padding-left: 17px;
+                    padding-right: 17px;
+                    font-size: 11px;
+                    line-height: 14px;
+                }
+                @media (min-width: $tablets) {
+                    font-size: 22px;
+                    line-height: 29px;
+                }
+                @media (min-width: $desktops) {
+                    padding-left: 21px;
+                    padding-right: 21px;
+                    font-size: 24px;
+                    line-height: 29px;
+                }
             }
             a{
                 position: absolute;
@@ -132,23 +171,18 @@
                 bottom: 0px;
                 .botao{
                     bottom: 0;
-                    margin-bottom: 10%;
+                    margin-bottom: 2%;
                     background: #FFBA00;
                     border: 2px solid #D98726;
+                    @media (min-width: $smallPhones) {
+                        margin-bottom: 5%;
+                    }
+                    @media (min-width: $desktops) {
+                        margin-bottom: 10%;
+                    }
                 }
             }
-        }
-        @media (min-width: $tablets) {
-            height: 400px;
-            margin-bottom: 30px;
-        }
-        @media (min-width: $desktops) {
-            width: 30%;
-            height: 434px;
-            border: 8px solid;
-            margin-bottom: 70px;
-            padding: 0px 21px 0px 31px;
-        }
+        }   
         .tipo{
             text-align: center;
             color: #5F4A87;
@@ -173,6 +207,10 @@
             font-size: 11px;
             line-height: 15px;
             color: #5F4A87;
+            @media (min-width: $smallPhones) {
+                font-size: 12px;
+                line-height: 16px;
+            }
             @media (min-width: $tablets) {
                 font-size: 22px;
                 line-height: 29px;

@@ -293,7 +293,7 @@ const calcRotat = {
       // está os dois com 'Number' pq estava concatenando em vez de somando
       var qtdRelatorios = Number(this.calcularMediaContratacaoAnual() * this.txDemissComport) + Number(this.calcularMediaContratacaoAnual())
       qtdRelatorios = qtdRelatorios * 3
-      return qtdRelatorios
+      return qtdRelatorios.toFixed(0)
     },
   }
 };

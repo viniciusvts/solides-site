@@ -103,7 +103,22 @@ export default {
       v=v.replace(/(\d)(\d{4})$/,"$1-$2"); //Coloca - depois dos 4 digitos após ()
       evt.target.value = v;
     },
+    moedaToNumber (valor) {
+      if(valor === ""){
+         valor =  0;
+      }else{
+         valor = valor.replace("$","");//remove cifrao
+         valor = valor.replace("R","");// remove R
+         valor = valor.replace(".","");
+         valor = valor.replace(",",".");
+         valor = parseFloat(valor);
+      }
+      return valor;
+    },
     sendForm () {
+      this.form.taxa_de_rotatividade = Number(this.form.taxa_de_rotatividade)
+      this.form.qtde_de_colaboradores = Number(this.form.qtde_de_colaboradores)
+      this.form.custo_de_rotatividade = this.moedaToNumber(this.form.custo_de_rotatividade)
       this.$http.sendToHSWithId('8a26943f-04e7-4cd3-b703-3c804c6abdb4', this.form)
       .then( resp => {
         if (resp.ok){

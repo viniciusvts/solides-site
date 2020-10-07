@@ -168,63 +168,54 @@ const apiRest = {
       fields: [
         {
           name: "email",
-          value: data.email,
+          value: data.email
         },
         {
           name: "firstname",
-          value: data.firstname,
+          value: data.firstname
         },
         {
           name: "company",
-          value: data.company,
+          value: data.company
         },
         {
           name: "cargorh",
-          value: data.cargorh,
-        },
-        {
-          name: "jobtitle",
-          value: data.jobtitle,
+          value: data.cargorh
         },
         {
           name: "phone",
-          value: data.phone,
+          value: data.phone
         },
-        //////////////////////////////////////////////////////
         {
           name: "taxa_de_rotatividade",
-          value: data.taxa_de_rotatividade,
+          value: data.taxa_de_rotatividade
         },
         {
           name: "qtde_de_colaboradores",
-          value: data.qtde_de_colaboradores,
+          value: data.qtde_de_colaboradores
         },
         {
           name: "custo_de_rotatividade",
-          value: data.custo_de_rotatividade,
-        },
+          value: data.custo_de_rotatividade
+        }
       ],
-      ///
       context: {
-        hutk: this.getCookie("hubspotutk"),
         pageUri: window.location.href,
-        pageName: "Site Sólides Calculadora de Rotatividade",
+        pageName: "Site Sólides Calculadora de Rotatividade"
       },
       legalConsentOptions: {
         consent: {
           consentToProcess: true,
-          text:
-            "I agree to allow Example Company to store and process my personal data.",
+          text: "I agree to allow Example Company to store and process my personal data.",
           communications: [
             {
               value: true,
               subscriptionTypeId: 999,
-              text:
-                "I agree to receive marketing communications from Example Company.",
-            },
-          ],
-        },
-      },
+              text: "I agree to receive marketing communications from Example Company."
+            }
+          ]
+        }
+      }
     };
     // header
     var myHeaders = new Headers();

@@ -75,6 +75,26 @@ const apiRest = {
   },
 
   /**
+   * Envia formulário para o wordpress
+   * @param {String} url - Id do form que receberá a transação
+   * @param {{}} data - objeto a ser enviado para o form
+   * @author Vinicius de Santana
+   */
+  sendFormToWP(url, data) {
+    if (typeof url == 'undefined') throw new TypeError("O parametro é obrigatório");
+    if (typeof data == 'undefined') throw new TypeError("O parametro é obrigatório");
+    //formar conteúdo
+    let formData = new FormData;
+    for (const key in data) {
+      formData.append(key, data[key]);
+    }
+    return fetch(url, {
+      method: "POST",
+      body: formData
+    });
+  },
+
+  /**
    * Envia a informação para o hubspot
    * @param {{
     firstname:String,

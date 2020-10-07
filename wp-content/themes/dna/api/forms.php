@@ -86,6 +86,36 @@ function dnaapi_pedirUmaDemo($req){
 }
 
 /**
+ * Atende a requisição enviando um email para o adm do site
+ * @author Vinicius de Santana
+ */
+function dnaapi_calcRotat($req){
+  // pega os parametros
+  $email = $req->get_param('email');
+  $firstname = $req->get_param('firstname');
+  $company = $req->get_param('company');
+  $cargorh = $req->get_param('cargorh');
+  $phone = $req->get_param('phone');
+  $taxa_de_rotatividade = $req->get_param('taxa_de_rotatividade');
+  $qtde_de_colaboradores = $req->get_param('qtde_de_colaboradores');
+  $custo_de_rotatividade = $req->get_param('custo_de_rotatividade');
+  // envia email
+  $to = get_option('admin_email');
+  $subject = 'Sólides Market Place - contato com o parceiro';
+  $message = "Nome: ".$firstname
+      ."<br>Email: ".$email
+      ."<br>empresa: ".$company
+      ."<br>cargo: ".$cargorh
+      ."<br>telefone: ".$phone
+      ."<br>Taxa de rotatividade: ".$taxa_de_rotatividade
+      ."<br>Qtd de colaboradores: ".$qtde_de_colaboradores
+      ."<br>Custo de rotatividade: ".$custo_de_rotatividade;
+  $headers = array('Content-Type: text/html; charset=UTF-8');
+  $wpmail = wp_mail( $to, $subject, $message, $headers );
+  return array('enviado' => $wpmail);
+}
+
+/**
  * Função registra os endpoints
  * @author Vinicius de Santana
  */
@@ -162,6 +192,42 @@ function dnaapi_register_ccp(){
           'required' => true,
         ),
         'telefone' => array(
+          'required' => true,
+        ),
+      ),
+      'permission_callback' => '__return_true'
+    )
+  );
+  //calculadora de rotatividade
+  register_rest_route('dna_theme/v1',
+    '/calculadora-de-rotatividade',
+    array(
+      'methods' => 'POST',
+      'callback' => 'dnaapi_calcRotat',
+      'description' => 'recebe as informações do form e envia um email notificando o adm do site',
+      'args' => array(
+        'firstname' => array(
+          'required' => true,
+        ),
+        'email' => array(
+          'required' => true,
+        ),
+        'company' => array(
+          'required' => true,
+        ),
+        'cargorh' => array(
+          'required' => true,
+        ),
+        'phone' => array(
+          'required' => true,
+        ),
+        'taxa_de_rotatividade' => array(
+          'required' => true,
+        ),
+        'qtde_de_colaboradores' => array(
+          'required' => true,
+        ),
+        'custo_de_rotatividade' => array(
           'required' => true,
         ),
       ),

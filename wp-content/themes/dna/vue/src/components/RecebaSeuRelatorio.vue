@@ -9,7 +9,11 @@
             <h3 v-html="data.titulo"></h3>
             <p v-html="data.texto"></p>
           </div>
-          <form action="#" method="post" class="mx-auto" @submit.prevent="sendForm">
+          <form 
+          :action="$http.baseURL + 'wp-json/dna_theme/v1/calculadora-de-rotatividade'" 
+          method="post" 
+          class="mx-auto" 
+          @submit.prevent="sendForm">
             <div class="col-12 col-lg-11 mx-auto row">
               <input class="col-12" type="text" required v-model="form.firstname"
                   name="firstname" id="firstname" placeholder="Nome">
@@ -115,17 +119,23 @@ export default {
       }
       return valor;
     },
-    sendForm () {
-      this.form.taxa_de_rotatividade = Number(this.form.taxa_de_rotatividade)
-      this.form.qtde_de_colaboradores = Number(this.form.qtde_de_colaboradores)
-      this.form.custo_de_rotatividade = this.moedaToNumber(this.form.custo_de_rotatividade)
-      this.$http.sendToHSWithId('8a26943f-04e7-4cd3-b703-3c804c6abdb4', this.form)
+    sendForm (evt) {
+      //envia para o wp
+      this.$http.sendFormToWP(evt.target.action, this.form)
       .then( resp => {
         if (resp.ok){
-          return resp.json()
+      //faz algumas formatações
+          this.form.taxa_de_rotatividade = Number(this.form.taxa_de_rotatividade)
+          this.form.qtde_de_colaboradores = Number(this.form.qtde_de_colaboradores)
+          this.form.custo_de_rotatividade = this.moedaToNumber(this.form.custo_de_rotatividade)
+          return this.$http.sendToHSWithId('8a26943f-04e7-4cd3-b703-3c804c6abdb4', this.form)
         } else {
           this.mensagem = '<p>Houve um erro, tente novamente mais tarde.</p>'
         }
+      })
+      //retorno da chamada sendToHSWithId
+      .then(resp => {
+        if (resp.ok) return resp.json()
       })
       .then(json => {
         console.log('sendForm => ', json)

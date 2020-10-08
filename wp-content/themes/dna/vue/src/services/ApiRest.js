@@ -75,6 +75,26 @@ const apiRest = {
   },
 
   /**
+   * Envia formulário para o wordpress
+   * @param {String} url - Id do form que receberá a transação
+   * @param {{}} data - objeto a ser enviado para o form
+   * @author Vinicius de Santana
+   */
+  sendFormToWP(url, data) {
+    if (typeof url == 'undefined') throw new TypeError("O parametro é obrigatório");
+    if (typeof data == 'undefined') throw new TypeError("O parametro é obrigatório");
+    //formar conteúdo
+    let formData = new FormData;
+    for (const key in data) {
+      formData.append(key, data[key]);
+    }
+    return fetch(url, {
+      method: "POST",
+      body: formData
+    });
+  },
+
+  /**
    * Envia a informação para o hubspot
    * @param {{
     firstname:String,
@@ -142,6 +162,80 @@ const apiRest = {
           ],
         },
       },
+    };
+    // header
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    return fetch(url, {
+      method: "POST",
+      body: JSON.stringify(dataForm),
+      headers: myHeaders
+    });
+  },
+
+  /**
+   * Envia a informação para o hubspot
+   * @param {String} id - Id do formulário do hubspot
+   * @param {{}} data - nome da posição registrada no tema
+   * @author Vinicius de Santana
+   */
+  sendToHSWithId(id, data) {
+    if (typeof data == 'undefined') throw new TypeError("O parametro é obrigatório");
+    var url = "https://api.hsforms.com/submissions/v3/integration/submit/6009739/"
+    url += id
+    // monta os campos
+    let dataForm = {
+      fields: [
+        {
+          name: "email",
+          value: data.email
+        },
+        {
+          name: "firstname",
+          value: data.firstname
+        },
+        {
+          name: "company",
+          value: data.company
+        },
+        {
+          name: "cargorh",
+          value: data.cargorh
+        },
+        {
+          name: "phone",
+          value: data.phone
+        },
+        {
+          name: "taxa_de_rotatividade",
+          value: data.taxa_de_rotatividade
+        },
+        {
+          name: "qtde_de_colaboradores",
+          value: data.qtde_de_colaboradores
+        },
+        {
+          name: "custo_de_rotatividade",
+          value: data.custo_de_rotatividade
+        }
+      ],
+      context: {
+        pageUri: window.location.href,
+        pageName: "Site Sólides Calculadora de Rotatividade"
+      },
+      legalConsentOptions: {
+        consent: {
+          consentToProcess: true,
+          text: "I agree to allow Example Company to store and process my personal data.",
+          communications: [
+            {
+              value: true,
+              subscriptionTypeId: 999,
+              text: "I agree to receive marketing communications from Example Company."
+            }
+          ]
+        }
+      }
     };
     // header
     var myHeaders = new Headers();

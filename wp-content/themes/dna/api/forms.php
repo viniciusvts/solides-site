@@ -103,7 +103,7 @@ function dnaapi_calcRotat($req){
   );
   // envia email
   $to = $reqData['email'];
-  $subject = 'Sólides Market Place - contato com o parceiro';
+  $subject = 'Sólides - Calculadora de Rotatividade';
   $message = criaMensagemSimplesCalculadora($reqData);
   $headers = array('Content-Type: text/html; charset=UTF-8');
   $wpmail = wp_mail( $to, $subject, $message, $headers );

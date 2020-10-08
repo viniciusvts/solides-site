@@ -46,7 +46,7 @@ $cinza: #F3F3F3;
         @media (min-width: $desktops) {
             font-size: 42px;
             line-height: 50px;
-            text-align: center;
+            text-align: left;
             width: unset;
             max-width: 750px;
             margin-bottom: 25px;
@@ -125,7 +125,7 @@ $cinza: #F3F3F3;
             width: unset;
         }
         @media (min-width: $tablets) {
-            width: 530px;
+            width: 560px;
         }
         select{
             appearance: none;
@@ -135,7 +135,7 @@ $cinza: #F3F3F3;
             background-position: top 17px right 15px;
             @media (min-width: $desktops) {
                 background-size: unset;
-                background-position: top 21px right 30px;
+                background-position: top 21px right 15px;
             }
             option{
                 font-size: 10px;
@@ -170,8 +170,8 @@ $cinza: #F3F3F3;
             }
             @media (min-width: $desktops) {
                 margin: 13px auto;
-                padding: 13px 30px;
-                font-size: 18px;
+                padding: 13px 15px;
+                font-size: 16px;
                 line-height: 22px;
                 height: unset;
             }
@@ -224,7 +224,7 @@ $cinza: #F3F3F3;
             padding-bottom: 20px;
         }
         @media (min-width: $desktops) {
-            margin-left: 60px;
+            margin-left: 30px;
         }
         ul.no-list.hs-error-msgs.inputs-list{
             list-style: none;
@@ -243,22 +243,30 @@ $cinza: #F3F3F3;
             }
         }          
         .hs_email{
-            display: inline-block;
-            width: 47%;
+            @media (min-width: $tablets) {
+                display: inline-block;
+                width: 47%;
+                vertical-align: top;
+            }
         }
         .hs-dependent-field{
-            display: contents;
-            .hs_cargorh{
-                display: inline-block;
-                width: 47%;
-            }
-            .hs_company{
-                display: inline-block;
-                width: 47%;
-            }
-            .hs_tamanho_de_empresa{
-                display: inline-block;
-                width: 47%;
+            @media (min-width: $tablets) {
+                display: contents;
+                .hs_cargorh{
+                    display: inline-block;
+                    width: 47%;
+                    vertical-align: top;
+                }
+                .hs_company{
+                    display: inline-block;
+                    width: 47%;
+                    vertical-align: top;
+                }
+                .hs_tamanho_de_empresa{
+                    display: inline-block;
+                    width: 47%;
+                    vertical-align: top;
+                }
             }
         }  
         input, select{

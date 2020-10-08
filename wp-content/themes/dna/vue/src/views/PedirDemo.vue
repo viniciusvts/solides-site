@@ -2,7 +2,7 @@
   <div v-if="pageData" class="pedir-demo container">
       <div class="row primeira-dobra">
         <div class="col-12 col-lg-6">
-          <h1 class="text-center" v-html="pageData.title.rendered"></h1>
+          <h1 v-html="pageData.title.rendered"></h1>
           <h2 v-html="pageData.acf.text"></h2>
           <h3 class="d-none d-lg-block" v-html="pageData.acf.funcionamento_titulo"></h3>
           <ul class="d-none d-lg-block">

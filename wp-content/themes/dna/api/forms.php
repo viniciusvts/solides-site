@@ -91,25 +91,20 @@ function dnaapi_pedirUmaDemo($req){
  */
 function dnaapi_calcRotat($req){
   // pega os parametros
-  $email = $req->get_param('email');
-  $firstname = $req->get_param('firstname');
-  $company = $req->get_param('company');
-  $cargorh = $req->get_param('cargorh');
-  $phone = $req->get_param('phone');
-  $taxa_de_rotatividade = $req->get_param('taxa_de_rotatividade');
-  $qtde_de_colaboradores = $req->get_param('qtde_de_colaboradores');
-  $custo_de_rotatividade = $req->get_param('custo_de_rotatividade');
+  $reqData = array(
+    'email' => $req->get_param('email'),
+    'firstname' => $req->get_param('firstname'),
+    'company' => $req->get_param('company'),
+    'cargorh' => $req->get_param('cargorh'),
+    'phone' => $req->get_param('phone'),
+    'taxa_de_rotatividade' => $req->get_param('taxa_de_rotatividade'),
+    'qtde_de_colaboradores' => $req->get_param('qtde_de_colaboradores'),
+    'custo_de_rotatividade' => $req->get_param('custo_de_rotatividade')
+  );
   // envia email
-  $to = get_option('admin_email');
+  $to = $reqData['email'];
   $subject = 'Sólides Market Place - contato com o parceiro';
-  $message = "Nome: ".$firstname
-      ."<br>Email: ".$email
-      ."<br>empresa: ".$company
-      ."<br>cargo: ".$cargorh
-      ."<br>telefone: ".$phone
-      ."<br>Taxa de rotatividade: ".$taxa_de_rotatividade
-      ."<br>Qtd de colaboradores: ".$qtde_de_colaboradores
-      ."<br>Custo de rotatividade: ".$custo_de_rotatividade;
+  $message = criaMensagemSimplesCalculadora($reqData);
   $headers = array('Content-Type: text/html; charset=UTF-8');
   $wpmail = wp_mail( $to, $subject, $message, $headers );
   return array('enviado' => $wpmail);
@@ -237,3 +232,92 @@ function dnaapi_register_ccp(){
 }
 
 add_action('rest_api_init', 'dnaapi_register_ccp');
+
+
+// funções auxiliares da api
+/**
+ * Cria a mensagem dá página contato com os parametros passados
+ * 
+ * @param array $data - informações do formulário
+ * @return string  - o html para enviar o email
+ * @author Vinicius de Santana
+*/
+function criaMensagemTabelaCalculadora($data){
+  // inicio mensagem
+  $message = '<div style="font-family: Arial, sans-serif;margin: 40px auto;width: 550px;">';
+  $message .=   '<table>';
+  $message .=     '<tbody><tr>';
+  $message .=     '<td><img src="https://solides.com.br/wp-content/uploads/2020/09/solides-logo-64.png" width="100" height="100"></td>';
+  $message .=     '<td><h1 style="margin-left: 30px;font-weight: 800;margin-bottom: 0;line-height: 35px;">Calculadora de rotatividade</h1>';
+  $message .=     '<h3 style="font-weight: 100;margin-left: 30px;margin-top: 0;">';
+  $message .=       'Acesse seu relatório completo na ';
+  $message .=       '<a href="https://solides.com.br/rotatividade-resultado/?numFunc=';
+  $message .=       $data['qtde_de_colaboradores'];
+  $message .=       '&taxaRot=';
+  $message .=       $data['taxa_de_rotatividade'];
+  $message .=       '">Sólides</a>';
+  $message .=     '</h3></td>';
+  $message .=     '</tr></tbody>';
+  $message .=   '</table>';
+  $message .=   '<table style="font-family: Arial, sans-serif;background-color: #eee;margin: 20px 40px 50px 40px;border-radius: 6px;min-width: 450px;">';
+  $message .=     '<tbody>';
+  if (isset($data['company'])){
+    $message .=     '<tr>';
+    $message .=       '<td style="padding: 10px 20px;">Empresa:</td>';
+    $message .=       '<td style="padding: 10px 20px; font-size: 18px;">';
+    $message .=         $data['company'];
+    $message .=       '</td>';
+    $message .=     '</tr>';
+  }
+  if (isset($data['taxa_de_rotatividade'])){
+    $message .=     '<tr>';
+    $message .=       '<td style="padding: 10px 20px;">Taxa de rotatividade:</td>';
+    $message .=       '<td style="padding: 10px 20px; font-size: 18px;">';
+    $message .=         $data['taxa_de_rotatividade'];
+    $message .=       '</td>';
+    $message .=     '</tr>';
+  }
+  if (isset($data['qtde_de_colaboradores'])){
+    $message .=     '<tr>';
+    $message .=       '<td style="padding: 10px 20px;">Quantidade de colaboradores:</td>';
+    $message .=       '<td style="padding: 10px 20px; font-size: 18px;">';
+    $message .=         $data['qtde_de_colaboradores'];
+    $message .=       '</td>';
+    $message .=     '</tr>';
+  }
+  if (isset($data['custo_de_rotatividade'])){
+    $message .=     '<tr>';
+    $message .=       '<td style="padding: 10px 20px;">custo total da rotatividade</td>';
+    $message .=       '<td style="padding: 10px 20px; font-size: 18px;">';
+    $message .=         'R$ ' . $data['custo_de_rotatividade'];
+    $message .=       '</td>';
+    $message .=     '</tr>';
+  }
+  $message .=     '</tbody>';
+  $message .=   '</table>';
+  $message .=   '<p style="font-family: Arial, sans-serif;font-weight: 100;font-style: italic;">Enviado pelo site Sólides.</p>';
+  $message .= '</div>';
+  return $message;
+  // fim mensagem
+}
+/**
+ * Cria um email simples com os parametros passados
+ * 
+ * @param array $data - informações do formulário
+ * @return string  - o html para enviar o email
+ * @author Vinicius de Santana
+*/
+function criaMensagemSimplesCalculadora($data){
+  // inicio mensagem
+  $message = '<div>';
+  $message .= 'Olá ' . $data['firstname'] . ',<br>';
+  $message .= 'Aqui está o seu relatório completo: ';
+  $message .=   '<a href="https://solides.com.br/rotatividade-resultado/?numFunc=';
+  $message .=   $data['qtde_de_colaboradores'];
+  $message .=   '&taxaRot=';
+  $message .=   $data['taxa_de_rotatividade'];
+  $message .=     '">Calculadora de Rotatividade</a>';
+  $message .= '</div>';
+  return $message;
+  // fim mensagem
+}

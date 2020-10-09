@@ -94,12 +94,12 @@ const routes = [
     component: Obrigado,
   },
   {
-    path: '/calculadora-de-rotatividade',
+    path: '/ferramentas/calculadora-de-rotatividade',
     name: 'CalcRotat',
     component: CalcRotat,
   },
   {
-    path: '/rotatividade-resultado',
+    path: '/ferramentas/rotatividade-resultado',
     name: 'CalcRotatResult',
     component: CalcRotatResult,
   },

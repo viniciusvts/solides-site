@@ -38,6 +38,7 @@
           <div class="resultado" :class="{'calculado': calculado}">
             <p>{{calculado}}</p>
           </div>
+          <div class="text-chama" v-if="calculado" v-html="pageData.acf.itens_calc.chama_acao"></div>
         </div>
         <div class="col-12 d-grid d-lg-flex">
           <button 
@@ -80,7 +81,7 @@ export default {
   },
   data () {
     return {
-      pageId: 1278,
+      pageId: 1419,
       pageData: null,
       calculado: 0,
       numFunc: 0,
@@ -91,7 +92,7 @@ export default {
   },
   methods: {
     getPost () {
-      this.$http.getPageById(this.pageId)
+      this.$http.getFerramentasById(this.pageId)
       .then(res => res.json() )
       .then(json => {
         this.pageData = json
@@ -104,7 +105,7 @@ export default {
     },
     relatorioOk (data) {
       if (data) {
-        var url = '/rotatividade-resultado/?'
+        var url = '/ferramentas/rotatividade-resultado/?'
         url += 'numFunc=' + this.numFunc
         url += '&taxaRot=' + this.calcVars.media_taxa_rotatividade
         window.location = url

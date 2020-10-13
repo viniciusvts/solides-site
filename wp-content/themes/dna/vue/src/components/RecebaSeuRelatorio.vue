@@ -21,7 +21,8 @@
                   name="email" id="email" placeholder="E-mail">
               <input class="col-12" type="text" v-model="form.company"
                   name="company" id="company" placeholder="Empresa">
-              <select class="col-12" name="cargorh" id="cargorh" required v-model="form.cargorh">
+              <select class="col-12" name="cargorh" id="cargorh" required v-model="form.cargorh" 
+                  v-on:change="changeShowDigiteCargo">
                 <option value="" hidden="">Cargo</option>
                 <option value="Analista de RH">Analista de RH</option>
                 <option value="Business Partner de RH">Business Partner de RH</option>
@@ -37,6 +38,8 @@
                 <option value="Buscando recolocação">Buscando recolocação</option>
                 <option value="Outros">Outros</option>
               </select>
+              <input class="jobtitle col-12" type="text" v-model="form.jobtitle" required
+                  v-if="showJobTitle" name="jobtitle" id="jobtitle" placeholder="Digite Seu Cargo">
               <input class="col-12" type="text" required v-model="form.phone"
                   name="phone" id="phone" placeholder="Telefone com DDD ou Whatsapp"
                   v-on:keyup="execMascara">
@@ -67,11 +70,13 @@ export default {
       hashForShow: 'receba-seu-relatorio',
       mensagem: '',
       show: false,
+      showJobTitle: false,
       form: {
         firstname: '',
         email: '',
         company: '',
         cargorh: '',
+        jobtitle: '',
         phone: '',
         taxa_de_rotatividade: '',
         qtde_de_colaboradores: '',
@@ -157,6 +162,9 @@ export default {
       const hashValue = window.location.hash.substr(1)
       if (hashValue == this.hashForShow) this.show = true
       else this.show = false
+    },
+    changeShowDigiteCargo () {
+      this.showJobTitle = this.form.cargorh == "Outros";
     }
   },
   watch: {

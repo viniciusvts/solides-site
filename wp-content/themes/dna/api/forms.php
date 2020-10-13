@@ -309,15 +309,17 @@ function criaMensagemTabelaCalculadora($data){
 */
 function criaMensagemSimplesCalculadora($data){
   // inicio mensagem
-  $message = '<div>';
-  $message .= 'Olá ' . $data['firstname'] . ',<br>';
-  $message .= 'Aqui está o seu relatório completo: ';
-  $message .=   '<a href="https://solides.com.br/rotatividade-resultado/?numFunc=';
-  $message .=   $data['qtde_de_colaboradores'];
-  $message .=   '&taxaRot=';
-  $message .=   $data['taxa_de_rotatividade'];
-  $message .=     '">Calculadora de Rotatividade</a>';
-  $message .= '</div>';
-  return $message;
+ $mensagem = '<p style="text-align: left;"><span style="font-weight: 400;">Oi '.$data['firstname'].', tudo bem? </span></p>';
+ $mensagem .= '<p style="text-align: left;"><span style="font-weight: 400;">Aqui está o relatório completo com as informações sobre a rotatividade da sua empresa. Por meio dele, você saberá os resultados e prejuízos reais com contratações erradas. </span></p>';
+ $mensagem .= '<p style="text-align: left;"></p>';
+ $mensagem .= '<a href="https://solides.com.br/ferramentas/rotatividade-resultado/?numFunc='.$data['qtde_de_colaboradores'].'&taxaRot='.$data['taxa_de_rotatividade'].'">';
+ $mensagem .= '<p style="text-align: left;"><span style="font-weight: 400;">ACESSAR RELATÓRIO COMPLETO</span></p>';
+ $mensagem .= '</a>';
+ $mensagem .= '<p style="text-align: left;"><span style="font-weight: 400;">';
+ $mensagem .= '</span><b>Reduza seus custos de rotatividade com a Sólides</b><span style="font-weight: 400;"><br>';
+ $mensagem .= '</span><span style="font-weight: 400;"> Pare de perder dinheiro! Clientes Sólides têm diminuído até 37% da rotatividade com nossa solução gerando impactos financeiros positivos. Agende uma demonstração gratuita com um especialista em rotatividade e saiba como podemos te ajudar!</span><span style="font-weight: 400;">';
+ $mensagem .= '</span><span style="font-weight: 400;"> </span></p>';
+ $mensagem .= '<p style="text-align: left;"><a href="https://solides.com.br/pedir-uma-demo/"><span style="font-weight: 400;">Agendar Demonstração Gratuita </span></a></p>';
+  return $mensagem;
   // fim mensagem
 }

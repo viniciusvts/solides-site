@@ -120,8 +120,8 @@
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item" href="/calculadora-de-rotatividade/">Ferramentas</a>
-                <a href="/calculadora-de-rotatividade/" class="no-decoration">
+                <a class="dropdown-item" href="/ferramentas/calculadora-de-rotatividade/">Ferramentas</a>
+                <a href="/ferramentas/calculadora-de-rotatividade/" class="no-decoration">
                   <p class="d-none d-lg-block">Calculadora de rotatividade</p>
                 </a>
               </div>

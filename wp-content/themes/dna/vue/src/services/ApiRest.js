@@ -61,6 +61,16 @@ const apiRest = {
     let url = this.baseURL + 'wp-json/wp/v2/produtos/' + id;
     return fetch(url);
   },
+  /**
+   * Resgata um ferramenta pelo seu id
+   * @param {number} id - Id da página
+   * @author Rafael Neves
+   */
+  getFerramentasById(id) {
+    if (!Number.isInteger(id))  throw new TypeError("O parametro precisa ser um número inteiro");
+    let url = this.baseURL + 'wp-json/wp/v2/ferramentas/' + id;
+    return fetch(url);
+  },
 
   /**
    * Resgata um menu baseado no location registrado pelo tema
@@ -201,6 +211,10 @@ const apiRest = {
         {
           name: "cargorh",
           value: data.cargorh
+        },
+        {
+          name: "jobtitle",
+          value: data.jobtitle,
         },
         {
           name: "phone",

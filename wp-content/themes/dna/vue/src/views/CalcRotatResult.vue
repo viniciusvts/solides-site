@@ -141,10 +141,10 @@ export default {
   },
   data () {
     return {
-      pageId: 1243,
+      pageId: 1420,
       pageData: null,
       
-      pageIdWithVars: 1278,
+      pageIdWithVars: 1419,
     }
   },
   created () {
@@ -157,13 +157,13 @@ export default {
   methods: {
     getPost () {
       //this post
-      this.$http.getPageById(this.pageId)
+      this.$http.getFerramentasById(this.pageId)
       .then(res => res.json() )
       .then(json => {
         this.pageData = json
       })
       //calc vars
-      this.$http.getPageById(this.pageIdWithVars)
+      this.$http.getFerramentasById(this.pageIdWithVars)
       .then(res => res.json() )
       .then(json => {
         this.calcVars = json.acf.calc_vars

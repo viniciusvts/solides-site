@@ -1,6 +1,7 @@
 <template>
   <div class="text">
-    <p>Para os <b><span>{{data.vagasTotal}}</span> novos contratados</b>, o custo total em treinamento é:
+    <p>Para os <b><span>{{data.vagasTotal}}</span> novos contratados</b>, o custo total com treinamento,
+    considerando a perda de produtividade dos outros colaboradores, será de:"
     </p>
   </div>
 </template>

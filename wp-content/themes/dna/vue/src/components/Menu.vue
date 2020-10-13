@@ -120,8 +120,8 @@
                 </a>
               </div>
               <div class="drop-item">
-                <a target="_blank" class="dropdown-item" href="https://contratarerradocustacaro.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346">Ferramentas</a>
-                <a target="_blank" href="https://contratarerradocustacaro.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346" class="no-decoration">
+                <a class="dropdown-item" href="/calculadora-de-rotatividade/">Ferramentas</a>
+                <a href="/calculadora-de-rotatividade/" class="no-decoration">
                   <p class="d-none d-lg-block">Calculadora de rotatividade</p>
                 </a>
               </div>

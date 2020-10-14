@@ -122,25 +122,24 @@
             border-color: #5F4A87;
             .infografico-background{
                 position: absolute;
-                height: 45%;
+                height: 70%;
                 width: 100%;
-                bottom: 0;
+                top: 0;
                 z-index: 0;
                 background-color: #5F4A87;
-                border-top: 8px solid #5F4A87;
-                box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
-                @media (min-width: $smallPhones) {
-                    height: 45%;
-                }
-                @media (min-width: $desktops) {
-                    height: 40%;
+                @media (min-width: $tablets) {
+                    height: 65%;
                 }
             }
+            .tipo{
+                color: white;
+                z-index: 1;
+            }
             .titulo{
-                position: absolute;
+                position: relative;
                 text-align: center;
-                bottom: 0;
-                margin-bottom: 21%;
+                //bottom: 0;
+                //margin-bottom: 21%;
                 color: white;
                 font-weight: 400;
                 padding-left: 8px;
@@ -171,15 +170,29 @@
                 bottom: 0px;
                 .botao{
                     bottom: 0;
-                    margin-bottom: 2%;
+                    margin-bottom: 50%;
                     background: #FFBA00;
                     border: 2px solid #D98726;
                     @media (min-width: $smallPhones) {
-                        margin-bottom: 5%;
+                        //margin-bottom: 5%;
                     }
-                    @media (min-width: $desktops) {
-                        margin-bottom: 10%;
+                    @media (min-width: $tablets) {
+                        margin-bottom: 60%;
                     }
+                }
+            }
+            .img-infografico{
+                bottom: 5px;
+                height: 50px;
+                position: absolute;
+                align-self: center;
+                z-index: 1;
+                @media (min-width: $smallPhones) {
+                    height: 60px;
+                }
+                @media (min-width: $tablets) {
+                    bottom: 30px;
+                    height: unset;
                 }
             }
         }   

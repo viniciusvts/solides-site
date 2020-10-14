@@ -8,6 +8,7 @@
         <h4 class="titulo" >{{ material.titulo }}</h4>
         <p v-if="material.tipo=='E-book'" class="descricao">{{ material.descricao }}</p>
         <img v-if="material.tipo=='Ferramenta'" class="img-ferramenta d-none d-md-block" :src="material.imagem.url" :alt="material.imagem.alt" >
+        <img v-if="material.tipo=='Infográfico'" class="img-infografico" src="@/assets/img/svg/Infografico.svg" alt="" >
         <a :href="material.link">
           <button class="botao" v-html="data.botao" :id="material.id" ></button>
         </a>

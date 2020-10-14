@@ -19,7 +19,7 @@
                   name="firstname" id="firstname" placeholder="Nome">
               <input class="col-12" type="email" required v-model="form.email"
                   name="email" id="email" placeholder="E-mail">
-              <input class="col-12" type="text" v-model="form.company"
+              <input class="col-12" type="text" required v-model="form.company"
                   name="company" id="company" placeholder="Empresa">
               <select class="col-12" name="cargorh" id="cargorh" required v-model="form.cargorh" 
                   v-on:change="changeShowDigiteCargo">

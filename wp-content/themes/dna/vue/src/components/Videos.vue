@@ -33,7 +33,7 @@ export default {
   data () {
     return {
       currentPage: 0,
-      itemsPerPage: 3,
+      itemsPerPage: 6,
       resultCount: 0,
       maxPages: 3,
     }

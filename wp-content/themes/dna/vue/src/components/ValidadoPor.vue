@@ -13,9 +13,6 @@
               <div class="col-12 col-md-4 pr-md-0 mt-40">
                 <img src="@/assets/img/ufmg.png" alt="ufmg" class="valpor">
               </div>
-              <div class="col-12 col-md-4 pr-md-0 mt-40">
-                <img src="@/assets/img/finep.png" alt="finep" class="valpor">
-              </div>
             </div>
           </div>
           <div class="to-right-30">

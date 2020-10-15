@@ -7,10 +7,10 @@
         <div class="row ml-4">
           <div class="text-left color-primary to-left-70">
             <div class="row pr-md-0 text-md-center trtr-valPor">
-              <div class="col-12 col-md-6 pr-md-0 mt-40">
+              <div class="col-12 col-md-4 pr-md-0 mt-40">
                 <img src="@/assets/img/usp.png" alt="usp" class="valpor">
               </div>
-              <div class="col-12 col-md-6 pr-md-0 mt-40">
+              <div class="col-12 col-md-4 pr-md-0 mt-40">
                 <img src="@/assets/img/ufmg.png" alt="ufmg" class="valpor">
               </div>
             </div>

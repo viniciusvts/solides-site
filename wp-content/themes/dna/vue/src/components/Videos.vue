@@ -13,7 +13,7 @@
             mais
           </button>
           <button class="btn-mais d-md-none" id="btn-mais" >
-            Ver Mais
+            ver mais
           </button>
         </a>
       </div>

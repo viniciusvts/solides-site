@@ -309,10 +309,13 @@
             cursor: pointer;
             border-radius: 33px;
             text-align: center;
+            padding: 0px 15px;
+            margin-top: 30px;
             @media (min-width: $tablets) {
                 font-size: 20px;
                 line-height: 24px;
                 padding: 0px 15px;
+                margin-top: unset;
             }
             @media (min-width: $desktops) {
                 font-size: 20px;

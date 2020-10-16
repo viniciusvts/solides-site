@@ -82,14 +82,18 @@
             }
         }
         &.E-book{
-            .botao{
+            a{
                 position: absolute;
-                bottom: 0;
-                margin-bottom: 30px;
-                @media (min-width: $desktops) {
-                    margin-bottom: 55px;
+                text-align: center;
+                width: 100%;
+                bottom: 0px;
+                left: 0px;
+                .botao{
+                    margin-bottom: 30px;
+                    @media (min-width: $desktops) {
+                        margin-bottom: 55px;
+                    }
                 }
-                
             }
         }
         &.Ferramenta{

@@ -103,6 +103,7 @@ $purple_border: #2F0A77;
             box-sizing: border-box;
             border-radius: 33px;
             width: 100%;
+            outline: none;
             appearance: none;
             background-image: url('../assets/img/svg/lupa.svg');
             background-size: 18px;
@@ -125,12 +126,16 @@ $purple_border: #2F0A77;
     }
     .select-filtro{
         display: flex;
+        justify-content: center;
+        @media (min-width: $tablets) {
+            justify-content: unset;
+        }
         p{
             color: #2F0A77;
             font-weight: bold;
             font-size: 13px;
             line-height: 16px;
-            min-width: 100px;
+            //min-width: 100px;
             padding-top: 1px;
             @media (min-width: $tablets) {
                 font-size: 16px;
@@ -142,8 +147,10 @@ $purple_border: #2F0A77;
             }
         }
         select{
+            //font-size usada na função getWidthText
             border: unset;
             background-color: unset;
+            outline: none;
             color: #2F0A77;
             width: 30%;
             border-radius: 30px;

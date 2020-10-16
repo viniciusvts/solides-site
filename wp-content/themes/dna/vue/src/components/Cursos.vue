@@ -1,7 +1,7 @@
 <template>
   <div class="cursos-mt">
     <div class="container">
-      <h2>{{ data.titulo }}</h2>
+      <h2>{{ pesquisaTexto=="" ? data.titulo : data.titulo+" sobre "+ pesquisaTexto}}</h2>
       <div class="card" v-for="(curso, index) in filterArray()" :key="index">
         <a :href="curso.link" >
           <img class="img-curso" :src="curso.imagem.url" :alt="curso.imagem.alt">
@@ -33,6 +33,7 @@ export default {
   mixins: [lazyComponent],
   props: {
     data: Object,
+    pesquisaTexto: String,
   },
   data () {
     return {

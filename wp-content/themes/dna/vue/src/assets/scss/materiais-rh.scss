@@ -96,7 +96,7 @@ $purple_border: #2F0A77;
     .search{
         margin-bottom: 12px;
         @media (min-width: $desktops) {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .search-box{
             border: 2px solid #5F4A87;
@@ -127,7 +127,7 @@ $purple_border: #2F0A77;
     .select-filtro{
         display: flex;
         justify-content: center;
-        @media (min-width: $tablets) {
+        @media (min-width: $desktops) {
             justify-content: unset;
         }
         p{
@@ -137,6 +137,7 @@ $purple_border: #2F0A77;
             line-height: 16px;
             //min-width: 100px;
             padding-top: 1px;
+            margin-right: 10px;
             @media (min-width: $tablets) {
                 font-size: 16px;
                 line-height: 22px;
@@ -144,6 +145,7 @@ $purple_border: #2F0A77;
             @media (min-width: $desktops) {
                 font-size: 18px;
                 line-height: 22px;
+                margin-left: 25px;
             }
         }
         select{
@@ -160,6 +162,7 @@ $purple_border: #2F0A77;
             font-weight: bold;
             font-size: 13px;
             line-height: 16px;
+            margin-right: 10px;
             @media (min-width: $tablets) {
                 width: 20%;
                 font-size: 16px;
@@ -170,7 +173,7 @@ $purple_border: #2F0A77;
                 font-size: 18px;
                 height: 22px;
                 line-height: 22px;
-                margin-left: 27px;
+                margin-left: 10px;
             }
             option{
                 @media (min-width: $desktops) {

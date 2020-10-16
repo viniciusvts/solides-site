@@ -19,6 +19,7 @@ import CalcRotat from '@/views/CalcRotat.vue'
 import CalcRotatResult from '@/views/CalcRotatResult.vue'
 // import PerfilLp from '@/lps/PerfilLp.vue'
 import PaginaNaoEncontrada from '@/views/PaginaNaoEncontrada.vue'
+import Materiais from '@/views/Materiais.vue'
 
 Vue.use(VueRouter)
 
@@ -92,6 +93,11 @@ const routes = [
     path: '/obrigado',
     name: 'Obrigado',
     component: Obrigado,
+  },
+  {
+    path: '/materiais',
+    name: 'Materiais',
+    component: Materiais,
   },
   {
     path: '/ferramentas/calculadora-de-rotatividade',

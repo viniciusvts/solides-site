@@ -114,8 +114,8 @@
                 </a>
               </div>
               <div class="drop-item">
-                <a target="_blank" class="dropdown-item" href="https://solides.com.br/materiais-educativos/">Materiais</a>
-                <a target="_blank" href="https://solides.com.br/materiais-educativos/" class="no-decoration">
+                <a class="dropdown-item" href="/materiais">Materiais</a>
+                <a href="/materiais" class="no-decoration">
                   <p class="d-none d-lg-block">Conteúdos gratuitos para baixar e ler quando quiser</p>
                 </a>
               </div>

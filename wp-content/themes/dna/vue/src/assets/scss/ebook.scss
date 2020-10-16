@@ -1,0 +1,368 @@
+@import './variables.scss';
+.ebooks-mt{
+    padding-top: 70px;
+    padding-bottom: 35px;
+    @media (min-width: $desktops) {
+        padding-top: 132px;
+        padding-bottom: 90px;
+    }
+    background-color: #F3F3F3;
+    h2{
+        color: #2F0A77;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        @media (min-width: $tablets) {
+            margin-bottom: 50px;
+            font-size: 32px;
+        }
+        @media (min-width: $desktops) {
+            line-height: 50px;
+            font-size: 42px;
+            margin-bottom: 50px;
+        }
+    }
+    .card{
+        position: relative;
+        box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        margin-left: 3%;
+        display: inline-flex;
+        width: 45%;
+        height: 164px;
+        border: 5px solid;
+        margin-bottom: 12px;
+        padding: 2px 15px 2px 20px;
+        @media (min-width: $smallPhones) {
+            padding: 2px 20px 2px 27px;
+            height: 200px;
+        }
+        @media (min-width: $tablets) {
+            height: 400px;
+            margin-bottom: 30px;
+        }
+        @media (min-width: $desktops) {
+            width: 30%;
+            height: 434px;
+            border: 8px solid;
+            margin-bottom: 70px;
+            padding: 0px 21px 0px 31px;
+        }
+        &:nth-child(4n){
+            border-color: #D74149;
+            .botao{
+                background: #D74149;
+                border: 2px solid #813337;
+            }
+        }
+        &:nth-child(4n+1){
+            border-color: #FFBA00;
+            .botao{
+                background: #FFBA00;
+                border: 2px solid #D98726;
+            }
+        }
+        &:nth-child(4n+2){
+            border-color: #70B968;
+            .botao{
+                background: #70B968;
+                border: 2px solid #086618;
+            }
+        }
+        &:nth-child(4n+3){
+            border-color: #00C9DB;
+            .botao{
+                background: #00C9DB;
+                border: 2px solid #0087A4;
+            }
+        }
+        &.E-book{
+            a{
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                bottom: 0px;
+                left: 0px;
+                .botao{
+                    margin-bottom: 30px;
+                    @media (min-width: $desktops) {
+                        margin-bottom: 55px;
+                    }
+                }
+            }
+        }
+        &.Ferramenta{
+            padding: unset;
+            .titulo{
+                padding-left: 21px;
+                padding-right: 21px;
+            }
+            .img-ferramenta{
+                width: 90px;
+                height: 120px;
+                margin-top: 20px;
+                align-self: center;
+            }
+            a{
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                bottom: 0px;
+                .botao{
+                    margin-bottom: 30px;
+                    @media (min-width: $desktops) {
+                        margin-bottom: 55px;
+                    }
+                }
+            }
+        }
+        &.Infográfico{
+            padding: unset;
+            border-color: #5F4A87;
+            .infografico-background{
+                position: absolute;
+                height: 70%;
+                width: 100%;
+                top: 0;
+                z-index: 0;
+                background-color: #5F4A87;
+                @media (min-width: $tablets) {
+                    height: 65%;
+                }
+            }
+            .tipo{
+                color: white;
+                z-index: 1;
+            }
+            .titulo{
+                position: relative;
+                text-align: center;
+                //bottom: 0;
+                //margin-bottom: 21%;
+                color: white;
+                font-weight: 400;
+                padding-left: 8px;
+                padding-right: 8px;
+                font-size: 10px;
+                line-height: 12px;
+                @media (min-width: $smallPhones) {
+                    padding-left: 17px;
+                    padding-right: 17px;
+                    font-size: 11px;
+                    line-height: 14px;
+                }
+                @media (min-width: $tablets) {
+                    font-size: 22px;
+                    line-height: 29px;
+                }
+                @media (min-width: $desktops) {
+                    padding-left: 21px;
+                    padding-right: 21px;
+                    font-size: 24px;
+                    line-height: 29px;
+                }
+            }
+            a{
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                bottom: 0px;
+                .botao{
+                    bottom: 0;
+                    margin-bottom: 50%;
+                    background: #FFBA00;
+                    border: 2px solid #D98726;
+                    @media (min-width: $smallPhones) {
+                        //margin-bottom: 5%;
+                    }
+                    @media (min-width: $tablets) {
+                        margin-bottom: 60%;
+                    }
+                }
+            }
+            .img-infografico{
+                bottom: 5px;
+                height: 50px;
+                position: absolute;
+                align-self: center;
+                z-index: 1;
+                @media (min-width: $smallPhones) {
+                    height: 60px;
+                }
+                @media (min-width: $tablets) {
+                    bottom: 30px;
+                    height: unset;
+                }
+            }
+        }   
+        .tipo{
+            text-align: center;
+            color: #5F4A87;
+            margin-top: 7%;
+            font-weight: 300;
+            font-size: 11px;
+            line-height: 13px;
+            @media (min-width: $tablets) {
+                font-weight: 300;
+                font-size: 24px;
+                line-height: 29px;
+            }
+            @media (min-width: $desktops) {
+                font-weight: 300;
+                font-size: 24px;
+                line-height: 29px;
+            }
+        }
+        .titulo{
+            text-align: center;
+            font-weight: bold;
+            font-size: 11px;
+            line-height: 15px;
+            color: #5F4A87;
+            @media (min-width: $smallPhones) {
+                font-size: 12px;
+                line-height: 16px;
+            }
+            @media (min-width: $tablets) {
+                font-size: 20px;
+                line-height: 23px;
+            }
+            @media (min-width: $desktops) {
+                font-size: 20px;
+                line-height: 23px;
+            }
+        }
+        .descricao{
+            display: none;
+            @media (min-width: $tablets) {
+                display: unset;
+                font-size: 14px;
+                line-height: 17px;
+            }
+            @media (min-width: $desktops) {
+                display: unset;
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+        .botao{
+            color: white;
+            cursor: pointer;
+            border-radius: 33px;
+            height: 19px;
+            font-size: 11px;
+            line-height: 13px;
+            padding: 0px 10px;
+            @media (min-width: $tablets) {
+                padding: 0px 18px;
+                height: 28px;
+                margin-bottom: 5px;
+                font-size: 20px;
+                line-height: 24px;
+            }
+            @media (min-width: $desktops) {
+                padding: 0px 18px;
+                height: 28px;
+                margin-bottom: 5px;
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+    }
+    .paginacao{
+        text-align: center;
+        .btn-pagina{
+            cursor: pointer;
+            border: unset;
+            margin-right: 16px;
+            color: #A1A9B7;
+            background-color: unset;
+            @media (min-width: $tablets) {
+                font-size: 18px;
+                line-height: 24px;
+            }
+            @media (min-width: $desktops) {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+        .active-btn{
+            color: #FFFFFF;
+            background: #A1A9B7;
+            border: 2px solid #A1A9B7;
+            border-radius: 33px;
+            @media (min-width: $tablets) {
+                padding: 0px 18px;
+            }
+            @media (min-width: $desktops) {
+                padding: 0px 28px;
+            }
+        }
+        .link-mais{
+            cursor: pointer;
+        }
+        .btn-mais{
+            border: 2px solid #A1A9B7;
+            color: #A1A9B7;
+            background: #FFFFFF;
+            cursor: pointer;
+            border-radius: 33px;
+            text-align: center;
+            padding: 0px 15px;
+            margin-top: 30px;
+            @media (min-width: $tablets) {
+                font-size: 20px;
+                line-height: 24px;
+                padding: 0px 15px;
+                margin-top: unset;
+            }
+            @media (min-width: $desktops) {
+                font-size: 20px;
+                line-height: 24px;
+                padding: 0px 15px;
+            }
+        }
+    }
+    .blog{
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        align-self: center;
+        margin-top: 150px;
+        .title-blog{
+            font-size: 42px;
+            line-height: 50px;
+            font-weight: 900;
+            text-align: center;
+            color: #000000;
+            margin-bottom: 25px;
+        }
+        .text-blog{
+            font-size: 31px;
+            line-height: 37px;
+            width: 714px;
+            margin: auto;
+        }
+        .blog-btn{
+            text-align: center;
+            .botao{
+                color: white;
+                background: #5F4A87;
+                border: 2px solid #2F0A77;
+                cursor: pointer;
+                font-size: 24px;
+                line-height: 16px;
+                font-weight: 700;
+                border-radius: 33px;
+                padding: 11px 27px 17px 26px;
+                margin-bottom: 20px;
+                margin-top: 30px;
+            }
+        }
+    }
+}

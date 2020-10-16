@@ -103,26 +103,26 @@
                 <a target="_blank" class="dropdown-item" href="https://blog.solides.com.br/">Blog da Sólides</a>
                 <a target="_blank" href="https://blog.solides.com.br/" class="no-decoration">
                   <p class="d-none d-lg-block">
-                    Os melhores conteúdos para gestão de pessoas
+                    Os melhores artigos sobre gestão de pessoas
                   </p>
                 </a>
               </div>
               <div class="drop-item">
                 <a target="_blank" class="dropdown-item" href="https://www.rhportal.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346">RH Portal</a>
                 <a target="_blank" href="https://www.rhportal.com.br/?__hstc=237478239.26aa389a524d853dd6c37d54678ebce0.1576514278372.1589294299112.1589376437584.128&__hssc=237478239.1.1589376437584&__hsfp=2627390346" class="no-decoration">
-                  <p class="d-none d-lg-block">Os melhores conteúdos sobre gestão de pessoas</p>
+                  <p class="d-none d-lg-block">O maior portal de RH da América Latina</p>
                 </a>
               </div>
               <div class="drop-item">
                 <a target="_blank" class="dropdown-item" href="https://solides.com.br/materiais-educativos/">Materiais</a>
                 <a target="_blank" href="https://solides.com.br/materiais-educativos/" class="no-decoration">
-                  <p class="d-none d-lg-block">Os melhores conteúdos para gestão de pessoas</p>
+                  <p class="d-none d-lg-block">Conteúdos gratuitos para baixar e ler quando quiser</p>
                 </a>
               </div>
               <div class="drop-item">
-                <a class="dropdown-item" href="/ferramentas/calculadora-de-rotatividade/">Ferramentas</a>
+                <a class="dropdown-item" href="/ferramentas/calculadora-de-rotatividade/">Calculadora de rotatividade</a>
                 <a href="/ferramentas/calculadora-de-rotatividade/" class="no-decoration">
-                  <p class="d-none d-lg-block">Calculadora de rotatividade</p>
+                  <p class="d-none d-lg-block">Descubra quanto está perdendo anualmente com alto turnover</p>
                 </a>
               </div>
             </div>

@@ -11,7 +11,7 @@
       </div>
       <div class="select-filtro">
         <p>{{ isDesktop ? "Filtrar materiais:" : "Filtrar:" }}</p>
-        <select name="categoria" @change="emitCategoria($event)" style="">
+        <select name="categoria" @change="emitCategoria($event)">
           <option value="">Categoria</option>
           <option v-for="option in data.categorias" :key="option.id" :value="option.id">
             {{ option.categoria }}
@@ -40,6 +40,9 @@ export default {
   },
   computed: {
     isDesktop: function () {
+      return screen.width > 991
+    },
+    isTablet: function () {
       return screen.width > 767
     }
   },
@@ -78,6 +81,9 @@ export default {
       let arrowTam;
       if(this.isDesktop){
         ctx.font = "18px Lato, Roboto, sans-serif";
+        arrowTam = 30;
+      }else if(this.isTablet){
+        ctx.font = "16px Lato, Roboto, sans-serif";
         arrowTam = 30;
       }
       else{

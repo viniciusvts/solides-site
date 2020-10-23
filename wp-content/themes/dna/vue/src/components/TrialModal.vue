@@ -51,7 +51,7 @@
                   name="phone" id="phone" placeholder="Telefone com DDD ou Whatsapp"
                   v-on:keyup="execMascara">
               <div v-html="mensagem" class="msg"></div>
-              <button type="submit" class="ml-auto mt-2">Criar conta</button>
+              <button type="submit" id="criar-conta-btn" class="ml-auto mt-2">Criar conta</button>
             </div>
           </form>
           <!-- o objetivo aqui é pegar o token do hubspot e enviar com o form superior -->
@@ -63,6 +63,7 @@
 </template>
 
 <script>
+//import safetymails from "https://static.safetymails.com/assets/js/safetyoptin_v3.0.min.js";
 export default {
   name: "TrialModal",
   data () {
@@ -82,6 +83,21 @@ export default {
         phone: '',
       }
     }
+  },
+  mounted() {
+      window.__safetyObj__ = {
+        api_key:'7f107d399a20e75305a690059003419023bc89da',
+        ticket_origem:'d42d93b59627e40dc9419f3a711f6f57e200e98c',
+        field_email: "#email",
+        button_id: "#criar-conta-btn",
+        accept_status: "PENDENTE,INCERTO,SCRAPED",
+        message_public_domain: "Por favor, utilize seu e-mail de trabalho.",
+        message_invalid: "Ops! Parece que este e-mail é inválido. Digite novamente.",
+        message_valid: "OK! Este e-mail é valido.",
+        tmp_delay: "1000",
+        block_public_domain: true,
+      };
+      eval("SafetyApi.init()");
   },
   created () {
     // aciona o form do hubspot para ter acesso ao cookie
@@ -150,8 +166,15 @@ export default {
     },
     hashOpenOrClose () {
       const hashValue = window.location.hash.substr(1)
-      if (hashValue == this.hashForShow) this.show = true
-      else this.show = false
+      if (hashValue == this.hashForShow) {
+        this.show = true
+      } else {
+        let pluginEmailDiv = document.getElementsByClassName('safetyoptin-result');
+        if(pluginEmailDiv.length>0){
+          pluginEmailDiv[0].style.display = "none";
+        }
+        this.show = false
+      }
     },
     changeShowDigiteCargo () {
       this.showJobTitle = this.form.cargorh == "Outros";

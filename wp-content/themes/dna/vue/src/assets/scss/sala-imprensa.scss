@@ -1,0 +1,89 @@
+@import "./variables.scss";
+.font-roboto{
+    &, & *{
+        font-family: 'Roboto', sans-serif;
+    }
+}
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+.imprensa{
+    background: #F3F3F3;
+    padding-top: 60px;
+    @media (min-width: $desktops) {
+        padding-top: 80px;
+    }
+    .over-x-h{
+        overflow-x: hidden;
+    }
+    .cabecalho{
+        text-align: center;
+        .titulo{
+            color: #2F0A77;
+            font-weight: 700;
+            cursor: pointer;
+            @media (min-width: $desktops) {
+                padding-top: 90px;
+                font-size: 42px;
+                line-height: 30px;
+            }
+        }
+        .subtitulo{
+            color: #A1A9B7;
+            font-weight: 400;
+            @media (min-width: $desktops) {
+                font-size: 34px;
+                line-height: 41px;
+            }
+        }
+        .search{
+            margin-bottom: 12px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 65%;
+            @media (min-width: $desktops) {
+                margin-bottom: 20px;
+                margin-top: 45px;
+            }
+            .search-box{
+                border: 2px solid #5F4A87;
+                box-sizing: border-box;
+                border-radius: 33px;
+                width: 100%;
+                outline: none;
+                appearance: none;
+                background-image: url('../assets/img/svg/lupa.svg');
+                background-size: 18px;
+                background-repeat: no-repeat;
+                padding-left: 34px;
+                background-position: top 8px left 15px;
+                @media (min-width: $tablets) {
+                    background-size: 20px;
+                    background-position: top 9px left 15px;
+                    padding-left: 44px;
+                }
+                @media (min-width: $desktops) {
+                    background-size: unset;
+                    background-position: top 9px left 15px;
+                    padding-left: 54px;
+                }  
+            }
+        }
+    }
+}
+/// correção da barra de cookie
+#hs-eu-cookie-confirmation,
+#hs-eu-cookie-confirmation-inner,
+#hs-eu-confirmation-button{
+    font-size: 18px;
+}
+#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button {
+    font-size: 12px;
+    @media (min-width: $tablets) {
+        font-size: 14px;
+    }
+    @media (min-width: $largeDesktops) {
+        font-size: 17px;
+    }
+}

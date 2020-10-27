@@ -19,6 +19,7 @@ import CalcRotat from '@/views/CalcRotat.vue'
 import CalcRotatResult from '@/views/CalcRotatResult.vue'
 // import PerfilLp from '@/lps/PerfilLp.vue'
 import PaginaNaoEncontrada from '@/views/PaginaNaoEncontrada.vue'
+import SalaImprensa from '@/views/SalaImprensa.vue'
 import Materiais from '@/views/Materiais.vue'
 
 Vue.use(VueRouter)
@@ -93,6 +94,11 @@ const routes = [
     path: '/obrigado',
     name: 'Obrigado',
     component: Obrigado,
+  },
+  {
+    path: '/sala-de-imprensa',
+    name: 'Materiais',
+    component: SalaImprensa,
   },
   {
     path: '/materiais',

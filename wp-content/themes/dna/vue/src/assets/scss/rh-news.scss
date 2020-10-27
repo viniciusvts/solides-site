@@ -1,0 +1,56 @@
+@import './variables.scss';
+.rh-news{
+    padding-top: 70px;
+    padding-bottom: 35px;
+    @media (min-width: $desktops) {
+        padding-top: 75px;
+        padding-bottom: 90px;
+    }
+    background-color: #F3F3F3;
+    .titulo-news{
+        color: #2F0A77;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        margin-bottom: 10px;
+        text-align: center;
+        @media (min-width: $tablets) {
+            margin-bottom: 50px;
+            font-size: 32px;
+        }
+        @media (min-width: $desktops) {
+            line-height: 50px;
+            font-size: 42px;
+            margin-bottom: 50px;
+        }
+    }
+    .div-mais{
+        text-align: center;
+        margin-top: 30px;
+        .link-mais{
+            cursor: pointer;
+            .btn-mais{
+                border: 2px solid #086618;
+                color: #FFFFFF;
+                background: #70B968;
+                cursor: pointer;
+                border-radius: 33px;
+                text-align: center;
+                padding: 0px 15px;
+                margin-top: 30px;
+                @media (min-width: $tablets) {
+                    font-size: 20px;
+                    line-height: 24px;
+                    padding: 0px 15px;
+                    margin-top: unset;
+                }
+                @media (min-width: $desktops) {
+                    font-size: 20px;
+                    line-height: 24px;
+                    padding: 0px 15px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@import './variables.scss';
+.reportagens{
+    padding-top: 70px;
+    padding-bottom: 35px;
+    @media (min-width: $desktops) {
+        padding-top: 75px;
+        padding-bottom: 90px;
+    }
+    background-color: #F3F3F3;
+    .card{
+        position: relative;
+        background: #FFFFFF;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        color: unset;
+        border-radius: 10px;
+        margin-left: 1%;
+        display: inline-flex;
+        width: 45%;
+        height: 164px;
+        margin-bottom: 12px;
+        padding: 2px 15px 2px 20px;
+        @media (min-width: $smallPhones) {
+            padding: 2px 20px 2px 27px;
+            height: 200px;
+        }
+        @media (min-width: $tablets) {
+            height: 400px;
+            margin-bottom: 30px;
+        }
+        @media (min-width: $desktops) {
+            width: 32%;
+            height: 230px;
+            margin-bottom: 13px;
+            padding: 27px 31px 0px 31px;
+        }
+        .data{
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 13px;
+        }
+        .titulo{
+            font-family: Lato;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 21px;
+            line-height: 25px;
+        }
+    }
+    .div-mais{
+        text-align: center;
+        margin-top: 30px;
+        .link-mais{
+            cursor: pointer;
+            .btn-mais{
+                border: 2px solid #086618;
+                color: #FFFFFF;
+                background: #70B968;
+                cursor: pointer;
+                border-radius: 33px;
+                text-align: center;
+                padding: 0px 15px;
+                margin-top: 30px;
+                @media (min-width: $tablets) {
+                    font-size: 20px;
+                    line-height: 24px;
+                    padding: 0px 15px;
+                    margin-top: unset;
+                }
+                @media (min-width: $desktops) {
+                    font-size: 20px;
+                    line-height: 24px;
+                    padding: 0px 15px;
+                }
+            }
+        }
+    }
+}

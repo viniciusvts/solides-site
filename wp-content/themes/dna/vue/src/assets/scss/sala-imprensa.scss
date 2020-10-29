@@ -22,29 +22,40 @@ html{
         .titulo{
             color: #2F0A77;
             font-weight: 700;
+            padding-top: 80px;
             cursor: pointer;
+            font-size: 24px;
+            line-height: 29px;
             @media (min-width: $desktops) {
-                padding-top: 90px;
                 font-size: 42px;
                 line-height: 30px;
+                padding-top: 90px;
             }
         }
         .subtitulo{
             color: #A1A9B7;
-            font-weight: 400;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+            max-width: 250px;
+            margin-left: auto;
+            margin-right: auto;
             @media (min-width: $desktops) {
                 font-size: 34px;
                 line-height: 41px;
+                font-weight: 400;
+                max-width: unset;
             }
         }
         .search{
             margin-bottom: 12px;
             margin-left: auto;
             margin-right: auto;
-            width: 65%;
+            width: 85%;
             @media (min-width: $desktops) {
                 margin-bottom: 20px;
                 margin-top: 45px;
+                width: 65%;
             }
             .search-box{
                 border: 2px solid #5F4A87;
@@ -62,12 +73,106 @@ html{
                     background-size: 20px;
                     background-position: top 9px left 15px;
                     padding-left: 44px;
+                    margin-bottom: 15px;
                 }
                 @media (min-width: $desktops) {
                     background-size: unset;
                     background-position: top 9px left 15px;
                     padding-left: 54px;
                 }  
+            }
+            .data-filtro{
+                justify-content: center;
+                @media (min-width: $tablets) {
+                    display: flex;
+                    justify-content: unset;
+                    margin-left: 25px;
+                }
+                .data-titulo{
+                    display: block;
+                    p{
+                        color: #2F0A77;
+                        font-weight: bold;
+                        font-size: 13px;
+                        line-height: 16px;
+                        padding-top: 13px;
+                        margin-bottom: unset;
+                        @media (min-width: $tablets) {
+                            margin-right: 10px;
+                            font-size: 16px;
+                            line-height: 22px;
+                            padding-top: 1px;
+                        }
+                        @media (min-width: $desktops) {
+                            font-size: 18px;
+                            line-height: 22px;
+                            margin-left: 25px;
+                        }
+                    }
+                }                
+                .data-content{
+                    display: inline-flex;                 
+                    p{
+                        margin-left: 10px;
+                        margin: 5px 10px 1px 10px;
+                        color: #2F0A77;
+                        font-weight: bold;
+                        font-size: 13px;
+                        line-height: 16px;
+                        padding-top: 1px;
+                        @media (min-width: $tablets) {
+                            margin: 0px 10px;
+                            font-size: 16px;
+                            line-height: 22px;
+                        }
+                        @media (min-width: $desktops) {
+                            font-size: 18px;
+                            line-height: 22px;
+                        }
+                    }
+                    .dt-filtro{
+                        background: #F3F3F3;
+                        border: 1px solid #5F4A87;
+                        box-sizing: border-box;
+                        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+                        border-radius: 33px;
+                        padding-left: 10px;
+                        padding-right: 6px;
+                        margin-top: 3px;
+                        color: #727272;
+                        font-size: 13px;
+                        width: 120px;
+                        height: 22px;
+                    }
+                    .dt-filtro::-webkit-calendar-picker-indicator {
+                        margin-left: 0px;
+                    }
+                }
+            }
+        }
+    }
+    .no-result{
+        text-align: center;
+        .no-result-title{
+            padding: 0px 30px 80px 30px;
+            font-weight: bold;
+            color: #2F0A77;
+            font-size: 35px;
+            line-height: 45px;
+            @media (min-width: $desktops) {
+                font-size: 50px;
+                line-height: 61px;
+            }
+        }
+        .no-result-desc{
+            padding: 0px 40px 40px 40px;
+            font-weight: bold;
+            color: #5F4A87;
+            font-size: 23px;
+            line-height: 35px;
+            @media (min-width: $desktops) {
+                font-size: 35px;
+                line-height: 49px;
             }
         }
     }

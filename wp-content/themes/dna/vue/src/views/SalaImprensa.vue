@@ -5,10 +5,25 @@
       <h2 class="subtitulo" v-html="pageData.acf.cabecalho.subtitulo" ></h2>
       <div class="search" v-if="verMais">
         <input class="search-box" type="text" placeholder="Pesquisar" @change="filterImprensa()" v-model="pesquisaTexto"/>
+        <div class="data-filtro">
+          <div class="data-titulo">
+            <p>Filtrar por data:</p>
+          </div>
+          <div class="data-content">
+            <input class="dt-filtro" type="date" v-model="dtInicio" @change="filterImprensa()" />
+            <p>a</p>
+            <input class="dt-filtro" type="date" v-model="dtFim" @change="filterImprensa()" />
+          </div>
+        </div>
       </div>
     </div>
     <Reportagens v-if="!verMais || pageName=='reportagem'" :data="dataFiltered.reportagens" :verMais="verMais" @varMaisChange="varMaisChange($event)" />
     <ArtigosBlog v-if="!verMais || pageName=='blog'" :data="dataFiltered.blog" :verMais="verMais" @varMaisChange="varMaisChange($event)" />
+    <RHNews v-if="!verMais" :data="dataFiltered.news" />
+    <div class="no-result" v-show="showNoResult">
+      <h1 class="no-result-title" >Nenhum resultado encontrado!</h1>
+      <h2 class="no-result-desc" >Tente novamente utilizando outros parâmetros.</h2>
+    </div>
     <!--
     <MateriaisRH 
       :data="pageData.acf.primeira_dobra"  
@@ -42,12 +57,14 @@
 import Loading from "@/components/Loading.vue"
 import Reportagens from "@/components/Reportagens.vue"
 import ArtigosBlog from "@/components/ArtigosBlog.vue"
+import RHNews from "@/components/RHNews.vue"
 
 export default {
   name: 'Sala de Imprensa',
   components:{
     Reportagens,
     ArtigosBlog,
+    RHNews,
     Loading
   },
   data () {
@@ -58,6 +75,8 @@ export default {
       pageName: "",
       verMais: false,
       pesquisaTexto: "",
+      dtInicio: "",
+      dtFim: "",
       deParaDate: {
         "janeiro": "January",
         "fevereiro": "February",
@@ -76,6 +95,11 @@ export default {
   },
   created () {
     this.getPost();
+  },
+  computed: {
+    showNoResult(){
+      return ((this.dataFiltered.reportagens.length==0 && this.pageName=="reportagem") || (this.dataFiltered.blog.artigos.length==0 && this.pageName=="blog"))
+    }
   },
   methods: {
     getPost () {
@@ -124,10 +148,26 @@ export default {
       }
     },
     filterTexto(blocoData){
-      return blocoData.filter( data => {
-        let exist = false;
-        if(data.titulo.toUpperCase().includes(this.pesquisaTexto.toUpperCase())){
-          exist = true;
+      return blocoData.filter( obj => {
+        let exist = true;
+        if(!obj.titulo.toUpperCase().includes(this.pesquisaTexto.toUpperCase())){
+          exist = false;
+        }
+        if(this.dtInicio){
+          let dtini = new Date(this.dtInicio);
+          //corrige fuso horário
+          dtini = new Date(dtini.getTime() + (dtini.getTimezoneOffset()*60000));
+          if(this.getDate(obj.data) < dtini){
+            exist=false;
+          }
+        }
+        if(this.dtFim){
+          let dtfim = new Date(this.dtFim);
+          //corrige fuso horário
+          dtfim = new Date(dtfim.getTime() + (dtfim.getTimezoneOffset()*60000));
+          if(this.getDate(obj.data) > dtfim){
+            exist=false;
+          }
         }
         return exist;
       });

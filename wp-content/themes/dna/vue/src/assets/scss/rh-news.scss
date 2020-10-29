@@ -13,7 +13,7 @@
         font-weight: bold;
         font-size: 24px;
         line-height: 29px;
-        margin-bottom: 10px;
+        margin-bottom: 40px;
         text-align: center;
         @media (min-width: $tablets) {
             margin-bottom: 50px;
@@ -23,6 +23,27 @@
             line-height: 50px;
             font-size: 42px;
             margin-bottom: 50px;
+        }
+    }
+    .video-news{
+        text-align: center;
+        filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+        iframe{
+            width: 196px;
+            height: 110px;
+            border-radius: 10px;
+            @media (min-width: $smallPhones) {
+                width: 85%;
+                height: 49vw;
+            }
+            @media (min-width: $tablets) {
+                width: 600px;
+                height: 336px;
+            }
+            @media (min-width: $desktops) {
+                width: 884px;
+                height: 498px;
+            }
         }
     }
     .div-mais{

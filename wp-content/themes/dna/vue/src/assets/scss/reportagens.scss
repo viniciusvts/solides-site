@@ -5,6 +5,9 @@
     @media (min-width: $desktops) {
         padding-top: 75px;
         padding-bottom: 90px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 980px;
     }
     background-color: #F3F3F3;
     .card{
@@ -13,38 +16,108 @@
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
         color: unset;
         border-radius: 10px;
-        margin-left: 1%;
+        margin: 0px 5px;
         display: inline-flex;
-        width: 45%;
+        width: 135px;
         height: 164px;
         margin-bottom: 12px;
-        padding: 2px 15px 2px 20px;
+        padding: 15px 14px 2px 16px;
+        text-align: center;
         @media (min-width: $smallPhones) {
-            padding: 2px 20px 2px 27px;
+            padding: 17px 14px 2px 16px;
+            width: 45%;
             height: 200px;
         }
         @media (min-width: $tablets) {
-            height: 400px;
-            margin-bottom: 30px;
+            text-align: unset;
+            width: 31%;
+            height: 230px;
+            margin-bottom: 13px;
+            padding: 27px 31px 0px 31px;
         }
         @media (min-width: $desktops) {
+            text-align: unset;
             width: 32%;
             height: 230px;
             margin-bottom: 13px;
             padding: 27px 31px 0px 31px;
         }
+        .logo-img{
+            position: absolute;
+            top: 15px;
+            align-self: center;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            @media (min-width: $smallPhones) {
+                top:23px;
+            }
+            @media (min-width: $tablets) {
+                margin-bottom: 6px;
+                position: relative;
+                top: unset;
+                margin-left: unset;
+                margin-right: unset;
+                left: unset;
+                right: unset;
+                margin-bottom: unset;
+            }
+        }
         .data{
+            position: absolute;
+            top:65px;
+            align-self: center;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
             font-weight: 300;
-            font-size: 18px;
-            line-height: 22px;
+            font-size: 9px;
+            line-height: 12px;
             margin-bottom: 13px;
+            @media (min-width: $smallPhones) {
+                top:70px;
+            }
+            @media (min-width: $tablets) {
+                position: relative;
+                top: unset;
+                margin-left: unset;
+                margin-right: unset;
+                left: unset;
+                right: unset;
+                font-size: 18px;
+                line-height: 22px;
+            }
         }
         .titulo{
+            position: absolute;
+            top:85px;
+            align-self: center;
+            margin-left: auto;
+            margin-right: auto;
+            left: 16px;
+            right: 14px;
+
             font-family: Lato;
             font-style: normal;
             font-weight: bold;
-            font-size: 21px;
-            line-height: 25px;
+            font-size: 11px;
+            line-height: 15px;
+            @media (min-width: $tablets) {
+                position: relative;
+                top: unset;
+                margin-left: unset;
+                margin-right: unset;
+                left: unset;
+                right: unset;
+                font-size: 15px;
+                line-height: 20px;
+            }
+            @media (min-width: $desktops) {
+                font-size: 21px;
+                line-height: 25px;
+            }
         }
     }
     .div-mais{

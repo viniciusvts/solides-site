@@ -2,9 +2,9 @@
   <div class="rh-news">
     <div class="container">
       <h1 class="titulo-news">{{ data.titulo}}</h1>
-      
+      <div class="video-news" v-html="data.embed" v-if="isPosition"></div>
       <div class="div-mais" v-if="!verMais">
-        <a class="link-mais" @click="emitVerMais()">
+        <a class="link-mais" :href="data.link" target="_blank">
           <button class="btn-mais" id="btn-mais" >
             ver mais
           </button>

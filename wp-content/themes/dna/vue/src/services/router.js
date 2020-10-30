@@ -11,6 +11,7 @@ import Profiler from '@/views/Profiler.vue'
 import Planos from '@/views/Planos.vue'
 import PoliticaPrivacidade from '@/views/PoliticaPrivacidade.vue'
 import Sobre from '@/views/Sobre.vue'
+import FalarComEspecialistaBlack from '@/views/FalarComEspecialista_black.vue'
 import FalarComEspecialista from '@/views/FalarComEspecialista.vue'
 import PedirDemo from '@/views/PedirDemo.vue'
 import Contato from '@/views/Contato.vue'
@@ -78,6 +79,11 @@ const routes = [
     path: '/falar-com-um-especialista',
     name: 'FalarComEspecialista',
     component: FalarComEspecialista,
+  },
+  {
+    path: '/falar-com-um-especialista-black-november',
+    name: 'FalarComEspecialistaBlack',
+    component: FalarComEspecialistaBlack,
   },
   {
     path: '/pedir-uma-demo',

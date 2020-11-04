@@ -104,6 +104,9 @@
             font-weight: bold;
             font-size: 11px;
             line-height: 15px;
+            @media (min-width: $smallPhones) {
+                top:95px;
+            }
             @media (min-width: $tablets) {
                 position: relative;
                 top: unset;
@@ -141,9 +144,9 @@
                     margin-top: unset;
                 }
                 @media (min-width: $desktops) {
-                    font-size: 20px;
+                    font-size: 21px;
                     line-height: 24px;
-                    padding: 0px 15px;
+                    padding: 10px 20px;
                 }
             }
         }

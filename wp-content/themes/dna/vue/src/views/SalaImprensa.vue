@@ -10,9 +10,9 @@
             <p>Filtrar por data:</p>
           </div>
           <div class="data-content">
-            <input class="dt-filtro" type="date" v-model="dtInicio" @change="filterImprensa()" />
+            <input :class="(dtInicio!='' || isDesktop) ?'dt-filtro':'has-date dt-filtro'" type="date" v-model="dtInicio" @change="filterImprensa()" placeholder="dd/mm/aaaa" />
             <p>a</p>
-            <input class="dt-filtro" type="date" v-model="dtFim" @change="filterImprensa()" />
+            <input :class="(dtFim!='' || isDesktop) ?'dt-filtro':'has-date dt-filtro'" type="date" v-model="dtFim" @change="filterImprensa()" placeholder="dd/mm/aaaa" />
           </div>
         </div>
       </div>
@@ -24,28 +24,12 @@
       <h1 class="no-result-title" >Nenhum resultado encontrado!</h1>
       <h2 class="no-result-desc" >Tente novamente utilizando outros parâmetros.</h2>
     </div>
-    <!--
-    <MateriaisRH 
-      :data="pageData.acf.primeira_dobra"  
-      @pesquisaChange="pesquisaChange($event)" 
-      @categoriaChange="categoriaChange($event)" 
-      @formatoChange="formatoChange($event)" />
-    <Ebook v-show="showBloco('ebook')" :data="dataFiltered.ebook" :pesquisaTexto="pesquisaTexto" :verMais="verMais" @varMaisChange="varMaisChange($event)"/>
-    <Videos v-show="showBloco('video')" :data="dataFiltered.videos" :pesquisaTexto="pesquisaTexto" />
-    <Cursos v-show="showBloco('curso')" :data="dataFiltered.cursos" :pesquisaTexto="pesquisaTexto" />
-    <div v-show="!this.verMais" class="universidade-btn">
-      <div class="no-result" v-show="showNoResult">
-        <h1 class="no-result-title" >Nenhum resultado encontrado!</h1>
-        <h2 class="no-result-desc" >Tente novamente utilizando outros parâmetros ou visite nossa universidade.</h2>
-      </div>
-      <a :href="pageData.acf.visite_universidade.link">
-          <button 
-            class="botao" 
-            v-html="pageData.acf.visite_universidade.texto" 
-            :id="pageData.acf.visite_universidade.id" />
-        </a>
+    <div class="contato-imprensa">
+      <h1 class="title-contato">Contato:</h1>
+      <p class="info" >imprensa@solides.com.br</p>
+      <p class="info" >contato@piarcomunicacao.com.br</p>
+      <p class="info" >(11) 4304-1222</p>
     </div>
-    -->
     <div class="gray"></div>
   </div>
   <div v-else>
@@ -99,6 +83,9 @@ export default {
   computed: {
     showNoResult(){
       return ((this.dataFiltered.reportagens.length==0 && this.pageName=="reportagem") || (this.dataFiltered.blog.artigos.length==0 && this.pageName=="blog"))
+    },
+    isDesktop: function () {
+      return screen.width > 767
     }
   },
   methods: {

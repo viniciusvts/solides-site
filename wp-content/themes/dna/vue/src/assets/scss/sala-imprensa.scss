@@ -142,10 +142,25 @@ html{
                         color: #727272;
                         font-size: 13px;
                         width: 120px;
-                        height: 22px;
+                        height: 25px;
+                        @media (min-width: $desktops) {
+                            width: 120px;
+                            height: 22px;
+                        }
                     }
                     .dt-filtro::-webkit-calendar-picker-indicator {
                         margin-left: 0px;
+                    }
+                    .has-date::before {
+                        content: attr(placeholder) !important;
+                        color: #aaa;
+                        font-size: 13px;
+                        padding-left: 10px;
+                        padding-right: 6px;
+                    }
+                    .has-date:focus:before,
+                    .has-date:valid:before {
+                        content: "";
                     }
                 }
             }
@@ -173,6 +188,51 @@ html{
             @media (min-width: $desktops) {
                 font-size: 35px;
                 line-height: 49px;
+            }
+        }
+    }
+
+    .contato-imprensa{
+        text-align: center;
+        padding-bottom: 30px;
+        padding-top: 50px;
+        @media (min-width: $smallPhones) {
+            padding-top: 60px;
+        }
+        @media (min-width: $tablets) {
+            padding-top: 80px;
+        }
+        @media (min-width: $fullHdDesktops) {
+            padding-top: 100px;
+        }
+        .title-contato{
+            font-family: Lato;
+            font-style: normal;
+            font-weight: bold;
+            text-align: unset;
+            font-size: 40px;
+            line-height: 46px;
+            margin-bottom: unset;
+            width: unset;
+            padding-bottom: 20px;
+            @media (min-width: $desktops) {
+                padding-top: unset;
+                padding-bottom: 40px;
+                font-size: 48px;
+                line-height: 58px;
+            }
+        }
+        .info{
+            width: unset;
+            text-align: center;
+            margin-bottom: unset;
+            padding-bottom: 5px;
+            font-size: 18px;
+            line-height: 24px;
+            @media (min-width: $desktops) {
+                padding-bottom: 20px;
+                font-size: 33px;
+                line-height: 40px;
             }
         }
     }

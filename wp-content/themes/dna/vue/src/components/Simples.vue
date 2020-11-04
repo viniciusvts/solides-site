@@ -6,7 +6,7 @@
       <div class="mt-5 mt-lg-0 text-center row simple">
         <div v-for="(wf, index) in imgs" :key="index" class="col-12 col-lg-4">
           <img :src="wf.imagem.sizes.medium" :alt="wf.imagem.alt">
-          <p class="color-primary mt-3 px-5 px-lg-2 font-weight-bold">{{wf.text}}</p>
+          <p class="color-primary mt-3 px-5 px-lg-2 font-weight-bold" v-html="wf.text" ></p>
         </div>
       </div>
       <div class="centerize-itens mt-0 mt-lg-30">

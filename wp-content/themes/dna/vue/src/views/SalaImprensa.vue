@@ -10,9 +10,11 @@
             <p>Filtrar por data:</p>
           </div>
           <div class="data-content">
-            <input :class="(dtInicio!='' || isDesktop) ?'dt-filtro':'has-date dt-filtro'" type="date" v-model="dtInicio" @change="filterImprensa()" placeholder="dd/mm/aaaa" />
+            <input id="DataInicio" class="dt-filtro" type="text" v-model="dtInicio" @change="filterImprensa();" v-on:keyup="execMascaraData" placeholder="dd/mm/aaaa" />
+            <!--input id="DataInicio" class="dt-filtro" type="date" v-model="dtInicio" @change="filterImprensa();" placeholder="dd/mm/aaaa" /-->
             <p>a</p>
-            <input :class="(dtFim!='' || isDesktop) ?'dt-filtro':'has-date dt-filtro'" type="date" v-model="dtFim" @change="filterImprensa()" placeholder="dd/mm/aaaa" />
+            <input id="DataFim" class="dt-filtro" type="text" v-model="dtFim" @change="filterImprensa();" v-on:keyup="execMascaraData" placeholder="dd/mm/aaaa" />
+            <!-- input id="DataFim" class="dt-filtro" type="date" v-model="dtFim" @change="filterImprensa();" placeholder="dd/mm/aaaa" /-->
           </div>
         </div>
       </div>
@@ -85,6 +87,9 @@ export default {
       return ((this.dataFiltered.reportagens.length==0 && this.pageName=="reportagem") || (this.dataFiltered.blog.artigos.length==0 && this.pageName=="blog"))
     },
     isDesktop: function () {
+      return screen.width > 991
+    },
+    isTablet: function () {
       return screen.width > 767
     }
   },
@@ -97,7 +102,6 @@ export default {
         this.pageData.acf.reportagens.sort(this.compareDate);
         this.pageData.acf.blog.artigos.sort(this.compareDate);
         this.dataFiltered = this.deepClone(this.pageData.acf);
-        console.log(this.dataFiltered);
       })
     },
     deepClone(obj){
@@ -119,6 +123,10 @@ export default {
       data[0] = this.deParaDate[data[0]]; 
       return new Date(data.join(" "));
     },
+    formatDateBr(str){
+      let data = str.split("/");
+      return new Date(data[2],data[1]-1,data[0]);
+    },
     varMaisChange(event){
       this.verMais = true;
       window.scrollTo(0, 0);
@@ -138,20 +146,18 @@ export default {
       return blocoData.filter( obj => {
         let exist = true;
         if(!obj.titulo.toUpperCase().includes(this.pesquisaTexto.toUpperCase())){
-          exist = false;
+          if(!obj.tag.toUpperCase().includes(this.pesquisaTexto.toUpperCase())){
+            exist = false;
+          }
         }
         if(this.dtInicio){
-          let dtini = new Date(this.dtInicio);
-          //corrige fuso horário
-          dtini = new Date(dtini.getTime() + (dtini.getTimezoneOffset()*60000));
+          let dtini = this.formatDateBr(this.dtInicio);
           if(this.getDate(obj.data) < dtini){
             exist=false;
           }
         }
         if(this.dtFim){
-          let dtfim = new Date(this.dtFim);
-          //corrige fuso horário
-          dtfim = new Date(dtfim.getTime() + (dtfim.getTimezoneOffset()*60000));
+          let dtfim = this.formatDateBr(this.dtFim);
           if(this.getDate(obj.data) > dtfim){
             exist=false;
           }
@@ -159,6 +165,16 @@ export default {
         return exist;
       });
     },
+    execMascaraData (evt) {
+      let v = evt.target.value;
+      v=v.replace(/\D/g,""); //Remove tudo o que não é dígito
+      v=v.replace(/^(\d{8})(\d)/g,"$1"); //Remove mais de 8 digitos
+      // Coloca a / da data
+      v=v.replace(/^(\d{2})(\d)/g,"$1/$2");
+      v=v.replace(/^(\d{2}\/)(\d{2})(\d)/g,"$1$2/$3");
+      evt.target.value = v;
+    }
+
   }
 }
 </script>

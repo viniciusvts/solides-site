@@ -1,13 +1,15 @@
 <template>
-  <div class="text" :class="setClass" v-html="dataTexto"></div>
+  <div class="text">
+    <p>Para os <b><span>{{data.numColab}}</span> colaboradores</b> da sua empresa,
+    sua perda anual é de:
+    </p>
+  </div>
 </template>
 <script>
 export default {
-  name: "CalcDataDinamico",
+  name: "CalcDataAbsent",
   props: {
-    dataTexto: Object,
     data: Object,
-    setClass: String,
   }
 };
 </script>

@@ -4,15 +4,25 @@
       <div class="container backGrayDesktop">
         <div class="row m-0 px-internal">
           <div class="left col-11 col-md-6 my-md-auto">
-            <div class="text" v-html="data.texto_esquerdatopo"></div>
+            <div v-if="data.texto_esquerdatopo" class="text" v-html="data.texto_esquerdatopo"></div>
+            <div v-else class="text">
+              <CalcDataRampagemL v-if="rampagem" :data="rampagem" />
+              <CalcDataPesqClimaL v-if="pesqClima" :data="pesqClima" />
+              <CalcDataAbsentL v-if="absenteismo" :data="absenteismo" />
+              <CalcDataAvalDesempL v-if="avalDesemp" :data="avalDesemp" />
+            </div>
           </div>
           <div class="right col-11 col-md-6 my-md-auto pl-md-3 pr-md-0">
             <div class="text">
               <CalcDataCustoRH v-if="custorh" :data="custorh" />
               <CalcDataEntrevGestor v-if="entregestor" :data="entregestor" />
-              <CalcDataDinamico v-if="custoscolab" :data="custoscolab" :dataTexto="data.texto_direitaabaixo" />
+              <CalcDataDinamico v-if="custoscolab" :data="custoscolab" :dataTexto="data.texto_direitaabaixo" setClass="bigRed" />
               <CalcDataTreinaOrienta v-if="custostreinador" :data="custostreinador" />
               <CalcDataPerdaProdu v-if="perdaprod" :data="perdaprod" />
+              <CalcDataAbsent v-if="absenteismo" :data="absenteismo" />
+              <CalcDataRampagemR v-if="rampagem" :data="rampagem" />
+              <CalcDataDinamico v-if="pesqClima" :data="pesqClima" :dataTexto="data.texto_direitaabaixo" />
+              <CalcDataDinamico v-if="avalDesemp" :data="avalDesemp" :dataTexto="data.texto_direitaabaixo" />
             </div>
           </div>
         </div>
@@ -47,6 +57,12 @@ import CalcDataEntrevGestor from "@/components/CalcDataEntrevGestor.vue"
 import CalcDataDinamico from "@/components/CalcDataDinamico.vue"
 import CalcDataTreinaOrienta from "@/components/CalcDataTreinaOrienta.vue"
 import CalcDataPerdaProdu from "@/components/CalcDataPerdaProdu.vue"
+import CalcDataAbsent from "@/components/CalcDataAbsent.vue"
+import CalcDataAbsentL from "@/components/CalcDataAbsentL.vue"
+import CalcDataRampagemR from "@/components/CalcDataRampagemR.vue"
+import CalcDataRampagemL from "@/components/CalcDataRampagemL.vue"
+import CalcDataPesqClimaL from "@/components/CalcDataPesqClimaL.vue"
+import CalcDataAvalDesempL from "@/components/CalcDataAvalDesempL.vue"
 export default {
   name: "CalcData",
   components: {
@@ -54,7 +70,13 @@ export default {
     CalcDataEntrevGestor,
     CalcDataDinamico,
     CalcDataTreinaOrienta,
-    CalcDataPerdaProdu
+    CalcDataPerdaProdu,
+    CalcDataAbsent,
+    CalcDataAbsentL,
+    CalcDataRampagemR,
+    CalcDataRampagemL,
+    CalcDataPesqClimaL,
+    CalcDataAvalDesempL,
     },
   props: {
     data: Object,
@@ -64,7 +86,11 @@ export default {
     entregestor: Object,
     custoscolab: Object,
     custostreinador: Object,
-    perdaprod: Object
+    perdaprod: Object,
+    absenteismo: Object,
+    rampagem: Object,
+    pesqClima: Object,
+    avalDesemp: Object,
   },
   methods: {
     getCusto () {
@@ -73,6 +99,10 @@ export default {
       if (this.custoscolab) return this.custoscolab.custoTotal
       if (this.custostreinador) return this.custostreinador.custoTotal
       if (this.perdaprod) return this.perdaprod.custoTotal
+      if (this.absenteismo) return this.absenteismo.custoTotal
+      if (this.rampagem) return this.rampagem.custoTotal
+      if (this.pesqClima) return this.pesqClima.custoTotal
+      if (this.avalDesemp) return this.avalDesemp.custoTotal
     }
   }
 };

@@ -15,6 +15,8 @@ const calcRotat = {
       },
       /** numero de funcionarios (digitato pelo user) */
       numFunc: 0,
+      /** Faturamento anual da empresa (calcProdut) */
+      fatAno: 0,
       /** Taxa de demissões por comportamento: 0.9 */
       txDemissComport: 0.9,
       /*##################### custo RH #####################*/
@@ -57,7 +59,28 @@ const calcRotat = {
       /** 8% */
       fgts: .08,
       /** 40% */
-      fgtsMulta: .4
+      fgtsMulta: .4,
+      /*################## Absenteismo #####################*/
+      /** Tempo de atraso por dia/colaborador em minutos */
+      tempAtraso: 5,
+      /** Média da produtividade de um novo colaborador no período 50% */
+      medProdNovoColab: .5,
+      /** Tempo para cadastro de dados de cada pesquisa 12 min */
+      tempCadDadosPesqClima: 12,
+      /** Tempo para validar e criar quais perguntas serão feitas em horas */
+      tempCriacaoValidacaoPesqClima: 30,
+      /** Tempo para análise dos dados recolhidos e criação de gráficos e relatórios em horas */
+      tempAnalDadosPesqClima: 35,
+      /** Número de pesquisas de clima por ano */
+      numPesqClimaPorAno: 2,
+      /** Tempo para cadastro de dados de cada Avaliação minuts */
+      tempCadDadosAval: 3,
+      /** Tempo para validar e criar quais critérios e perguntas da Avaliação em horas */
+      tempCriacaoAvaliacao: 30,
+      /** Tempo para análise dos dados recolhidos e criação de gráficos e relatórios em horas */
+      tempAnalAvaliacao: 44,
+      /** Número de Av. Desempenho por ano */
+      numAvalPorAno: 2,
     }
   },
   methods: {
@@ -119,6 +142,25 @@ const calcRotat = {
       var custo = (this.calcularCustoRhPorVaga() * this.calcularMediaContratacaoAnual())
       if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
       else return custo
+    },
+    /**custo total do rh para todos os candidatos anual
+     * utilizado no cac Produtividade
+     * @author Vinicius de Santana
+    */
+    calcularCustoRhAnual (formated) {
+      var custo = (this.calcularCustoRhPorVaga() * this.numFunc)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /**hora rh total para todos os candidatos
+     * @author Vinicius de Santana
+    */
+    calcularHoraRhTotalProdutividade (formated) {
+      var horas = (this.calcularHoraRhPorVaga() * this.numFunc)
+      if (formated){
+        var fracaoDaHora = (horas % 1) * 60
+        return horas.toFixed(0) + 'h e ' + fracaoDaHora.toFixed(0) + ' min'
+      } else return horas
     },
     /*###################################################################
     ################################# custo Gestor #####################*/
@@ -223,6 +265,29 @@ const calcRotat = {
       else return custo
     },
     /**
+     * Custo total do gestor e do treinador por contratado
+     * Utilizado na calculadora produtividade
+     * @author Vinicius de Santana
+    */
+    calcularCustoTotalGestorTreinadorPorContratado (formated) {
+      var custo = (
+        this.calcularCustoTotalTreinamentoGestor() + 
+        this.calcularCustoTreinamentoContratado()
+      )
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /**
+     * Custo total do gestor e do treinador por todos os contratados
+     * Utilizado na calculadora produtividade
+     * @author Vinicius de Santana
+    */
+    calcularCustoTotalGestorTreinadorTodosOsContratados (formated) {
+      var custo = (this.calcularCustoTotalGestorTreinadorPorContratado() * this.numFunc)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /**
      * Custo total com treinamento dos novos colaboradores contratados
      * @author Vinicius de Santana
     */
@@ -294,6 +359,243 @@ const calcRotat = {
       var qtdRelatorios = Number(this.calcularMediaContratacaoAnual() * this.txDemissComport) + Number(this.calcularMediaContratacaoAnual())
       qtdRelatorios = qtdRelatorios * 3
       return qtdRelatorios.toFixed(0)
+    },
+    /*###################################################################
+    ################ CalcProdutividade #####################*/
+    /** Se usuário não digitou um valor em fauramento anual
+     * retorno um valor aproximado segundo uma tabela
+     * @return {Number}
+     * @author Vinicius de Santana
+     */
+    getFatAno () {
+      if (this.fatAno > 0) return this.fatAno
+      if(this.numFunc <= 19) return 360000
+      if(this.numFunc <= 59) return 2500000
+      if(this.numFunc <= 99) return 4800000
+      if(this.numFunc <= 199) return 50000000
+      if(this.numFunc <= 299) return 100000000
+      if(this.numFunc <= 399) return 150000000
+      if(this.numFunc <= 499) return 250000000
+      if(this.numFunc <= 500) return 300000000
+    },
+    /*###################################################################
+    ################ Absenteismo #####################*/
+    /**
+     * Custo por Hora de funcionário com salário médio
+     * =salariomédio / 23 dias úteis / 8 horas diárias
+     * @author Vinicius de Santana
+    */
+    calcularCustoHoraColab (formated) {
+      var custo = (this.calcVars.med_sal / 23 / 8)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /**
+     * Perda total por atraso de cada colaborador por dia
+     * = custo hora colab / 60 minutos * 5 minutos
+     * @author Vinicius de Santana
+    */
+    calcularAbsentColabPorDia (formated) {
+      var custo = ((this.calcularCustoHoraColab() / 60) * 5)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /**
+     * Perda total da empresa com absenteísmo por dia
+     * @author Vinicius de Santana
+    */
+    calcularAbsentColabsPorDia (formated) {
+      var custo = (this.calcularAbsentColabPorDia() * this.numFunc)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /**
+     * Perda total anual com absenteísmo
+     * considerando 250 dias úteis
+     * @author Vinicius de Santana
+    */
+    calcularAbsentAnual (formated) {
+      var custo = (this.calcularAbsentColabsPorDia() * 250)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /*###################################################################
+    ################ Custo com experiencia #####################*/
+    /**
+     * Produtividade média mensal dos colaboradores da sua empresa
+     * @author Vinicius de Santana
+    */
+    calcularProdMensal (formated) {
+      var custo = (this.fatAno / this.numFunc / 12)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /**
+     * Produtividade média mensal Com aumento de 10%
+     * @author Vinicius de Santana
+    */
+    aumenteProdMensal (formated) {
+      var custo = (this.calcularProdMensal() * 1.12)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /**
+     * Produtividade média anual Com aumento de 10%
+     * @author Vinicius de Santana
+    */
+    aumenteProdAnual (formated) {
+      var custo = (this.calcularProdMensal() * 12 * 1.12)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /**
+     * Perda de produtividade média mensal dos colaboradores da sua empresa
+     * @author Vinicius de Santana
+    */
+    calcularPerdaProdMensal (formated) {
+      var custo = (this.calcularProdMensal() * this.medProdNovoColab)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /**
+     * Produtividade perdida até a rampagem de cada novo colaborador
+     * @author Vinicius de Santana
+    */
+    calcularPerdaProdPeriodoExpe (formated) {
+      var custo = (this.calcularPerdaProdMensal() * this.calcVars.tempo_de_casa)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /**
+     * Produtividade anual perdida até a rampagem do novo colaborador
+     * @author Vinicius de Santana
+    */
+    calcularPerdaProdTotalAnual (formated) {
+      var custo = (this.calcularPerdaProdPeriodoExpe() * this.numFunc)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /*###################################################################
+    ################ Custo com pesquisa de clima #####################*/
+    /**
+     * Total de respostas a serem tabuladas para um excel
+     * (50 perguntas por pesquisa)
+     * @author Vinicius de Santana
+    */
+    calcularTotalRespostasPesquisaDeClima () {
+      return (this.numFunc * 50)
+    },
+    /** Tempo em horas para tabular a pesquisa de clima 
+     * @author Vinicius de Santana
+    */
+    calcularTempHorasTabPesqClima (formated) {
+      var horas = ((this.tempCadDadosPesqClima * this.calcularTotalRespostasPesquisaDeClima()) / 60)
+      if (formated){
+        var fracaoDaHora = (horas % 1) * 60
+        return horas.toFixed(0) + 'h e ' + fracaoDaHora.toFixed(0) + ' min'
+      } else return horas
+    },
+    /** Custo total do RH para criar a pesquisa de clima sem People Analytics
+     * @author Vinicius de Santana
+    */
+    calcularCustoCriarPesqClimaSemPA (formated) {
+      var custo = (this.calcVars.salario_hora_rh * this.tempCriacaoValidacaoPesqClima)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /** Custo total do RH para tabular os dados sem People Analytics
+     * @author Vinicius de Santana
+    */
+    calcularCustoTabPesqClimaSemPA (formated) {
+      var custo = (this.calcVars.salario_hora_rh * this.calcularTempHorasTabPesqClima())
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /** Custo total do RH para analisar os dados e gerar relatórios sem People Analytics
+     * @author Vinicius de Santana
+    */
+    calcularCustoAnalisePesqClimaSemPA (formated) {
+      var custo = (this.calcVars.salario_hora_rh * this.tempAnalDadosPesqClima)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /** Custo total do RH para rodar pesquisas de clima/ano sem People Analytics
+     * @author Vinicius de Santana
+    */
+    calcularCustoPesqClimaPorAnoSemPA (formated) {
+      var custo = ((this.calcularCustoCriarPesqClimaSemPA() + this.calcularCustoTabPesqClimaSemPA() + this.calcularCustoAnalisePesqClimaSemPA()) * this.numPesqClimaPorAno)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /*###################################################################
+    ################ Custos com avaliação de desempenho #####################*/
+    /**
+     * Total de respostas a serem tabuladas para um excel
+     * (50 perguntas por pesquisa)
+     * @author Vinicius de Santana
+    */
+    calcularTotalRespostasAvalDesem () {
+      return (this.numFunc * 3 * 5)
+    },
+    /** Tempo em horas para tabular a Avaliação de Desempenho 
+     * @author Vinicius de Santana
+    */
+    calcularTempHorasTabDadosAval (formated) {
+      var horas = ((this.tempCadDadosAval * this.calcularTotalRespostasAvalDesem()) / 60)
+      if (formated){
+        var fracaoDaHora = (horas % 1) * 60
+        return horas.toFixed(0) + 'h e ' + fracaoDaHora.toFixed(0) + ' min'
+      } else return horas
+    },
+    /** Custo total do RH para criar a Av. Desempenho sem People Analytics 
+     * @author Vinicius de Santana
+    */
+    calcularCustoCriaAvalDesemSemPA (formated) {
+      var custo = (this.calcVars.salario_hora_rh * this.tempCriacaoAvaliacao)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /** Custo total do RH para tabular os dados sem People Analytics
+     * @author Vinicius de Santana
+    */
+    calcularCustoTabAvalDesemSemPA (formated) {
+      var custo = (this.calcVars.salario_hora_rh * this.calcularTempHorasTabDadosAval())
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /** Custo total do RH para analisar os dados e gerar relatórios sem People Analytics
+     * @author Vinicius de Santana
+    */
+    calcularCustoAnalAvalDesemSemPA (formated) {
+      var custo = (this.calcVars.salario_hora_rh * this.tempAnalAvaliacao)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /** Custo total do RH para rodar 2 Av. Desempenho/ano sem People Analytics
+     * @author Vinicius de Santana
+    */
+    calcularCustoAvalDesenPorAnoSemPA (formated) {
+      var custo = ((this.calcularCustoCriaAvalDesemSemPA() + this.calcularCustoTabAvalDesemSemPA() + this.calcularCustoAnalAvalDesemSemPA()) * this.numAvalPorAno)
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
+    },
+    /*###################################################################
+    ################################# custo Total #####################*/
+    /**
+     * Soma de todos os custos de produtividade
+     * @author Vinicius de Santana
+    */
+    calcularCustoTotalProdutividade (formated) {
+      var custo = (
+        this.calcularCustoRhAnual() + 
+        this.calcularCustoTotalGestorTreinadorTodosOsContratados() + 
+        this.calcularAbsentAnual() +
+        this.calcularPerdaProdTotalAnual() +
+        this.calcularCustoPesqClimaPorAnoSemPA() +
+        this.calcularCustoAvalDesenPorAnoSemPA()
+      )
+      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+      else return custo
     },
   }
 };

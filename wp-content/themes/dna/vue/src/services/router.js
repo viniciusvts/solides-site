@@ -17,6 +17,8 @@ import Contato from '@/views/Contato.vue'
 import Obrigado from '@/views/Obrigado.vue'
 import CalcRotat from '@/views/CalcRotat.vue'
 import CalcRotatResult from '@/views/CalcRotatResult.vue'
+import CalcProdut from '@/views/CalcProdut.vue'
+import CalcProdutResultado from '@/views/CalcProdutResultado.vue'
 // import PerfilLp from '@/lps/PerfilLp.vue'
 import PaginaNaoEncontrada from '@/views/PaginaNaoEncontrada.vue'
 import Materiais from '@/views/Materiais.vue'
@@ -108,6 +110,16 @@ const routes = [
     path: '/ferramentas/rotatividade-resultado',
     name: 'CalcRotatResult',
     component: CalcRotatResult,
+  },
+  {
+    path: '/ferramentas/calculadora-de-produtividade',
+    name: 'CalcProdut',
+    component: CalcProdut,
+  },
+  {
+    path: '/ferramentas/produtividade-resultado',
+    name: 'CalcProdutResultado',
+    component: CalcProdutResultado,
   },
   // {
   //   path: '/lps/perfil-disc-lp/',

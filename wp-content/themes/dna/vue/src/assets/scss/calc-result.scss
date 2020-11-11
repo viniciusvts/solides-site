@@ -71,7 +71,7 @@ $vermelho_solides: #D64149;
                 max-width: 880px;
                 margin-bottom: 38px;
             }
-            &, & *{
+            &, & p, & li{
                 color: $roxo_solides;
                 font-style: normal;
                 font-weight: normal;
@@ -85,13 +85,14 @@ $vermelho_solides: #D64149;
                     font-size: 34px;
                     line-height: 51px;
                 }
-                span, b{
-                    font-weight: bold;
+                span, b, strong{
+                    font-size: inherit;
+                    font-weight: bold!important;
                 }
             }
         }
         .note{
-            &, & *{
+            &, & p, & li{
                 color: #696161;
                 font-style: normal;
                 font-weight: normal;
@@ -105,7 +106,8 @@ $vermelho_solides: #D64149;
                     font-size: 21px;
                     line-height: 25px;
                 }
-                span, b{
+                span, b, strong{
+                    font-size: inherit;
                     font-weight: bold;
                 }
             }

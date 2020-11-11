@@ -87,6 +87,7 @@ export default {
   props: {
     data: Object,
     numFunc: Number,
+    fatAno: Number,
     txRot: Number,
     custoRotat: Number,
   },

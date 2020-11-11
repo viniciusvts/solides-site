@@ -1,0 +1,21 @@
+$amarelo:#FAB80E;
+$amarelo_borda:#DDA411;
+$amarelo_bg:#FAB80EEE;
+.calc-produt{
+    .calc .left label{
+        color: $amarelo;
+    }
+    .bigGreenEqual span{
+        background: $amarelo;
+    }
+    .grenBtn{
+        background: $amarelo;
+        border: 2px solid $amarelo_borda;
+    }
+    .calc .left {
+        display: block;
+    }
+    .trial-modal.rec-seu-rel-rotat{
+        background: $amarelo_bg;
+    }
+}

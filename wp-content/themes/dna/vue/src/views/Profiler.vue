@@ -126,7 +126,12 @@
     :txtDestaq="lp.acf.tabela_texto_destaque"
     :imgSrc="lp.acf.tabela_imagem_destaque.sizes.large"
     :imgAlt="lp.acf.tabela_imagem_destaque.alt"
-    :tblPreco="lp.acf.tabela_precos"
+    :txtDesconto="lp.acf.texto_desconto"
+    :txtRelatorio="lp.acf.texto_modelo_relatorio"
+    :relSimplesTxt="lp.acf.botao_1_secao_tabela[1].texto"
+    :relSimplesLink="lp.acf.botao_1_secao_tabela[1].link"
+    :relCompletoTxt="lp.acf.botao_1_secao_tabela[2].texto"
+    :relCompletoLink="lp.acf.botao_1_secao_tabela[2].link"
     :linkhref="lp.acf.botao_1_secao_tabela[0].link"
     :linkTexto="lp.acf.botao_1_secao_tabela[0].texto"
   />
@@ -241,6 +246,7 @@ export default {
       .then(json => {
         this.lp = json
         document.title = this.lp.title.rendered
+        console.log(this.lp)
       });
     },
     startHsForm (selector) {

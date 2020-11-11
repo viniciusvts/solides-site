@@ -120,12 +120,33 @@ $borderbuttom: #673BBD;
                 max-width: unset;
             }
             @media (min-width: $desktops) {
-                font-size: 32px;
-                max-width: 380px;
+                font-size: 40px;
+                max-width: 480px;
                 margin-left: unset;
                 margin-right: unset;
                 transform: translateY(50px);
                 line-height: 44px;
+            }
+        }
+        &.discount{
+            max-width: 240px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 22px;
+            font-weight: 350;
+            @media (min-width: $smallPhones) {
+                max-width: 310px;
+            }
+            @media (min-width: $tablets) {
+                max-width: unset;
+            }
+            @media (min-width: $desktops) {
+                font-size: 32px;
+                max-width: 480px;
+                margin-left: unset;
+                margin-right: unset;
+                transform: translateY(50px);
+                line-height: 41px;
             }
         }
         &.form{
@@ -190,6 +211,29 @@ $borderbuttom: #673BBD;
         }
         @media (min-width: $largeDesktops) {
             transform: translateY(-90px);
+        }
+    }
+    .simulate-btn{
+        min-width: 120px;
+        @media (min-width: $desktops) {
+            min-width: 200px;
+            transform: translateY(60px);
+        }
+        @media (min-width: $largeDesktops) {
+            transform: translateY(80px);
+        }
+    }
+    .report-btn{
+        min-width: 110px;
+        margin: 0px 10px;
+        @media (min-width: $smallPhones) {
+            min-width: 120px;
+        }
+        @media (min-width: $desktops) {
+            min-width: 158px;
+        }
+        @media (min-width: $largeDesktops) {
+            min-width: 180px;
         }
     }
     ul.ul1{
@@ -720,69 +764,44 @@ $borderbuttom: #673BBD;
         }
     }
     
-    table.prices{
-        border-radius: 10px;
-        overflow: hidden;
-    
-        @media (min-width: $tablets) {
-            box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.09);
-        }
-        thead{
-            tr{
-                background-color: #F8F9FA;
-                th{
-                    font-size: .6rem;
-                    padding: .75rem .3rem;
-                    border-top: none;
-                    vertical-align: middle;
-                    text-align: center;
-                    @media (min-width: $tablets) {
-                        font-size: 14px;
-                        line-height: 20px;
-                    }
-                    @media (min-width: $largeDesktops) {
-                        font-size: 14px;
-                        line-height: 0px;
-                    }
-                }
-            }
-        }
-        tbody{
-            tr{
-                &:nth-of-type(odd) {
-                    background-color: #E2E3E3;
-                }
-                &:nth-of-type(even) {
-                    background-color: #F8F9FA;
-                }
-                td{
-                    font-size: 10px;
-                    padding: .75rem .1rem;
-                    font-weight: bold;
-                    @media (min-width: $tablets) {
-                        font-size: 18px;
-                    }
-                    @media (min-width: $desktops) {
-                        font-size: 14px;
-                        padding: 10px;
-                    }
-                }
-            }
-        }
-    }
     .price-details{
         line-height: normal;
         @media (min-width: $desktops) {
-            margin-top: -75px;
+            margin-top: -25px;
         }
         @media (min-width: $largeDesktops) {
-            margin-top: -135px;
+            margin-top: -35px;
         }
         p{
-            max-width: 180px;
-            @media (min-width: $tablets) {
-                max-width: unset;
+            &.txt-inclui{
+                margin-bottom: 15px;
+                @media (min-width: $desktops) {
+                    margin-bottom: unset;
+                }
             }
+        }
+        p, span{
+            font-size: 18px;
+            @media (min-width: $tablets) {
+                font-size: 20px;
+            }
+            @media (min-width: $desktops) {
+                font-size: 25px;
+            }
+            @media (min-width: $largeDesktops) {
+                font-size: 28px;
+            }
+        }
+    }
+
+    .report-tmp{
+        line-height: normal;
+        margin-top: 30px;
+        @media (min-width: $desktops) {
+            margin-top: -25px;
+        }
+        @media (min-width: $largeDesktops) {
+            margin-top: -35px;
         }
         p, span{
             font-size: 18px;

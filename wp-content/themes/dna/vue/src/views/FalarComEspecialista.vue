@@ -1,28 +1,45 @@
 <template>
   <div v-if="pageData" class="falar-com-um-especialista container">
-    <h1 v-html="pageData.title.rendered"></h1>
-    <p class="first" v-html="pageData.acf.text"></p>
-    <h2 class="mx-auto" v-html="pageData.acf.sub"></h2>
-    <div v-show="isLoadingForm" class="loading-form">
-      <img src="@/assets/img/svg/form-loading.svg" alt="Logo da sólides animado" srcset="">
-    </div>
-    <div v-show="!isLoadingForm" id="hsform-falarcomespecialista"></div>
-    <!-- <form :action="$http.baseURL + 'wp-json/dna_theme/v1/falar-com-especialista'" method="post" class="mx-auto">
-      <div class="col-12 col-lg-11 mx-auto row">
-        <input class="col-12" type="text" 
-            name="nome" id="nome" placeholder="Nome">
-        <input class="col-12" type="email" 
-            name="email" id="email" placeholder="E-mail corporativo">
-        <input class="col-12" type="text" 
-            name="telefone" id="telefone" placeholder="Telefone com DDD ou Whatsapp"
-            v-on:keyup="execMascara">
-        <input class="col-12" type="text" 
-            name="cargo" id="cargo" placeholder="Cargo">
-        <input type="hidden" name="uriOrigem" :value="uriOrigem">
-        <button type="submit" class="ml-auto">Falar com um especialista</button>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <h1 v-html="pageData.title.rendered"></h1>
+        <h2 v-html="pageData.acf.text"></h2>
+        <h3 class="d-none d-lg-block" v-html="pageData.acf.funcionamento_titulo"></h3>
+        <ul class="d-none d-lg-block">
+          <li v-for="(item, index) in pageData.acf.funcionamento_lista" :key="index" v-html="item.texto"></li>
+        </ul>
       </div>
-    </form> -->
-    <p class="detail" v-html="pageData.acf.detalhe"></p>
+      <div class="col-12 col-lg-6">
+        <div v-show="isLoadingForm" class="loading-form">
+          <img src="@/assets/img/svg/form-loading.svg" alt="Logo da sólides animado" srcset="">
+        </div>
+        <div v-show="!isLoadingForm" id="hsform-falarcomespecialista"></div>
+        <h3 class="d-lg-none" v-html="pageData.acf.funcionamento_titulo"></h3>
+        <ul class="d-lg-none">
+          <li v-for="(item, index) in pageData.acf.funcionamento_lista" :key="index" v-html="item.texto"></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Imagens-->
+    <div class="clientes">
+      <h3 class="titulo-clientes" v-html="pageData.acf.detalhe"></h3>
+      <img class="img-clientes align-lg-vertical-middle" v-for="(img, index) in pageData.acf.imagens_empresas" :key="index" :src="img.imagem.url" :alt="img.imagem.alt">
+    </div>
+    <!-- depoimento-->
+    <div class="depoimento row">
+      <div class="col-12 col-lg-9">
+        <div class="text">
+          <img class="asp begin" src="@/assets/img/asp-begin.png" alt="aspas begin">
+          <img class="asp end" src="@/assets/img/asp-end.png" alt="aspas end">
+          <p v-html="pageData.acf.texto_depoimento" class="font-roboto"></p>
+        </div>
+      </div>
+      <div class="text-center col-12 col-lg-3 align-lg-vertical">
+        <img class="profile" :src="pageData.acf.foto_depoimento.sizes.medium" :alt="pageData.acf.foto_depoimento.alt">
+        <p v-html="pageData.acf.nome_depoimento" class="profile color-primary font-roboto"></p>
+        <p v-html="pageData.acf.cargo_depoimento" class="identidade font-roboto"></p>
+      </div>
+    </div>
   </div>
   <div v-else>
     <Loading></Loading>

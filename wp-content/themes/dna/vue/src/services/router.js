@@ -11,6 +11,7 @@ import Profiler from '@/views/Profiler.vue'
 import Planos from '@/views/Planos.vue'
 import PoliticaPrivacidade from '@/views/PoliticaPrivacidade.vue'
 import Sobre from '@/views/Sobre.vue'
+import FalarComEspecialistaBlack from '@/views/FalarComEspecialista_black.vue'
 import FalarComEspecialista from '@/views/FalarComEspecialista.vue'
 import PedirDemo from '@/views/PedirDemo.vue'
 import Contato from '@/views/Contato.vue'
@@ -21,6 +22,7 @@ import CalcProdut from '@/views/CalcProdut.vue'
 import CalcProdutResultado from '@/views/CalcProdutResultado.vue'
 // import PerfilLp from '@/lps/PerfilLp.vue'
 import PaginaNaoEncontrada from '@/views/PaginaNaoEncontrada.vue'
+import SalaImprensa from '@/views/SalaImprensa.vue'
 import Materiais from '@/views/Materiais.vue'
 
 Vue.use(VueRouter)
@@ -82,6 +84,11 @@ const routes = [
     component: FalarComEspecialista,
   },
   {
+    path: '/falar-com-um-especialista-black-november',
+    name: 'FalarComEspecialistaBlack',
+    component: FalarComEspecialistaBlack,
+  },
+  {
     path: '/pedir-uma-demo',
     name: 'PedirDemo',
     component: PedirDemo,
@@ -95,6 +102,11 @@ const routes = [
     path: '/obrigado',
     name: 'Obrigado',
     component: Obrigado,
+  },
+  {
+    path: '/sala-de-imprensa',
+    name: 'Materiais',
+    component: SalaImprensa,
   },
   {
     path: '/materiais',

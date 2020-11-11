@@ -179,7 +179,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a target="_blank" class="nav-link p-0" href="https://parcerias.solides.com.br/">Seja Parceiro</a>
+            <a target="_blank" class="nav-link p-0" href="https://materiais.solides.com.br/solides-partners">Seja Parceiro</a>
           </li>
           <li @click="togleLogin(null)"
           @mouseover="togleLogin(true)"

@@ -11,6 +11,12 @@
           </p>
         </div>
         <div class="row mb-5">
+          <div class="col-12 col-lg-6 color-primary text-lg-left">
+            <h2 v-html="txtDesconto" class="discount" ></h2>
+            <a :href="linkhref" target="_blank" >
+              <button class="badge badge-pill mx-button blue-back color-white simulate-btn">{{linkTexto}}</button>
+            </a>
+          </div>
           <div class="d-none d-lg-block col-lg-6 align-lg-vertical">
             <img
             class="w-100"
@@ -18,32 +24,19 @@
             :alt="imgAlt"
             v-if="isPosition">
           </div>
-          <div class="col-12 col-lg-6">
-            <table class="table table-striped color-primary prices">
-              <thead>
-                <tr>
-                  <th class="w-25" scope="col">Quantidade de créditos</th>
-                  <th class="w-25" scope="col">Valor por crédito</th>
-                  <th class="w-25" scope="col">Parcelamento no cartão</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="(preco, index) in tblPreco" :key="index">
-                  <td>{{preco.quantidade_de_creditos}}</td>
-                  <td>{{preco.valor_por_credito}}</td>
-                  <td>{{preco.parcelamento_no_cartao}}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
         <div class="row">
-          <div class="col-12 col-lg-9 text-left color-primary price-details">
-            <p><span class="font-weight-bold">Inclui:</span><br>Relatório DISC;<br>Plataforma web para gerenciar avaliações;</p>
+          <div class="col-12 col-lg-7 text-lg-left color-primary price-details">
+            <p class="txt-inclui"><span class="font-weight-bold">Inclui:</span></p>
+            <p>Relatório DISC;<br>Plataforma web para gerenciar avaliações.</p>
           </div>
-          <div class="col-12 col-lg-3 text-left text-lg-right">
-            <a :href="linkhref">
-              <button class="badge badge-pill mx-button blue-back color-white trtry-price">{{linkTexto}}</button>
+          <div class="col-12 col-lg-5 text-center report-tmp">
+            <p v-html="txtRelatorio" class="color-primary font-weight-bold" />
+            <a :href="relSimplesLink" target="_blank" >
+              <button class="badge badge-pill blue-back color-white report-btn">{{relSimplesTxt}}</button>
+            </a>
+            <a :href="relCompletoLink" target="_blank">
+              <button class="badge badge-pill blue-back color-white report-btn">{{relCompletoTxt}}</button>
             </a>
           </div>
         </div>
@@ -60,9 +53,14 @@ export default {
   props: {
     titulo: String,
     txtDestaq: String,
+    txtDesconto: String,
+    txtRelatorio: String,
+    relSimplesTxt: String,
+    relSimplesLink: String,
+    relCompletoTxt: String,
+    relCompletoLink: String,
     imgSrc: String,
     imgAlt: String,
-    tblPreco: Array,
     linkhref: String,
     linkTexto: String,
   }

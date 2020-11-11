@@ -1,0 +1,163 @@
+@import './variables.scss';
+.artigos-blog{
+    padding-top: 70px;
+    padding-bottom: 35px;
+    text-align: center;
+    @media (min-width: $desktops) {
+        padding-top: 75px;
+        padding-bottom: 90px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 990px;
+    }
+    background-color: #F3F3F3;
+    .titulo-blog{
+        color: #2F0A77;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        margin-bottom: 40px;
+        text-align: center;
+        @media (min-width: $tablets) {
+            margin-bottom: 50px;
+            font-size: 32px;
+            line-height: 40px;
+        }
+        @media (min-width: $desktops) {
+            line-height: 50px;
+            font-size: 42px;
+            margin-bottom: 50px;
+        }
+    }
+    .card{
+        position: relative;
+        box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+        border-radius: unset;
+        margin-left: 3px;
+        margin-right: 3px;
+        background: #FFFFFF;
+        display: inline-flex;
+        align-self: center;
+        text-align: center;
+        width: 138px;
+        height: 135px;
+        margin-bottom: 12px;
+        @media (min-width: $smallPhones) {
+            width: 150px;
+            height: 145px;
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+        @media (min-width: $tablets) {
+            width: 200px;
+            height: 190px;
+            margin-bottom: 25px;
+            padding-top: 7px;
+        }
+        @media (min-width: $desktops) {
+            margin-left: 16px;
+            margin-right: 16px;
+            width: 288px;
+            height: 281px;
+            margin-bottom: 45px;
+        }
+        .img-artigo{
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            align-self: center;
+            left: 0;
+            right: 0;
+            top: 2px;
+            border-radius: 2px;
+            filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+            width: 133px;
+            height: 83px;
+            @media (min-width: $smallPhones) {
+                width: 142px;
+                height: 88px;
+            }
+            @media (min-width: $tablets) {
+                width: 195px;
+                height: 120px;
+            }
+            @media (min-width: $desktops) {
+                position: unset;
+                margin-left: unset;
+                margin-right: unset;
+                align-self: unset;
+                left: unset;
+                right: unset;
+                width: 276px;
+                height: 172px;
+            }
+        }
+        .titulo-artigo{
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            align-self: center;
+            left: 0;
+            right: 0;
+            top: 80px;
+            color: #5F4A87;
+            font-size: 11px;
+            line-height: 12px;
+            padding: 5px 2px;
+            @media (min-width: $smallPhones) {
+                top: 90px
+            }
+            @media (min-width: $tablets) {
+                top: 125px;
+                font-size: 14px;
+                line-height: 19px;
+            }
+            @media (min-width: $desktops) {
+                position: unset;
+                margin-left: unset;
+                margin-right: unset;
+                align-self: unset;
+                left: unset;
+                right: unset;
+                font-size: 18px;
+                line-height: 25px;
+                padding: 15px 15px;
+            }
+            p{
+                font-size: unset;
+            }
+            strong{
+                font-size: unset;
+            }
+        }
+    }
+    .div-mais{
+        text-align: center;
+        margin-top: 30px;
+        .link-mais{
+            cursor: pointer;
+            .btn-mais{
+                border: 2px solid #086618;
+                color: #FFFFFF;
+                background: #70B968;
+                cursor: pointer;
+                border-radius: 33px;
+                text-align: center;
+                padding: 0px 15px;
+                margin-top: 30px;
+                @media (min-width: $tablets) {
+                    font-size: 20px;
+                    line-height: 24px;
+                    padding: 0px 15px;
+                    margin-top: unset;
+                }
+                @media (min-width: $desktops) {
+                    font-size: 21px;
+                    line-height: 24px;
+                    padding: 10px 20px;
+                }
+            }
+        }
+    }
+}

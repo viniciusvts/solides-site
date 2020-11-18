@@ -376,7 +376,7 @@ const calcRotat = {
       if(this.numFunc <= 299) return 100000000
       if(this.numFunc <= 399) return 150000000
       if(this.numFunc <= 499) return 250000000
-      if(this.numFunc <= 500) return 300000000
+      return 300000000
     },
     /*###################################################################
     ################ Absenteismo #####################*/
@@ -435,7 +435,7 @@ const calcRotat = {
      * @author Vinicius de Santana
     */
     aumenteProdMensal (formated) {
-      var custo = (this.calcularProdMensal() * 1.12)
+      var custo = (this.calcularProdMensal() * 1.1)
       if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
       else return custo
     },
@@ -444,7 +444,7 @@ const calcRotat = {
      * @author Vinicius de Santana
     */
     aumenteProdAnual (formated) {
-      var custo = (this.calcularProdMensal() * 12 * 1.12)
+      var custo = (this.calcularProdMensal() * 12 * 1.1)
       if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
       else return custo
     },

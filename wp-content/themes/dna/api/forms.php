@@ -111,6 +111,32 @@ function dnaapi_calcRotat($req){
 }
 
 /**
+ * Atende a requisição enviando um email para o adm do site
+ * @author Vinicius de Santana
+ */
+function dnaapi_calcProdut($req){
+  // pega os parametros
+  $reqData = array(
+    'email' => $req->get_param('email'),
+    'firstname' => $req->get_param('firstname'),
+    'company' => $req->get_param('company'),
+    'cargorh' => $req->get_param('cargorh'),
+    'phone' => $req->get_param('phone'),
+    'taxa_de_rotatividade' => $req->get_param('taxa_de_rotatividade'),
+    'faturamentoAnual' => $req->get_param('faturamentoAnual'),
+    'qtde_de_colaboradores' => $req->get_param('qtde_de_colaboradores'),
+    'custo_de_produtividade' => $req->get_param('custo_de_produtividade')
+  );
+  // envia email
+  $to = $reqData['email'];
+  $subject = 'Sólides - Calculadora de Rotatividade';
+  $message = criaMensagemSimplesProduti($reqData);
+  $headers = array('Content-Type: text/html; charset=UTF-8');
+  $wpmail = wp_mail( $to, $subject, $message, $headers );
+  return array('enviado' => $wpmail);
+}
+
+/**
  * Função registra os endpoints
  * @author Vinicius de Santana
  */
@@ -229,6 +255,45 @@ function dnaapi_register_ccp(){
       'permission_callback' => '__return_true'
     )
   );
+  //calculadora de produtividade
+  register_rest_route('dna_theme/v1',
+    '/calculadora-de-produtividade',
+    array(
+      'methods' => 'POST',
+      'callback' => 'dnaapi_calcProdut',
+      'description' => 'recebe as informações do form e envia um email notificando o adm do site',
+      'args' => array(
+        'firstname' => array(
+          'required' => true,
+        ),
+        'email' => array(
+          'required' => true,
+        ),
+        'company' => array(
+          'required' => true,
+        ),
+        'cargorh' => array(
+          'required' => true,
+        ),
+        'phone' => array(
+          'required' => true,
+        ),
+        'taxa_de_rotatividade' => array(
+          'required' => true,
+        ),
+        'faturamentoAnual' => array(
+          'required' => true,
+        ),
+        'qtde_de_colaboradores' => array(
+          'required' => true,
+        ),
+        'custo_de_produtividade' => array(
+          'required' => true,
+        ),
+      ),
+      'permission_callback' => '__return_true'
+    )
+  );
 }
 
 add_action('rest_api_init', 'dnaapi_register_ccp');
@@ -318,6 +383,29 @@ function criaMensagemSimplesCalculadora($data){
  $mensagem .= '<p style="text-align: left;"><span style="font-weight: 400;">';
  $mensagem .= '</span><b>Reduza seus custos de rotatividade com a Sólides</b><span style="font-weight: 400;"><br>';
  $mensagem .= '</span><span style="font-weight: 400;"> Pare de perder dinheiro! Clientes Sólides têm diminuído até 37% da rotatividade com nossa solução gerando impactos financeiros positivos. Agende uma demonstração gratuita com um especialista em rotatividade e saiba como podemos te ajudar!</span><span style="font-weight: 400;">';
+ $mensagem .= '</span><span style="font-weight: 400;"> </span></p>';
+ $mensagem .= '<p style="text-align: left;"><a href="https://solides.com.br/pedir-uma-demo/"><span style="font-weight: 400;">Agendar Demonstração Gratuita </span></a></p>';
+  return $mensagem;
+  // fim mensagem
+}
+/**
+ * Cria um email simples com os parametros passados
+ * 
+ * @param array $data - informações do formulário
+ * @return string  - o html para enviar o email
+ * @author Vinicius de Santana
+*/
+function criaMensagemSimplesProduti($data){
+  // inicio mensagem
+ $mensagem = '<p style="text-align: left;"><span style="font-weight: 400;">Oi '.$data['firstname'].', tudo bem? </span></p>';
+ $mensagem .= '<p style="text-align: left;"><span style="font-weight: 400;">Aqui está o relatório completo com as informações sobre a produtividade da sua empresa. Por meio dele, você saberá os resultados e prejuízos reais com contratações erradas. </span></p>';
+ $mensagem .= '<p style="text-align: left;"></p>';
+ $mensagem .= '<a href="https://solides.com.br/ferramentas/produtividade-resultado/?numFunc='.$data['qtde_de_colaboradores'].'&fatAno='.$data['faturamentoAnual'].'&taxaRot='.$data['taxa_de_rotatividade'].'">';
+ $mensagem .= '<p style="text-align: left;"><span style="font-weight: 400;">ACESSAR RELATÓRIO COMPLETO</span></p>';
+ $mensagem .= '</a>';
+ $mensagem .= '<p style="text-align: left;"><span style="font-weight: 400;">';
+ $mensagem .= '</span><b>Reduza seus custos de produtividade com a Sólides</b><span style="font-weight: 400;"><br>';
+ $mensagem .= '</span><span style="font-weight: 400;"> Pare de perder dinheiro! Clientes Sólides têm diminuído até 10% o custo com perda da produtividade com nossa solução gerando impactos financeiros positivos. Agende uma demonstração gratuita com um especialista em produtividade e saiba como podemos te ajudar!</span><span style="font-weight: 400;">';
  $mensagem .= '</span><span style="font-weight: 400;"> </span></p>';
  $mensagem .= '<p style="text-align: left;"><a href="https://solides.com.br/pedir-uma-demo/"><span style="font-weight: 400;">Agendar Demonstração Gratuita </span></a></p>';
   return $mensagem;

@@ -74,7 +74,8 @@
     :numFunc="numFunc"
     :fatAno="fatAno"
     :txRot="calcVars.media_taxa_rotatividade"
-    :custoRotat="calculado"
+    :custoProd="calculado"
+    formId="cc44ba8a-26d2-433d-809e-c777fb55e549"
     />
   </div>
   <div v-else>
@@ -83,7 +84,7 @@
 </template>
 
 <script>
-import RecebaSeuRelatorio from '@/components/RecebaSeuRelatorio.vue'
+import RecebaSeuRelatorio from '@/components/RecebaSeuRelatorio-produtividade.vue'
 import Loading from "@/components/Loading.vue"
 import calcRotat from '@/services/calcRotat.js'
 export default {
@@ -113,12 +114,13 @@ export default {
       })
     },
     calcula () {
-      if (this.numFunc < 1 || this.fatAno < 1) return alert('Preencha os campos!')
-      this.calculado = this.calcularCustoTotal(true)
+      if (this.numFunc < 1 ) return alert('Preencha quantos funcionários possui.')
+      if (this.fatAno < 1) this.fatAno = this.getFatAno()
+      this.calculado = this.calcularCustoTotalProdutividade(true)
     },
     relatorioOk (data) {
       if (data) {
-        var url = '/ferramentas/rotatividade-resultado/?'
+        var url = '/ferramentas/produtividade-resultado/?'
         url += 'numFunc=' + this.numFunc
         url += '&fatAno=' + this.fatAno
         url += '&taxaRot=' + this.calcVars.media_taxa_rotatividade

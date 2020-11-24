@@ -10,7 +10,7 @@
             <p v-html="data.texto"></p>
           </div>
           <form 
-          :action="/*$http.baseURL*/'http://solides.localhost/' + 'wp-json/dna_theme/v1/calculadora-de-produtividade'" 
+          :action="$http.baseURL + 'wp-json/dna_theme/v1/calculadora-de-produtividade'" 
           method="post" 
           class="mx-auto" 
           @submit.prevent="sendForm">
@@ -119,7 +119,7 @@ export default {
     },
     moedaToNumber (valor) {
       if(valor === ""){
-         valor =  0;
+        return 0;
       }else{
          valor = valor.replace("$","");//remove cifrao
          valor = valor.replace("R","");// remove R

@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <RecebaSeuRelatorio 
+    <RecebaSeuRelatorioProdutividade 
     :data="pageData.acf.form" 
     @relatorioOk="relatorioOk"
     :numFunc="numFunc"
@@ -69,14 +69,14 @@
 </template>
 
 <script>
-import RecebaSeuRelatorio from '@/components/RecebaSeuRelatorio.vue'
+import RecebaSeuRelatorioProdutividade from '@/components/RecebaSeuRelatorio-produtividade.vue'
 import Loading from "@/components/Loading.vue"
 import calcRotat from '@/services/calcRotat.js'
 export default {
   name: 'CalcRotat',
   mixins: [calcRotat],
   components: {
-    RecebaSeuRelatorio,
+    RecebaSeuRelatorioProdutividade,
     Loading,
   },
   data () {
@@ -101,6 +101,7 @@ export default {
     },
     calcula () {
       if (this.numFunc < 1 || this.calcVars.media_taxa_rotatividade < 1) return alert('Preencha os campos!')
+      this.fatAno = this.getFatAno()
       this.calculado = this.calcularCustoTotal(true)
     },
     relatorioOk (data) {

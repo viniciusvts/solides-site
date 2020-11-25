@@ -125,6 +125,12 @@
                   <p class="d-none d-lg-block">Descubra quanto está perdendo anualmente com alto turnover</p>
                 </a>
               </div>
+              <div class="drop-item">
+                <a class="dropdown-item" href="/ferramentas/calculadora-de-produtividade/">Calculadora de produtividade</a>
+                <a href="/ferramentas/calculadora-de-produtividade/" class="no-decoration">
+                  <p class="d-none d-lg-block">Descubra quanto está custando a baixa produtividade</p>
+                </a>
+              </div>
             </div>
           </li>
           <li @click="togleCursos(null)"

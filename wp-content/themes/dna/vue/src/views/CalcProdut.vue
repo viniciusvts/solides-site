@@ -133,17 +133,19 @@ export default {
     },
     onChangefatAno(){
       this.calculado = 0;
-      this.fatAno = parseInt(this.fatAnoMsk.replace(/[\D]+/g,''))/100;
+      this.fatAnoMsk = this.fatAnoMsk.replace(/[\D]+/g,'');
+      this.fatAno = parseInt(this.fatAnoMsk)/100;
+      this.fatAnoMsk = this.formatReal(this.fatAnoMsk);
     },
     execMascaraMoeda (evt) {
       let v = evt.target.value;
-      v=v.replace(/\D/g,""); //Remove tudo o que não é dígito
-      v=v.replace(/([0-9]{2})$/g, ",$1");
-      /*if(v.length>2){
-        v = v.substr(0,v.length-2)+","+v.substr(-2);
-      }*/
-      v=v.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
-      evt.target.value = "R$ "+v;
+      evt.target.value = this.formatReal(v);
+    },
+    formatReal(obj){
+      obj=obj.replace(/\D/g,""); //Remove tudo o que não é dígito
+      obj=obj.replace(/([0-9]{2})$/g, ",$1");
+      obj=obj.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+      return "R$ " + obj;
     }
   },
   computed: {

@@ -20,14 +20,13 @@
           </div>
           <div class="campos">
             <label for="fatAno" v-html="pageData.acf.itens_calc.item_2"></label>
-            <input type="number"
-            min="0"
-            step=".01"
+            <input type="text"
             name="fatAno"
             id="fatAno" 
-            placeholder="0" 
-            v-model="fatAno"
-            @change="onChangeValues">
+            placeholder="R$ 0" 
+            v-model="fatAnoMsk"
+            v-on:keyup="execMascaraMoeda"
+            @change="onChangefatAno">
           </div>
           <div class="campos">
             <label for="taxaRot" v-html="pageData.acf.itens_calc.item_3"></label>
@@ -87,6 +86,7 @@
 import RecebaSeuRelatorio from '@/components/RecebaSeuRelatorio-produtividade.vue'
 import Loading from "@/components/Loading.vue"
 import calcRotat from '@/services/calcRotat.js'
+
 export default {
   name: 'CalcProdut',
   mixins: [calcRotat],
@@ -99,6 +99,7 @@ export default {
       pageId: 1483,
       pageData: null,
       calculado: 0,
+      fatAnoMsk: "R$"
     }
   },
   created () {
@@ -129,6 +130,20 @@ export default {
     },
     onChangeValues () {
       this.calculado = 0
+    },
+    onChangefatAno(){
+      this.calculado = 0;
+      this.fatAno = parseInt(this.fatAnoMsk.replace(/[\D]+/g,''))/100;
+    },
+    execMascaraMoeda (evt) {
+      let v = evt.target.value;
+      v=v.replace(/\D/g,""); //Remove tudo o que não é dígito
+      v=v.replace(/([0-9]{2})$/g, ",$1");
+      /*if(v.length>2){
+        v = v.substr(0,v.length-2)+","+v.substr(-2);
+      }*/
+      v=v.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+      evt.target.value = "R$ "+v;
     }
   },
   computed: {

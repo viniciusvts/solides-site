@@ -51,7 +51,7 @@
       custoPorHora: calcVars.salario_hora_gestor,
       custoPorVaga: calcularCustoGestorPorVaga(true), 
       custoTotal: calcularCustoTotalGestorTreinadorTodosOsContratados(true),
-      vagasTotal: this.numFunc
+      vagasTotal: this.calcularMediaContratacaoAnual()
     }"
     />
     <CalcData 
@@ -67,7 +67,7 @@
     :data="pageData.acf.custo_4" 
     signal="sum" 
     :rampagem="{
-      numContrat: this.numFunc, 
+      numContrat: this.calcularMediaContratacaoAnual(), 
       prodMensal: calcularProdMensal(true),
       perdaProdMensal: calcularPerdaProdMensal(true),
       perdaProdRampagem: calcularPerdaProdPeriodoExpe(true),
@@ -158,12 +158,12 @@
         </div>
       </div>
     </div>
-    <div class="custo-total">
+    <!-- <div class="custo-total">
       <div class="text" v-html="pageData.acf.ganhos_por_ano.texto"></div>
       <div class="resultado-bgwhi-bdgray">
         <span>{{aumenteProdAnual(true)}}</span>
       </div>
-    </div>
+    </div> -->
     <div class="cta-um-botao">
       <h2 v-html="pageData.acf.cta_final.titulo"></h2>
       <p v-html="pageData.acf.cta_final.texto"></p>

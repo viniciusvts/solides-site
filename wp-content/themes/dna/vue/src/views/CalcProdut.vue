@@ -36,7 +36,7 @@
             name="taxaRot"
             id="taxaRot" 
             placeholder="0" 
-            v-model="this.calcVars.media_taxa_rotatividade"
+            v-model="calcVars.media_taxa_rotatividade"
             @change="onChangeValues">
           </div>
             <div class="text" v-html="pageData.acf.itens_calc.anotacao"></div>
@@ -72,7 +72,7 @@
     @relatorioOk="relatorioOk"
     :numFunc="numFunc"
     :fatAno="fatAno"
-    :txRot="calcVars.media_taxa_rotatividade"
+    :txRot="Number(calcVars.media_taxa_rotatividade)"
     :custoProd="calculado"
     formId="cc44ba8a-26d2-433d-809e-c777fb55e549"
     />
@@ -99,7 +99,7 @@ export default {
       pageId: 1483,
       pageData: null,
       calculado: 0,
-      fatAnoMsk: "R$"
+      fatAnoMsk: "R$ 0"
     }
   },
   created () {
@@ -117,6 +117,7 @@ export default {
     calcula () {
       if (this.numFunc < 1 ) return alert('Preencha quantos funcionários possui.')
       if (this.fatAno < 1) this.fatAno = this.getFatAno()
+      this.fatAnoMsk = this.fatAno.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
       this.calculado = this.calcularCustoTotalProdutividade(true)
     },
     relatorioOk (data) {
@@ -132,10 +133,10 @@ export default {
       this.calculado = 0
     },
     onChangefatAno(){
-      this.calculado = 0;
+      this.onChangeValues()
       this.fatAnoMsk = this.fatAnoMsk.replace(/[\D]+/g,'');
-      this.fatAno = parseInt(this.fatAnoMsk)/100;
-      this.fatAnoMsk = this.formatReal(this.fatAnoMsk);
+      this.fatAno = Number(this.fatAnoMsk)/100;
+      this.fatAnoMsk = this.fatAno.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
     },
     execMascaraMoeda (evt) {
       let v = evt.target.value;

@@ -133,7 +133,7 @@ $vermelho_solides: #D64149;
                 margin-bottom: auto;
                 @media (min-width: $desktops) {
                     height: 43px;
-                    width: 30%;
+                    width: 40%;
                 }
                 &, &::placeholder{
                     color: $azul_solides;
@@ -213,7 +213,7 @@ $vermelho_solides: #D64149;
                 filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.25));
                 border-radius: 50px;
                 @media (min-width: $desktops) {
-                    width: 295px;
+                    width: 340px;
                     height: 61px;
                     margin-right: 0;
                 }

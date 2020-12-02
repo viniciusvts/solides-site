@@ -138,7 +138,7 @@ export default {
           this.form.taxa_de_rotatividade = Number(this.form.taxa_de_rotatividade)
           this.form.qtde_de_colaboradores = Number(this.form.qtde_de_colaboradores)
           this.form.faturamentoAnual = Number(this.form.faturamentoAnual)
-          this.form.custo_de_produtividade = this.moedaToNumber(this.form.custo_de_produtividade)
+          this.form.custo_de_produtividade = Number(this.form.custo_de_produtividade)
           return this.$http.sendToHSProdutividade(this.formId, this.form)
         } else {
           this.mensagem = '<p>Houve um erro, tente novamente mais tarde.</p>'
@@ -154,6 +154,7 @@ export default {
         this.mensagem = '<p>Gerando relatório...</p>'
         this.$emit('relatorioOk', true);
       })
+        this.$emit('relatorioOk', true);
     },
     startHsForm (selector) {
       setTimeout(() => {

@@ -132,31 +132,31 @@ const calcRotat = {
     */
     calcularCustoRhPorVaga (formated) {
       var custo = (this.calcularHoraRhPorVaga() * this.calcVars.salario_hora_rh)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**custo total do rh para todos os candidatos
      * @author Vinicius de Santana
     */
     calcularCustoRhTotal (formated) {
       var custo = (this.calcularCustoRhPorVaga() * this.calcularMediaContratacaoAnual())
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**custo total do rh para todos os candidatos anual
      * utilizado no cac Produtividade
      * @author Vinicius de Santana
     */
     calcularCustoRhAnual (formated) {
-      var custo = (this.calcularCustoRhPorVaga() * this.numFunc)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      var custo = (this.calcularCustoRhPorVaga() * this.calcularMediaContratacaoAnual())
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**hora rh total para todos os candidatos
      * @author Vinicius de Santana
     */
     calcularHoraRhTotalProdutividade (formated) {
-      var horas = (this.calcularHoraRhPorVaga() * this.numFunc)
+      var horas = (this.calcularHoraRhPorVaga() * this.calcularMediaContratacaoAnual())
       if (formated){
         var fracaoDaHora = (horas % 1) * 60
         return horas.toFixed(0) + 'h e ' + fracaoDaHora.toFixed(0) + ' min'
@@ -181,16 +181,16 @@ const calcRotat = {
     */
     calcularCustoGestorPorVaga (formated) {
       var custo = (this.calcVars.salario_hora_gestor * this.calcularHoraGestorPorVaga())
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**custo Total Gestor para todos os candidatos
      * @author Vinicius de Santana
     */
     calcularCustoGestorTotal (formated) {
       var custo = (this.calcularCustoGestorPorVaga() * this.calcularMediaContratacaoAnual())
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /*###################################################################
     ##################### Salário e demais custos #####################*/
@@ -201,8 +201,8 @@ const calcRotat = {
     */
     calcularSalarioColaboradorMes (formated) {
       var custo = (this.calcVars.med_sal * this.fatorCustoColaborador)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * retorna o custo do colaborador/mês multiplicado pelo tempo médio de casa
@@ -210,8 +210,8 @@ const calcRotat = {
     */
     calcularSalarioColaboradorTempoMedio (formated) {
       var custo = (this.calcularSalarioColaboradorMes() * this.calcVars.tempo_de_casa)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * calcula o custo de todos os colaboradores durante o tempo médio
@@ -219,8 +219,8 @@ const calcRotat = {
     */
     calcularSalarioColaboradorTotal (formated) {
       var custo = (this.calcularSalarioColaboradorTempoMedio() * this.calcularMediaContratacaoAnual())
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /*###################################################################
     ################ Tempo Gestor e treinador Total #####################*/
@@ -230,8 +230,8 @@ const calcRotat = {
     */
     calcularCustoTotalTreinamentoGestor (formated) {
       var custo = (this.calcVars.salario_hora_gestor * this.horasOrientaGestor)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Custo total do acompanhamento, por novo colaborador
@@ -239,8 +239,8 @@ const calcRotat = {
     */
     calcularCustoTotalTreinamentoTreinador (formated) {
       var custo = (this.custoHoraTreinador * this.horasTreinadorTotal)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Custo total do treinamento, por novo colaborador
@@ -248,8 +248,8 @@ const calcRotat = {
     */
     calcularCustoTreinamentoContratado (formated) {
       var custo = (this.custoHoraColabTreinamento * this.horasOrientaColab)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Custo total do agregado, por novo colaborador
@@ -261,8 +261,8 @@ const calcRotat = {
         this.calcularCustoTotalTreinamentoTreinador() +
         this.calcularCustoTreinamentoContratado()
       )
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Custo total do gestor e do treinador por contratado
@@ -274,8 +274,8 @@ const calcRotat = {
         this.calcularCustoTotalTreinamentoGestor() + 
         this.calcularCustoTreinamentoContratado()
       )
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Custo total do gestor e do treinador por todos os contratados
@@ -283,9 +283,9 @@ const calcRotat = {
      * @author Vinicius de Santana
     */
     calcularCustoTotalGestorTreinadorTodosOsContratados (formated) {
-      var custo = (this.calcularCustoTotalGestorTreinadorPorContratado() * this.numFunc)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      var custo = (this.calcularCustoTotalGestorTreinadorPorContratado() * this.calcularMediaContratacaoAnual())
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Custo total com treinamento dos novos colaboradores contratados
@@ -293,8 +293,8 @@ const calcRotat = {
     */
     calcularCustoTotalTreinamento (formated) {
       var custo = (this.calcularCustoTotalTreinamentoPorColaborador() * this.calcularMediaContratacaoAnual())
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /*###################################################################
     ################ Perda Produtividade #####################*/
@@ -310,8 +310,8 @@ const calcRotat = {
       var ferias = (this.calcVars.med_sal * this.calcVars.tempo_de_casa) / 12
       var tercoFerias = ferias / 3
       var custo = (fgts + multaFgts + decimoTerc + multaDecimoTerc + ferias + tercoFerias)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Custo total da rescisão com novos colaboradores contratados
@@ -319,8 +319,8 @@ const calcRotat = {
     */
     calcularCustoRescisaoTotal (formated) {
       var custo = (this.calcularCustoRescisao() * this.numFunc * this.calcVars.media_taxa_rotatividade) /100
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /*###################################################################
     ################################# custo Total #####################*/
@@ -336,8 +336,8 @@ const calcRotat = {
         this.calcularCustoTotalTreinamento() +
         this.calcularCustoRescisaoTotal()
       )
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Os custos por erros de contratação
@@ -345,8 +345,8 @@ const calcRotat = {
     */
     calcularCustoErroContratacao (formated) {
       var custo = (this.calcularCustoTotal() * .8)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /*###################################################################
     ################ Outras Informações #####################*/
@@ -387,8 +387,8 @@ const calcRotat = {
     */
     calcularCustoHoraColab (formated) {
       var custo = (this.calcVars.med_sal / 23 / 8)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Perda total por atraso de cada colaborador por dia
@@ -397,8 +397,8 @@ const calcRotat = {
     */
     calcularAbsentColabPorDia (formated) {
       var custo = ((this.calcularCustoHoraColab() / 60) * 5)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Perda total da empresa com absenteísmo por dia
@@ -406,8 +406,8 @@ const calcRotat = {
     */
     calcularAbsentColabsPorDia (formated) {
       var custo = (this.calcularAbsentColabPorDia() * this.numFunc)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Perda total anual com absenteísmo
@@ -416,8 +416,8 @@ const calcRotat = {
     */
     calcularAbsentAnual (formated) {
       var custo = (this.calcularAbsentColabsPorDia() * 250)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /*###################################################################
     ################ Custo com experiencia #####################*/
@@ -426,9 +426,9 @@ const calcRotat = {
      * @author Vinicius de Santana
     */
     calcularProdMensal (formated) {
-      var custo = (this.fatAno / this.numFunc / 12)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      var custo = (this.fatAno / this.calcularMediaContratacaoAnual() / 12)
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Produtividade média mensal Com aumento de 10%
@@ -436,8 +436,8 @@ const calcRotat = {
     */
     aumenteProdMensal (formated) {
       var custo = (this.calcularProdMensal() * 1.1)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Produtividade média anual Com aumento de 10%
@@ -445,8 +445,8 @@ const calcRotat = {
     */
     aumenteProdAnual (formated) {
       var custo = (this.calcularProdMensal() * 12 * 1.1)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Perda de produtividade média mensal dos colaboradores da sua empresa
@@ -454,8 +454,8 @@ const calcRotat = {
     */
     calcularPerdaProdMensal (formated) {
       var custo = (this.calcularProdMensal() * this.medProdNovoColab)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Produtividade perdida até a rampagem de cada novo colaborador
@@ -463,17 +463,17 @@ const calcRotat = {
     */
     calcularPerdaProdPeriodoExpe (formated) {
       var custo = (this.calcularPerdaProdMensal() * this.calcVars.tempo_de_casa)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /**
      * Produtividade anual perdida até a rampagem do novo colaborador
      * @author Vinicius de Santana
     */
     calcularPerdaProdTotalAnual (formated) {
-      var custo = (this.calcularPerdaProdPeriodoExpe() * this.numFunc)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      var custo = (this.calcularPerdaProdPeriodoExpe() * this.calcularMediaContratacaoAnual())
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /*###################################################################
     ################ Custo com pesquisa de clima #####################*/
@@ -500,32 +500,32 @@ const calcRotat = {
     */
     calcularCustoCriarPesqClimaSemPA (formated) {
       var custo = (this.calcVars.salario_hora_rh * this.tempCriacaoValidacaoPesqClima)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /** Custo total do RH para tabular os dados sem People Analytics
      * @author Vinicius de Santana
     */
     calcularCustoTabPesqClimaSemPA (formated) {
       var custo = (this.calcVars.salario_hora_rh * this.calcularTempHorasTabPesqClima())
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /** Custo total do RH para analisar os dados e gerar relatórios sem People Analytics
      * @author Vinicius de Santana
     */
     calcularCustoAnalisePesqClimaSemPA (formated) {
       var custo = (this.calcVars.salario_hora_rh * this.tempAnalDadosPesqClima)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /** Custo total do RH para rodar pesquisas de clima/ano sem People Analytics
      * @author Vinicius de Santana
     */
     calcularCustoPesqClimaPorAnoSemPA (formated) {
       var custo = ((this.calcularCustoCriarPesqClimaSemPA() + this.calcularCustoTabPesqClimaSemPA() + this.calcularCustoAnalisePesqClimaSemPA()) * this.numPesqClimaPorAno)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /*###################################################################
     ################ Custos com avaliação de desempenho #####################*/
@@ -552,32 +552,32 @@ const calcRotat = {
     */
     calcularCustoCriaAvalDesemSemPA (formated) {
       var custo = (this.calcVars.salario_hora_rh * this.tempCriacaoAvaliacao)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /** Custo total do RH para tabular os dados sem People Analytics
      * @author Vinicius de Santana
     */
     calcularCustoTabAvalDesemSemPA (formated) {
       var custo = (this.calcVars.salario_hora_rh * this.calcularTempHorasTabDadosAval())
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /** Custo total do RH para analisar os dados e gerar relatórios sem People Analytics
      * @author Vinicius de Santana
     */
     calcularCustoAnalAvalDesemSemPA (formated) {
       var custo = (this.calcVars.salario_hora_rh * this.tempAnalAvaliacao)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /** Custo total do RH para rodar 2 Av. Desempenho/ano sem People Analytics
      * @author Vinicius de Santana
     */
     calcularCustoAvalDesenPorAnoSemPA (formated) {
       var custo = ((this.calcularCustoCriaAvalDesemSemPA() + this.calcularCustoTabAvalDesemSemPA() + this.calcularCustoAnalAvalDesemSemPA()) * this.numAvalPorAno)
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
     },
     /*###################################################################
     ################################# custo Total #####################*/
@@ -594,8 +594,26 @@ const calcRotat = {
         this.calcularCustoPesqClimaPorAnoSemPA() +
         this.calcularCustoAvalDesenPorAnoSemPA()
       )
-      if (formated) return custo.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
-      else return custo
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
+    },
+    /*###################################################################
+    ################################# auxiliares #####################*/
+    /**
+     * Retorna o valor formatado como BRL
+     * @param {Number} valor - número que será formatado como BRL
+     * @author Vinicius de Santana
+    */
+    formataMoeda(valor) {
+      return valor.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
+    },
+    /**
+     * Retorna o valor arrendodado para 2 digitos dpois da virgula
+     * @param {Number} valor - número que será formatado como BRL
+     * @author Vinicius de Santana
+    */
+    formataDoisDigitos(valor) {
+      return Number(valor.toFixed(2))
     },
   }
 };

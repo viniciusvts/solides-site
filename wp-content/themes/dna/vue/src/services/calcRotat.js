@@ -422,6 +422,15 @@ const calcRotat = {
     /*###################################################################
     ################ Custo com experiencia #####################*/
     /**
+     * Faturamento por colaborador
+     * @author Vinicius de Santana
+    */
+    calcularFatPorColaborador (formated) {
+      var custo = (this.fatAno / this.numFunc)
+      if (formated) return this.formataMoeda(custo)
+      else return this.formataDoisDigitos(custo)
+    },
+    /**
      * Produtividade média mensal dos colaboradores da sua empresa
      * @author Vinicius de Santana
     */

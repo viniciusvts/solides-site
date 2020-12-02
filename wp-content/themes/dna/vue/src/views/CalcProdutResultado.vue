@@ -7,7 +7,7 @@
         <div class="note" v-html="pageData.acf.head.detalhe"></div>
       </div>
     </div>
-    <!-- <div class="container data">
+    <div class="container data">
       <div class="row">
         <div class="col-12 col-md-6 left">
           <div class="col-12 col-md-6 text d-md-flex">
@@ -15,7 +15,7 @@
           </div>
           <div class="col-12 col-md-6 d-md-flex">
             <div class="resultado my-md-auto">
-              <span>0,32%</span>
+              <span>{{numFunc}}</span>
             </div>
           </div>
         </div>
@@ -25,12 +25,12 @@
           </div>
           <div class="col-12 col-md-6 d-md-flex">
             <div class="resultado my-md-auto maior">
-              <span>R$ 1.222.333,55</span>
+              <span>{{calcularFatPorColaborador(true)}}</span>
             </div>
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
     <CalcData 
     :data="pageData.acf.custo_1" 
     signal="sum" 

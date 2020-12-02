@@ -133,7 +133,7 @@ export default {
       //faz algumas formatações
           this.form.taxa_de_rotatividade = Number(this.form.taxa_de_rotatividade)
           this.form.qtde_de_colaboradores = Number(this.form.qtde_de_colaboradores)
-          this.form.custo_de_rotatividade = this.moedaToNumber(this.form.custo_de_rotatividade)
+          this.form.custo_de_rotatividade = Number(this.form.custo_de_rotatividade)
           return this.$http.sendToHSWithId('8a26943f-04e7-4cd3-b703-3c804c6abdb4', this.form)
         } else {
           this.mensagem = '<p>Houve um erro, tente novamente mais tarde.</p>'

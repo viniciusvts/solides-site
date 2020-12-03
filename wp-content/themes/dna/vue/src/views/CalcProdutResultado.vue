@@ -25,7 +25,7 @@
           </div>
           <div class="col-12 col-md-6 d-md-flex">
             <div class="resultado my-md-auto maior">
-              <span>{{calcularFatPorColaborador(true)}}</span>
+              <span>{{calcularProdMensal(true)}}</span>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@
       custoPorHora: calcVars.salario_hora_gestor,
       custoPorVaga: calcularCustoGestorPorVaga(true), 
       custoTotal: calcularCustoTotalGestorTreinadorTodosOsContratados(true),
-      vagasTotal: this.calcularMediaContratacaoAnual()
+      vagasTotal: this.calcularTaxaRotatividade()
     }"
     />
     <CalcData 
@@ -67,7 +67,7 @@
     :data="pageData.acf.custo_4" 
     signal="sum" 
     :rampagem="{
-      numContrat: this.calcularMediaContratacaoAnual(), 
+      numContrat: calcularTaxaRotatividade(), 
       prodMensal: calcularProdMensal(true),
       perdaProdMensal: calcularPerdaProdMensal(true),
       perdaProdRampagem: calcularPerdaProdPeriodoExpe(true),

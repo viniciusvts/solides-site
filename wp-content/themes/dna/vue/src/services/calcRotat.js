@@ -92,6 +92,15 @@ const calcRotat = {
     calcularMediaContratacaoAnual () {
       return (this.numFunc * (this.calcVars.media_taxa_rotatividade / 100) * this.txDemissComport).toFixed(0)
     },
+    /**
+     * Calcula a taxa de rotatividade crua
+     * forma menos exata e simplificada da calcularMediaContratacaoAnual
+     * Nº colabs * taxa de Rotatividade
+     * @author Vinicius de Santana
+    */
+    calcularTaxaRotatividade () {
+      return (this.numFunc * (this.calcVars.media_taxa_rotatividade / 100)).toFixed(0)
+    },
     /**Nº colabs * taxa de Rotatividade * taxa de demissões por comportamento
      * Taxa de demissões por comportamento: 0.9
      * @author Vinicius de Santana
@@ -148,7 +157,7 @@ const calcRotat = {
      * @author Vinicius de Santana
     */
     calcularCustoRhAnual (formated) {
-      var custo = (this.calcularCustoRhPorVaga() * this.calcularMediaContratacaoAnual())
+      var custo = (this.calcularCustoRhPorVaga() * this.calcularTaxaRotatividade())
       if (formated) return this.formataMoeda(custo)
       else return this.formataDoisDigitos(custo)
     },
@@ -283,7 +292,7 @@ const calcRotat = {
      * @author Vinicius de Santana
     */
     calcularCustoTotalGestorTreinadorTodosOsContratados (formated) {
-      var custo = (this.calcularCustoTotalGestorTreinadorPorContratado() * this.calcularMediaContratacaoAnual())
+      var custo = (this.calcularCustoTotalGestorTreinadorPorContratado() * this.calcularTaxaRotatividade())
       if (formated) return this.formataMoeda(custo)
       else return this.formataDoisDigitos(custo)
     },
@@ -435,7 +444,7 @@ const calcRotat = {
      * @author Vinicius de Santana
     */
     calcularProdMensal (formated) {
-      var custo = (this.fatAno / this.calcularMediaContratacaoAnual() / 12)
+      var custo = (this.fatAno / this.numFunc / 12)
       if (formated) return this.formataMoeda(custo)
       else return this.formataDoisDigitos(custo)
     },
@@ -480,7 +489,7 @@ const calcRotat = {
      * @author Vinicius de Santana
     */
     calcularPerdaProdTotalAnual (formated) {
-      var custo = (this.calcularPerdaProdPeriodoExpe() * this.calcularMediaContratacaoAnual())
+      var custo = (this.calcularPerdaProdPeriodoExpe() * this.calcularTaxaRotatividade())
       if (formated) return this.formataMoeda(custo)
       else return this.formataDoisDigitos(custo)
     },
@@ -611,6 +620,7 @@ const calcRotat = {
     /**
      * Retorna o valor formatado como BRL
      * @param {Number} valor - número que será formatado como BRL
+     * @return {String}
      * @author Vinicius de Santana
     */
     formataMoeda(valor) {
@@ -619,6 +629,7 @@ const calcRotat = {
     /**
      * Retorna o valor arrendodado para 2 digitos dpois da virgula
      * @param {Number} valor - número que será formatado como BRL
+     * @return {Number}
      * @author Vinicius de Santana
     */
     formataDoisDigitos(valor) {

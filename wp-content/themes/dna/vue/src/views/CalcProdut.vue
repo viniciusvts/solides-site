@@ -26,7 +26,19 @@
             placeholder="R$ 0" 
             v-model="fatAnoMsk"
             v-on:keyup="execMascaraMoeda"
-            @change="onChangefatAno">
+            @change="onChangefatAno"
+            @mouseover="tooltip['fatAno'] = true"
+            @mouseout="tooltip['fatAno'] = false">
+          </div>
+          <div class="tooltip competencias"
+          :class="{'active': tooltip['fatAno']}">
+            <p>Faturamento da empresa: caso não tenha acesso a essa informação 
+              ou não deseje informar, deixe em branco que será considerado segundo 
+              porte dos beneficiários do BNDES:</p>
+            <p>Microempresa (até 19 func) – até 360 mil/ano</p>
+            <p>Pequena empresa (20-99 func) – de 360mil a 4,8 milhões/ano</p>
+            <p>Média empresa (100-500 func) – de 4,8milhões a 300 milhões/ano</p>
+            <p>Mais de 500 func – mais de 300 milhoes/ano</p>
           </div>
           <div class="campos">
             <label for="taxaRot" v-html="pageData.acf.itens_calc.item_3"></label>
@@ -39,7 +51,7 @@
             v-model="calcVars.media_taxa_rotatividade"
             @change="onChangeValues">
           </div>
-            <div class="text" v-html="pageData.acf.itens_calc.anotacao"></div>
+          <div class="text" v-html="pageData.acf.itens_calc.anotacao"></div>
         </div>
         <div class="col-2 d-none d-lg-block bigGreenEqual">
           <span></span>
@@ -99,7 +111,8 @@ export default {
       pageId: 1483,
       pageData: null,
       calculado: 0,
-      fatAnoMsk: "R$ 0"
+      fatAnoMsk: "R$ 0",
+      tooltip: {fatAno: false}
     }
   },
   created () {

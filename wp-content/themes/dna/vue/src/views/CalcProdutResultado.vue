@@ -136,7 +136,7 @@
       </div>
     </div>-->
     <div class="aumente-produt">
-      <img class="tr-rotx-180" src="@/assets/img/svg/frame-form-home.svg" alt="">
+      <img class="tr-rotx-180 w-100" src="@/assets/img/svg/frame-form-home.svg" alt="">
       <div class="bg-gray internal">
         <div class="container">
           <div class="row">

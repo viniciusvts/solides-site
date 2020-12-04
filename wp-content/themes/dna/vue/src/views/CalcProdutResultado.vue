@@ -57,6 +57,7 @@
     <CalcData 
     :data="pageData.acf.custo_3" 
     signal="sum" 
+    bg='gray'
     :absenteismo="{
       numColab: this.numFunc, 
       custoPorDia: calcularAbsentColabsPorDia(true),
@@ -77,6 +78,7 @@
     <CalcData 
     :data="pageData.acf.custo_5" 
     signal="sum" 
+    bg='gray'
     :pesqClima="{
       ttRespTabExcel: calcularTotalRespostasPesquisaDeClima(true), 
       tempHorasParaTab: calcularTempHorasTabPesqClima(true),

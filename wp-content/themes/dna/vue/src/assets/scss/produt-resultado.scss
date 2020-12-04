@@ -106,8 +106,8 @@ $cinza_bg: #F3F3F3;
         }
         .text{
             &, & p, & li{
-                font-size: 8px;
-                line-height: 12px;
+                font-size: 10px;
+                line-height: 14px;
                 font-weight: bold;
                 color: $cinza;
                 width: 242px;
@@ -278,8 +278,8 @@ $cinza_bg: #F3F3F3;
             }
             .text{
                 &, & p, & li{
-                    font-size: 8px;
-                    line-height: 12px;
+                    font-size: 10px;
+                    line-height: 14px;
                     text-align: center;
                     color: $cinza;
                     @media (min-width: $tablets) {

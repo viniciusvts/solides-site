@@ -96,8 +96,8 @@ $vermelho_solides: #D64149;
                 color: #696161;
                 font-style: normal;
                 font-weight: normal;
-                font-size: 8px;
-                line-height: 12px;
+                font-size: 10px;
+                line-height: 14px;
                 @media (min-width: $tablets) {
                     font-size: 14px;
                     line-height: 21px;
@@ -170,10 +170,14 @@ $vermelho_solides: #D64149;
             }
         }
         .text{
+            padding: 0;
+            @media (min-width: $smallPhones) {
+                padding: inherit;
+            }
             p{
                 color: #878787;
-                font-size: 8px;
-                line-height: 10px;
+                font-size: 10px;
+                line-height: 14px;
                 text-align: center;
                 font-weight: bold;
                 @media (min-width: $tablets) {
@@ -333,8 +337,8 @@ $vermelho_solides: #D64149;
                 }
             }
             p{
-                font-size: 8px;
-                line-height: 10px;
+                font-size: 10px;
+                line-height: 14px;
                 color: $cinza_texto2;
                 margin-bottom: 20px;
                 @media (min-width: $tablets) {
@@ -362,8 +366,8 @@ $vermelho_solides: #D64149;
             }
             &, & *{
                 color: $cinza_texto2;
-                font-size: 8px;
-                line-height: 12px;
+                font-size: 10px;
+                line-height: 14px;
                 font-weight: bold;
                 text-align: center;
                 @media (min-width: $tablets) {
@@ -440,8 +444,8 @@ $vermelho_solides: #D64149;
                 margin-left: auto;
                 margin-right: auto;
                 margin-bottom: 10px;
-                font-size: 8px;
-                line-height: 10px;
+                font-size: 10px;
+                line-height: 14px;
                 text-align: center;
                 color: $cinza_texto;
                 @media (min-width: $tablets) {
@@ -487,8 +491,8 @@ $vermelho_solides: #D64149;
             }
             .text-1, .text-2, .text-3{
                 &, & *{
-                    font-size: 8px;
-                    line-height: 12px;
+                    font-size: 10px;
+                    line-height: 14px;
                     color: $cinza_texto;
                     margin-bottom: 13px;
                     font-weight: normal;
@@ -637,7 +641,7 @@ $vermelho_solides: #D64149;
             }
         }
         p{
-            font-size: 8px;
+            font-size: 10px;
             line-height: 16px;
             text-align: center;
             margin-left: auto;

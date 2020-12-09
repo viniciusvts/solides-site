@@ -41,12 +41,12 @@ $purple_border: #2F0A77;
             font-size: 19px;
         }
         @media (min-width: $tablets) {
-            font-size: 26px;
-            line-height: 26px;
+            font-size: 24px;
+            line-height: 33px;
         }
         @media (min-width: $desktops) {
-            font-size: 31px;
-            line-height: 37px;
+            font-size: 24px;
+            line-height: 33px;
             margin-bottom: 42px;
         }
     }

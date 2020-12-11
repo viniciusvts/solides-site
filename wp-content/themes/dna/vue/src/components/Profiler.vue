@@ -12,7 +12,7 @@
         </div>
         <div class="col-1 d-none d-lg-block"></div>
         <div class="col-12 col-lg-5">
-          <img :src="data.imagem.url" :alt="data.imagem.alt" class="w-100 d-none d-lg-block">
+          <img v-lazy="data.imagem.url" :alt="data.imagem.alt" class="w-100 d-none d-lg-block" lazy="loading">
         </div>
       </div>
     </div>

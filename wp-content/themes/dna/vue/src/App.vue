@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Menu from '@/components/Menu.vue'
-import Foot from '@/components/Foot.vue'
+const Menu = () => import('@/components/Menu.vue');
+const Foot = () => import('@/components/Foot.vue');
 
 export default {
   name: 'App',

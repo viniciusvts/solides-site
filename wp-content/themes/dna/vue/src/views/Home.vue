@@ -22,22 +22,22 @@
 </template>
 
 <script>
-import RHPoderoso from '@/components/RHPoderoso.vue'
-import SoftwareRH from '@/components/SoftwareRH.vue'
-import TitleH2Center from '@/components/TitleH2Center.vue'
-import RecrutamentoSelecao from '@/components/RecrutamentoSelecao.vue'
-import AvaliacaoDesempenho from '@/components/AvaliacaoDesempenho.vue'
-import PesquisaClima from '@/components/PesquisaClima.vue'
-import BoxCultural from '@/components/BoxCultural.vue'
-import PeopleAnalytics from '@/components/PeopleAnalytics.vue'
-import Profiler from '@/components/Profiler.vue'
-import PrincipaisClientes from '@/components/PrincipaisClientes.vue'
-import Depoimento from '@/components/Depoimento.vue'
-import ComoEstamosAjudando from '@/components/ComoEstamosAjudando.vue'
-import AutomatizeRS from '@/components/AutomatizeRS.vue'
-import BlogCards from '@/components/BlogCards.vue'
-import TrialModal from '@/components/TrialModal.vue'
-import Loading from "@/components/Loading.vue"
+const RHPoderoso = () => import('@/components/RHPoderoso.vue')
+const SoftwareRH = () => import('@/components/SoftwareRH.vue')
+const TitleH2Center = () => import('@/components/TitleH2Center.vue')
+const RecrutamentoSelecao = () => import('@/components/RecrutamentoSelecao.vue')
+const AvaliacaoDesempenho = () => import('@/components/AvaliacaoDesempenho.vue')
+const PesquisaClima = () => import('@/components/PesquisaClima.vue')
+const BoxCultural = () => import('@/components/BoxCultural.vue')
+const PeopleAnalytics = () => import('@/components/PeopleAnalytics.vue')
+const Profiler = () => import('@/components/Profiler.vue')
+const PrincipaisClientes = () => import('@/components/PrincipaisClientes.vue')
+const Depoimento = () => import('@/components/Depoimento.vue')
+const ComoEstamosAjudando = () => import('@/components/ComoEstamosAjudando.vue')
+const AutomatizeRS = () => import('@/components/AutomatizeRS.vue')
+const BlogCards = () => import('@/components/BlogCards.vue')
+const TrialModal = () => import('@/components/TrialModal.vue')
+const Loading = () => import("@/components/Loading.vue")
 export default {
   name: 'Home',
   components:{

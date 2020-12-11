@@ -6,7 +6,7 @@
       <template v-for="img in data.imagem">
         <div class="space" :key="img.key"></div>
         <div class="col variable-col" :key="img.key">
-          <img :src="img.url" :alt="img.alt">
+          <img v-lazy="img.url" :alt="img.alt" lazy="loading">
         </div>
       </template>
     </div>

@@ -4,10 +4,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './services/router.js'
 import ApiRest from './services/ApiRest.js'
+import VueLazyload from 'vue-lazyload'
 // import UpMeta from './services/UpdateMeta.js'
 
 Vue.prototype.$http = ApiRest
 Vue.config.productionTip = false
+
+Vue.use(VueLazyload)
 
 new Vue({
   router,

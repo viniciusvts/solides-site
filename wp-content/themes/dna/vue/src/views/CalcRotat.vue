@@ -60,7 +60,7 @@
     @relatorioOk="relatorioOk"
     :numFunc="Number(numFunc)"
     :txRot="Number(calcVars.media_taxa_rotatividade)"
-    :custoRotat="Number(calculado)"
+    :custoRotat="calculado"
     />
   </div>
   <div v-else>

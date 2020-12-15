@@ -130,6 +130,7 @@ export default {
       return valor;
     },
     sendForm (evt) {
+      this.mensagem = '<p>Enviando dados...</p>'
       //envia para o wp
       this.$http.sendFormToWP(evt.target.action, this.form)
       .then( resp => {
@@ -139,6 +140,7 @@ export default {
           this.form.qtde_de_colaboradores = Number(this.form.qtde_de_colaboradores)
           this.form.faturamentoAnual = Number(this.form.faturamentoAnual)
           this.form.custo_de_produtividade = Number(this.form.custo_de_produtividade)
+          this.mensagem = '<p>Gerando relatório...</p>'
           return this.$http.sendToHSProdutividade(this.formId, this.form)
         } else {
           this.mensagem = '<p>Houve um erro, tente novamente mais tarde.</p>'
@@ -146,15 +148,22 @@ export default {
       })
       //retorno da chamada sendToHSWithId
       .then(resp => {
-        if (resp.ok) return resp.json()
+        if (resp.status == 400) { return {"badrequest": true} }
+        if (resp.ok) { return resp.json() }
+        else { this.mensagem = '<p>Houve um erro ao gerar o relatório, tente novamente mais tarde</p>' }
       })
       .then(json => {
-        console.log('sendForm => ', json)
-        // mando uma mensagem no form e crio o user na plataforma Sólides
-        this.mensagem = '<p>Gerando relatório...</p>'
-        this.$emit('relatorioOk', true);
+        console.log('sendToHS => ', json)
+        if (typeof json.badrequest != 'undefined') {
+          this.mensagem = '<p>Houve um erro, provavelmente o email já foi cadastrado.</p>'
+        } else if (typeof json.inlineMessage != 'undefined') {
+          // mando uma mensagem no form e crio o user na plataforma Sólides
+          this.mensagem = '<p>Relatório criado, redirecionando...</p>'
+          this.$emit('relatorioOk', true);
+        } else {
+          this.mensagem = '<p>Houve um erro ao gerar o relatório, tente novamente mais tarde</p>'
+        }
       })
-        this.$emit('relatorioOk', true);
     },
     startHsForm (selector) {
       setTimeout(() => {

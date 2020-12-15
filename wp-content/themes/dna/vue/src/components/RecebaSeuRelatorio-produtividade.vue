@@ -118,6 +118,7 @@ export default {
       evt.target.value = v;
     },
     moedaToNumber (valor) {
+      if(typeof valor == 'number') return valor
       if(valor === ""){
         return 0;
       }else{
@@ -155,7 +156,7 @@ export default {
       .then(json => {
         console.log('sendToHS => ', json)
         if (typeof json.badrequest != 'undefined') {
-          this.mensagem = '<p>Houve um erro, provavelmente o email já foi cadastrado.</p>'
+          this.mensagem = '<p>Houve um erro, email inválido ou já cadastrado.</p>'
         } else if (typeof json.inlineMessage != 'undefined') {
           // mando uma mensagem no form e crio o user na plataforma Sólides
           this.mensagem = '<p>Relatório criado, redirecionando...</p>'

@@ -114,6 +114,7 @@ export default {
       evt.target.value = v;
     },
     moedaToNumber (valor) {
+      if(typeof valor == 'number') return valor
       if(valor === ""){
          valor =  0;
       }else{

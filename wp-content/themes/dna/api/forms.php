@@ -129,7 +129,7 @@ function dnaapi_calcProdut($req){
   );
   // envia email
   $to = $reqData['email'];
-  $subject = 'Sólides - Calculadora de Rotatividade';
+  $subject = 'Sólides - Calculadora de Produtividade';
   $message = criaMensagemSimplesProduti($reqData);
   $headers = array('Content-Type: text/html; charset=UTF-8');
   $wpmail = wp_mail( $to, $subject, $message, $headers );

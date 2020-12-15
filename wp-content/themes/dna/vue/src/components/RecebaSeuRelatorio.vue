@@ -127,14 +127,17 @@ export default {
       return valor;
     },
     sendForm (evt) {
+      this.mensagem = '<p>Enviando dados...</p>'
       //envia para o wp
       this.$http.sendFormToWP(evt.target.action, this.form)
       .then( resp => {
         if (resp.ok){
-      //faz algumas formatações
+          console.log('sendFormToWP => ', resp)
+          //faz algumas formatações
           this.form.taxa_de_rotatividade = Number(this.form.taxa_de_rotatividade)
           this.form.qtde_de_colaboradores = Number(this.form.qtde_de_colaboradores)
-          this.form.custo_de_rotatividade = Number(this.form.custo_de_rotatividade)
+          this.form.custo_de_rotatividade = this.moedaToNumber(this.form.custo_de_rotatividade)
+          this.mensagem = '<p>Gerando relatório...</p>'
           return this.$http.sendToHSWithId('8a26943f-04e7-4cd3-b703-3c804c6abdb4', this.form)
         } else {
           this.mensagem = '<p>Houve um erro, tente novamente mais tarde.</p>'
@@ -142,13 +145,22 @@ export default {
       })
       //retorno da chamada sendToHSWithId
       .then(resp => {
-        if (resp.ok) return resp.json()
+        console.log('sendToHSResp => ', resp)
+        if (resp.status == 400) { return {"badrequest": true} }
+        if (resp.ok) { return resp.json() }
+        else { this.mensagem = '<p>Houve um erro ao gerar o relatório, tente novamente mais tarde</p>' }
       })
       .then(json => {
-        console.log('sendForm => ', json)
-        // mando uma mensagem no form e crio o user na plataforma Sólides
-        this.mensagem = '<p>Gerando relatório...</p>'
-        this.$emit('relatorioOk', true);
+        console.log('sendToHS => ', json)
+        if (typeof json.badrequest != 'undefined') {
+          this.mensagem = '<p>Houve um erro, email inválido ou já cadastrado.</p>'
+        } else if (typeof json.inlineMessage != 'undefined') {
+          // mando uma mensagem no form e crio o user na plataforma Sólides
+          this.mensagem = '<p>Relatório criado, redirecionando...</p>'
+          this.$emit('relatorioOk', true);
+        } else {
+          this.mensagem = '<p>Houve um erro ao gerar o relatório, tente novamente mais tarde</p>'
+        }
       })
     },
     startHsForm (selector) {

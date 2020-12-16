@@ -44,12 +44,16 @@
                 font-size: 10px;
                 line-height: 12px;
                 position: absolute;
-                margin-left: -60px;
+                margin-left: -80px;
                 top: 5px;
+                @media (min-width: $tablets) {
+                    margin-left: -90px;
+                    line-height: 20px;
+                }
                 @media (min-width: $desktops) {
                     font-size: 14px;
-                    line-height: 17px;
-                    margin-left: -80px;
+                    line-height: 25px;
+                    margin-left: -110px;
                 }
             }
         }

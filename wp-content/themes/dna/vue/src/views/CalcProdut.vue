@@ -154,6 +154,7 @@ export default {
     execMascaraMoeda (evt) {
       let v = evt.target.value;
       evt.target.value = this.formatReal(v);
+      this.fatAno = evt.target.value.replace(/\D/g,"")
     },
     formatReal(obj){
       obj=obj.replace(/\D/g,""); //Remove tudo o que não é dígito

@@ -193,6 +193,9 @@ export default {
     },
     custoProd: function(val){
       this.form.custo_de_produtividade = val
+    },
+    fatAno: function(val){
+      this.form.faturamentoAnual = val
     }
   }
 };

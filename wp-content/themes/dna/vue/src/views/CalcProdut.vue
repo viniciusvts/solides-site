@@ -151,10 +151,10 @@ export default {
       this.fatAno = Number(this.fatAnoMsk)/100;
       this.fatAnoMsk = this.fatAno.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
     },
-    execMascaraMoeda (evt) {
-      let v = evt.target.value;
-      evt.target.value = this.formatReal(v);
-      this.fatAno = evt.target.value.replace(/\D/g,"")
+    execMascaraMoeda () {
+      this.fatAnoMsk = this.fatAnoMsk.replace(/[\D]+/g,'');
+      this.fatAno = Number(this.fatAnoMsk)/100;
+      this.fatAnoMsk = this.fatAno.toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' })
     },
     formatReal(obj){
       obj=obj.replace(/\D/g,""); //Remove tudo o que não é dígito

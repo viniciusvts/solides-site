@@ -4,6 +4,12 @@
     @media (min-width: $desktops) {
         padding-top: 80px;
     }
+    .btn-color{
+        cursor: pointer;
+        color: white;
+        background: #D64149;
+        border: 2px solid #D74149;
+    }
     .pt-160{
         padding-top: 160px;
     }

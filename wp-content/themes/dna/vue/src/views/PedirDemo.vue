@@ -67,11 +67,10 @@ export default {
   },
   methods: {
     getPost () {
-      this.$http.getPageById(this.pageId)
+       this.$http.getPageById(this.pageId)
       .then(res => res.json() )
       .then(json => {
         this.pageData = json;
-        console.log(this.pageData);
       })
     },
     execMascara (evt) {

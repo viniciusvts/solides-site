@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Menu v-if="!isLP "/>
+    <Menu v-if="!isLP && !hasNewMenu"/>
+    <MenuDemo v-if="hasNewMenu"/>
     <transition mode="out-in">
       <router-view/>
     </transition>
@@ -10,12 +11,14 @@
 
 <script>
 const Menu = () => import('@/components/Menu.vue');
+const MenuDemo = () => import('@/components/MenuDemo.vue');
 const Foot = () => import('@/components/Foot.vue');
 
 export default {
   name: 'App',
   components: {
     Menu,
+    MenuDemo,
     Foot
   },
   mounted() {
@@ -23,7 +26,19 @@ export default {
     script.setAttribute('src', 'https://js.hsforms.net/forms/v2.js')
     document.body.appendChild(script)
   },
+  data () {
+    return {
+      pagesMenuDemo: ['HomeAgendarDemo']
+    }
+  },
   computed: {
+    hasNewMenu(){
+      console.log(this.$route.name);
+      if (this.pagesMenuDemo.includes(this.$route.name )) {
+        return true
+      }
+      return false
+    },
     isLP(){
       if (this.$route.name == 'perfil-lp') {
         return true

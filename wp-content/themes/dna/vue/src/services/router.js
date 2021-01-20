@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Home from '@/views/Home.vue'
+import HomeAgendarDemo from '@/views/HomeAgendarDemo.vue'
 import RecrutamentoESelecao from '@/views/RecrutamentoESelecao.vue'
 import AvaliacaoDesempenho from '@/views/AvaliacaoDesempenho.vue'
 import PesquisaClima from '@/views/PesquisaClima.vue'
@@ -32,6 +33,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+  },
+  {
+    path: '/demo',
+    name: 'HomeAgendarDemo',
+    component: HomeAgendarDemo,
   },
   {
     path: '/produtos/recrutamento-e-selecao',

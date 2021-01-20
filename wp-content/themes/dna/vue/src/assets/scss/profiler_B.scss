@@ -1,0 +1,112 @@
+@import './variables.scss';
+.profiler-B{
+    padding-top: 50px;
+    padding-bottom: 60px;
+    @media (min-width: $desktops) {
+        padding-top: 80px;
+        padding-bottom: 75px;
+    }
+    h2{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        font-feature-settings: 'liga' off;
+        color: #000000;
+        ///
+        @media (min-width: $tablets) {
+            font-size: 40px;
+            line-height: 46px;
+            margin-bottom: 40px;
+        }
+        @media (min-width: $desktops) {
+            font-size: 38px;
+            line-height: 46px;
+            margin-bottom: 20px;
+        }
+    }
+    .img-mobile{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+        @media (min-width: $tablets) {
+            text-align: center;
+            width: 60%;
+        }
+    }
+    .text{
+        width: 279px;
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width: $tablets) {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            width: unset;
+        }
+        @media (min-width: $desktops) {
+            margin-top: 0;
+            margin-bottom: 0;
+            width: 85%;
+            margin-left: auto;
+            margin-right: unset;
+        }
+        *{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            ///
+            margin-bottom: 20px;
+            width: 101%;
+            @media (min-width: $tablets) {
+                font-size: 21px;
+                line-height: 30px;
+                width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            @media (min-width: $desktops) {
+                font-size: 24px;
+                line-height: 29px;
+                margin-bottom: 40px;
+                width: unset;
+            }
+        }
+    }
+    button{
+        &.purple{
+            color: white;
+            background: #5F4A87;
+            border: 2px solid #2F0A77;
+        }
+        &.badge{
+            padding: 10px 25px;
+            font-size: 13px;
+            cursor: pointer;
+            @media (min-width: $smallPhones) {
+                font-size: 15px;
+            }
+            @media (min-width: $tablets) {
+                padding: 14px 35px;
+                font-size: 19px;
+            }
+            @media (min-width: $desktops) {
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 29px;
+                text-align: center;
+            }
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+    .vertical-center{
+        height: fit-content;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}

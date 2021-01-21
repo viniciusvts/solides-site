@@ -18,11 +18,12 @@ $vermelho_solides: #D64149;
     }
     h1{
         font-weight: bold;
-        font-size: 24px;
+        font-size: 22px;
         line-height: 29px;
         text-align: center;
+        padding-bottom: 15px;
+        color: $roxo_solides;
         @media (min-width: $tablets) {
-            color: $roxo_solides;
             font-weight: 900;
             font-size: 34px;
             line-height: 51px;

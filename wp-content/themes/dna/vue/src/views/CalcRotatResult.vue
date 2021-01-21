@@ -2,7 +2,7 @@
   <div v-if="pageData" class="calc-result">
     <div class="container">
       <div class="head container">
-        <h1 class="text-center d-none d-md-block mb-0" v-html="pageData.acf.head.titulo"></h1>
+        <h1 class="text-center d-md-block mb-0" v-html="pageData.acf.head.titulo"></h1>
         <div class="text" v-html="pageData.acf.head.sub"></div>
         <div class="note" v-html="pageData.acf.head.detalhe"></div>
       </div>
@@ -167,6 +167,9 @@ export default {
       .then(res => res.json() )
       .then(json => {
         this.calcVars = json.acf.calc_vars
+        if(this.taxaRot){
+          this.calcVars.media_taxa_rotatividade = this.taxaRot;
+        }
       })
     },
     getUriParam (param) {

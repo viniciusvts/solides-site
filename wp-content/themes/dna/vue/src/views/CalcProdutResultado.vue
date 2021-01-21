@@ -2,7 +2,7 @@
   <div v-if="pageData" class="calc-result produt-resultado">
     <div class="container">
       <div class="head container">
-        <h1 class="text-center d-none d-md-block mb-0" v-html="pageData.acf.head.titulo"></h1>
+        <h1 class="text-center d-md-block mb-0" v-html="pageData.acf.head.titulo"></h1>
         <div class="text" v-html="pageData.acf.head.sub"></div>
         <div class="note" v-html="pageData.acf.head.detalhe"></div>
       </div>
@@ -87,12 +87,19 @@
     />
     <CalcData 
     :data="pageData.acf.custo_6" 
+    signal="equal"
     :avalDesemp="{
       ttRespTabExcel: calcularTotalRespostasAvalDesem(true), 
       tempHorasParaTab: calcularTempHorasTabDadosAval(true),
       custoTotal: calcularCustoAvalDesenPorAnoSemPA(true),
     }"
     />
+    <div class="custo-total">
+      <div class="text" v-html="pageData.acf.resultado.custo_total"></div>
+      <div class="resultado-bgwhi-bdgray">
+        <span class="soma-total" >{{calcularCustoTotalProdutividade(true)}}</span>
+      </div>
+    </div>
     <div class="dados-pesquisa container">
       <div class="row">
         <div class="head col-12 col-md-6">
@@ -203,7 +210,7 @@ export default {
   mounted () {
     this.numFunc = Number(this.getUriParam('numFunc'))
     this.fatAno = Number(this.getUriParam('fatAno'))
-    this.calcVars.media_taxa_rotatividade = Number(this.getUriParam('taxaRot'))
+    this.taxaRot = Number(this.getUriParam('taxaRot'))
   },
   methods: {
     getPost () {
@@ -218,6 +225,9 @@ export default {
       .then(res => res.json() )
       .then(json => {
         this.calcVars = json.acf.calc_vars
+        if(this.taxaRot){
+          this.calcVars.media_taxa_rotatividade = this.taxaRot;
+        }
       })
     },
     getUriParam (param) {

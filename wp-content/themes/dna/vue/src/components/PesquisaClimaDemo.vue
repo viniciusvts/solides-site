@@ -14,9 +14,6 @@
           <div class="col-12 col-lg-6 vertical-center">
             <h2 class="d-none d-lg-block" v-html="data.titulo"></h2>
             <div class="text" v-html="data.texto"></div>
-            <a :href="data.botao.url">
-              <button class="badge badge-pill purple" v-html="data.botao.title"></button>
-            </a>
           </div>
         </div>
       </div>

@@ -36,7 +36,7 @@ const Profiler = () => import('@/components/ProfilerDemo.vue')
 const PrincipaisClientes = () => import('@/components/PrincipaisClientesDemo.vue')
 const Depoimento = () => import('@/components/Depoimento.vue')
 const ComoEstamosAjudando = () => import('@/components/ComoEstamosAjudandoDemo.vue')
-const AutomatizeRS = () => import('@/components/AutomatizeRS.vue')
+const AutomatizeRS = () => import('@/components/AutomatizeRSDemo.vue')
 const BlogCards = () => import('@/components/BlogCards.vue')
 const TrialModal = () => import('@/components/TrialModal.vue')
 const Loading = () => import("@/components/Loading.vue")
@@ -68,6 +68,10 @@ export default {
   },
   created () {
     this.getPost();
+    // Check browser support
+    if (typeof(Storage) !== "undefined") {
+      sessionStorage.setItem("versao","/demo");
+    }
   },
   methods: {
     setTrialOff () {

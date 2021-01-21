@@ -90,7 +90,7 @@ const calcRotat = {
      * @author Vinicius de Santana
     */
     calcularMediaContratacaoAnual () {
-      return (this.numFunc * (this.calcVars.media_taxa_rotatividade / 100) * this.txDemissComport).toFixed(0)
+      return (this.numFunc * (this.calcVars.media_taxa_rotatividade / 100)).toFixed(0)
     },
     /**
      * Calcula a taxa de rotatividade crua
@@ -365,7 +365,7 @@ const calcRotat = {
     */
     calcularQtdDeRelatorios () {
       // está os dois com 'Number' pq estava concatenando em vez de somando
-      var qtdRelatorios = Number(this.calcularMediaContratacaoAnual() * this.txDemissComport) + Number(this.calcularMediaContratacaoAnual())
+      var qtdRelatorios = Number(this.calcularMediaContratacaoAnual())
       qtdRelatorios = qtdRelatorios * 3
       return qtdRelatorios.toFixed(0)
     },

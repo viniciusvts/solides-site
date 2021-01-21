@@ -4,9 +4,13 @@ $azul: #2F0A77;
 $cinza: #878787;
 $cinza_titulo: #696161;
 $cinza_bg: #F3F3F3;
+$vermelho_solides: #D64149;
 .produt-resultado{
     .custo-total{
         background: $amarelo;
+        .soma-total{
+            color: $vermelho_solides;
+        }
     }
     .resultado-bgwhi-bdgray{
         color: $azul;

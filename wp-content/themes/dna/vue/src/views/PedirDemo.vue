@@ -84,17 +84,14 @@ export default {
       setTimeout(() => {
         window.hbspt.forms.create({
           portalId: "6009739",
-          //formId: "bc5d109b-a72b-4a16-a31f-7aea6d8917c2",
-          formId: "081425a3-83f7-47ae-b8cb-c90e8de38121",
-          target: selector,
-          onFormReady: function(){
-            if (typeof(Storage) !== "undefined") {
-              console.log(sessionStorage.getItem("versao"));
-              //jQuery('input[name="pagina_que_originou_a_conversao"]').val(document.referrer()).change();
-            }
-          }
+          formId: "bc5d109b-a72b-4a16-a31f-7aea6d8917c2",
+          target: selector
         });
         setTimeout(()=>{
+           if (typeof(Storage) !== "undefined" && sessionStorage.getItem("versao")) {
+              document.querySelector('input[name="pagina_que_originou_a_conversao"]').value = sessionStorage.getItem("versao");
+            }
+
           this.isLoadingForm = false;
         },500);
       }, 3000);

@@ -62,7 +62,7 @@ export default {
   },
   data () {
     return {
-      pageId: 2,
+      pageId: 1772,
       pageData: null,
     }
   },
@@ -70,7 +70,7 @@ export default {
     this.getPost();
     // Check browser support
     if (typeof(Storage) !== "undefined") {
-      sessionStorage.setItem("versao","/demo");
+      sessionStorage.setItem("versao","Versão B");
     }
   },
   methods: {

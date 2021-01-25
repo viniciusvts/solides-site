@@ -1,0 +1,111 @@
+@import './variables';
+$purple: #5F4A87;
+.como-estamos-ajudando-B{
+    padding-top: 40px;
+    padding-bottom: 30px;
+    overflow-y: hidden;
+    @media (min-width: $desktops) {
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+    }
+    & > .container{
+        @media (min-width: $fullHdDesktops) {
+            position: relative;
+        }
+    }
+    .vertical-pill{
+        position: absolute;
+        border-radius: 100px;
+        min-width: 10px;
+        min-height: 20px;
+        z-index: -1;
+        transform: translateY(-50px);
+        @media (min-width: $desktops) {
+            left: 133px;
+            width: 211px;
+            height: 900px;
+            transform: translateY(-350px);
+        }
+        &.yellow{
+            background: #FFBA00;
+            display: none;
+            @media (min-width: $desktops) {
+                display: block;
+            }
+        }
+        &.green{
+            background: #57DD6D;
+            width: 54px;
+            height: 330px;
+            right: 26px;
+            transform: translateY(-70px);
+            @media (min-width: $tablets){
+                width: 80px;
+                height: 400px;
+                right: 70px;
+            }
+            @media (min-width: $desktops) {
+                display: none;
+            }
+        }
+    }
+    h2{
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        font-feature-settings: 'liga' off;
+        color: $purple;
+        ///
+        max-width: 480px;
+        margin-bottom: 40px;
+        @media (min-width: $tablets){
+            font-size: 40px;
+            line-height: 46px;
+            margin-bottom: 78px;
+        }
+        @media (min-width: $desktops) {
+            font-size: 42px;
+            line-height: 50px;
+            margin-bottom: 50px;
+        }
+    }
+    .text{
+        p{
+            font-family: Lato;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 30px;
+            &:nth-child(n+4){
+                width: 240px;
+            }
+            @media (min-width: $tablets) {
+                font-size: 24px;
+                line-height: 32px;
+                &:nth-child(n+4){
+                    max-width: 500px;
+                    width: unset;
+                }
+            }
+            @media (min-width: $desktops) {
+                font-size: 38px;
+                line-height: 46px;
+                margin-bottom: 50px;
+                &:nth-child(n+4){
+                    transform: translateX(-150px);
+                    max-width: 750px;
+                    width: unset;
+                }
+            }
+            strong{
+                font-weight: 900;
+                color: $purple;
+            }
+        }
+    }
+    .container{
+        @media (min-width: $hdDesktops) {
+            max-width: 1240px;
+        }
+    }
+}

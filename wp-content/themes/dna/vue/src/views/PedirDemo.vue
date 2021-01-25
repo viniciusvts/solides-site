@@ -67,11 +67,10 @@ export default {
   },
   methods: {
     getPost () {
-      this.$http.getPageById(this.pageId)
+       this.$http.getPageById(this.pageId)
       .then(res => res.json() )
       .then(json => {
         this.pageData = json;
-        console.log(this.pageData);
       })
     },
     execMascara (evt) {
@@ -89,6 +88,10 @@ export default {
           target: selector
         });
         setTimeout(()=>{
+           if (typeof(Storage) !== "undefined" && sessionStorage.getItem("versao")) {
+              document.querySelector('input[name="pagina_que_originou_a_conversao"]').value = sessionStorage.getItem("versao");
+            }
+
           this.isLoadingForm = false;
         },500);
       }, 3000);
